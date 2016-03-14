@@ -1,6 +1,126 @@
 % Template file for a standard thesis
 \documentclass[11pt]{isuthesis}
-\usepackage[pdftex]{graphicx}
+\usepackage{datatool}
+\usepackage{amsthm}
+\usepackage{booktabs}
+%\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{enumerate}
+\usepackage{cprotect}
+\usepackage{xtab}
+\usepackage{tikz}
+\usepackage{url}
+%\usepackage{hyperref}
+\usepackage{cite}
+\usepackage[update,prepend,outdir=./]{epstopdf}
+\DTLsetseparator{•}
+\DTLloaddb{data}{featureUse/analysis_output/database.csv}
+
+\usepackage{balance}
+
+%submission site: http://cyberchairpro.borbala.net/asepapers/submit/
+% Login: carl1978@iastate.edu
+% Password: ASE-143111797041267
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+\newcommand{\todoNow}[1]{\textbf{\textcolor{red}{TODO.NOW: #1}}} %comment out for submission
+\newcommand{\todoMid}[1]{\textbf{\textcolor{magenta}{TODO.MID: #1}}} %comment out for submission
+%\newcommand{\todoMid}[1]{\textbf{\textcolor{magenta}{}}} %comment out for submission
+\newcommand{\todoLast}[1]{\textbf{\textcolor{blue}{TODO.LAST: #1}}} %comment out for submission
+\newcommand{\yes}{\tikz\draw[black,fill=black] (0,0) circle (.5ex);}
+\newcommand{\sorta}{\tikz\draw[gray,fill=gray] (0,0) circle (.5ex);}
+\newcommand{\no}{\tikz\draw[black] (0,0) circle (.5ex);}
+\renewcommand{\dbltopfraction}{.9}
+\usepackage{bigstrut}
+    \setlength\bigstrutjot{2pt}
+\newtheorem{mydef}{Definition}
+
+
+
+
+
+\usepackage{url}
+%\usepackage[table,xcdraw]{xcolor}
+\usepackage{listings}
+\usepackage{eurosym}
+\usepackage{amsfonts}
+\usepackage{balance}
+\usepackage{cite} %this package is awesome - it reorders lists of citations to be in numeric order
+\usepackage{pifont}
+\newcommand{\xmark}{\ding{53}}%
+\usepackage{eqparbox}
+%\usepackage{hyperref}
+\usepackage{subfigure}
+%\usepackage{fancyvrb}
+
+\usepackage{algorithm}% http://ctan.org/pkg/algorithms
+\usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
+\newcommand{\var}[1]{{\ttfamily#1}}% variable
+
+% Tables
+\usepackage{booktabs}
+\usepackage{pbox}
+\renewcommand{\arraystretch}{1.2}
+\usepackage{arydshln}
+%\renewcommand*\cmidrule{} % No middle lines
+%\renewcommand{\arraystretch}{1.5} % Additional spacing with no middle lines
+%\renewcommand*\cmidrule{\hdashline[1pt/2pt]}% Dashed middle lines
+\renewcommand*\cmidrule{\midrule[0.001em]} % Thin middle lines
+%\renewcommand*\cmidrule{\midrule} % Thick middle lines
+\newcommand{\clarify}[1]{{\color{blue}\{CLARIFY: #1\}}}
+
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+
+
+%Images
+%\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.jpg,.png}
+
+\hyphenation{second-ly ap-pen-dix}
+
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+\newcommand{\horiz}{\hspace{2.1pt}}
+\renewcommand{\topfraction}{.9}
+
+\newcommand{\ignore}[1]{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\usepackage[pdftex]{graphicx}
 % Standard, old-style thesis
 \usepackage{isutraditional}   \chaptertitle
 % Old-style, thesis numbering down to subsubsection
@@ -13,6 +133,27 @@
 %Optional Package to add PDF bookmarks and hypertext links
 \usepackage[pdftex,hypertexnames=false,linktocpage=true]{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue,anchorcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{document}
 \DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png}
 \include{Preface/titlepage}
@@ -38,8 +179,12 @@
 \pagenumbering{arabic}
 \include{Body/chapter1}
 \include{Body/chapter2}
-\include{Body/chapter3}
-\include{Body/chapter4}
+%\include{Body/chapter3}
+\chapter{Feature Use}
+\include{featureUse/paper/RegexFeatureUseInPractice}
+\chapter{Refactoring}
+\include{refactoring/paper}
+%\include{Body/chapter4}
 \include{Body/chapter5}
 \include{Appendix/appendix1}
 \include{Appendix/appendix2}
