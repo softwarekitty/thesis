@@ -1,0 +1,44 @@
+% package for custom commands in Carl's Thesis
+% 
+% (c) Carl Chapman
+%
+%% This program can be redistributed and/or modified under the terms
+%% of the LaTeX Project Public License Distributed from CTAN archives
+%% in directory macros/latex/base/lppl.txt.
+% 
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{carlthesis}
+  [2016/03/20 v0.01 LaTeX package for commands used in Carl Chapman's Master's Thesis at ISU 2016]
+  
+%% commands not requiring a package
+\newcommand{\todoNow}[1]{\textbf{\textcolor{red}{TODO.NOW: #1}}}
+\newcommand{\todoMid}[1]{\textbf{\textcolor{magenta}{TODO.MID: #1}}}
+\newcommand{\todoLast}[1]{\textbf{\textcolor{blue}{TODO.LAST: #1}}}
+\newcommand{\clarify}[1]{{\color{blue}\{CLARIFY: #1\}}}
+
+%% packages and the commands that require them
+
+\RequirePackage[pdftex,hypertexnames=false,linktocpage=true]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,anchorcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB}
+\newcommand{\footurl}[1]{\footnote{\url{#1}}}
+
+\RequirePackage{tikz}
+\newcommand{\yes}{\tikz\draw[black,fill=black] (0,0) circle (.5ex);}
+\newcommand{\sorta}{\tikz\draw[gray,fill=gray] (0,0) circle (.5ex);}
+\newcommand{\no}{\tikz\draw[black] (0,0) circle (.5ex);}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+\RequirePackage{datatool}
+\DTLsetseparator{•}
+\DTLloaddb{data}{nontex/database.csv}
+\newcommand{\dbfetch}[1]{\DTLfetch{data}{key}{#1}{value}}
+
+\RequirePackage{booktabs}
+\renewcommand*\cmidrule{\midrule[0.001em]} % Thin middle lines
+
+\RequirePackage{pifont}
+\newcommand{\xmark}{\ding{53}}
+
+\endinput
+%%
+%% End of file `carlthesis.sty'.

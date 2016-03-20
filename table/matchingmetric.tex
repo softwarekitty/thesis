@@ -1,0 +1,19 @@
+\begin{table}
+\caption{Matching metric example \label{matchingmetric}}
+\begin{center}
+\begin{small}
+\begin{tabular} {cl | c c c c c}
+\textbf{String} & \verb!`RR*'! & \textbf{Oracle} & \textbf{P1} & \textbf{P2} & \textbf{P3}& \textbf{P4}\\ \hline
+1 & ``ARROW"    & \checkmark    & \checkmark    & \checkmark    & \checkmark    & \checkmark \\
+2 & ``qRs"      & \checkmark    & \checkmark    & \xmark        & \xmark        & ?\\
+3 & ``R0R"      & \checkmark    & \checkmark    & \checkmark    & ?             & -\\
+4 & ``qrs"      & \xmark        & \checkmark    & \xmark        & \checkmark    & -\\
+5 & ``98"       & \xmark        & \xmark        & \xmark        & \xmark        & -\\
+\hline
+  & Score       & 1.00          & 0.80          & 0.80          & 0.50          & 1.00\\
+\\
+\multicolumn{7}{l}{\checkmark = match, \xmark = not a match, ? = unsure, -- = left blank}\\
+\end{tabular}
+\end{small}
+\end{center}
+\end{table}
