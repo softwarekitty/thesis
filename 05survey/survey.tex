@@ -1,10 +1,72 @@
 \chapter{Developer Survey}
 
 \section{Survey design based on feature analysis}
-
-\section{Summary of results}
-
 \section{Discussion of survey results}
 \subsection{Implications}
 \subsection{Opportunities for future work}
 \subsection{Threats to validity}
+
+To understand the context of when and how programmers use regular expressions,
+we designed a survey, implemented using Google Forms, with 40 questions. The questions asked about regex usage frequency, languages, purposes, pain points, and the use of various language
+features.
+\footurl{https://github.com/softwarekitty/tour_de_source/blob/master/regex_usage_in_practice_survey.pdf}
+Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
+
+Our goal was to understand the practices of professional developers. Thus, we deployed the survey to 22 professional developers at Dwolla, a small software company that provides tools for online and mobile payment management. While this sample comes from a single company, we note anecdotally that Dwolla is a start-up and most of the developers worked previously for other software companies, and thus bring their past experiences with them. Surveyed developers have nine years of experience, on average, indicating the results may generalize beyond a single, small software company, but further study is needed.
+
+
+\section{Summary of results}
+The survey was completed by 18 participants (82\% response rate) that identified as software developer/maintainers.
+Respondents have an average of nine years of programming experience ($\sigma = 4.28$).
+On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly.
+Table~\ref{tab:regexenviron} shows how frequently participants compose regexes using each of several languages and technical environments.
+Six (33\%) of the survey participants report to compose regexes using general purpose programming languages (e.g., Java, C, C\#) 1-5 times per year and five (28\%) do this 6-10 times per year.  For command line usage in tools such as grep, 6 (33\%) participants use regexes 51+ times per year. Yet, regexes were rarely used in query languages like SQL. Upon further investigation, it turns out the surveyed developers were not on teams that dealt heavily with a database.
+
+\input{table/regexenviron}
+
+\input{table/regexactivities}
+
+Table~\ref{tab:regexactivities} shows how frequently, on average, the participants use
+regexes for various activities.
+Participants answered questions using a 6-point likert scale including very frequently~(6), frequently~(5), occasionally~(4), rarely~(3), very rarely~(2), and never~(1).
+Averaging across participants, among the most common usages are capturing parts of a string and locating content within a file, with both occurring somewhere between occasionally and frequently.
+
+Using a similar 7-point likert scale that includes `always' as a seventh point, developers indicated that they test their regexes with the same frequency as they test their code (average response was 5.2, which is between frequently and very frequently).  Half of the  developers indicate that they use external tools to test their regexes, and the other half indicated that they only use tests that they write themselves. Of the nine developers using tools, six mentioned online composition aides such as \url{regex101.com} where a regex and input string are entered, and the input string is highlighted according to what is matched.
+
+When asked an open ended question about pain points encountered with regular expressions, we observed three main categories. The most common, ``hard to compose," was represented in 61\% (11) responses. Next,
+ 39\% (7) developers responded that regexes are ``hard to read" and 17\% (3) indicated difficulties with ``inconsistency across implementations," which manifest when using regexes in multiple languages. These responses do not sum to 18 as three developers provided multiple parts in their answers.
+
+\vspace{6pt}
+\textbf{Summary - RQ1:}
+Common uses of regexes include locating content within a file, capturing parts of strings, and parsing user input.
+The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regexes being hard to read and hard to write.
+
+\input{table/saturation}
+
+The pattern language for Python, which is used to compose regexes, supports default character classes like the ANY or dot character class: \verb!.! meaning, `any character except newline'.
+It also supports three other default character classes: \verb!\d!, \verb!\w!, \verb!\s! (and their negations). All of these default character classes can be simulated using the custom character class (CCC) feature, which can create semantically equivalent regexes.
+For example  the decimal character class: \verb!\d! is equivalent to a CCC containing all 10 digits:  \verb!\d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!.
+
+Other default character classes such as the word character class: \verb!\w! may not be as intuitive to encode in a CCC: \verb![a-zA-Z0-9_]!.
+
+Survey participants were asked if they use only CCC, use CCC more than default, use both equally, use default more than CCC or use only default.  Results for this question are shown in Table~\ref{tab:cccvsdefault}, with 67\% (12) indicating that they use default the most.
+
+ Participants who favored CCC indicated that ``it is more explicit," whereas the participants who favored default character classes said,  ``it is less verbose" and ``I like using built-in code."
+
+\input{table/cccvsdefault}
+
+To further explore how participants use various regex features, participants were asked five questions about how frequently they use specific related groups of features:
+\begin{itemize} \itemsep -2pt
+   \item endpoint anchors (STR, END): \verb!^! and \verb!$!
+   \item capture groups(CG): (capture me)
+   \item word boundaries (WNW): \verb!word\b!
+   \item (negative) look-ahead/behinds (LKA, NLKA, LKB, NLKB): \verb!a(?=bc)!, \verb!(?<!x)yz!, \verb!(?<=a)!, \verb!a(?!yz)!
+   \item lazy repetition (LZY): \verb!ab+?!, \verb!xy{2,3}?!
+\end{itemize}
+These features were
+chosen based on the tool feature support explored in Section~\ref{regextoolsresults}.
+Results are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy repetition and look-ahead features are rarely used and capture groups and endpoint anchors are occasionally to frequently used.
+
+\input{table/regexfeaturegroups}
+
+Our results indicate that regexes are most frequently used in command line tools and IDEs.
