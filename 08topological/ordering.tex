@@ -1,19 +1,10 @@
-\chapter{Topological sort of representations by frequency and comprehensibility}
 \section{Design of topological sort}
 
 \subsection{Conceptual Basis}
 \subsection{Implementation details}
 
 \section{Total ordering of representations}
-
-\section{Discussion of ordering results}
-\subsection{Implications}
-\subsection{Opportunities for future work}
-\subsection{Threats to validity}
-
-\section{Desirable Representations (RQ3)}
-\label{sec:rq3}
-To determine the overall trends in the data, we created total orderings on the representation nodes in each equivalence class (Figure~\ref{fig:refactoringTree})  with respect to the community standards (RQ1)  and understandability (RQ2) metrics.
+To determine the overall trends in the data, we created total orderings on the representation nodes in each equivalence class (Figure~\ref{fig:refactoringTree})  with respect to the community standards and understandability metrics.
 
 \subsection{Analysis}
 At a high level, these total orderings were achieved by building directed graphs with the representations as nodes and edge directions determined by the metrics: patterns and projects for community standards and matching and composition for understandability. Then, within each graph, we performed a topological sort to obtain total node orderings.
@@ -36,7 +27,7 @@ In the community standards graph, we represent a directed edge  $\overrightarrow
 When there is a conflict between nPatterns and nProjects, as is the case between L2 and L3 where L2 is found in more patterns and L3 is found in more projects, an undirected edge $\overline{L2L3}$ is used.
 This represents that there was no winner based on the two metrics.
 After considering all pairs of nodes in each equivalence class that also have an edge in Figure~\ref{fig:refactoringTree}, we have created a graph, for example Figure~\ref{fig:graphsforanalysis}a, that represents the frequency trends among the community artifacts.
-Note that with the CCC group, there is no edge between C3 and C5 because there is no straightforward refactoring between those representations, as discussed in Section~\ref{sec:refactoring}.
+Note that with the CCC group, there is no edge between C3 and C5 because there is no straightforward refactoring between those representations, as discussed in Section\todoLast{N}.
 
 In the understandability graph, we represent a directed edge  $\overrightarrow{C2C1}$ when match(C1) $>$ match(C2) \emph{and} compose(C1) $>$ compose(C2). When there is a conflict between match and compose, as is the case with T1 and T3 where match(T1) is higher but compose(T3) is higher, an undirected edge $\overline{T1T3}$ is used. When one metric has a tie, as is the case with composition in E9, we resort to the matching metric to determine  $\overrightarrow{C5C1}$. An example understandability graph for the CCC is shown in Figure~\ref{fig:graphsforanalysis}b.
 
@@ -87,4 +78,3 @@ After the top rank, it is not clear who the second place winner is in any of the
 This positive result, that the most popular representation in the corpus is also the most understandable, makes sense as people may be more likely to understand things that are familiar or well documented. However, while L3 is the winner for the LBW group, we note that L2 appears in slightly more patterns.
 
 DBB is different  as the orderings are completely reversed depending on the analysis, so the community standards favor D2 and understandability favors D3. Further study is needed on this, as well as on LBW and SNG since not all nodes were considered in the understandability analysis.
-

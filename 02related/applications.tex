@@ -1,0 +1,251 @@
+\section{Applications of regex}
+
+\subsubsection{Everyday searching and replacing}
+
+\todoMid{rewrite this to cover ephemeral stuff like find/replace in text editors, IDEs, Browsers, etc.  Then cover the (sometimes ephemeral) bash scripts and the deep embedding of regex in system administration tools like grep, find, chron and others that often act on files, filtering pipes, etc.  Maybe more.}
+
+Any text editing application is likely to seem incomplete to most users without the ability to search content using regular expressions.  A survey of over 2000 web developers by codeanywhere\footurl{https://blog.codeanywhere.com/most-popular-ides-code-editors/} indicates that the 10 tools in Table~\ref{table:codeTools} are widely used.  Support for features using regex is indicated there by checkmarks \todoMid{clean codeTools table and intro}.
+\input{table/codeTools}
+
+\todoMid{clean shellTools and intro} Table~\ref{table:shellTools}.
+\input{table/shellTools}
+
+\todoMid{clean sqlTools and intro} Table~\ref{table:sqlTools}.
+\input{table/sqlTools}
+
+
+\subsection{Programming languages that support regex}
+
+For most popular programming languages, the ability to use regular expressions to search text is provided using standard libraries or is built into the language.  Below is a list of standard regex libraries or built-ins \emph{provided as a core language feature} for each of the top 20 most popular languages ordered according to the TIOBE\footurl{http://www.tiobe.com/tiobe_index} index on March 22, 2016:
+
+\begin{multicols}{2}
+\begin{description}[itemsep=0em]
+\begin{small}
+\item [1: Java] \underline{java.util.regex}
+\item [2: C] \underline{\emph{\textbf{NONE}}}
+\item [3: C++] \underline{std::regex}
+\item [4: C\#] \underline{System.Text.RegularExpressions}
+\item [5: Python] \underline{re} module
+\item [6: PHP] \underline{PCRE} core extension
+\item [7: Visual Basic .NET] \begin{tiny}{\underline{System.Text.RegularExpressions}}\end{tiny}
+\item [8: JavaScript] \underline{RegExp} object (built-in)
+\item [9: Perl] \underline{perlre} core library
+\item [10: Ruby] \underline{Regexp} class (built-in)
+\item [11: Delpi] \underline{RegularExpressions} unit
+\item [12: Assembly language] \underline{\emph{\textbf{NONE}}}
+\item [13: Visual Basic] \underline{\emph{\textbf{NONE}}}
+\item [14: Swift] \underline{NSRegularExpression}
+\item [15: Objective-C] \underline{NSRegularExpression}
+\item [16: R] \underline{grep} (built-in)
+\item [17: Groovy] \underline{java.util.regex}
+\item [18: MATLAB] \underline{regexp} function (built-in)
+\item [19: PL/SQL] \underline{LIKE} operator (built-in)
+\item [20: D] \underline{std.regex}
+\end{small}
+\end{description}
+\end{multicols}
+
+Although pure ANSI C does not include a standard regex library or built-in, libraries providing regex support can be made available such as \underline{POSIX}, \underline{PCRE} or \underline{re2c}.  Similarly, pure Visual Basic has no core regex support but can use the \underline{RegExp} object provided by the VBScript library.  In fact, for most general-purpose languages, multiple alternative regex libraries can be found which may offer slightly different syntax or optimizations for speed.  For example, the following libraries are alternatives to the C++ std::regex libary: Boost.Regex, Boost.Xpressive, cppre, DEELX, GRETA, Qt/QRegExp and RE2.  These alternative libraries are developed by hobby users and software giants alike, with RE2~\cite{re2} being a recent and notable alternative library developed by Google.
+
+The vast majority of modern regex libraries implement pattern syntax and feature sets based on PCRE standards with some exclusions or slightly different syntax for the same functionality. The major exception to this rule is SQL, which has it's own version of many features (underscore for characters, etc. \todoLast{SQL feature mini-table?}). A complete analysis of the many subtle variations in syntax and implementation detail is beyond the scope of this thesis and is an opportunity for future work mentioned in the final discussion.
+% ~\ref{sec:finalDiscussion}
+
+\todoMid{clean these thoughts} So what are programming languages using regex for?  It depends, but IMHO the capture group really shines in programming-language use, because captured content can be put into a variable and used later.  Simple matching that requires the whole string to match seems less useful - unless we are validating user input.  Note that regex are central to YACC and LEX, which are critical compiler tools for generating parsers used in the compilation process and lexing source files, respectively.  So here regex are used as a meta-programming language specifying the behavior of a parser.  I use split all the time, usually splitting on a comma or tab, but this needs to be flexable, why not regex?  This qualifies as worthwhile for future work.
+
+\section{Analyzing and testing regex}
+
+% Due in part to their common use across programming languages and how susceptible regexes are to error, many researchers and practitioners have developed tools to support more robust regex creation~\cite{Spishak:2012:TSR:2318202.2318207} or to allow visual debugging~\cite{Beck:2014:RVD:2591062.2591111}. Other research has focused on learning regular expressions from  text~\cite{Babbar:2010:CBA:1871840.1871848, Li:2008:REL:1613715.1613719}, avoiding human composition altogether.
+% Researchers have also explored applying regexes to test case generation~\cite{Ghosh:2013:JAT:2486788.2486925, Galler:2014:STD:2683035.2683100, Anand:2013:OSM:2503903.2503991, Tillmann:2014:TAT:2642937.2642941},
+% as specifications for string constraint solvers~\cite{Trinh:2014:SSS:2660267.2660372, hampi} and using regexes as queries in a data mining framework~\cite{Begel:2010:CDE:1806799.1806821}.
+% Regexes are also employed in critical missions like MySQL injection prevention~\cite{Yeole:2011:ADT:1980022.1980229} and network intrusion detection~\cite{network}, or in more diverse applications like DNA sequencing alignment~\cite{1594922}.
+
+
+Regular expressions have been a focus point in a variety of research objectives. From the user perspective, tools have been developed to support more robust creation~\cite{Spishak:2012:TSR:2318202.2318207} or to allow visual debugging~\cite{Beck:2014:RVD:2591062.2591111}.
+Building on the perspective that regexes are difficult to create, other research has focused on removing the human from the creation process by learning regular expressions from  text~\cite{Babbar:2010:CBA:1871840.1871848, Li:2008:REL:1613715.1613719}.
+
+Research tools like Hampi~\cite{hampi}, and Rex~\cite{rex}, and commercial tools like brics~\cite{brics} all support the use of regular expressions in various ways. Hampi was developed  in academia and uses regular expressions as a specification language for a constraint solver. Rex was developed by Microsoft Research and generates strings for regular expressions that can be used in  applications such as test case generation~\cite{Anand:2013:OSM:2503903.2503991, Tillmann:2014:TAT:2642937.2642941}. Brics is an open-source package that creates automata from regular expressions for manipulation and evaluation.
+
+
+Tools have been developed to make regexes easier to understand, and many are available online.
+Some tools will, for example, highlight parts of regex patterns that match parts of strings as a tool to aid in comprehension.\footurl{https://regex101.com/}
+Others will automatically generate strings that are matched by the regular expessions~\cite{hampi}.
+Other tools will automatically generate regexes when given a list of strings to match~\cite{Babbar:2010:CBA:1871840.1871848, Li:2008:REL:1613715.1613719}.
+The commonality of such tools provides evidence that people need help with regex composition and understandability.
+
+\section{Composing Assistants}
+VerbalExpressions\footurl{https://github.com/VerbalExpressions/PHPVerbalExpressions}.
+
+
+\section{Special Applications for regex}
+
+Some data mining frameworks use regular expressions as queries (e.g., ~\cite{Begel:2010:CDE:1806799.1806821}). Efforts have also been made to expedite the processing of regular expressions on large bodies of text~\cite{Baeza-Yates:1996:FTS:235809.235810}.
+
+
+Regarding applications, regular expressions have been used for test case generation~\cite{Ghosh:2013:JAT:2486788.2486925, Galler:2014:STD:2683035.2683100, Anand:2013:OSM:2503903.2503991, Tillmann:2014:TAT:2642937.2642941},  and
+as specifications for string constraint solvers~\cite{Trinh:2014:SSS:2660267.2660372, hampi}.
+Regexes are also employed in MySQL injection prevention~\cite{Yeole:2011:ADT:1980022.1980229} and network intrusion detection~\cite{network}, or in more diverse applications like DNA sequencing alignment~\cite{1594922} or querying RDF data~\cite{Lee:2010:PSQ:1871871.1871877, Alkhateeb:2009:ESR:1540656.1540975}.
+
+
+\section{Formalisms and research addressing regex}
+
+Regular expression understandability has not been studied directly, though prior work has suggested that regexes are hard to read and understand since there are tens of thousands of bug reports related to regular expressions~\cite{Spishak:2012:TSR:2318202.2318207}.
+To aid in regex creation and understanding,  tools have been developed to support more robust creation~\cite{Spishak:2012:TSR:2318202.2318207} or to allow visual debugging~\cite{Beck:2014:RVD:2591062.2591111}. Building on the perspective that regexes are difficult to create, other research has focused on removing the human from the creation process by learning regular expressions from  text~\cite{Babbar:2010:CBA:1871840.1871848, Li:2008:REL:1613715.1613719}.
+
+
+
+
+
+% The following non-exhaustive list of popular IDEs, text editors, database engines and command line tools that all \emph{depend on regex for some core functionality} is provided for a sense of scale.
+% \begin{multicols}{4}
+% \begin{itemize}[itemsep=0em]
+% \begin{small}
+% \item Acme
+% \item Allegro
+% \item Anjuta
+% \item AppBuilder
+% \item Aptana
+% \item apt-get
+% \item Atom
+% \item awk
+% \item bash
+% \item BBEdit
+% \item Bluefish
+% \item BlueJ
+% \item Brackets
+% \item Chocolatapp
+% \item CLion
+% \item Coda
+% \item CodeBlocks
+% \item CodeLite
+% \item Codelobster
+% \item Codenvy
+% \item CoffeeCup
+% \item CodeRunner
+% \item ContTEXT
+% \item CPIde
+% \item cron
+% \item DB2
+% \item Decoda
+% \item Delphi
+% \item Dev-C
+% \item DrJava
+% \item E
+% \item Ed
+% \item Eclipse
+% \item EditPlus
+% \item egrep
+% \item EiffelStudio
+% \item Enide Studio
+% \item EverEdit
+% \item Elvis
+% \item find
+% \item FlashDevelop
+% \item Gambas
+% \item gedit
+% \item Geany
+% \item GNAT
+% \item Greenfoot
+% \item grep
+% \item ICEcoder
+% \item IDLE
+% \item JBuilder
+% \item JCreator
+% \item JDeveloper
+% \item JEdit
+% \item JGRASP
+% \item JSource
+% \item Judo
+% \item Julia St.
+% \item Kantharos
+% \item Kate
+% \item KDevelop
+% \item Kile
+% \item Kod
+% \item Komodo Edit
+% \item KWrite
+% \item Lazarus
+% \item Leksah
+% \item Light Table
+% \item Leafpad
+% \item Lime
+% \item LispWorks
+% \item locate
+% \item MacVim
+% \item MongoDB
+% \item Monkey St.
+% \item MonoDevelop
+% \item Morphik
+% \item Mousepad
+% \item MS Access
+% \item MS SQL Server
+% \item MSEide
+% \item MySQL
+% \item nano
+% \item NetBeans
+% \item Notepad
+% \item NOV
+% \item Nuclide
+% \item NuSphere
+% \item OpenWatcom
+% \item Oracle
+% \item Padre
+% \item Pharo
+% \item PhpED
+% \item PHPEdit
+% \item PhpStorm
+% \item PIDA
+% \item PostgreSQL
+% \item PSPad
+% \item PureBasic
+% \item PyCharm
+% \item PyScripter
+% \item Pyvim
+% \item Qt Creator
+% \item RadPHP
+% \item RJ TextEd
+% \item rsync
+% \item RubyMine
+% \item rxrepl
+% \item SciTe
+% \item sed
+% \item Servoy
+% \item SharpDevelop
+% \item Slap
+% \item SlickEdit
+% \item SLIME
+% \item snort
+% \item Spyder
+% \item Squeak
+% \item Synwrite
+% \item Syntaxic
+% \item Suplemon
+% \item tcsh
+% \item Textadept
+% \item Textastic
+% \item TextEdit
+% \item TextMate
+% \item Textpad
+% \item TextWrangler
+% \item Thonny
+% \item tre-agrep
+% \item UltraEdit
+% \item Understand
+% \item vim
+% \item vi
+% \item vile
+% \item Visual Studio
+% \item VisualWorks
+% \item WebStorm
+% \item Webuilder
+% \item WingWare
+% \item Write!
+% \item Xcode
+% \item Xojo
+% \item yi
+% \item Zend Studio
+% \item ZeroBrane
+% \item Zinjal
+% \end{small}
+% \end{itemize}
+% \end{multicols}
+

@@ -1,15 +1,5 @@
-\chapter{Equivalent representations of regex and their frequencies in the corpus}
 \section{Experiment design}
 \subsection{Defining five equivalence classes}
-\subsection{Implementation details}
-\section{Frequency analysis results}
-\section{Discussion of representation frequency analysis}
-\subsection{Context and common sense about these representations}
-\subsection{Community support indicates a preference}
-\subsection{Implications}
-\subsection{Opportunities for future work}
-\subsection{Threats to validity}
-
 As with source code, in regular expressions, there are multiple ways to express the same semantic concept.
 For example, the regex, \verb!`aa*'! matches an \verb!a! followed by zero or more \verb!a!'s, and is is equivalent to \verb!`a+'! , which matches one or more \verb!a!'s.
 What is not clear is which representation,  \verb!`aa*'!  or  \verb!`a+'!, is preferred.
@@ -40,8 +30,6 @@ equivalence classes and possible refactorings as well as our two empirical studi
 \label{fig:refactoringTree}
 \end{figure*}
 
-\section{Refactorings}
-\label{sec:refactoring}
 After studying over 13,000 distinct regex strings from nearly 4,000 Python projects, we have defined a set of equivalence classes for regexes with refactorings that can transform among members in the classes.
 For example,  \verb!AAA*! and \verb!AA+! are semantically identical, except one uses the star operator (indicating zero or more repetitions) and the other uses the plus operator (indicating one or more repetitions).
 Both match strings with two or more \verb!A!'s.
@@ -49,7 +37,6 @@ Both match strings with two or more \verb!A!'s.
 Figure~\ref{fig:refactoringTree} displays the five equivalence classes in grey boxes and various semantically equivalent \emph{representations} of a regex are shown in white boxes. For example, LWB is an equivalence class with representations that all have a lower bound on repetitions. Regexes \verb!AAA*! and \verb!AA+!  are both members of this class mapping to representations L2 and L3, respectively, along with the L1 representation, \verb!A{2,}!.
 The undirected edges between the representations define possible refactorings.
 Identifying the best direction for each arrow in the possible refactorings is discussed in Section
-% ~\ref{sec:results}.
 
 We use concrete regexes in the representations to more clearly illustrate examples of the representations. However, the \verb!A!'s in the LWB group abstractly represent any pattern that could be operated on by a repetition modifier (literal characters, character classes, groups, etc.).   We chose the lower bound repetition threshold of  2 for illustration; in practice this could be any number, including zero.
 Next, we describe each group, the representations, and possible transformations in detail:
@@ -127,33 +114,18 @@ Regular expressions will often belong to many representations in the equivalence
 Using an example from a Python project, the regex \verb!`[^ ]*\.[A-Z]{3}'! is a member of S1, L2, C1, C3, and T1. This is because \verb!`[^ ]'! maps it to C3, \verb!`[^ ]*'! maps it to L2, \verb!`[A-Z]'! maps it to C1, \verb!`\.'! maps it to T1, and \verb!`[A-Z]{3}'! maps it to S1.
 As examples of refactorings, moving from S1 to S2 would be possible by replacing  \verb!`[A-Z]{3}'! with  \verb!`[A-Z][A-Z][A-Z]'! and moving from L2 to L1 would replace \verb!`[^ ]*'! with \verb!`[^ ]{0,}'!, resulting in a refactored regex of:  \verb!`[^ ]{0,}\.[A-Z][A-Z][A-Z]'!.
 
-We define understandability two ways. First, assuming that common programming practices are more understandable than uncommon practices, we explore the frequencies of each representation from Figure~\ref{fig:refactoringTree} using thousands of regexes scraped from Python projects. Second, we then present people with regexes exemplifying some of the more common characteristics and ask them comprehension questions along two directions: determine which of a list of strings are matched by the regex, and compose a string that is matched by the regex. Our  research questions are:
-
-\begin{description}
-\item[RQ1:] Which refactorings have the strongest \emph{community support} based on how frequently each representation appears in regexes in open source Python projects?
-\item[RQ2:] Which refactorings have the strongest support based on \emph{understandability} as measured by matching strings and composing strings?
-\item[RQ3:] Which regex representations are most desirable based on both community support and understandability?
-\end{description}
-
-Next, we present the analysis and results for each  question in turn, followed by a unified discussion in Section
-% ~\ref{sec:discussionR}.
-
-\input{table/nodeCount}
-
-\section{Community Support Study}
-\label{communitystudy}
+We define understandability two ways. Assuming that common programming practices are more understandable than uncommon practices, we explore the frequencies of each representation from Figure~\ref{fig:refactoringTree} using thousands of regexes scraped from Python projects.
+\subsection{Implementation details}
 The goal of this study is to understand how frequently each of the regex representations appears in source code. Based on the results, we identify preferred representations using popularity in source code.
 
 \subsection{Artifacts}
 Artifacts were same as those described in chapter 3: Features.\todoNow{Adjust this to smoothly reflect the previous chapter}
 
 \subsection{Metrics}
-\label{sec:communitymetric}
-We measure community support by matching each regex in the corpus to the representations (nodes) in Figure~\ref{fig:refactoringTree} and counting the number of \emph{patterns} that contain the representation and the number of \emph{projects} that contain the representation.  A \emph{pattern} is extracted from a utilization, as shown in Figure~\ref{fig:exampleUsage}.
-Note that a regex can belong to multiple representations, and a regex can belong to multiple projects since we collapsed duplicates and only analyze the distinct regex patterns.
+% We measure community support by matching each regex in the corpus to the representations (nodes) in Figure~\ref{fig:refactoringTree} and counting the number of \emph{patterns} that contain the representation and the number of \emph{projects} that contain the representation.  A \emph{pattern} is extracted from a utilization, as shown in Figure~\ref{fig:exampleUsage}.
+% Note that a regex can belong to multiple representations, and a regex can belong to multiple projects since we collapsed duplicates and only analyze the distinct regex patterns.
 
 \subsection{Analysis}
-\label{communityanalysis}
 To determine how many of the representations match patterns in the corpus, we performed an analysis using the PCRE parser and by representing the regexes as token streams, depending on the characteristics of the representation. Our analysis code is available on GitHub\footurl{https://github.com/softwarekitty/regex_readability_study}. Next, we describe the process in detail:
 
 \subsubsection{Presence of a Feature}
@@ -176,15 +148,3 @@ Identifying T3 requires that a single literal character is wrapped in a custom c
 The following representations were identified by representing the regex patterns as a sequence of dot-delimited tokens.
 Identifying S2 requires any element to be repeated at least twice. This element could be a character class, a literal, or a collection of things encapsulated in parentheses.
 Identifying C1 requires that a non-negative character class contains a range.  Identifying C2 requires that there exists a custom character class that does not use ranges or defaults. Identifying C4 requires the presence of a default character class within a custom character class, specifically, \verb!\d!, \verb!\D!, \verb!\w!, \verb!\W!, \verb!\s!, \verb!\S! and \verb!.!.  Identifying C5 requires an OR of length-one sequences (literal characters or any character class).
-
-\subsection{Results}
-Table~\ref{table:nodeCount} presents the frequencies with which each representation appears in a regex pattern and in a project scraped from GitHub. The \emph{node} column references the representations in Figure~\ref{fig:refactoringTree} and the \emph{description} column briefly describes the representation, followed by an \emph{example} from the corpus. The \emph{nPatterns} column counts the patterns that belong to the representation, followed by the percent of patterns out of 13,597.
-The \emph{nProjects} column counts the projects that contain a regex belonging to the representation,
-followed by the percentage of projects out of 1,544.
-Recall that the patterns are all unique and could appear in multiple projects, hence the project support is used to show how pervasive the representation in across the whole community.
-For example, 2,479 of the patterns belong to the C1 representation, representing 18.2\% of the patterns. These appear in 810 projects, representing 52.5\%.
- Representation D1 appears in 346 (2.5\%) of the patterns but only 234 (15.2\%) of the projects. In contrast, representation T3 appears in 39 \emph{fewer} patterns but 34 \emph{more} projects, indicating that D1 is more concentrated in a few projects and T3 is more widespread across projects.
-
-Using the pattern frequency as a guide, we can create refactoring recommendations based on community frequency. For example, since C1 is more prevalent than C2, we could say that C2 is smelly since it could better conform to the community standard if expressed as C1. Thus, we might recommend a $\overrightarrow{C2C1}$ refactoring. Based on patterns alone, the winning representations per equivalence class are C1, D2, T1, L2, and S2. With one exception, these are the same for recommendations based on projects. The difference is that L3 appears in more projects than L2, so it is not clear which is more desirable based on community standards.
-Section~\ref{sec:rq3} explores these results more deeply.
-

@@ -1,0 +1,39 @@
+\section{Surveys of regex research}
+
+\todoMid{clean these thoughts} We've got a handful of surveys that have been done exploring the state of the art in regex: Brzozowski in 1962 did the first survey of applications,
+
+\section{Mining}
+
+
+Exploring language feature usage by mining source code has been studied extensively for
+Smalltalk~\cite{Callau:2011:DUD:1985441.1985448},
+JavaScript~\cite{Richards:2010:ADB:1809028.1806598},
+and Java~\cite{Dyer:2014:MBA:2568225.2568295, Grechanik:2010:EIL:1852786.1852801, Parnin:2013:AUJ:2589712.2589717, Livshits:2005:RAJ:2099708.2099724},
+and more specifically,
+Java generics~\cite{Parnin:2013:AUJ:2589712.2589717} and
+Java reflection~\cite{Livshits:2005:RAJ:2099708.2099724}.
+Our prior work (~\cite{chapman2016}, under review) was the first to mine and evaluate regular expression usages from existing software repositories. The intention of the prior work~\cite{chapman2016} was to explore regex language features  usage and surveyed developers about regex usage. In this work, we define potential refactorings and use the mined corpus to find support for the presence of various regex representations in the wild. Beyond that, we measure regex understandability and suggest canonical representations for regexes to enhance conformance to community standards and understandability.
+
+Mining properties of open source repositories is a well-studied topic, focusing, for example, on API usage patterns~\cite{Linares-Vasquez:2014:MEA:2597073.2597085} and bug characterizations~\cite{Chen:2014:ESD:2597073.2597108}.
+Exploring language feature usage by mining source code has been studied extensively for
+Smalltalk~\cite{Callau:2011:DUD:1985441.1985448, Callau:2013:DUD:2589712.2589718},
+JavaScript~\cite{Richards:2010:ADB:1809028.1806598},
+and Java~\cite{Dyer:2014:MBA:2568225.2568295, Grechanik:2010:EIL:1852786.1852801, Parnin:2013:AUJ:2589712.2589717, Livshits:2005:RAJ:2099708.2099724},
+and more specifically,
+Java generics~\cite{Parnin:2013:AUJ:2589712.2589717} and
+Java reflection~\cite{Livshits:2005:RAJ:2099708.2099724}.
+To our knowledge, this is the first work to mine and evaluate regular expression usages from existing software repositories. Related to mining work, regular expressions have been used to form queries in mining framework~\cite{Begel:2010:CDE:1806799.1806821}, but have not been the focus of the mining activities.
+Surveys have been used to measure adoption of various programming languages~\cite{Meyerovich:2013:EAP:2509136.2509515, Dattero:2004:PLG:962081.962087}, and been combined with  repository analysis~\cite{Meyerovich:2013:EAP:2509136.2509515}, but have not focused on regexes.
+
+\section{Refactoring and smells}
+
+Regular expression refactoring has also not been studied directly, though refactoring literature abounds~\cite{Mens:2004:SSR:972215.972286, Opdyke:1992:ROF:169783, Griswold:1993:AAP:152388.152389}.
+The closest to regex refactoring comes from research toward  expediting the processing of regular expressions on large bodies of text~\cite{Baeza-Yates:1996:FTS:235809.235810}, which could be thought of as refactoring for performance.
+
+
+In software, code smells have been found to hinder understandability of source code~\cite{abbes2011empirical, du2006does}.
+Once removed through refactoring, the code becomes more understandable, easing the burden on the programmer.
+In regular expressions, such code smells have not yet been defined, perhaps in part because it is not clear what makes a regex smelly.
+
+Code smells in object-oriented languages were introduced by Fowler~\cite{Fowl1999}. Researchers have studied the impact of code smells on program comprehension~\cite{abbes2011empirical, du2006does}, finding that the more smells in the code, the harder the comprehension. This is similar to our work, except we aim to identify which  regex representations can be considered smelly.
+Code smells have been extended to other language paradigms including end-user programming languages~\cite{Hermans2012intra, Hermans2012intraExt, stoleeicse, stoleeTSE}. The code smells identified in this work are representations that are not common or not well understood by developers. This concept of using community standards to define smells has been used in other refactoring literature  for end-user programmers~\cite{stoleeicse, stoleeTSE}.

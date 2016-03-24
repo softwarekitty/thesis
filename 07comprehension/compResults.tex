@@ -1,0 +1,86 @@
+\section{Matching comprehension results}
+\section{Composing comprehension results}
+\section{Unsure answers as a result}
+
+
+
+\begin{figure}[tp]
+\begin{small}
+\fbox{\parbox{\columnwidth}{
+\begin{enumerate}
+\item
+\begin{tabular} {lrr}
+\textbf{What is your gender?} & \textbf{n} & \textbf{\%}\\ \hline
+Male & 149 & 83\%\\
+Female & 27& 15\%\\
+Prefer not to say & 4& 2\%
+\end{tabular}
+\item \textbf{What is your age?} \\
+$\mu = 31$, $\sigma = 9.3$
+
+\item
+
+\begin{tabular} {l |rr}
+\textbf{Education Level?} & \textbf{n} & \textbf{\%}\\ \hline
+High School & 5 & 3\%\\
+Some college, no degree & 46 & 26\%\\
+Associates degree & 14 & 8\%\\
+Bachelors degree & 78 & 43\%\\
+Graduate degree & 37 & 21\%\\
+\end{tabular}
+\item
+\begin{tabular} {lrr}
+\textbf{Familiarity with regexes?} & \textbf{n} & \textbf{\%}\\ \hline
+Not familiar at all & 5 & 3\%\\
+Somewhat not familiar & 16 & 9\%\\
+Not sure & 2 & 1\%\\
+Somewhat familiar & 121 & 67\%\\
+Very familiar & 36 & 20\%\\
+\end{tabular}
+\item \textbf{How many regexes do you compose each year?} \\
+$\mu = 67$, $\sigma = 173$
+\item \textbf{How many regexes (not written by you) do you read each year?} \\
+$\mu = 116$, $\sigma = 275$
+\end{enumerate}
+}}
+\caption{Participant Profiles, $n=180$ \todoLast{can remove this for space} \label{participantprofile}}
+\end{small}
+\end{figure}
+
+\subsection{Participants}
+
+In total, there were 180 participants in the study.
+A majority were male (83\%) with an average age of 31. Most had
+at least an Associates degree (72\%) and most were at least somewhat familiar with regexes prior to the study (87\%). On average,
+participants compose 67 regexes per year with a range of 0 to 1000.
+Participants read more regexes than they write with an average of 116 and a range from 0 to 2000.
+Figure~\ref{participantprofile} summarizes the self-reported participant characteristics from the qualification survey.
+
+\input{table/testedEdgesTable}
+
+\todoMid{in study section present choices about pairwise vs random selection for nodes.}
+
+\subsection{Analysis}
+For each of the 180 HITs, we computed a matching and composition score for each of the 10 regexes, using the metrics described in Section\todoLast{N}. This allowed us to compute and then average 26-30 values for each metric  for each of the 60 regexes (fewer than 30 values were used if all the responses in a matching question were unsure or a combination of blanks and unsure).
+
+Each regex was a member of one of 26 groupings of equivalent regexes.
+These groupings allow pairwise comparisons of the metrics values to determine which representation of the regex was most understandable and the direction of a refactoring for understandability.
+Among all the groups, we performed 42 pairwise comparisons of the matching and composition scores  (i.e., one comparison for each group of size two and three comparisons within each group of size three).
+For example, one group had regexes, \verb!RR*! and \verb!R+!, which  represent a transformation between L2 and L3. The former had an average matching of 86\% and the latter had an average matching of 92\%. The average composition score for the former was 97\% and 100\% for the latter. Thus, the community found \verb!R+! from L3 more understandable.
+There were two other pairwise comparisons performed between the L2 and L3 group, using regexes pair \verb!zaa*! and \verb!za+'!, and regexes pair \verb!\..*! and \verb!\.+'!.
+Considering all three of these regex pairs, the overall matching average for the regexes belonging to L2 was 0.86 and 0.91 for L3.
+The overall composition score for L2 was 0.91 and 0.98 for L3. Thus, the community found L3 to be more understandable than L2, from the perspective of both understandability metrics, suggesting a refactoring from L2 to L3.
+
+This information is presented in summary in Table~\ref{table:testedEdgesTable}, with this specific example appearing in the E3 row. The \emph{Index} column enumerates all the pairwise comparisons evaluated in this experiment, \emph{Representations} lists the two representations, \emph{Pairs} shows how many comparisons were performed, \emph{Match1} gives the overall matching score for the first representation listed, \emph{Match2} gives the overall matching score for the second representation listed, and $H_0: \mu_{match1} = \mu_{match2}$ uses the Mann-Whitney test of means to compare the matching scores, and presents the p-values. The last three columns list the average composition scores for the representations and the p-value, also using the Mann-Whitney test of means.
+
+Table~\ref{table:testedEdgesTable} presents the results of the understandability analysis. A horizontal line separates the first three edges from the bottom 11. In E1 through E3, there is a statistically significant difference between the representations for at least one of the metrics considering $\alpha = 0.05$.  These represent the strongest evidence for suggesting the directions of refactoring based on the understandability metrics we defined. Specifically, $\overrightarrow{T4 T1}$, $\overrightarrow{D2 D3}$, and $\overrightarrow{L2 L3}$
+are likely to improve understandability.
+
+We note here that participants were able to select \emph{unsure} when they were not sure if a string would be matched by a pattern (Figure~\ref{fig:exampleQuestion}). From a comprehension perspective, this indicates some level of confusion and is worth exploring.
+
+\input{table/unsureResults}
+
+For each pattern, we counted the number of responses containing at least one unsure, representing confusion.
+We then grouped the patterns into their representation nodes and computed an average of unsures per pattern.
+A higher number may indicate difficulty in comprehending a pattern from that node.
+Overall, the highest number of unsure responses came from T4 and T2, which present octal and hex representations of characters. The least number of unsure responses were in L3 and D3, which are both shown to be understandable by looking at E2 and E3 in Table~\ref{table:testedEdgesTable}.

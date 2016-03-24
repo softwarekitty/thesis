@@ -1,19 +1,21 @@
 \chapter{DISCUSSION}
+% \label{sec:finalDiscussion}
 \section{Implications of the thesis as a whole}
+\subsection{Review of implications already discussed}
+\subsection{Implications considering all experiments together}
 
 \section{Opportunities for future work studying regular expressions}
 \subsection{Semantic search}
 \subsection{Ephemeral regex}
 \subsection{Comparing regex usage across communities}
 \subsection{Evolution of patterns}
+\subsection{Taxonomy of regex language varieties}
 
 \subsubsection{Capturing Specific Content Near A Delimiter}
 The survey results from Section
-% ~\ref{rq1:survey}
-indicate that capturing parts of strings is among the most frequent activities for which developers use regexes.
+\todoLast{N} indicate that capturing parts of strings is among the most frequent activities for which developers use regexes.
 From a feature perspective, the capture group (CG) is the most frequently used in terms of patterns (Table~\ref{table:featureStats}).  This feature has two functions: 1) logical grouping as would be expected by parenthesis, and 2) retrieval of information in one logical grouping.  As mentioned in Section
-% ~\ref{rq4:results}
-, capturing content was a primary goal evident in several cluster categories.  The fourth-largest category is based entirely on capturing the content between brackets or parentheses (Section~\ref{cluster:contentparens}).
+\todoLast{N}, capturing content was a primary goal evident in several cluster categories.  The fourth-largest category is based entirely on capturing the content between brackets or parentheses (Section\todoLast{N}).
 
 Many uses of CG also use the ANY and KLE features, eg. \verb!(.*){(.*)}(.*)! and \verb!\\s*([^: ]*)\\s*:(.*)!.  This type of usage frequently revolves around an important delimiter character such as \verb!:! or \verb!\!.  This use case is well supported by existing tools for ASCII characters, but future tools should consider the centrality of this use case and its implications for non-English users of regex tools.  For example, Unicode characters like `U+060D' the Arabic Date Separator, or `U+1806' the Mongolian Todo Soft Hyphen may be used to locate segments of text that a user would want to capture.
 
@@ -49,17 +51,13 @@ From another perspective, our regex similarity measure, and even containment ana
 \vspace{-2pt}
 \subsubsection{Automated Regex Repair}
 Regular expression errors are common and have produced thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}. This provides an opportunity to introduce automated repair techniques for regular expressions.
-Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cite{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes through mutation operators could lead to big changes in behavior, so we hypothesize that using the semantic clusters identified in Section
-% ~\ref{rq4:results}
-to identify potential repair candidates could efficiently and effectively converge on a repair candidate.
+Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cite{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes through mutation operators could lead to big changes in behavior, so we hypothesize that using the semantic clusters identified in Section\todoLast{N} to identify potential repair candidates could efficiently and effectively converge on a repair candidate.
 
 \subsubsection{Developer Awareness of Best Practices}
 One category of clusters, \emph{Content of Brackets and Parenthesis}, parses the contents of angle brackets, which may indicate developers are using regexes to parse HTML or XML.  As the contents of angle brackets are usually unconstrained, regexes are a poor replacement for XML or HTML parsers.  This may be a missed opportunity for the regex users to take advantage of more robust tools. More research is needed into how regex users discover best practices and how aware they are of how regexes should and should not be used.
 
 \subsubsection{Tool-Specific Regex Exploration}
-In some environments, such as command line or text editor, regexes are used extensively by the surveyed developers (Section
-% ~\ref{rq1:survey}
-), but these regular expressions do not persist. Thus, using a repository analysis for feature usage only illustrates part of how regexes are used in practice. Exploring how the feature usage differs between environments would help inform tool developers about how to best support regex usage in context, and is left for future work.
+In some environments, such as command line or text editor, regexes are used extensively by the surveyed developers (Section\todoLast{N}), but these regular expressions do not persist. Thus, using a repository analysis for feature usage only illustrates part of how regexes are used in practice. Exploring how the feature usage differs between environments would help inform tool developers about how to best support regex usage in context, and is left for future work.
 
 Based on our analyses of source code and our empirical study on the understandability of regex representations, we have identified preferred regex representations that may make regexes easier to understand and thus maintain. In this section, we describe the implications of these results.
 
@@ -178,3 +176,11 @@ Notice that M3 does not even have a strong p-value candidate, but this may be th
 \verb!&(\w+);'!    \verb!&([A-Za-z0-9_]+);'!
 \todoMid{(from M4,M5,M7 respectively)  Although one refactoring from M5 might be of slight interest:}
 0.1196  FALSE   \verb!tri[a-f]3'!  \verb!tri(a|b|c|d|e|f)3'!
+
+
+\subsection{Reason for knowledge gap}
+\todoLast{clean and move this}
+What explains the lack of rigor for regular expressions?  I've been pondering this for quite a while now.  This seems like it might be a case of being unable to see the forest because of the trees.  Everyone in CS uses regex, and deals to some extent with other people using regex.  It's never billed as top priority to optimize this, and it's so fundamental that the wikipedia pages explaining regex and Klene's theory are nearly circular with definitions of regular expressions relying on knowledge of what regular expressions are.  The terminology is also very confusing to theory people, who probably believe that modern regex still represent DFA's and regular languages.  I'd say there is an over-abundance of anecdotal evidence about how regex are used, so that people believe that it is a known topic.  I also suspect a very real hacker/Unix ethos, where the odd ducks out there who really love regex also scorn formal evaluations and `design by committee' in favor of just getting things to work, getting it good enough.  It has flabbergasted me to look at every single documentation source for the dozens of different regex language `flavors' and see that it is always just a thrown-together hodgepodge of examples and concepts.  Most regex doc feels like it may be incomplete, saying stuff like `it's mostly like PCRE'.  Nobody and I mean nobody has a definitive feature list, outlining how the flavors differ and overlap.  Like it's just okay to have all these dangling details for something that is pretty confusing already.  Now you have two problems.  It would be pretty fun to do a sort of gotcha-quiz of developers to see how many people would fall for the common myths and stuff.
+
+
+
