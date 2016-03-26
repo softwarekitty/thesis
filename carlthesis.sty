@@ -39,6 +39,21 @@
 \RequirePackage{pifont}
 \newcommand{\xmark}{\ding{53}}
 
+\RequirePackage{fancyvrb,newverbs,ascii,inconsolata}
+\definecolor{cverbbg}{gray}{0.93}
+\newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
+\newverbcommand{\cverb}
+  {\setbox\verbbox\hbox\bgroup}
+  {\egroup\colorbox{cverbbg}{\box\verbbox}}
+\newverbcommand{\gverb}
+{\color{gray}}
+{}
+%  {\color{cverbbg}}
+%  {}  
+
+
+  
+
 \endinput
 %%
 %% End of file `carlthesis.sty'.

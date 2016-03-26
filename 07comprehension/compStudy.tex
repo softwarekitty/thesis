@@ -1,12 +1,8 @@
 
 \section{Experiment design}
 
-We present people with regexes exemplifying some of the more common characteristics and ask them comprehension questions along two directions: determine which of a list of strings are matched by the regex, and compose a string that is matched by the regex.
-
-\subsection{Conceptual basis}
-
 The overall idea of this study  is to present  programmers with one of several representations of semantically equivalent regexes and ask comprehension questions. By comparing the understandability of semantically equivalent regexes that have different representations, we aim to understand which representations  are more desirable and which are more smelly.
-This study was  implemented on Amazon's Mechanical Turk with 180 participants.  Each regex pattern was evaluated by 30 participants.
+This study was implemented on Amazon's Mechanical Turk with 180 participants.  Each regex pattern was evaluated by 30 participants.
 The patterns used were designed to belong to various representations in Figure~\ref{fig:refactoringTree}.
 
 \begin{figure}[tb]
@@ -21,7 +17,7 @@ The patterns used were designed to belong to various representations in Figure~\
 \input{table/matchingmetric}
 
 \subsection{Metrics}
-We measure the understandability of regexes using two complementary metrics, \emph{matching} and \emph{compostition}.
+We measure the understandability of regexes using two complementary metrics, \emph{matching} and \emph{composition}.
 
 \textbf{Matching:}
 Given a pattern and a set of strings, a participant determines which strings will be matched by the pattern. There are four possible responses for each string, \emph{matches}, \emph{not a match}, \emph{unsure}, or blank. An example from our study is shown in Figure~\ref{fig:exampleQuestion}.
@@ -37,24 +33,13 @@ Given a pattern, a participant composes a string they think it matches. If the p
 
 To determine a match, each pattern was compiled using the \emph{java.util.regex} library. A \emph{java.util.regex.Matcher} \verb!m! object was created for each composed string using the compiled pattern.  If \verb!m.find()! returned true, then that composed string was given a score of 1, otherwise it was given a score of 0.
 
-\subsection{Design}
+\subsection{Implementation}
 This study was implemented on the Amazon's Mechanical Turk (MTurk),  a crowdsourcing platform in which requesters can create human intelligence tasks (HITs) for completion by workers. Each HIT is designed to be completed in a fixed amount of time and workers are compensated with money if their work is satisfactory. Requesters can screen workers by requiring each to complete a qualification test prior to completing any HITs.
 
 \subsubsection{Worker Qualification}
 Workers qualified to participate in the study by answering questions regarding some basics of regex knowledge. These questions were multiple-choice and asked the worker to describe what the following patterns mean: \verb!`a+'!, \verb!`(r|z)'!, \verb!`\d'!, \verb!`q*'!, and \verb!`[p-s]'!. To pass the qualification, workers had to answer four of the five questions correctly.
 
-\subsubsection{Tasks}
-Using the patterns in the corpus as a guide, we created 60 regex patterns that were grouped into 26 semantic equivalence groups.
-These semantic groups were focused on exploring edges in the equivalence classes. In this way, we can draw conclusions about transformations between representations since the regexes evaluated were semantically equivalent.
-
-For example, a  group with regexes \verb!`([0-9]+)\.([0-9]+)'! and  \verb!`(\d+)\.(\d+)'! is intended to evaluate the edge between C1 and C4.
-There were 18 groups with two regexes that target various edges in the equivalence classes.
-The other eight semantic groups had three regexes each.
-For example, a semantic group with regexes \verb!`((q4f){0,1}ab)'!, \verb!`((q4f)?ab)'!, and \verb!`(q4fab|ab)'! is intended to explore the edges among D1, D2, and D3.
-
-\subsection{Implementation details}
-
-\todoNow{Smooth this section with description included}
+\subsubsection{Selecting pairwise comparisons}
 Using the patterns in the corpus as a guide, we created six metagroups containing three pairs of patterns focusing on:
 \begin{itemize}
 \item S1 vs S2
@@ -74,40 +59,19 @@ and four metagroups containing two triplets of patterns focusing on
 
 Each of these 10 metagroups contains 6 strings, resulting in a total of 60 regex patterns.  These patterns are logically partitioned into 26 semantic equivalence groups (18 from pairs, 8 from triples).
 
+Although we had 42 pairwise comparisons (18 from pairs, 24 from triples),  we had to drop six comparisons  due to a design flaw since the patterns performed transformations from multiple equivalence classes. For example, pattern \verb!([\072\073])! is in C2 and T4, and was grouped with pattern \verb!(:|;)! in C5, T1, so it was not possible to attribute results purely to C2 and C5, or to T4 and T1. However, the third member of the group, \verb!([:;])!, could be compared with both, since it is a member of T1 and C2, so comparing it to \verb!([\072\073])! evaluates the transformation between T1 and T4, and comparing to \verb!(:|;)! evaluates the transformation between C2 and C5.
+
+Another example of a pairwise comparison from a pair used in this study is a group with regexes \verb!`([0-9]+)\.([0-9]+)'! and  \verb!`(\d+)\.(\d+)'!, which is intended to evaluate the edge between C1 and C4.
+An example of pairwise compairisons from a triple is a semantic group with regexes \verb!`((q4f){0,1}ab)'!, \verb!`((q4f)?ab)'!, and \verb!`(q4fab|ab)'! which is intended to explore the edges among D1, D2, and D3.
+
+The end result is 36 pairwise comparisons across 14 edges from Figure~\ref{fig:refactoringTree}.
+
+\subsubsection{Composing Tasks}
 For each of the 26 groups of patterns, we created five strings, where at least one matched and at least one did not match. These strings were used to compute the matching metric.
 
 Once all the patterns and matching strings were collected, we created tasks for the MTurk participants as follows:
 randomly select a pattern from each of the 10 metagroups. Randomize the order of these 10 patterns, as well as the order of the matching strings for each pattern. After adding a question asking the participant to compose a string that each pattern matches, this creates one task on MTurk.   This process was completed until each of the 60 regexes appeared in 30 HITs, resulting in a total of 180 total unique HITs.
 An example of a single regex pattern, the five matching strings and the space for composing a string is shown in Figure~\ref{fig:exampleQuestion}.
-
-\subsubsection{Implementation}
+\subsubsection{Worker outcomes}
 Workers were paid \$3.00 for successfully completing a HIT, and were only allowed to complete  one HIT.  The average completion time for accepted HITs was 682 seconds (11 mins, 22 secs).
 A total of 55 HITs were rejected, and  of those, 48 were rushed through by one person leaving many answers blank, 4 other HITs were also rejected because a worker had submitted more than one HIT, one was rejected for not answering composition sections, and one was rejected because it was missing data for 3 questions.  Rejected HITs were returned to MTurk to be completed by others.
-
-
-\todoNow{smooth the explanation of comparisons and strings}
-60 strings
-42 comparisons
-18@2, 8@3
-
-M6R1 ? group 3, 3 comparisons
-- 1 comparisons
-- 0 strings
-
-M3R0 ? group 3, 3 comparisons
-- 1 comparisons
-- 0 strings
-
-M3R1 ? group 3, 3 comparisons
-- 2 comparisons
-- 1 string
-
-M3R0 ? group 3, 3 comparisons
-- 2 comparisons
-- 1 string
-
-58 strings
-36 comparisons
-
-Although we had 42 pairwise comparisons,  we had to drop six comparisons  due to a design flaw since the patterns performed transformations from multiple equivalence classes. For example, pattern \verb!([\072\073])! is in C2 and T4, and was grouped with pattern \verb!(:|;)! in C5, T1, so it was not clear if any differences in understandability were due to the transformation between C2 and C5, or T4 and T1. However, the third member of the group, \verb!([:;])!, could be compared with both, since it is a member of T1 and C2, so comparing it to \verb!([\072\073])! evaluates the transformation between T1 and T4, and comparing to \verb!(:|;)! evaluates the transformation between C2 and C5. The end result is 36 pairwise comparisons across 14 edges from Figure~\ref{fig:refactoringTree}.
-
