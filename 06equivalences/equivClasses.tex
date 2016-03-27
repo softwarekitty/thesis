@@ -16,7 +16,7 @@ Preferences in regex refactorings could come from a number of sources, including
 \label{fig:refactoringTree}
 \end{figure*}
 
-Figure~\ref{fig:refactoringTree} displays five equivalence classes in grey boxes.  These equivalence classes provide options for how to represent double-bounds in repetitions (e.g., \cverb!a{1,2}! or \cverb!a|aa!), single-bounds in repetitions (e.g., \cverb!a{2}! or \cverb!aa!), lower bounds in repetitions (e.g., \cverb!a{2,}! or \cverb!aaa*!), character classes (e.g., \cverb![0-9]! or \cverb![\d]!), and literals (e.g., \cverb!\a! or \cverb!\x07!).
+Figure~\ref{fig:refactoringTree} displays five equivalence classes in grey boxes.  These equivalence classes provide options for how to represent double-bounds in repetitions (e.g., \cverb!a{1,2}! or \cverb!a|aa!), single-bounds in repetitions (e.g., \cverb!a{2}! or \cverb!aa!), lower bounds in repetitions (e.g., \cverb!a{2,}! or \cverb!aaa*!), character classes (e.g., \cverb![0-9]! or \cverb![\d]!), and literals (e.g., \cverb!\a! or \cverb!\x07!).  This work will often use the term \emph{group} as shorthand for `equivalence class'.
 
 Each equivalence class has multiple \emph{nodes} which each represent different ways to express or \emph{represent} the behavior of a particular regex.  Examples of various semantically equivalent \emph{representations} of a regex are shown in white boxes. A \emph{representation} is a particular regex that expresses matching behavior using the style of a particular \emph{node}.
 

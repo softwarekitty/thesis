@@ -19,7 +19,7 @@ Capturing the contents of brackets and searching for delimiter characters were s
 \item capture/find/identify/count identifiers like emails, usernames, twitter handles, etc
 \item parse some structured file, maybe xml or maybe just something home-rolled that is regular by design
 \item similarly, finding a special marker that you are expecting.  For example, if you write a program that inserts a colon between some fields when serializing an object, then you can de-serialize using the colon.  There is so much freedom that it's a hard pattern to detect, but I think this is where the single-character focus comes in the most often.
-\item foolishly parse contents of brackets.  This can be okay in certain controlled contexts.
+\item foolishly parse contents of brackets.  This can be okay in certain controlled contexts - these users frequently use NCCC to gather content within delimiters like \cverb!<[^>]*?>!,
 \item similarly foolishly parsing contents of double-quotes.
 \item breaking down a log file, maybe counting presence/absence of something or summing a field when present
 \item parsing a simple string code like a date format, certainly html escape codes
@@ -30,6 +30,7 @@ Capturing the contents of brackets and searching for delimiter characters were s
 \item scanning for objects and function calls like `prefs.add\(.*\)'
 \item scanning for HTML content like `a href='
 \item really generic stuff like numbers and then some space...so vanilla it is hard to say what they were doing without going back to their code.
+
 \end{itemize}
 %taking break at line 1200
 

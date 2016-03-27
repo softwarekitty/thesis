@@ -1,52 +1,59 @@
 \section{Counting representations in nodes}
 
-Because Figure~\ref{fig:refactoringTree} is a graph with many nodes, we will refer to all representations generally as nodes.
+\subsection{Overview of the node counting process}
+\label{sec:nodeCountOverview}
+This work finds defines a community standard for each equivalence class by counting the number of regexes in each node.  A program was implemented that iterates through the corpus once for each of the 18 nodes, adding regexes to sets that represent nodes based on the definitions in section \todoMid{N}.  A regex is a \emph{candidate} for membership in a node if it is possible for that regex belong to a node.  For six nodes, the presence of a feature is enough to determine membership without ambiguity.  For four nodes, the presence of a feature and a search of the regex's pattern is enough to determine candidacy for membership.  The remaining eight nodes require more advanced \emph{filters} to determine candidacy for membership.
+
+To verify accuracy and obtain a final node count, all sets were dumped to text files and reviewed manually. Regexes that had been erroneously added to a node were removed.  The regexes that had not been added to any node in an equivalence class were also dumped to a file, and manually searched for regexes that belonged to some node but had been erroneously filtered out.  This process was iterated on several times to refine the filters used in the implementation.  Even after many iterations, manual verification was still required for \todoMid{dem nodes D3}. The final outcome of this node counting process is summarized in Table\todoMid{N}.
+
+The source code used to perform the node counting process is available on Github\footurl{https://github.com/softwarekitty/regex_readability_study}.  The following sections provide implementation details sufficient to recreate the process.
+
+\subsection{Artifact details}
+The implementation is written in Java 8, and depends on antlr 3.5.2 because the \todoMid{dude's PCRE Parser} is used to identify features used by a regex.  Implementation details about building the corpus can be found in Section\todoMid{N}.  For this experiment, the corpus was re-loaded from a text file.  Tests verify that this re-loaded corpus is identical to the corpus built from scratch.
+
+Each regex in the corpus contains the original pattern used to compile the regex, a {\tt org.antlr.runtime.tree.CommonTree} (parse tree) created by \todoMid{dude's PCRE Parser} from the pattern, and a set of integers used to identify the set of Python projects that used this regex in at least one utilization.
+
+\subsubsection{Tokenstreams}
+A \emph{tokenstream} is a string that can be generated from a regex's parse tree to represent the parsed regex as a string. Unlike the pattern used to compile the regex, all ambiguities due to multiple meanings of characters, balanced parenthesis, etc. have already been resolved by the parser. This sequence of tokens is still a context free language with nested, balanced \verb!DOWN! and \verb!UP! tokens, therefore it cannot be fully described or parsed using Java Regular Expressions (which do not support the recursion feature or similar).  However, the tokenstream can be searched for necessary conditions when constructing filters to identify candidacy for node membership, and regexes that are erroneously added to a node can be removed manually, as described in Section~\ref{sec:nodeCountOverview}.
+
+Each leaf of the parse tree is assigned a text representation based on the token names used by the parser.  The `bullet' character was chosen as a delimiter that is not present in any text representation.  Invisible characters and Unicode characters like the `bullet' are represented using a hex representation of their bytes.  The tokenstream is created by joining the text representation of each leaf with the delimiter, as shown in Figure\todoMid{N}.
 
 
+\subsection{Implementation details of determining node membership}
 
+\subsubsection{Membership based only on feature presence}
+The nodes which only require a check for the presence of a feature to determine membership are described here:
+\begin{description} \itemsep -1pt
+\item[D2] requires QST (zero-or-one repetition using question mark)
+\item[S1] requires SNG (curly braces with one number inside specifying the number of repetitions)
+\item[L1] requires LWB (curly braces with one number followed by a comma, specifying a lower bound on repetition)
+\item[L2] requires KLE (kleene star indicating zero-or-more repetitions)
+\item[L3] requires ADD (plus character indicating one-or-more repetitions)
+\item[C3] requires NCCC (a negated custom character class, where a \verb!`^'! negates a CCC like \cverb![^X]!)
+\end{description}
 
- Assuming that common programming practices are more understandable than uncommon practices, we explore the frequencies of each representation from Figure~\ref{fig:refactoringTree} using thousands of regexes scraped from Python projects.
+\subsubsection{Membership based on a feature presence and search of the pattern}
+\begin{description} \itemsep -1pt
+\item[S3] requires DBB, and requires the regex's pattern to match \cverb!\{(\d+),\1\}! which guarantees that both bounds of DBB are the same by capturing the first bound in \cverb!(\d+)! and then back-referencing the captured number.
+\item[T2] requires the presence of some hex character representation in the pattern, which is verified by searching the regex's pattern with the regex \cverb!\\x[a-f0-9A-F]{2}!.
+\item[T4] requires the presence of some octal character representation in the pattern, which is verified by searching the regex's pattern with the regex \cverb!((\\0\d*)|(\\\d{3}))!.  Python-style octals require either exactly three digits after a slash, or a zero and some other digits after a slash.  Only one false positive was identified which was actually the lower end of a hex range using the literal \verb!\0!.
+\item[D3] requires OR (alternation using the \verb!`|'!), and requires the regex's pattern to match \cverb!(?<=[|])([^ \\]+)\1+|([^ \\]+)\1+(?=[|])!.  The core of this regex is \cverb!([^ \\]+)\1+! which describes a string that contains a repetition of some sequence at least two times.  The sequence is captured by \cverb!([^ \\]+)! and then back-referenced by \cverb!\1+!, which can appear one or more times as specified by ADD.
 
-\subsection{Implementation details}
-The goal of this study is to understand how frequently each of the regex representations appears in source code. Based on the results, we identify preferred representations using popularity in source code.
+In this regex, the lookbehind \cverb!(?<=[|])! and lookahead \cverb!(?=[|])! match when the \verb!`|'! character is found to the left or right of the core regex, respectively.  The regex used as a filter matches either \cverb!(?<=[|])([^ \\]+)\1+! or \cverb!([^ \\]+)\1+(?=[|])!.  All patterns in the corpus that have some repeated sequence as an alternative within an OR match this regex.  For example the pattern \verb!"a|aa"! compiles to the regex \cverb!a|aa! which belongs to D3.  This filter produced a list of 113 candidates which were narrowed down manually to 10 actual members.
 
-\subsection{Artifacts}
-Artifacts were same as those described in Section~\ref{sec:corpus}.
+The space and slash characters are excluded from the sequence described by \cverb!([^ \\]+)! in order to exclude common false positives like \verb!"some text  |more text"! and \verb!"\\|/"!, which match the regex but do not belong to D3.  Note that these false positives were manually verified as described in Section~\ref{sec:nodeCountOverview}, ensuring that in the corpus used, no valid members of D3 were excluded.  However it is possible for this filter to exclude a regex with a pattern like \verb!"(  | )"! or \verb!"(\\\\|\\)"! which should belong to D3.
+\end{description}
 
-% \subsection{Metrics}
-% We measure community support by matching each regex in the corpus to the representations (nodes) in Figure~\ref{fig:refactoringTree} and counting the number of \emph{regexs} that contain the representation and the number of \emph{projects} that contain the representation.  A \emph{regex} is extracted from a utilization, as shown in Figure~\ref{fig:exampleUsage}.
-% Note that a regex can belong to multiple representations, and a regex can belong to multiple projects since we collapsed duplicates and only analyze the distinct regex regexs.
+\subsubsection{Membership based on a feature presence and filters}
+\begin{description} \itemsep -1pt
+\item[D1] requires DBB (curly braces with two numbers separated by a comma inside), where the two numbers are different.  When these two numbers are the same, then the regex cannot be refactored within the DBB group, but instead belongs to the S3 node.  It is likely impossible to directly specify that two numbers are different in Java Regular Expressions, but it is possible to identify when two numbers are the same using back-references, and eliminate only these.  So the same regex used to identify members of S3: \cverb!\{(\d+),\1\}! was used to find all such same-bound parts of a pattern and replace them with \verb!"{$1}"!, where \verb!$1! is referencing the digit captured by \cverb!(\d+)}!.  In effect this step is actually performing a refactoring from S3 to S1.  All patterns that still contain DBB syntax must belong to D1, so the modified pattern is then searched using \cverb!\{\d+,\d+\}! to determine membership in D1.
 
-\subsection{Analysis}
-To determine how many of the representations match regexs in the corpus, we performed an analysis using the PCRE parser and by representing the regexes as token streams, depending on the characteristics of the representation. Our analysis code is available on GitHub\footurl{https://github.com/softwarekitty/regex_readability_study}. Next, we describe the process in detail:
-
-\subsubsection{Presence of a Feature}
-For the representations that only require a particular feature to be present, such as the question-mark in D2, the features identified by the PCRE parser were used to decide membership of regexs in nodes.
-These feature-requiring nodes are as follows: D1 requires double-bounded repetition with different bounds, D2 requires the question-mark repetition, S1 requires single-bounded repetition, S3 requires double-bounded repetition with the same bounds,  L1 requires a lower-bound repetition, L2 requires the kleene star (\verb!*!) repetition, L3 requires the add (\verb!+!) repetition, and C3 requires a negated custom character class.
-
-\subsubsection{Features  and Pattern}
-For some representations, the presence of a feature is not enough to determine membership.
-However,  the presence of a feature and properties of the regex can determine membership.
-
-Identifying D3 requires an OR containing at least two entries - some sequence present in one entry repeated N times, and then the same sequence present in another entry repeated N+1 times.  This is a hard regex to detect directly, but we identified candidates by looking for a sequence of N repeating groups with an OR-bar (ie. \verb!|!) next to them on one side (either side).  This produced a list of 113 candidates which we narrowed down manually to 10 actual members.
-
-Identifying T2 requires a literal feature that matches the regex \verb!(\\x[a-f0-9A-F]{2})! which reliably identifies hex codes within a regex.
-Similarly T4 requires a literal feature and must match the regex \verb!((\\0\d*)|(\\\d{3}))! which is specific to Python-style octal, requiring either exactly three digits after a slash, or a zero and some other digits after a slash.  Only one false positive was identified which was actually the lower end of a hex range using the literal \verb!\0!.
-
-Identifying T3 requires that a single literal character is wrapped in a custom character class (a member of T3 is always a member of C2).
- T1 requires that no characters are wrapped in brackets or are hex or octal characters, which actually matches over 91\% of the total regexs analyzed.
-
-\subsubsection{Token Stream }
-The following representations were identified by representing the regex regexs as a sequence of dot-delimited tokens.
-Identifying S2 requires any element to be repeated at least twice. This element could be a character class, a literal, or a collection of things encapsulated in parentheses.
-Identifying C1 requires that a non-negative character class contains a range.  Identifying C2 requires that there exists a custom character class that does not use ranges or defaults. Identifying C4 requires the presence of a default character class within a custom character class, specifically, \verb!\d!, \verb!\D!, \verb!\w!, \verb!\W!, \verb!\s!, \verb!\S! and \verb!.!.  Identifying C5 requires an OR of length-one sequences (literal characters or any character class).
-
-\section{Frequency analysis results}
-\input{table/nodeCount}
-
-Table~\ref{table:nodeCount} presents the frequencies with which each representation appears in a regex pattern and in a project scraped from GitHub. The \emph{node} column references the representations in Figure~\ref{fig:refactoringTree} and the \emph{description} column briefly describes the representation, followed by an \emph{example} from the corpus. The \emph{nPatterns} column counts the patterns that belong to the representation, followed by the percent of patterns out of 13,597.
-The \emph{nProjects} column counts the projects that contain a regex belonging to the representation,
-followed by the percentage of projects out of 1,544.
-Recall that the patterns are all unique and could appear in multiple projects, hence the project support is used to show how pervasive the representation in across the whole community.
-For example, 2,479 of the patterns belong to the C1 representation, representing 18.2\% of the patterns. These appear in 810 projects, representing 52.5\%.
-Representation D1 appears in 346 (2.5\%) of the patterns but only 234 (15.2\%) of the projects. In contrast, representation T3 appears in 39 \emph{fewer} patterns but 34 \emph{more} projects, indicating that D1 is more concentrated in a few projects and T3 is more widespread across projects.
+\item[TODO 7 MORE] \todoMid{finish the remaining 7 filter implementation descriptions}
+\item[S2] requires any element to be repeated at least twice. This element could be a character class, a literal, or a collection of things encapsulated in parentheses.
+\item[T1] requires that no characters are wrapped in brackets or are hex or octal characters, which matches over 91\% of the total regexes analyzed.
+\item[T3] requires that a single literal character is wrapped in a custom character class (a member of T3 is always a member of C2).
+\item[C1] requires that a non-negative character class contains a range.
+\item[C2] requires that there exists a custom character class that does not use ranges or defaults.
+\item[C4] requires the presence of a default character class within a custom character class, specifically, \verb!\d!, \verb!\D!, \verb!\w!, \verb!\W!, \verb!\s!, \verb!\S! and \verb!.!.
+\item[C5] requires an OR of length-one sequences (literal characters or any character class).
+\end{description}

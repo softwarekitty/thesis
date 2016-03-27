@@ -20,7 +20,7 @@ Ordinary characters in regexes specify a literal match of those characters, for 
 
 \subsubsection{Elements: Escaped characters and VWSP}
 
-Several characters need be written in Python strings using the backslash.  These characters are the backslash:\verb!\\!, bell:\verb!\a!, backspace\verb!\b!, form feed:\verb!\f!, newline:\verb!\n!, carriage return:\verb!\r!, horizontal tab:\verb!\t! and vertical whitespace:\verb!\v!.  The vertical tab is rarely used and was examined on its own as an individual feature with the code VWSP.  Every character can also be expressed in hex or octal form.  For example, a regex expressing the newline character \cverb!\n! is equivalent to the same character expressed in hex: \cverb!\x0A! and octal: \cverb!\012!
+Several characters need be written in Python strings using the backslash.  These characters are the backslash:\verb!\\!, bell:\verb!\a!, backspace\verb!\b!, form feed:\verb!\f!, newline:\verb!\n!, carriage return:\verb!\r!, horizontal tab:\verb!\t! and vertical whitespace:\verb!\v!.  The vertical tab is rarely used and was examined on its own as an individual feature with the code VWSP.  Every character can also be expressed in hex or octal form.  For example, a regex expressing the newline character \cverb!\n! is equivalent to the same character expressed in hex: \cverb!\x0A! and octal: \cverb!\012!.  In addition to the characters mentioned, the singlequote \verb!`''! and doublequote \verb!`"'! often must be escaped, depending on the quotation style used in source code.  This work will not address this issue in further detail.
 
 \subsubsection{Elements: Character Classes}
 
