@@ -9,16 +9,16 @@ For each node, Table~\ref{table:nodeCount} presents the number of regexes belong
 \subsection{Preferences indicated by community support}
 Using the count of regexes in each node provided in Table~\ref{table:nodeCount}, the most preferred nodes for each group are C1, D2, T1, L2, and S2.  In this section the practical issues of refactoring between nodes are explored and several preferences between nodes are identified.
 
-\subsubsection{CCC refactoring issues}
+\subsubsection{Community based CCC refactoring}
 
 \paragraph{C1 may be preferred overall because ranges are shorter}
 Within the CCC group, C1 has the most regexes (2,479), suggesting that there may be a preference to write a regex with a range whenever possible.  This makes sense, since a range shortens the regex, and programmers are often trying to make their code as short and efficient as possible.
 
 These three regexes from the corpus belong to C2: \cverb!i[3456]86!, \cverb![Hh][123456]! and \\
-\cverb!-py([123]\\.[0-9])$!.  The community preference for regexes to use C1 suggests refactorings to \cverb!i[3-6]86!, \cverb![Hh][1-6]! and \cverb!-py([1-3]\\.[0-9])$! respectively.
+\cverb!-py([123]\.[0-9])$!.  The community preference for regexes to use C1 suggests refactorings to \cverb!i[3-6]86!, \cverb![Hh][1-6]! and \cverb!-py([1-3]\.[0-9])$! respectively.
 
 \paragraph{C2 contains few sequential character sets, so it is hard to refactor out of}
-On inspection, there are very few such regexes in C2 that are obvious candidates for refactoring to C1.  This is true because most of regexes in C2 do not express ranges of characters, but instead express non-continuous sets.  The following regexes (or regex fragments) extracted from the corpus illustrate this point: \cverb![?/:|]+!, \cverb!coding[:=]!, \cverb!([\\\\"]|[^\\ -~])!, \cverb!^[012TF\\*]{9}$!, \cverb!\\?|[-+]?[.\\w]+$!.
+On inspection, there are very few such regexes in C2 that are obvious candidates for refactoring to C1.  This is true because most of regexes in C2 do not express ranges of characters, but instead express non-continuous sets.  The following regexes (or regex fragments) extracted from the corpus illustrate this point: \cverb![?/:|]+!, \cverb!coding[:=]!, \cverb!([\\"]|[^\ -~])!, \cverb!^[012TF\*]{9}$!, \cverb!\?|[-+]?[.\w]+$!.
 
 \paragraph{Refactoring out of C3 is generally awkward}
 Similarly, very few regexes in C3 actually seem like candidates for refactoring to C1 on inspection.  Although the transformation is possible, most regexes in C3 seem to be negating just one or two characters like \cverb![^:]*:! and \cverb!^([^/:]+):!.  Refactoring these to C1 exposes an awareness of the charset and uses ranges that often start or end with invisible characters.  For example these two regexes when refactored to C1 (assuming ASCII) would be \cverb![\x00-9;-\x7F]*:! and \cverb!^([\x00-.0-9;-\x7F]+):!. The most notable candidate for refactorings going out of C3 is probably from C3 to C4, because many NCCC simply represent the negated version of some default character class.  For example the NCCC \cverb![^a-zA-Z0-9_]! appears in 8 regexes belonging to C3, and could be refactored to \cverb![\W]! which belongs to C4.  However, according to community standards the preferred representation may be in C3, not C4.
@@ -30,24 +30,39 @@ Refactorings going from C4 to C1 are possible for the DEC and WRD default charac
 Regexes belonging to C5 are the most proportionally widespread compared to other members of the CCC group, with about as many regexes (245) as there are projects that they appear in (239).  One interpretation of this is that these regexes are not pulled from other projects, but are original compositions in each project.  All of the regexes belonging to C5 could be refactored to C2, which offers a more preferred representation style according to the community.  Three such possible refactorings from the corpus are: \cverb!(a|b)*?c! to \cverb![ab]*?c!, \cverb!:|\*|\?|"|<|>|\\|! to \cverb![:*?"<>\\"]! and
 \cverb@^(?:!|&|\\*)$@ to \cverb|^(?:[!&*])$|.
 
+\subsubsection{Community based DBB refactoring}
 
-\subsubsection{DBB preferences}
+\paragraph{D1 to D2 is recommended for small upper bounds} There are about six times as many regexes in D2 (1,871) than there are in D1 (346).  D3 has only 10 regexes and appears in only 27 projects, so it is clearly not recommended according to community standards.  Refactoring from D1 to D2 is always possible, and always recommended by the community standard.  For example the regex \cverb|^[\n\r]{0,1}| from the corpus belonging to D1 becomes \cverb|^[\n\r]?|.  This is a simple change in syntax because the upper bound is low. Similarly the corpus regex \cverb!(\d{2,3})! becomes \cverb!(\d\d\d?)! when transformed from D1 to D2.
 
- With one exception, these are the same for recommendations based on projects. The difference is that L3 appears in more projects than L2, so it is not clear which is more desirable based on community standards.
+In contrast the corpus regex \cverb!^.{3,20}$! belongs to D1, and can be converted to the equivalent representation in D2: \cverb!^....?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?$!.  This new regex is not as compact and seems ridiculous.  Intuitively, it does not make any sense to recommend a refactoring that explodes a small regex into a huge one.  One reason that D2 may have more community support is that the use case of specifying zero-or-one of something is a very natural idea, and may occur more frequently than the need to specify a particular range using DBB.
 
-\paragraph{Regex Programming Standards}
-Many organizations enforce coding standards in their repositories to ease understandability.  An organization could develop standards based on how frequently regexes of the same type appear.
+\subsubsection{Community based LIT refactoring}
 
-\subsubsection{Other insights gained from the node count}
+\paragraph{T3 to T1 is always recommended} It is not surprising that most regex belong to the T1 node, since ordinary characters are necessary for most string specifications.  Regex like \cverb![$][{]\d+:([^}]+)[}]! belong to T3 and seem to be trying to avoid escaping special characters by wrapping them in a CCC.  This regex can be refactored to T1 yielding \cverb!\$\{\d+:([^}]+)\}!, which is recommended due to overwhelming community support of T1.
 
+\paragraph{T2 and T4 may be special cases} The most popular regex from T4 \cverb![\041-\176]+:$! appears in 13 projects.  The character class defined in this regex represents the printable ASCII characters.  This could be refactored to the equivalent \cverb|[!-~]$| in T1, but the original regex may offer more intuition about the size of the range being specified.
 
+Similarly, the most popular regex from T3 \cverb![\x80-\xff]! appears in 81 projects and refers to a range of characters above ASCII.  This representation may offer some useful intuition about the range being specified, so a refactoring to T1 is not recommended at this time.  More study is needed into the readability of this type of range and the alternative using T1.
+
+\paragraph{T4 to T2 is always recommended}  It is not always possible to use a literal character to specify a character. For characters that cannot be represented directly, a refactoring from T4 to T2 is always recommended.  T2 has more than 34 times as many regexes (479) as T4 (14) and so based on community standards, all of these should be refactored.
+
+\subsubsection{Community based LWB refactoring}
+\paragraph{L2 to L3 may be recommended} L2 has 6,017 regexes while L3 has 6,003 and so they are very closely tied in terms of number of regexes.  In terms of projects, L3 has a slight advantage with 1,207 compared to the 1,097 containing some L2 regex.  This indicates a slight preference for L3 over L2, but is not a strong indicator.  Furthermore a refactoring from L2 to L3 requires an additional repeated element in the sequence to be present before the element to which KLE is applied.  For example the regex belonging to L2 \cverb!kk*! has this extra \verb!`k'! that can be used to transform this regex into a regex belonging to L3: \cverb!k+!.  However the regex \cverb!k*! does not have another \verb!`k'!, so no transformation is possible.  Patterns of the 6,017 regexes belonging to L3 were searched using the regex \cverb!([^\\)\]])\1\*!, locating 38 patterns where their corresponding regexes could be transformed this way.  The most popular example (8 projects) was the regex \cverb!(?::*)! which would become \cverb!(?:+)!.
+
+\paragraph{L1 to L3 is recommended for lower bounds}  L1 has only 91 regexes or almost 67 times fewer than L3, so the community supports a refactoring to L3.  The most popular regex in L1 (32 projects) is \cverb!\n{2,}! which can be transformed to \cverb!\n\n+! belonging to L3.  The regex in L1 with the largest lower bound is \cverb![1-9A-HJ-NP-Za-km-z]{26,}\\Z! which when transformed to a regex in L3 would become too long to typeset in this thesis, and that refactoring cannot be recommended.  However only 3 regexes had a lower bound greater than 6 and only 10 had a lower bound greater than 4, so most regexes in L1 are good candidates for refactoring to L3.
+
+\subsubsection{Community based SNG refactoring}
+\paragraph{refactoring to S2 may be recommended for small repetitions}  Inspecting the contents of S2 reveals that most of these regexes belong to S2 because they contain normal words like \verb!"session"! or \verb!"https"! that happen to have a repetition of characters.  This artificially inflates the size of S2 and presents a challenge when trying to use the community standards rationale to suggest a refactoring to S2 from S1 or S3.  For example, consider the most popular (32 projects) regex from S1: \cverb!^[a-f0-9]{40}$!.  Expanding this out so that it uses sequential repetition would create a very long regex and cannot be recommended.  However transforming the regex \cverb!^(-?\d+)(\d{3})! from S1 yields the regex \cverb!^(-?\d+)(\d\d\d)! which may be recommended by the community standards, but more investigation is needed.
+
+\paragraph{refactoring out of S3 is recommended}
+S3 only has 27 regexes, and all of them seem to be abusing the DBB feature by making the upper and lower bounds identical.  Perhaps these regexes started off with different bounds and were fixed as time went on to have identical bounds.  Due to the inflation of S2, it is not clear whether to recommend a refactoring to S1 or S2.  Perhaps the best recommendation is to refactor low numbers of repetitions of small elements to S2, and all others to S1.
 
 \subsection{Opportunities for future work}
 
 \paragraph{Equivalence Class Models}
 This study uses 5 equivalence classes, each with 3 to 5 nodes.  These equivalence classes are very inclusive of regexes with very different behavior, and are defined largely by the features used by a regex.  Future work could look into much more narrowly defined equivalence models, specific to particular behaviors of the most frequently observed regexes.  For example a node could require the presence of a very specific, frequently used CCC like \cverb![a-zA-Z0-9_-]! which can be refactored to \cverb![\w-]!.
 
-In addition to breaking the five equivalence classes into more specific nodes, future work could model refactorings outside of these groups.  This work does not provide a list of all possible refactoring groups given the functional variety and significant number of features to consider, but does provide a few additional equivalence classes outside of our 5 groups:
+In addition to breaking the five equivalence classes into more granular nodes, future work could model refactorings outside of these groups. Due to the functional variety and significant number of features to consider, this work does not provide a list of all possible refactoring groups.  However the following 5 additional equivalence classes are examples of other possible groups:
 \begin{description}
 \item[Single line option]  \verb!'''(.|\n)+'''! $\equiv$ \verb!(?s)'''(.)+'''!
 \item[Multi line option]  \verb!(?m)G\n! $\equiv$ \verb!(?m)G$!
@@ -58,13 +73,15 @@ In addition to breaking the five equivalence classes into more specific nodes, f
 
 Future work could also use reasoning tools for regular expressions, like Microsoft's Automata library to identify populations of equivalent regexes with differing representations, even identifying \emph{all} equivalence classes present in a given corpus.
 
-\paragraph{Studying a different corpus}
+\paragraph{Regex Programming Standards}
+Many organizations enforce coding standards in their repositories to ease understandability.  Using an equivalence class model and the node counting technique described in this chapter could help to objectively develop regular expression standards for a given development community like Mozilla or OpenBSD.
 
-using larger sets of regexes from other languages and sources,
-targeting specific communities
+\paragraph{Studying a different corpus}
+A technique similar to the one described in this work could be applied to a different corpus.  Ideas about alternative ways to build a corpus of regexes can be found in Section~\ref{sec:alternateCorpus}).  The concept of a community standard would be reinforced by regexes sourced from a very specific community like only text editor projects, or only shopping cart frameworks.
 
 \subsection{Threats to validity}
-human error in manual validation
-overly general rules defining nodes may obscure better refactorings
-our corpus is randomly selected from github, may be biased towards homeworks and small pet projects, or frequently cloned projects like the linux kernel
-community may support smelly nodes through ignorance
+Because the technique of determining a node count includes manual verification, is possible that some regexes were not removed from a node that should have been removed, or were included when they should not have been.  This does not represent a serious threat, however, because a small number of errors would not significantly change the main results of the work.
+
+The rules used to define the nodes of equivalence classes may have been too permissive, or may have not been designed in the best possible way, resulting in an experiment that fails to detect some other more interesting refactoring that was not considered.  As the first work on regular expression refactoring, this outcome is unavoidable and is not considered a major problem.
+
+Because of the way the corpus is randomly selected from Github the projects it references may be biased towards homeworks and small pet projects, or frequently cloned projects like the linux kernel.  This threat is not of significant concern because no claims are made about what community is being represented, and the concept of community is not being used strictly to determine the refactoring recommendations, but is more of a guide.
