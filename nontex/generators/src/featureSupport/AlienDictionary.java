@@ -25,7 +25,7 @@ public class AlienDictionary {
 	public static boolean hasAlienFeature(int ID, String languageName) {
 		switch (languageName) {
 		case "Python":
-			return true;
+			return pythonContainsA(ID);
 		case "Perl":
 			return perlContainsA(ID);
 		case ".Net":
@@ -44,6 +44,61 @@ public class AlienDictionary {
 			throw new RuntimeException("language name not found in switch: " +
 				languageName);
 		}
+	}
+
+	private static boolean pythonContainsA(int ID) {
+		List<Integer> missingFeatures_py = Arrays.asList( 
+				//perl has:
+				// (?n) recursive call to group n (not re2)
+				RCUN,		// (?R) recursive call to group 0 (not re2)
+				RCUZ,		// \g{+1}	backreference
+				GPLS,		// \g{name}	named backreference
+				GBRK,		// \k<name>	named backreference  (net has)
+				KBRK,//		(?(cond)X) if conditionals (not re2)
+				IFC,//		(?(cond)X|else) ifelse conditionals (net has)(not re2)
+				IFEC,//		(?{code}) embedded code (not re2)
+				ECOD,		
+				
+				//java and perl has:
+//				end of previous match position: \G(net has)(not re2)
+				PRV,//		0xhhhh long hex values: \\uhhhh (js has)(net has)
+				LHX,//		posessive modifiers: Z++ (NSRE has, .Net does not have)
+				POSS,		//net-style named groups (?<name>X) (net has) (rub has) (not re2)
+				NNCG,//		option modulation (?i)z(?-i)z (net has)
+				MOD,//		atomic NCG (?>X)(net has)(not re2)
+				ATOM,//		CCC intersection [a-z&&[^f]] (perl does not have)
+				CCCI,//		end of input, or before last newline: \Z(net has)
+				LNLZ,//		end of input \z (re2 has)
+				FINL,//		quotation \Q...\E (re2 has)
+				QUOT,//		4 Java defaults \p{javaMirrored}
+				JAVM,		
+				
+				//RE2 has:
+				//\pN Unicode character class (one-letter name)
+				UNI,		//\PN Negated Unicode character class (one-letter name)
+				NUNI,// (?flags:re) flags just for re
+				OPTG,		
+				
+				//ere has
+//				equivalence classes [[=o=]]
+				EREQ,
+				
+				//		javascript has (not java)
+//				12 POSIX classes [:alpha:] (ere, re2, ruby has)
+				PXCC,//		trivial char class [^] ???
+				TRIV,
+				
+				//		.net has:
+//				char class subtraction [a-f-[c]]
+				CCSB,//		variable width look behinds (?<=ab.+)
+				VLKB,//		balancing groups (?<close-open>)
+				BAL,//		net style conditionals (?(<n>)X|else)
+				NCND,	
+				// others:
+				// (?|x|y|z)	branch numbering reset
+				BRES,		// (?'name're) single-quote named groups
+				QNG);
+		return !missingFeatures_py.contains(ID);
 	}
 
 	private static boolean re2ContainsA(int ID) {
@@ -93,64 +148,48 @@ public class AlienDictionary {
 	}
 
 	private static boolean rubyContainsA(int ID) {
-		List<Integer> missingFeatures = Arrays.asList( 
+		List<Integer> missingFeatures_rb = Arrays.asList( 
 				//perl has:
 				// (?n) recursive call to group n (not re2)
 				RCUN,		// (?R) recursive call to group 0 (not re2)
 				RCUZ,		// \g{+1}	backreference
 				GPLS,		// \g{name}	named backreference
-				GBRK,		// \k<name>	named backreference  (net has)
-				KBRK,//		(?(cond)X) if conditionals (not re2)
+				GBRK,//		(?(cond)X) if conditionals (not re2)
 				IFC,//		(?(cond)X|else) ifelse conditionals (net has)(not re2)
 				IFEC,//		(?{code}) embedded code (not re2)
-				ECOD,//		(?# embedded comments) (net has) (not re2)
-				ECOM,		
+				ECOD,//				
 				
 				//java and perl has:
-//				end of previous match position: \G(net has)(not re2)
-				PRV,//		0xhhhh long hex values: \\uhhhh (js has)(net has)
-				LHX,//		posessive modifiers: Z++ (NSRE has, .Net does not have)
-				POSS,		//net-style named groups (?<name>X) (net has) (rub has) (not re2)
-				NNCG,//		option modulation (?i)z(?-i)z (net has)
-				MOD,//		atomic NCG (?>X)(net has)(not re2)
-				ATOM,//		CCC intersection [a-z&&[^f]] (perl does not have)
-				CCCI,//		beginning of input \A(net has)(re2 has)
-				STRA,//		end of input, or before last newline: \Z(net has)
-				LNLZ,//		end of input \z (re2 has)
-				FINL,//		quotation \Q...\E (re2 has)
+				//		quotation \Q...\E (re2 has)
 				QUOT,//		4 Java defaults \p{javaMirrored}
 				JAVM,		
 				
 				//RE2 has:
 				//\pN Unicode character class (one-letter name)
 				UNI,		//\PN Negated Unicode character class (one-letter name)
-				NUNI,// (?flags:re) flags just for re
-				OPTG,		
+				NUNI,		
 				
 				//ere has
 //				equivalence classes [[=o=]]
 				EREQ,
 				
 				//		javascript has (not java)
-//				12 POSIX classes [:alpha:] (ere, re2, ruby has)
-				PXCC,//		trivial char class [^] ???
+//				//		trivial char class [^] ???
 				TRIV,
 				
 				//		.net has:
 //				char class subtraction [a-f-[c]]
 				CCSB,//		variable width look behinds (?<=ab.+)
 				VLKB,//		balancing groups (?<close-open>)
-				BAL,//		net style conditionals (?(<n>)X|else)
-				NCND,	
+				BAL,//			
 				// others:
 				// (?|x|y|z)	branch numbering reset
-				BRES,		// (?'name're) single-quote named groups
-				QNG);
-		return !missingFeatures.contains(ID);
+				BRES);
+		return !missingFeatures_rb.contains(ID);
 	}
 
 	private static boolean ereContainsA(int ID) {
-		List<Integer> missingFeatures = Arrays.asList( 
+		List<Integer> missingFeatures_ere = Arrays.asList( 
 				//perl has:
 				// (?n) recursive call to group n (not re2)
 				RCUN,		// (?R) recursive call to group 0 (not re2)
@@ -166,7 +205,7 @@ public class AlienDictionary {
 				
 				//java and perl has:
 //				end of previous match position: \G(net has)(not re2)
-				PRV,//		0xhhhh long hex values: \\uhhhh (js has)(net has)
+				PRV,//maybe?	0xhhhh long hex values: \\uhhhh (js has)(net has)
 				LHX,//		posessive modifiers: Z++ (NSRE has, .Net does not have)
 				POSS,		//net-style named groups (?<name>X) (net has) (rub has) (not re2)
 				NNCG,//		option modulation (?i)z(?-i)z (net has)
@@ -185,13 +224,8 @@ public class AlienDictionary {
 				NUNI,// (?flags:re) flags just for re
 				OPTG,		
 				
-				//ere has
-//				equivalence classes [[=o=]]
-				EREQ,
-				
 				//		javascript has (not java)
-//				12 POSIX classes [:alpha:] (ere, re2, ruby has)
-				PXCC,//		trivial char class [^] ???
+//				//		trivial char class [^] ???
 				TRIV,
 				
 				//		.net has:
@@ -204,7 +238,7 @@ public class AlienDictionary {
 				// (?|x|y|z)	branch numbering reset
 				BRES,		// (?'name're) single-quote named groups
 				QNG);
-		return !missingFeatures.contains(ID);
+		return !missingFeatures_ere.contains(ID);
 	}
 
 	private static boolean javaContainsA(int ID) {
@@ -215,33 +249,11 @@ public class AlienDictionary {
 				RCUZ,		// \g{+1}	backreference
 				GPLS,		// \g{name}	named backreference
 				GBRK,		// \g<name>	subroutine call
-				GSUB,		// \k<name>	named backreference  (net has)
-				KBRK,//		(?(cond)X) if conditionals (not re2)
+				GSUB,//		(?(cond)X) if conditionals (not re2)
 				IFC,//		(?(cond)X|else) ifelse conditionals (net has)(not re2)
 				IFEC,//		(?{code}) embedded code (not re2)
 				ECOD,//		(?# embedded comments) (net has) (not re2)
 				ECOM,		
-				
-				//java and perl has:
-//				end of previous match position: \G(net has)(not re2)
-				PRV,//		0xhhhh long hex values: \\uhhhh (js has)(net has)
-				LHX,//		posessive modifiers: Z++ (NSRE has, .Net does not have)
-				POSS,		//net-style named groups (?<name>X) (net has) (rub has) (not re2)
-				NNCG,//		option modulation (?i)z(?-i)z (net has)
-				MOD,//		atomic NCG (?>X)(net has)(not re2)
-				ATOM,//		CCC intersection [a-z&&[^f]] (perl does not have)
-				CCCI,//		beginning of input \A(net has)(re2 has)
-				STRA,//		end of input, or before last newline: \Z(net has)
-				LNLZ,//		end of input \z (re2 has)
-				FINL,//		quotation \Q...\E (re2 has)
-				QUOT,//		4 Java defaults \p{javaMirrored}
-				JAVM,		
-				
-				//RE2 has:
-				//\pN Unicode character class (one-letter name)
-				UNI,		//\PN Negated Unicode character class (one-letter name)
-				NUNI,// (?flags:re) flags just for re
-				OPTG,		
 				
 				//ere has
 //				equivalence classes [[=o=]]
@@ -266,7 +278,7 @@ public class AlienDictionary {
 	}
 
 	private static boolean javaScriptContainsA(int ID) {
-		List<Integer> missingFeatures = Arrays.asList( 
+		List<Integer> missingFeatures_js = Arrays.asList( 
 				//perl has:
 				// (?n) recursive call to group n (not re2)
 				RCUN,		// (?R) recursive call to group 0 (not re2)
@@ -282,8 +294,7 @@ public class AlienDictionary {
 				
 				//java and perl has:
 //				end of previous match position: \G(net has)(not re2)
-				PRV,//		0xhhhh long hex values: \\uhhhh (js has)(net has)
-				LHX,//		posessive modifiers: Z++ (NSRE has, .Net does not have)
+				PRV,//		posessive modifiers: Z++ (NSRE has, .Net does not have)
 				POSS,		//net-style named groups (?<name>X) (net has) (rub has) (not re2)
 				NNCG,//		option modulation (?i)z(?-i)z (net has)
 				MOD,//		atomic NCG (?>X)(net has)(not re2)
@@ -298,17 +309,17 @@ public class AlienDictionary {
 				//RE2 has:
 				//\pN Unicode character class (one-letter name)
 				UNI,		//\PN Negated Unicode character class (one-letter name)
-				NUNI,// (?flags:re) flags just for re
+				NUNI,
+				
+				
+				
+				
+				// (?flags:re) flags just for re
 				OPTG,		
 				
 				//ere has
 //				equivalence classes [[=o=]]
 				EREQ,
-				
-				//		javascript has (not java)
-//				12 POSIX classes [:alpha:] (ere, re2, ruby has)
-				PXCC,//		trivial char class [^] ???
-				TRIV,
 				
 				//		.net has:
 //				char class subtraction [a-f-[c]]
@@ -320,11 +331,11 @@ public class AlienDictionary {
 				// (?|x|y|z)	branch numbering reset
 				BRES,		// (?'name're) single-quote named groups
 				QNG);
-		return !missingFeatures.contains(ID);
+		return !missingFeatures_js.contains(ID);
 	}
 
 	private static boolean dotNetContainsA(int ID) {
-		List<Integer> missingFeatures = Arrays.asList( 
+		List<Integer> missingFeatures_dn = Arrays.asList( 
 				//perl has:
 				// (?n) recursive call to group n (not re2)
 				RCUN,		// (?R) recursive call to group 0 (not re2)
@@ -361,11 +372,11 @@ public class AlienDictionary {
 				// others:
 				// (?|x|y|z)	branch numbering reset
 				BRES);
-		return !missingFeatures.contains(ID);
+		return !missingFeatures_dn.contains(ID);
 	}
 
 	private static boolean perlContainsA(int ID) {
-		List<Integer> missingFeatures = Arrays.asList( 
+		List<Integer> missingFeatures_pr = Arrays.asList( 
 							//CCC intersection [a-z&&[^f]] (perl does not have)
 				CCCI,//		4 Java defaults \p{javaMirrored}
 				JAVM,			
@@ -387,7 +398,7 @@ public class AlienDictionary {
 				// (?|x|y|z)	branch numbering reset
 				BRES,		// (?'name're) single-quote named groups
 				QNG);
-		return !missingFeatures.contains(ID);
+		return !missingFeatures_pr.contains(ID);
 	}
 	
 	private void initializeIntToCodeMap() {
@@ -587,7 +598,7 @@ public class AlienDictionary {
 	}
 	
 	private String pad(String s){
-		String pre = "\\begin{minipage}{0.5in}\\begin{verbatim}";
+		String pre = "\\begin{minipage}{0.8in}\\begin{verbatim}";
 		String suf = "\\end{verbatim}\\end{minipage}";
 		return pre + s + suf;
 	}

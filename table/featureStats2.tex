@@ -1,0 +1,81 @@
+\begin{table*}
+\begin{center}
+\begin{footnotesize}
+\caption{How Frequently do Features Appear in Patterns, Files and Projects?}
+\label{table:featureStatsOnly}
+\begin{tabular}
+{lllcccc  cc}
+rank & code & example & \% patterns & nPatterns & nFiles & nProjects & nTokens & maxTokens. \\
+\toprule[0.16em]
+1 & ADD & \begin{minipage}{0.5in}\begin{verbatim}z+\end{verbatim}\end{minipage} & 44.1 & 6,003 & 9,165 & 1,204 & 11,136 & 30 \\
+\midrule
+2 & CG & \begin{minipage}{0.5in}\begin{verbatim}(caught)\end{verbatim}\end{minipage} & 52.4 & 7,130 & 9,559 & 1,194 & 12,707 & 17 \\
+\midrule
+3 & KLE & \begin{minipage}{0.5in}\begin{verbatim}.*\end{verbatim}\end{minipage} & 44.3 & 6,017 & 8,163 & 1,099 & 11,620 & 50 \\
+\midrule
+4 & CCC & \begin{minipage}{0.5in}\begin{verbatim}[aeiou]\end{verbatim}\end{minipage} & 32.9 & 4,468 & 7,648 & 1,026 & 8,179 & 42 \\
+\midrule
+5 & ANY & \begin{minipage}{0.5in}\begin{verbatim}.\end{verbatim}\end{minipage} & 34.3 & 4,657 & 6,277 & 1,005 & 7,119 & 60 \\
+\midrule
+6 & RNG & \begin{minipage}{0.5in}\begin{verbatim}[a-z]\end{verbatim}\end{minipage} & 19.3 & 2,631 & 5,092 & 848 & 8,043 & 50 \\
+\midrule
+7 & STR & \begin{minipage}{0.5in}\begin{verbatim}^\end{verbatim}\end{minipage} & 26.2 & 3,563 & 5,458 & 846 & 3,661 & 12 \\
+\midrule
+8 & END & \begin{minipage}{0.5in}\begin{verbatim}$\end{verbatim}\end{minipage} & 23.3 & 3,169 & 5,393 & 827 & 3,276 & 12 \\
+\midrule[0.12em]
+9 & NCCC & \begin{minipage}{0.5in}\begin{verbatim}[^qwxf]\end{verbatim}\end{minipage} & 14.2 & 1,935 & 3,947 & 776 & 2,718 & 15 \\
+\midrule
+10 & WSP & \begin{minipage}{0.5in}\begin{verbatim}\s\end{verbatim}\end{minipage} & 20.9 & 2,846 & 4,704 & 762 & 6,128 & 32 \\
+\midrule
+11 & OR & \begin{minipage}{0.5in}\begin{verbatim}a|b\end{verbatim}\end{minipage} & 15.5 & 2,102 & 3,926 & 708 & 2,606 & 15 \\
+\midrule
+12 & DEC & \begin{minipage}{0.5in}\begin{verbatim}\d\end{verbatim}\end{minipage} & 16.9 & 2,297 & 4,198 & 692 & 4,868 & 24 \\
+\midrule
+13 & WRD & \begin{minipage}{0.5in}\begin{verbatim}\w\end{verbatim}\end{minipage} & 10.5 & 1,430 & 2,952 & 650 & 2,037 & 13 \\
+\midrule
+14 & QST & \begin{minipage}{0.5in}\begin{verbatim}z?\end{verbatim}\end{minipage} & 13.8 & 1,871 & 3,707 & 645 & 3,290 & 35 \\
+\midrule
+15 & LZY & \begin{minipage}{0.5in}\begin{verbatim}z+?\end{verbatim}\end{minipage} & 9.6 & 1,300 & 2,221 & 605 & 1,761 & 12 \\
+\midrule
+16 & NCG & \begin{minipage}{0.5in}\begin{verbatim}a(?:b)c\end{verbatim}\end{minipage} & 5.8 & 791 & 1,709 & 404 & 1,453 & 28 \\
+\midrule
+17 & PNG & \begin{minipage}{0.5in}\begin{verbatim}(?P<name>x)\end{verbatim}\end{minipage} & 6.7 & 915 & 1,475 & 354 & 2,399 & 16 \\
+\midrule
+18 & SNG & \begin{minipage}{0.5in}\begin{verbatim}z{8}\end{verbatim}\end{minipage} & 4.3 & 581 & 1,267 & 340 & 1,159 & 17 \\
+\midrule
+19 & NWSP & \begin{minipage}{0.5in}\begin{verbatim}\S\end{verbatim}\end{minipage} & 3.6 & 484 & 776 & 270 & 676 & 10 \\
+\midrule
+20 & DBB & \begin{minipage}{0.5in}\begin{verbatim}z{3,8}\end{verbatim}\end{minipage} & 2.7 & 367 & 647 & 238 & 573 & 11 \\
+\midrule
+21 & NLKA & \begin{minipage}{0.5in}\begin{verbatim}a(?!yz)\end{verbatim}\end{minipage} & 1 & 131 & 489 & 183 & 148 & 3 \\
+\midrule
+22 & WNW & \begin{minipage}{0.5in}\begin{verbatim}\b\end{verbatim}\end{minipage} & 1.8 & 248 & 438 & 166 & 408 & 36 \\
+\midrule
+23 & NWRD & \begin{minipage}{0.5in}\begin{verbatim}\W\end{verbatim}\end{minipage} & 0.7 & 94 & 305 & 165 & 149 & 6 \\
+\midrule
+24 & LWB & \begin{minipage}{0.5in}\begin{verbatim}z{15,}\end{verbatim}\end{minipage} & 0.7 & 91 & 281 & 158 & 107 & 3 \\
+\midrule
+25 & LKA & \begin{minipage}{0.5in}\begin{verbatim}a(?=bc)\end{verbatim}\end{minipage} & 0.8 & 112 & 358 & 158 & 133 & 4 \\
+\midrule
+26 & OPT & \begin{minipage}{0.5in}\begin{verbatim}(?i)CasE\end{verbatim}\end{minipage} & 1.7 & 231 & 377 & 154 & 238 & 2 \\
+\midrule
+27 & NLKB & \begin{minipage}{0.5in}\begin{verbatim}(?<!x)yz\end{verbatim}\end{minipage} & 0.7 & 94 & 296 & 137 & 117 & 4 \\
+\midrule[0.12em]
+28 & LKB & \begin{minipage}{0.5in}\begin{verbatim}(?<=a)bc\end{verbatim}\end{minipage} & 0.6 & 80 & 255 & 120 & 99 & 4 \\
+\midrule
+29 & ENDZ & \begin{minipage}{0.5in}\begin{verbatim}\Z\end{verbatim}\end{minipage} & 0.7 & 89 & 149 & 90 & 89 & 1 \\
+\midrule
+30 & BKR & \begin{minipage}{0.5in}\begin{verbatim}\1\end{verbatim}\end{minipage} & 0.4 & 60 & 129 & 84 & 73 & 4 \\
+\midrule
+31 & NDEC & \begin{minipage}{0.5in}\begin{verbatim}\D\end{verbatim}\end{minipage} & 0.3 & 36 & 92 & 58 & 51 & 6 \\
+\midrule
+32 & BKRN & \begin{minipage}{0.5in}\begin{verbatim}(P?=name)\end{verbatim}\end{minipage} & 0.1 & 17 & 44 & 28 & 19 & 2 \\
+\midrule
+33 & VWSP & \begin{minipage}{0.5in}\begin{verbatim}\v\end{verbatim}\end{minipage} & 0.1 & 13 & 16 & 15 & 14 & 2 \\
+\midrule
+34 & NWNW & \begin{minipage}{0.5in}\begin{verbatim}\B\end{verbatim}\end{minipage} & 0 & 4 & 11 & 11 & 5 & 2 \\
+\bottomrule[0.13em]
+\end{tabular}
+\end{footnotesize}
+\end{center}
+\end{table*}

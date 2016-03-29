@@ -2,7 +2,16 @@ package featureSupport;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.TreeSet;
 
@@ -19,30 +28,35 @@ public class MakeTables {
 	private static String tablePath = thesisPath + "table/";
 	private static String langTable = "rankedFeatureSupport.tex";
 	private static String[] langNames = { "Python", "Perl", ".Net",
-		"Ruby", "Java", "RE2", "POSIX ERE", "JavaScript"};
+		"Ruby", "Java", "RE2", "JavaScript", "POSIX ERE"};
 
 	private static String YES = "\\yes";
 	private static String NO = "\\no";
 
 	public static void main(String[] args) throws IllegalArgumentException,
-			IOException, QuoteRuleException, PythonParsingException {
+			IOException, QuoteRuleException, PythonParsingException, ClassNotFoundException, SQLException {
 		makeRankedFeatureTable();
 		makeAlienFeatureTable();
-
+		TreeSet<RegexProjectSet> corpus = CorpusUtil.reloadCorpus();
+		File featureStats = new File(tablePath,"featureStats2.tex");
+		String homePath = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/";
+		String connectionString = "jdbc:sqlite:" + homePath +
+			"tools/merged/merged_report.db";
+		IOUtil.createAndWrite(featureStats, FeatureStatsTable.featureStats(corpus, connectionString));
 	}
 	
+
+
 	private static void makeAlienFeatureTable(){
 		AlienDictionary ad = new AlienDictionary();
 		String between = " & ";
 		String tableHeader = "\\begin{table*}[h!tb]\n\\centering\n\\begin{small}\n\\caption{What other features are supported in various languages?}"
-			+ "\n\\label{table:alienFeatureSupport}\n\\begin{tabular}{l@{  \\horiz}lc @{   \\horiz} c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c}"
+			+ "\n\\label{table:alienFeatureSupport}\n\\begin{tabular}{l@{  \\horiz}lc @{   \\horiz} c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c} \\\\ \n"
 			+ "code & example & Python & Perl & .Net  & Ruby &  Java & RE2 & \\begin{footnotesize}JavaScript\\end{footnotesize} & \\begin{footnotesize}POSIX ERE\\end{footnotesize}\\\\\n";
 		StringBuilder sb = new StringBuilder();
 		sb.append(tableHeader);
 		for(int i=0; i<AlienDictionary.alienFeatures.length;i++){
 			int ID = AlienDictionary.alienFeatures[i];
-			sb.append(i+1);
-			sb.append(between);
 			sb.append(ad.getCode(ID));
 			sb.append(between);
 			sb.append(ad.getVerbatim(ID));
@@ -53,7 +67,7 @@ public class MakeTables {
 				sb.append(between);
 				sb.append(answer);
 			}
-			sb.append("\\\\\n");
+			sb.append("  \\\\\n");
 			if(i<rankedFeatures.length-1){
 				sb.append("\\midrule\n");
 			}else{
@@ -66,13 +80,12 @@ public class MakeTables {
 		IOUtil.createAndWrite(alienFeatureSupport, sb.toString());
 	}
 	
-	
+	//	private static String[] langNames = { "Python", "Perl", ".Net", "Ruby", "Java", "RE2", "JavaScript", "POSIX ERE"};
 	private static void makeRankedFeatureTable(){
 		FeatureDictionary fd = new FeatureDictionary();
-		//TreeSet<RegexProjectSet> corpus = CorpusUtil.reloadCorpus();
 		String between = " & ";
 		String tableHeader = "\\begin{table*}[h!tb]\n\\centering\n\\begin{small}\n\\caption{What regular expression languages support features studied in this thesis?}"
-			+ "\n\\label{table:rankedFeatureSupport}\n\\begin{tabular}{ll@{  \\horiz}lc @{   \\horiz} c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c}"
+			+ "\n\\label{table:rankedFeatureSupport}\n\\begin{tabular}{l@{  \\horiz}clc@{  \\horiz}lc @{   \\horiz} c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c @{   \\horiz}c}"
 			+ "rank & code & example & Python & Perl & .Net  & Ruby &  Java & RE2 & \\begin{footnotesize}JavaScript\\end{footnotesize} & \\begin{footnotesize}POSIX ERE\\end{footnotesize}\\\\\n";
 		StringBuilder sb = new StringBuilder();
 		sb.append(tableHeader);
