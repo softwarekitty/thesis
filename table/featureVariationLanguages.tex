@@ -1,0 +1,80 @@
+\begin{table*}[h!tb]
+\centering
+\begin{small}
+\caption{What regular expression languages support features studied in this thesis?}
+\label{table:featureVariationLanguages}
+\begin{tabular}{ll@{  \horiz}lc @{   \horiz} c @{  \horiz }c @{   \horiz}c @{   \horiz}c @{   \horiz}c @{   \horiz}c @{   \horiz}c @{   \horiz}c @{   \horiz}c}
+rank & code & example & Python & Perl & .Net & \begin{footnotesize}JavaScript\end{footnotesize} &  Swift& Java & \begin{footnotesize}POSIX ERE\end{footnotesize} & Ruby & RE2 & VIM \\
+\toprule[0.16em]
+1 & ADD & \begin{minipage}{0.5in}\begin{verbatim}z+\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+2 & CG & \begin{minipage}{0.5in}\begin{verbatim}(caught)\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+3 & KLE & \begin{minipage}{0.5in}\begin{verbatim}.*\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+4 & CCC & \begin{minipage}{0.5in}\begin{verbatim}[aeiou]\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+5 & ANY & \begin{minipage}{0.5in}\begin{verbatim}.\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+6 & RNG & \begin{minipage}{0.5in}\begin{verbatim}[a-z]\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+7 & STR & \begin{minipage}{0.5in}\begin{verbatim}^\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+8 & END & \begin{minipage}{0.5in}\begin{verbatim}$\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule[0.12em]
+9 & NCCC & \begin{minipage}{0.5in}\begin{verbatim}[^qwxf]\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+10 & WSP & \begin{minipage}{0.5in}\begin{verbatim}\s\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+11 & OR & \begin{minipage}{0.5in}\begin{verbatim}a|b\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+12 & DEC & \begin{minipage}{0.5in}\begin{verbatim}\d\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+13 & WRD & \begin{minipage}{0.5in}\begin{verbatim}\w\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+14 & QST & \begin{minipage}{0.5in}\begin{verbatim}z?\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+15 & LZY & \begin{minipage}{0.5in}\begin{verbatim}z+?\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+16 & NCG & \begin{minipage}{0.5in}\begin{verbatim}a(?:b)c\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+17 & PNG & \begin{minipage}{0.5in}\begin{verbatim}(?P<name>x)\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+18 & SNG & \begin{minipage}{0.5in}\begin{verbatim}z{8}\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+19 & NWSP & \begin{minipage}{0.5in}\begin{verbatim}\S\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+20 & DBB & \begin{minipage}{0.5in}\begin{verbatim}z{3,8}\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+21 & NLKA & \begin{minipage}{0.5in}\begin{verbatim}a(?!yz)\end{verbatim}\end{minipage} & \no & \no & \no & \no & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+22 & WNW & \begin{minipage}{0.5in}\begin{verbatim}\b\end{verbatim}\end{minipage} & \no & \no & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+23 & NWRD & \begin{minipage}{0.5in}\begin{verbatim}\W\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+24 & LWB & \begin{minipage}{0.5in}\begin{verbatim}z{15,}\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+25 & LKA & \begin{minipage}{0.5in}\begin{verbatim}a(?=bc)\end{verbatim}\end{minipage} & \no & \no & \no & \no & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+26 & OPT & \begin{minipage}{0.5in}\begin{verbatim}(?i)CasE\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+27 & NLKB & \begin{minipage}{0.5in}\begin{verbatim}(?<!x)yz\end{verbatim}\end{minipage} & \no & \no & \no & \no & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule[0.12em]
+28 & LKB & \begin{minipage}{0.5in}\begin{verbatim}(?<=a)bc\end{verbatim}\end{minipage} & \no & \no & \no & \no & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+29 & ENDZ & \begin{minipage}{0.5in}\begin{verbatim}\Z\end{verbatim}\end{minipage} & \no & \no & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+30 & BKR & \begin{minipage}{0.5in}\begin{verbatim}\1\end{verbatim}\end{minipage} & \no & \no & \no & \no & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+31 & NDEC & \begin{minipage}{0.5in}\begin{verbatim}\D\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+32 & BKRN & \begin{minipage}{0.5in}\begin{verbatim}\g<name>\end{verbatim}\end{minipage} & \no & \yes & \no & \no & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+33 & VWSP & \begin{minipage}{0.5in}\begin{verbatim}\v\end{verbatim}\end{minipage} & \no & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\midrule
+34 & NWNW & \begin{minipage}{0.5in}\begin{verbatim}\B\end{verbatim}\end{minipage} & \no & \no & \no & \yes & \yes & \yes & \yes & \yes & \yes & \yes  \\
+\bottomrule[0.13em]
+\end{tabular}
+\end{small}
+\vspace{-12pt}
+\end{table*}

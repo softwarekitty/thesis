@@ -1,0 +1,51 @@
+\section{Feature Support}
+
+\paragraph{High-level focus} Different regex analysis tools and engines support different features, and the variation among the supported feature set is not easy to define.  Often the same feature is essentially supported, but nuances exist so that the exact behavior of the feature still varies enough to have an effect on code that relies on regexes using that feature.
+
+As an example, the {\tt re.MULTILINE} flag, or similar, is present in Python, Java, and C\#, but  the Python {\tt re.DOTALL} flag is not present in C\# though Java has an equivalent flag.
+
+Documentation of engines varies in detail and quality, so that often the particular behavioral details and full feature set is only known to developers of the engine.  In this attempt to document some of the variations in feature support, no attempt is made to address these minor nuances and tricky details, but instead the focus is on documenting the presence or absence of features at a high level.
+
+
+
+\subsection{Variation in feature sets among Analysis tools}
+
+\paragraph{Rationale for exploring features supported by Analysis tools} \todoMid{Some paragraph introducing this table}
+
+\input{table/featureVariationTools}
+
+\subsection{Variation in feature sets among languages}
+\label{sec:featureSupport}
+
+\paragraph{Rationale for exploring features supported by different languages} \todoMid{Some paragraph introducing this table}
+
+Note: we exclude substitutions like \$n, only valid in a replacement context.  Also if a feature has the same functionality but different syntax...it is NOT considered the same feature, considering the desire to port patterns across languages, for example \cverb!\Z! in Python is \cverb!\z! in most other variants, and in those variants \cverb!\Z! means something else!  One exception is the OPT feature, for which different engines have different sets of options.  Python's set of 7 options is small compared to Tcl which has 15 or so.  For the feature table, if the following 3 core options are supported: \cverb!(?ism)!, the variant will be shown as having that feature.
+
+Unable to get enough information about Swift's underlying NSRegularExpression to include it in the table - a strong contender for future work!  Also wanted to get Vim's features but do not have time, and it is a very alien feature set!.
+
+% \input{table/featureVariationLanguages}
+\input{table/rankedFeatureSupport}
+
+% \subsection{Brief description of Alien features}
+% This thesis provides detailed descriptions for many Python Regular Expression features in Section~\ref{sec:featureDescriptions}.  The features alien to our main explorations are not described in detail, but are present in Table~\ref{featureVariationLanguages}.  Only an example of the syntax and a reference code is provided in this table, but a cursory description of them by reference code is provided below.
+Python\footurl{https://docs.python.org/2/library/re.html}
+Java\footurl{https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html}
+Automata.Z3\footurl{https://github.com/AutomataDotNet/Automata/blob/master/src/Automata.Tests/SampleRegexes.cs}
+PCREvsPython\footurl{http://stackoverflow.com/questions/3070655/does-regex-differ-from-php-to-python}
+.Net\footurl{http://regexhero.net/reference/}
+POSIX.ERE\footurl{http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html},
+\footurl{http://www.regextester.com/eregsyntax.html}
+%#tag_09_04
+Perl\footurl{https://www.cs.tut.fi/~jkorpela/perl/regexp.html}
+Swift\footurl{https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial}
+Javascript\footurl{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions},\footurl{http://www.ecma-international.org/ecma-262/5.1/}
+%#sec-15.10
+- note that javascript is an implementation of the ecma standard, including r.e. support.
+RE2\footurl{https://github.com/google/re2/wiki/Syntax}
+VIM\footurl{http://vimregex.com/}
+
+\input{table/featureVariationAlien}
+
+\begin{description} \itemsep -1pt
+\item [FTR1] does something \todoMid{finish descriptions for posterity}
+\end{description}

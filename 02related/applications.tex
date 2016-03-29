@@ -46,7 +46,7 @@ For most popular programming languages, the ability to use regular expressions t
 \end{description}
 \end{multicols}
 
-Although pure ANSI C does not include a standard regex library or built-in, libraries providing regex support can be made available such as \underline{POSIX}, \underline{PCRE} or \underline{re2c}.  Similarly, pure Visual Basic has no core regex support but can use the \underline{RegExp} object provided by the VBScript library.  In fact, for most general-purpose languages, multiple alternative regex libraries can be found which may offer slightly different syntax or optimizations for speed.  For example, the following libraries are alternatives to the C++ std::regex libary: Boost.Regex, Boost.Xpressive, cppre, DEELX, GRETA, Qt/QRegExp and RE2.  These alternative libraries are developed by hobby users and software giants alike, with RE2~\cite{re2} being a recent and notable alternative library developed by Google.
+Although pure ANSI C does not include a standard regex library or built-in, libraries providing regex support can be made available such as \underline{POSIX}, \underline{PCRE} or \underline{re2c}.  Similarly, pure Visual Basic has no core regex support but can use the \underline{RegExp} object provided by the VBScript library.  In fact, for most general-purpose languages, multiple alternative regex libraries can be found which may offer slightly different syntax or optimizations for speed.  The std::regex library\footurl{http://en.cppreference.com/w/cpp/regex/syntax_option_type} implements engines for ECMAScript Regular Expressions (the default - same is used by JavaScript), AWK Regular Expressions,  POSIX BRE or POSIX ERE.  The following libraries are alternatives to std::regex libary for C++: Boost.Regex, Boost.Xpressive, cppre, DEELX, GRETA, Qt/QRegExp and RE2.  These alternative libraries are developed by hobby users and software giants alike, with RE2~\cite{re2} being a recent and notable alternative library developed by Google.
 
 The vast majority of modern regex libraries implement pattern syntax and feature sets based on PCRE standards with some exclusions or slightly different syntax for the same functionality. The major exception to this rule is SQL, which has it's own version of many features (underscore for characters, etc. \todoLast{SQL feature mini-table?}). A complete analysis of the many subtle variations in syntax and implementation detail is beyond the scope of this thesis and is an opportunity for future work mentioned in the final discussion.
 % ~\ref{sec:finalDiscussion}
@@ -93,7 +93,7 @@ Regular expression understandability has not been studied directly, though prior
 To aid in regex creation and understanding,  tools have been developed to support more robust creation~\cite{Spishak:2012:TSR:2318202.2318207} or to allow visual debugging~\cite{Beck:2014:RVD:2591062.2591111}. Building on the perspective that regexes are difficult to create, other research has focused on removing the human from the creation process by learning regular expressions from  text~\cite{Babbar:2010:CBA:1871840.1871848, Li:2008:REL:1613715.1613719}.
 
 
-
+%http://stackoverflow.com/questions/1253845/what-is-a-good-regular-expression-tester-for-os-x
 
 
 % The following non-exhaustive list of popular IDEs, text editors, database engines and command line tools that all \emph{depend on regex for some core functionality} is provided for a sense of scale.

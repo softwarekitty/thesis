@@ -1,8 +1,13 @@
 \section{Utilizations of the re module}
 \label{sec:utilizations}
 
-\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a regex appears in source code.  We detect utilizations by statically analyzing source code and recording calls to the {\tt re} module in Python.
-Within a source code file, a {utilization} is composed of a function, a pattern, and 0 or more flags.  Figure~\ref{fig:exampleUsage} presents an example of one regex {utilization}, with key components labeled. The function call is {\tt re.compile}, \verb!(0|-?[1-9][0-9]*)$! is the regex string, or pattern, and {\tt re.MULTILINE} is an (optional) flag. When executed, this {utilization}  will compile a regex object in the variable {\tt r1} from the pattern \verb!(0|-?[1-9][0-9]*)$!, with the \verb!$! token matching at the end of each line because of the {\tt re.MULTILINE} flag. Thought of another way, a regex  utilization is one single invocation of the {\tt re} library.\\
+\noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a regex is used in source code.  We detect utilizations by statically analyzing source code and recording calls to the {\tt re} module in Python.
+Within a Python source code file, a {utilization} of the {\tt re} module is composed of a function, a pattern, and 0 or more flags.  Figure~\ref{fig:exampleUsage} presents an example of one {utilization}, with key components labeled. The function call is {\tt re.compile}, \verb!"(0|-?[1-9][0-9]*)$"! is the pattern, and {\tt re.MULTILINE} is an (optional) flag. When executed, this {utilization}  will compile a regex into the variable {\tt r1} from the pattern \verb!"(0|-?[1-9][0-9]*)$"!.  The resulting regex \cverb!(0|-?[1-9][0-9]*)$! is an OR of two regexes: \cverb!(0|-?[1-9][0-9]*)! with the END feature (\cverb!$!) specifying a position at the end of every line (instead of only the end of the last line) because of the {\tt re.MULTILINE} flag.
+
+The regex fragment \cverb!(0|-?[1-9][0-9]*)! matches \verb!"0"!, or an integer not starting with 0 like \verb!"123"! or \verb!"9"! because of the regex fragment \cverb![1-9][0-9]*! where the first character matched must be between 1 and 9 (inclusive), followed by zero or more digits (because of the KLE applied to \cverb![0-9]!).  The regex fragment \cverb!-?! specifies zero or one \verb!`-'! character using the QST feature.  When combined the full regex \cverb!(0|-?[1-9][0-9]*)$! matches positive and negative integers at the end of lines.  For example the multi-line string: \verb!"line 1: xyz 85!\gverb!\n!\verb!line2: -2!\gverb!\n!\verb!last line!\gverb!\n!\verb!"! will match at the end of the first two lines.
+
+Without the {\tt re.MULTILINE} flag, this regex would only match the last
+will match if it finds a zero at the end of a line, or a (possibly negative) integer at the end of a line (i.e., due to QST repetition applied to the \verb!`-'!) with the \verb!$! token matching at the end of each line . Thought of another way, a regex  utilization is one single invocation of the {\tt re} library.\\
 
 \begin{figure}[tb]
 \centering
@@ -13,10 +18,14 @@ Within a source code file, a {utilization} is composed of a function, a pattern,
 \label{fig:exampleUsage}
 \end{figure}
 
-\noindent \textbf{Pattern}: A \emph{pattern} is extracted from a utilization, as shown in Figure~\ref{fig:exampleUsage}. In essence, it is a string, but more formally it is an ordered series of regular expression language feature tokens.  The pattern in Figure~\ref{fig:exampleUsage}  will match if it finds a zero at the end of a line, or a (possibly negative) integer at the end of a line (i.e., due to the {\tt -?} sequence denoting zero or one instance of the {\tt -}).
+\noindent \textbf{Pattern}: A \emph{pattern} is extracted from a utilization, as shown in Figure~\ref{fig:exampleUsage}. As described in Section~\ref{sec:nomenclature}, a pattern is an ordered series of regular expression language feature tokens which can be compiled by an engine into a regex.  A regex compiled from the pattern in Figure~\ref{fig:exampleUsage} .
 
-Note that because the vast majority of regex features are shared across most general programming languages (e.g., Java, C, C\#, or Ruby), a Python {pattern} will (almost always) behave the same when used in other languages, whereas a utilization is not universal in the same way (i.e., it may not compile in other languages, even with small modifications to function and flag names).
-As an example, the {\tt re.MULTILINE} flag, or similar, is present in Python, Java, and C\#, but  the Python {\tt re.DOTALL} flag is not present in C\# though it has an equivalent flag in Java.
+Note that because the vast majority of regular expression features are shared across most general programming languages (e.g., Java, C, C\#, or Ruby), a Python pattern will (almost always) behave the same when used in other languages as mentioned in Section~\ref{usuallyOk}, whereas a utilization is not universal in the same way (i.e., it is very unlikely to compile in other languages because of variations in programming language syntax and the names of functions).
+
+
+
+
+
 
 In this work, we primarily focus on patterns since they are cross-cutting across languages and are the primary way of specifying the matching behavior. Next, we describe the research questions, data set collection and analysis.
 

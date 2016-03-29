@@ -52,7 +52,7 @@ In addition to providing logical grouping, the text matched by the contents of t
 
 \subsection{Options}
 \begin{description} \itemsep -1pt
-\item[OPT:] The \emph{options} feature allows the user to modify the engine's matching behavior within the regex itself, instead of using flag arguments passed to the regex engine.  For example the regex \cverb!(?i)[a-z]! uses the option \cverb!(?i)! which switches on the ignore-case flag, so that this regex will match \verb!"lower"! and \verb!"UPPER"!.  Other options include \cverb!(?a)!, \cverb!(?s)!, \cverb!(?m)!, \cverb!(?l)! \cverb!(?x)! and \cverb!(?u)!.  In Python Regular Expressions, options can appear anywhere within the regex and will have the same effect.
+\item[OPT:] The \emph{options} feature allows the user to modify the engine's matching behavior within the regex itself, instead of using flag arguments passed to the regex engine.  For example the regex \cverb!(?i)[a-z]! uses the option \cverb!(?i)! which switches on the ignore-case flag, so that this regex will match \verb!"lower"! and \verb!"UPPER"!.  Other options include \cverb!(?s)! for single-line mode making ANY match all characters, \cverb!(?m)! for multiline mode, making STR and END match the beginning and ending of every line, \cverb!(?l)! may change the meaning of default character classes if a locale has been set, \cverb!(?x)! ignores whitespace between \emph{tokens} and \cverb!(?u)!.  In Python Regular Expressions, options can appear anywhere within the regex and will have the same effect.
 \end{description}
 
 \subsection{Operators}
@@ -93,6 +93,8 @@ For example, consider the regex \cverb!A|BC+!.  The ADD repetition modifier take
 \item[END:] The \emph{end anchor} uses the special character \verb!$! to indicate either the position between the last newline and the character before it, or between the end of the string and the character before it if the string does not end in a newline.  For example \cverb!R$! will match \verb!"abcR"! and \verb!"xyz!\gverb!\n!\verb!R!\gverb!\n!\verb!"! but not \verb!"R!\gverb!\n!\verb!xyz!\gverb!\n!\verb!"!.  The `MULTILINE' flag or `m' option also affects the END anchor so that if activated, the string \verb!"R!\gverb!\n!\verb!xyz!\gverb!\n!\verb!"! \emph{will} match because there exists a line where \verb!`R'! is at the end of a line.
 
 \item[ENDZ:] The \emph{absolute end anchor} uses the special sequence \verb!\Z! to indicate the absolute end of the.  For example \cverb!R\Z! will match \verb!"abcR"! and  \verb!"xyz!\gverb!\n!\verb!R"! but not \verb!"xyzR!\gverb!\n!\verb!"! or \verb!"Rs"!.
+
+The syntax of this feature may cause much confusion when porting to another language like Java, Perl, JavaScript, etc. where the lowercase z: \cverb!\z! has this meaning, but the uppercase Z: \cverb!\Z! \emph{would} match \verb!"R!\gverb!\n!\verb!"! - it matches the end of string or before the last newline.
 \end{description}
 
 \subsubsection{Positions: Boundaries}

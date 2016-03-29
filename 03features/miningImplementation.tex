@@ -1,4 +1,105 @@
 \section{Github mining implementation}
 \label{sec:miningImplementation}
 
+The Github mining tool, named {\tt tour\_de\_source} was written in an object-oriented style by a programmer with relatively little experience in Python.
+
+\subsection{Objects used in design}
+The mining process is conducted using the following four objects:
+\begin{description} \itemsep -1pt
+\item[Scanner] provides the {\tt scanDirectory()} function, which scans a directory, recording utilizations.  This object also tracks the total number of projects scanned and the frequency of the number of files scanned per project.
+\item[Rewinder] handle for a particular repository. The {\tt getUniqueSourceID()} and {\tt getSourceJSON()} functions provide metadata about the repository, and the {\tt rewind()} function resets a repository to an earlier state in its history.
+\item[Sourcer] handle for a source of projects.  The {\tt next()} function gets a rewinder for the next Python project, and the {\tt isExhausted()} function returns true if there are no more projects.  The sourcer also tracks the total number of projects checked for Python source code.
+\item[Tourist] provides the {\tt tour()} function which controls the mining process.
+\end{description}
+
+\subsection{Mining Algorithm}
+The algorithm used for mining is quite straightforward, but the tour()~\ref{alg:tour} and scanDirectory()~\ref{alg:scanDirectory} functions are described here for reference (with logging, profiling and exception handling functionality removed, and some changes for readability).
+
+\begin{algorithm}
+  \caption{The tour() function}\label{alg:tour}
+  \begin{algorithmic}[1]
+\While {not sourcer.isExhausted()} \label{line:isExhausted}
+    \State rewinder = sourcer.next() \label{line:next}
+    \State filePathSet = []
+    \State uniqueSourceID = rewinder.getUniqueSourceID()
+    \State sourceJSON = rewinder.getSourceJSON()
+    \While (rewinder.rewind()) \label{line:rewind}
+        \State scanner.scanDirectory(uniqueSourceID, sourceJSON, filePathSet)\label{line:scanDirectory}
+    \EndWhile
+    \State nFiles = len(filePathSet)
+    \State scanner.incrementNFilesFrequencies(nFiles)\label{line:fileFrequencies}
+    \State scanner.incrementNProjectsScanned()\label{line:projectScannedCount}
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Iterating through projects} The {\tt tour()} function~\ref{alg:tour} simply iterates through available sources, using the {\tt isExhausted()} function on Line~\ref{line:isExhausted} to check that another source is available, and then using the {\tt next()} function on Line~\ref{line:next} to get the a rewinder object that handles the current repository.  Internally, the {\tt next()} function pages through all repositories on Github using the {\tt https://api.github.com/repositories?since=<lastRepoID>} endpoint to get a page describing 100 repositories.  Each project description contains a url endpoint containing a description of the languages that the project contains.  This url is visited and if it indicates that the project contains Python, then the a rewinder is created for that project.  Note that the language url is automatically maintained by Github - developers do not have to go through any steps to indicate that a project contains Python, aside from committing a file written in Python.
+
+\paragraph{Creating a rewinder}  The name, clone url and other metadata for a repository containing Python is collected using the Github API, and then cloned into a new directory named using the repoID provided by Github to ensure uniqueness.  A list of commit logs is parsed, gathering the date and SHA of all commits.  If a project has 20 or fewer commits, all of them are added to a stack and the rewinder is complete.  Otherwise the most recent commit is added to a stack, and unit spacing is computed by dividing the number of remaining commits by 19, and 19 more evenly-spaced commits are added to the stack.
+
+\paragraph{Rewinding through commit history} On Line~\ref{line:rewind} the rewinder attempts to rewind the repository through a history of commits.  Internally the rewinder uses the {\tt git} Python module to perform {\tt git reset --hard <SHA>}, and will return true unless it has reached the end of its list of 20 or fewer commit SHAs.
+
+\paragraph{Rationale for using 20 commits} The idea of using 20 commit points is that the patterns within utilizations may change over time, but with some experimentation this was determined to not happen very often.  The number of commits to use was selected by trial and error and attempts to balance the time and memory used to build the AST with the more expensive operation of finding and cloning an entire project for the first time.
+
+\begin{algorithm}
+  \caption{The scanDirectory() function}\label{alg:scanDirectory}
+  \begin{algorithmic}[1]
+\State uniqueSourceID, sourceJSON, filePathSet passed as arguments
+\State shaSet = []\label{line:shaSet}
+\State citationSet = []\label{line:citationSet}
+\State pythonAbsPaths = get absolute paths of files in repo directory ending in `.py'\label{line:getAbsPaths}
+\For fileAbsPath in pythonAbsPaths\label{line:forFile}
+    \State fileHash = util.getHash(fileAbsPath)\label{line:getHash}
+    \If{fileHash not in shaSet}
+        \State shaSet.append(fileHash)
+        \State fileRelPath = get relative file path from fileAbsPath
+        \If{fileRelPath not in filePathSet}
+            \State filePathSet.append(fileRelPath)\label{line:addFilePathSet}
+        \EndIf
+        \State root = astroid.ast\_from\_file(relFilePath)\label{line:buildAST}
+        \State metadata = struct(uniqueSourceID, sourceJSON, fileHash, fileRelPath)
+        \State extractRegexR(root, metadata, citationSet)\label{line:extractRegex}
+    \EndIf
+\EndFor
+\end{algorithmic}
+\end{algorithm}
+
+
+\paragraph{Scanning the project at one point in history} On Line~\ref{line:scanDirectory} the scanner is called with metadata about the current project commit and an empty list for tracking file paths.  This scanning function is described in Algorithm~\ref{alg:scanDirectory}.  In addition to the metadata and file path list passed to scanner, an empty list of sha strings and another empty list of citations are created on Line~\ref{line:shaSet} and Line~\ref{line:citationSet}, respectively.  These lists are used to avoid re-scanning duplicate files as well as tracking duplicate utilizations and total number of files scanned.  The lists are sets in practice, because no element is added without first checking if the list contains it.
+
+On Line~\ref{line:getAbsPaths}, a list of absolute paths of Python files in the repository is created.  Iteration over this list begins on Line~\ref{line:forFile}.  For each of these files a SHA\_224 of the file is computed (on Line~\ref{line:getHash}) using Python's {\tt hashlib} module like {\tt hashlib.sha224(fileContents)} (and converted to a base 36 string for readability).  It is unlikely that two files with different content will map to the same SHA\_224, and impossible for the same content to map to two different SHA\_224 strings.  If the fileHash is not already in the shaSet, then it is assumed this exact file content has not been scanned yet.  Unique relative file paths are added to the filePathSet for tracking on Line~\ref{line:addFilePathSet}.  The {\tt astroid} module is used on Line~\ref{line:addbuildAST} to build an AST of the source code contained in the current Python file, and the root of the tree is stored in a variable.  This root, the metadata about the current project commit, and the citationSet are passed to the {\tt extractRegexR} function on Line~\ref{line:extractRegex}.
+
+\paragraph{Extracting utilizations from an AST}  The extractRegexR function is tightly bound to the internal details of the {\tt astroid} module, which is fairly complex and verbose, so no Algorithm is shown.  Little documentation exists on how to use {\tt astroid} to extract utilizations, so the technique used was developed by trial and error on a test project known to contain every type of utilization of interest.  The details of each utilization was internally treated as a 4-tuple called a `citation', containing:
+\begin{enumerate} \itemsep -1pt
+\item The relative file path.
+\item The name of the function of the {\tt re} module called.
+\item The pattern in the utilization.
+\item The flags as an integer formed using a bitmask.
+\end{enumerate}
+If the citationSet already contained a duplicate 4-tuple, the new citation was not added to the citationSet.  Otherwise the citation represented a unique utilization, and so was recorded in the database along with relevant metadata.  Multiple runs on multiple machines were completed to collect the utilizations used to build the corpus.  Each run produced its own database file, and so after enough data had been collected, the data from all runs was merged into a single database.
+
+\subsection{Database schema}
+Early implementations of tour\_de\_source stored project metadata in a separate table.  This led to awkward and verbose queries, and so the final version used only two tables: {\tt RegexCitationMerged} and {\tt FilesPerProjectMerged}.  The {\tt FilesPerProjectMerged} table has two columns of integers: {\tt nFiles} and {\tt frequency} - these were used to generate statistics about how many Python files the scanned projects contained.  The columns of the {\tt RegexCitationMerged} table are described below:
+
+\begin{description} \itemsep -1pt
+\item[uniqueSourceID] An ID generated by tour\_de\_source (sequentially) for each source.
+\item[repoID] The ID of the repository on Github.
+\item[sourceJSON]
+\item[fileHash] The SHA\_224 hash of the file containing the utilization.
+\item[filePath] The path of the file containing the utilization (relative to the repository root).
+\item[pattern] The string compiled into a regex in the utilization.
+\item[flags] An integer representing the 6 flags as described in \todoMid{elsewhere?}
+\item[regexFunction] The name of the function called in the utilization.
+\end{description}
+
+\subsection{Challenges in implementation}
+
+\paragraph{Python garbage collector ignores integers}  It was a surprise to find out that the memory used by tour\_de\_source only grew as mining went on.  Every time that astroid built a new AST, memory consumed would climb by many megabytes, and for large projects even an entire gigabyte.  The machines running tour\_de\_source only had 16 gigabytes of memory, and so they could only mine utilizations from a few hundred projects before failing.  Every effort was made to profile the system and find a memory leak, without positive results.  The only viable explanation found is that an AST can have a very large number of nodes, each identified by a unique integer, and none of the memory used to store these integers is reclaimed after the maps go out of scope.
+
+\paragraph{Rationale behind building the AST} The tool used to mine utilizations from Python project was written in Python to take advantage of the astroid \todoMid{reference } library, which is a Python AST parser that is actively being maintained in order to support Pylint \todoMid{reference }.  The decision to use an AST parser instead of, say, trying to extract utilizations using a regex, was made due to the difficulty of writing a regex that cannot be fooled into capturing the wrong content.  A simple example is some source code like {\tt re.compile("\")")}, which a naive regex like \cverb!re.compile\("([^)])"\)! would capture the string \verb!"\"! instead of the actual content \verb!"\")"!.
+
+\paragraph{Erasing cloned files}  Every effort was made to erase a repository once scanning was complete, but for whatever reason, certain files could not be erased automatically.  Some files seemed to have read-only flags set, and occasionally the file system lock for that file had been obtained by another process (probably git) but never released.  These errors caused unexpectedly serious problems - when a repository failed to erase completely, a new repository was not cloned, meaning that no `.git' folder was present in the target directory.  As a result, the `.git' folder of the tour\_de\_source project itself was referenced by calls to git, causing the source code of the mining tool to be rewound by the mining tool!  The solution to this problem was to allow the files to remain and erase them using the command line later.
+
+\paragraph{Github API rate limit and network latency}
+The mining program was able to check about one repository ID per second, which was slowed by network latencies, or, once 5000 API calls had been made in one hour, was throttled by Github.  The apparent solution was to create multiple accounts, each providing 5000 API calls per hour.  After contacting Github to request help with this issue, they indicated that they do not want users to create multiple accounts for mining projects because it can put a strain on their servers, slowing the service for regular users.  An alternative strategy was proposed by Github of using \todoMid{a database} to find Python projects without using the API.  However, at this point in the project, enough data had been acquired to begin analysis and a determination was made to stop development of this mining program and focus on analysis.  Future mining efforts are encouraged to obtain repository information from this database instead of crawling through all projects using the Github API, like tour\_de\_source did.
 
