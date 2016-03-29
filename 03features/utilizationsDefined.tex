@@ -2,12 +2,10 @@
 \label{sec:utilizations}
 
 \noindent \textbf{Utilization}: A \emph{utilization} occurs whenever a regex is used in source code.  We detect utilizations by statically analyzing source code and recording calls to the {\tt re} module in Python.
-Within a Python source code file, a {utilization} of the {\tt re} module is composed of a function, a pattern, and 0 or more flags.  Figure~\ref{fig:exampleUsage} presents an example of one {utilization}, with key components labeled. The function call is {\tt re.compile}, \verb!"(0|-?[1-9][0-9]*)$"! is the pattern, and {\tt re.MULTILINE} is an (optional) flag. When executed, this {utilization}  will compile a regex into the variable {\tt r1} from the pattern \verb!"(0|-?[1-9][0-9]*)$"!.  The resulting regex \cverb!(0|-?[1-9][0-9]*)$! is an OR of two regexes: \cverb!(0|-?[1-9][0-9]*)! with the END feature (\cverb!$!) specifying a position at the end of every line (instead of only the end of the last line) because of the {\tt re.MULTILINE} flag.
 
-The regex fragment \cverb!(0|-?[1-9][0-9]*)! matches \verb!"0"!, or an integer not starting with 0 like \verb!"123"! or \verb!"9"! because of the regex fragment \cverb![1-9][0-9]*! where the first character matched must be between 1 and 9 (inclusive), followed by zero or more digits (because of the KLE applied to \cverb![0-9]!).  The regex fragment \cverb!-?! specifies zero or one \verb!`-'! character using the QST feature.  When combined the full regex \cverb!(0|-?[1-9][0-9]*)$! matches positive and negative integers at the end of lines.  For example the multi-line string: \verb!"line 1: xyz 85!\gverb!\n!\verb!line2: -2!\gverb!\n!\verb!last line!\gverb!\n!\verb!"! will match at the end of the first two lines.
-
-Without the {\tt re.MULTILINE} flag, this regex would only match the last
-will match if it finds a zero at the end of a line, or a (possibly negative) integer at the end of a line (i.e., due to QST repetition applied to the \verb!`-'!) with the \verb!$! token matching at the end of each line . Thought of another way, a regex  utilization is one single invocation of the {\tt re} library.\\
+\subsection{Utilization defined}
+\label{sec:utilizationDefined}
+Within a Python source code file, a {utilization} of the {\tt re} module is composed of a function, a pattern, and 0 or more flags.  Figure~\ref{fig:exampleUsage} presents an example of one {utilization}, with key components labeled. The function call is {\tt re.compile}, \verb!"(0|-?[1-9][0-9]*)$"! is the pattern, and {\tt re.MULTILINE} is an (optional) flag. When executed, this {utilization}  will compile a regex into the variable {\tt r1} from the pattern \verb!"(0|-?[1-9][0-9]*)$"!.  The resulting regex \cverb!(0|-?[1-9][0-9]*)$! is composed of two regex fragments: \cverb!0! and \cverb!-?[1-9][0-9]*! operated on by the OR \verb!|!, and contained in a CG \verb!(! \verb!)! so that the following the END feature (\cverb!$!) applies regardless of which fragment is matched. Because of the {\tt re.MULTILINE} flag used, the END specifies a position at the end of every line (instead of only the end of the last line).
 
 \begin{figure}[tb]
 \centering
@@ -18,68 +16,11 @@ will match if it finds a zero at the end of a line, or a (possibly negative) int
 \label{fig:exampleUsage}
 \end{figure}
 
+The regex fragment \cverb!0! matches \verb!"0"!, and the fragment on the right of the OR, \cverb!-?[1-9][0-9]*!, matches all positive or negative integers (not starting with 0) like \verb!"123"!, \verb!"9"!, \verb!"-10000"! or \verb!"-8"!. When combined the full regex \cverb!(0|-?[1-9][0-9]*)$! matches all positive and negative integers at the end of lines.  For example the multi-line string: \verb!"line 1: xyz 85!\gverb!\n!\verb!line2: -2!\gverb!\n!\verb!last line!\gverb!\n!\verb!"! will match at the end of the first two lines.  Expressing zero or one dash characters using the regex fragment \cverb!-?! is useful so that the sign of the integer will be part of the capture, (e.g., from \verb!"A: -9"!\gverb!\n!, \verb!"-9"! is captured, not just \verb!"9"!).
+
 \noindent \textbf{Pattern}: A \emph{pattern} is extracted from a utilization, as shown in Figure~\ref{fig:exampleUsage}. As described in Section~\ref{sec:nomenclature}, a pattern is an ordered series of regular expression language feature tokens which can be compiled by an engine into a regex.  A regex compiled from the pattern in Figure~\ref{fig:exampleUsage} .
 
 Note that because the vast majority of regular expression features are shared across most general programming languages (e.g., Java, C, C\#, or Ruby), a Python pattern will (almost always) behave the same when used in other languages as mentioned in Section~\ref{usuallyOk}, whereas a utilization is not universal in the same way (i.e., it is very unlikely to compile in other languages because of variations in programming language syntax and the names of functions).
 
-
-
-
-
-
-In this work, we primarily focus on patterns since they are cross-cutting across languages and are the primary way of specifying the matching behavior. Next, we describe the research questions, data set collection and analysis.
-
-We consider regex language features to be tokens that specify the matching behavior of a regex pattern, for example,  the {\tt +} in {\tt ab+}.  All studied features are listed and described in Table~\ref{table:featureStats} with examples. We then map the feature coverage for four common regex support tools, brics, hampi, RE2 and Rex, and explore survey responses regarding feature usage for some of the less supported features.\\
-
-Regular expressions (regexes) are an abstraction of keyword search that enables the identification of text using a pattern instead of an exact keyword.  For example, the pattern \verb!`ab*c'! will match strings beginning with a, followed by zero or more b's, and ending in c, such as: `ac'!, `abc', `abbc', etc.
-
-Regexes are commonly used for parsing text using a general purpose language like Python, validating content entered into web forms using JavaScript, and searching text files for a particular pattern using tools like grep, vim or Eclipse.
-
-Although regexes are powerful and versatile, they can be hard to understand,  maintain, and debug, resulting in tens of thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}.
-
-Regular expressions are used frequently by developers for many purposes, such as parsing files, validating user input, or querying a database.
-Regexes are also employed in MySQL injection prevention~\cite{Yeole:2011:ADT:1980022.1980229} and network intrusion detection~\cite{network}.
-However, recent research has suggested that regular expressions (regexes) are hard to understand, hard to compose, and error prone~\cite{Spishak:2012:TSR:2318202.2318207}.
-Given the difficulties with working with regular expressions and how often they appear in software projects and processes, it seems fitting that efforts should be made to ease the burden on developers.
-
-Our goal was to collect regexes from a variety of projects to represent the breadth of how developers use the language features.
-Using the GitHub API, we scraped \dbfetch{nProjScanned} projects containing Python code.
-We did so  by dividing a range of about 8 million repo IDs into 32 sections of equal size and scanning  for Python projects from the beginning of those segments until we ran out of memory. At that point, we felt we had enough data to do an analysis without further perfecting our mining techniques. We built the AST of each Python file in each project to find utilizations of the {\tt re} module functions. In most projects, almost all regex utilizations are present in the most recent version of a project, but to be more thorough, we also scanned up to 19 earlier versions. The number 20 was chosen to try and maximize returns on computing resources invested after observing the scanning process in many hours of trial scans.
-All regex utilizations were obtained, sans duplicates. Within a project, a duplicate utilization was marked when two versions of the same file have the same function, pattern and flags.  In the end, we observed and recorded \dbfetch{nUsages} non-duplicate regex utilizations in \dbfetch{nProjScanned} projects.
-
-In collecting the set of distinct patterns for analysis,  we ignore the \dbfetch{percentBadFlags}\%  of utilizations using flags, which can alter regex behavior.  An additional \dbfetch{percentInvalidPattern}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable).
-The remaining \dbfetch{percentCleanUsages}\% (\dbfetch{nCleanUsages}) of the utilizations were collapsed into \dbfetch{nDistinctPatterns} distinct pattern strings.  Each of the pattern strings was pre-processed by removing Python quotes (\verb!`\\W!' becomes \verb!\\W!), unescaping escaped characters (\verb!\\W! becomes \verb!\W!) and parsing the resulting  string using an ANTLR-based, open source PCRE parser\footurl{https://github.com/bkiers/pcre-parser}.
-This parser was unable to support \dbfetch{percentUnicode}\% (\dbfetch{N_UNICODE}) of the patterns due to unsupported unicode characters.  Another \dbfetch{percentAlien}\% (\dbfetch{N_ALIEN}) of the patterns used regex features that we  chose to exclude because they appeared very rarely (e.g., reference conditions).  An additional 0.1\% (16) of the patterns were excluded because they were empty or otherwise malformed so as to cause a parsing error.
-
-The \dbfetch{nCorpus} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We  refer to this set of weighted, distinct pattern strings as the \emph{corpus}.
-
-% \subsection{Experiment design}
-Third, we investigate what features are supported by four large projects that aim to support regex usage (brics~\cite{brics}, hampi~\cite{hampi}, Rex~\cite{rex}, and RE2~\cite{re2}), and which features are not supported, but are frequently used by developers.
-
-% \subsection{Implementation details}
-
-We explore regex utilizations and flags used in the scraped Python projects.
-Out of the \dbfetch{nProjScanned}\ projects scanned, \dbfetch{percentProjectsUsingRegex}\% (\dbfetch{nProjectsUsingRegex}) contained at least one regex utilization.  To illustrate how saturated projects are with regexes, we measure utilizations per project, files scanned per project, files contained utilizations, and  utilizations  per file, as shown in Table~\ref{table:saturation}.
-
-Of projects containing at least one utilization, the average utilizations per project was 32 and the maximum  was 1,427.  The project with the most utilizations is a C\# project\footurl{https://github.com/Ouroboros/Arianrhod} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.
-From Table~\ref{table:saturation}, we also see that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.
-
-\begin{figure}[tb]
-\centering
-\includegraphics[width=\columnwidth]{nontex/illustrations/partFunctions.eps}
-\vspace{-12pt}
-\caption{How often are  {\tt re} functions used?}
-\vspace{-6pt}
-\label{fig:partFunctions}
-\end{figure}
-
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.9\columnwidth]{nontex/illustrations/partFlags.eps}
-\vspace{-6pt}
-\caption{Which behavioral flags are used?}
-\vspace{-6pt}
-\label{fig:partFlags}
-\end{figure}
-
-
+\subsection{Omission of calls to compiled objects}
+Every utilization recorded using the technique described in Section~\ref{sec:miningImplemenation} is an invocation directly using the {\tt re} library, like {\tt re.compile(...)} or {\tt re.search(...)}.  However, this technique is not able to record calls on compiled objects.  For example the regex described in Section~\ref{sec:utilizationDefined} is stored in the variable {\tt r1}.  The regex in this variable can be used to call {\tt re} module functions but will not use the re library directly.  For example the code {\tt r1.search("-45")} would not be recorded by the technique used in this work.  However, since our primary focus is on patterns and the features of their compiled regexes, and these patterns must be compiled before becoming regexes, this omission only impacts the interpretation of Figure~\ref{fig:partFunctions}, which describes which function calls were observed.  Notice that \emph{every compilation of a pattern to a regex} is captured by the technique used in this study.

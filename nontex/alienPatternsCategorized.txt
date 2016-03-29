@@ -1,0 +1,45 @@
+IFC (6)
+'([^()]+?)\\s*(\\()?(\\d{4})(?(2)\\))$'
+'^((?:https?://)?(?:youtu\\.be/|(?:\\w+\\.)?youtube(?:-nocookie)?\\.com/)(?:(?:(?:v|embed|e)/)|(?:(?:watch(?:_popup)?(?:\\.php)?)?(?:\\?|#!?)(?:.+&)?v=)))?([0-9A-Za-z_-]+)(?(1).+)?$'
+'^(\\()?([^()]+)(?(1)\\))$'
+u'(?<=[\\w)\\]"\\\']|([ ]))(===?|!==?|[<>]=?)(?=[\\w({\\["\\\']|(?(1)\\b\\b|[ ]))'
+u'(?<=[\\w)\\]"\\\']|([ ]))(=|[-+*/%^&|]=|<<=|>>>?=)(?=[\\w({\\["\\\']|(?(1)\\b\\b|[ ]))'
+u'(?<=[\\w)\\]"\\\']|([ ]))([-+*/%^]|&&?|\\|\\|?|<<|>>>?)(?=[\\w({\\["\\\']|(?(1)\\b\\b|[ ]))'
+
+NCND (5)
+'(?P<g1>a)(?P<g2>b)?((?(g2)c|d))'
+'(?P<quote>)(?(quote))'
+'\\A(?P<head>.*?)(?P<escape>\\\\*)(?P<symbol>\\$(?P<brace_open>\\{)?(?P<name>[A-z_]\\w*)(?(brace_open)\\}))(?P<tail>.*)\\Z'
+'\\A(?P<sign>__)?(?P<is_time>T)?(?P<amount>\\d+)(?P<unit>(?(is_time)[SMH]|[DW]))?\\Z'
+u'\\$(?P<_bracket_>\\{)?((?(_bracket_)(?:\\\\\\}|[^\\}])*|(?:\\$|[A-Z]+(?:_[A-Z]+)*)))(?(_bracket_)\\})'
+
+
+IFEC (3)
+'^(?:(a)|c)((?(1)b|d))$'
+'^(?:(a)|c)((?(1)|d))$'
+'(?:(\\[)|\\.|^)((?(1)[^]]*|[^.[]*))(?(1)(?:\\]|$)([^.[]+)?)'
+
+PXCC 1
+'([[:alpha:]]+://)?(([[:alnum:]]+)(:[^:@]+)?@)?([^:]+)(:[[:digit:]]+)?(/.*)?'
+
+ECOM 2
+'(?:http://)?(?:\\w+\\.)?depositfiles.com/(?:../(?#locale))?files/(.+)'
+'\n                     (?:\\W|^)    (?# Break or beginning)\n                     (           (?# Begin number capture)\n                      [-+]?      (?# Optional sign)\n                      [\\d.]+     (?# Optional sign. Digit and dot)\n                      [ed][-+]?  (?# Exponent, [edED] with ignored case)\n                      \\d+        (?# Exponent number)\n                     )           (?# End number capture)\n                     (?:\\W|$)    (?# Break or end)\n                                 '
+
+LHX 2
+'[\\u002E\\u3002\\uFF0E\\uFF61]'
+'^([\\s|\\u00a0])?[\\d|#|\\-|\\*|\\u2022]+\\.?\\s*'
+
+include with count of errors - some parsing confusion happened here(6)
+'\\$\\Id[^$]*\\$'
+'\\citation\\{([^\\}]+)\\}'
+'\\here.(\\w*)'
+'\\u'
+'--.*[\\n\\Z]'
+'[ \n]*[[]'
+
+
+
+
+
+

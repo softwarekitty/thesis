@@ -80,10 +80,10 @@ public class FeatureStatsTable {
 		StringBuilder sb = new StringBuilder();
 		String between = " & ";
 		sb.append("\\begin{table*}\n\\begin{center}\n\\begin{footnotesize}\n"
-			+ "\\caption{How Frequently do Features Appear in Patterns, Files and Projects?}\n"
+			+ "\\caption{Frequency of feature appearance in Projects, Files and Patterns, with number of tokens observed and the maximum number of tokens observed in a single pattern.}\n"
 			+ "\\label{table:featureStatsOnly}\n"
 			+ "\\begin{tabular}\n{lllcccc  cc}\n");
-		sb.append("rank & code & example & \\% patterns & nPatterns & nFiles & nProjects & nTokens & maxTokens. \\\\ \n\\toprule[0.16em]\n");
+		sb.append("rank & code & example & \\% projects & nProjects & nFiles & nPatterns & nTokens & maxTokens. \\\\ \n\\toprule[0.16em]\n");
 		TreeSet<FeatureDetail> sortedFeatures = new TreeSet<FeatureDetail>();
 		for (int i = 0; i < nFeatures; i++) {
 			if (i == FeatureDictionary.I_META_LITERAL || presentCounter[i] == 0) {
@@ -128,15 +128,16 @@ public class FeatureStatsTable {
 			sb.append(between);
 			sb.append(verbatimBlock);
 			sb.append(between);
-			sb.append(percentPresent);
-			sb.append(between);
-			sb.append(nPresent);
+			sb.append(percentProjects);
+			sb.append(between);			
+			sb.append(nProjects);
 			sb.append(between);
 			sb.append(nFiles);
 			sb.append(between);
-			sb.append(nProjects);
+//			sb.append(percentPresent);
+//			sb.append(between);
+			sb.append(nPresent);
 			sb.append(between);
-
 			sb.append(nTokens);
 			sb.append(between);
 			// sb.append(percentTokens);

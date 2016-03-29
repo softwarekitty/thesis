@@ -38,7 +38,7 @@ public class MakeTables {
 		makeRankedFeatureTable();
 		makeAlienFeatureTable();
 		TreeSet<RegexProjectSet> corpus = CorpusUtil.reloadCorpus();
-		File featureStats = new File(tablePath,"featureStats2.tex");
+		File featureStats = new File(tablePath,"featureStatsOnly.tex");
 		String homePath = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/";
 		String connectionString = "jdbc:sqlite:" + homePath +
 			"tools/merged/merged_report.db";
