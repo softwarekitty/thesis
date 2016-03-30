@@ -10,7 +10,7 @@ Every time a new repository is created on Github, a new unique identifier (stric
 
 \input{table/saturation}
 
-\subsection{Saturation}
+\subsection{Saturation of artifacts with regexes}
 Out of the \dbfetch{nProjScanned}\ projects scanned, \dbfetch{percentProjectsUsingRegex}\% (\dbfetch{nProjectsUsingRegex}) contained at least one utilization.  Within a project, a duplicate utilization was marked when two versions of the same file have the same function, pattern and flags.  In total, \dbfetch{nUsages} non-duplicate utilizations were observed.  To illustrate how saturated projects are with regexes, measurements are made for the number of utilizations per project, number of files scanned per project, number of files containing utilizations, and number of utilizations  per file, as shown in Table~\ref{table:saturation}.
 
 Of projects containing at least one utilization, the average utilizations per project was 32 and the maximum  was 1,427.  The project with the most utilizations is a C\# project\footurl{https://github.com/Ouroboros/Arianrhod} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.

@@ -1,73 +1,91 @@
 \section{Feature Support}
 
-\paragraph{High-level focus} Different regex analysis tools and engines support different features, and the variation among the supported feature set is not easy to define.  Often the same feature is essentially supported, but nuances exist so that the exact behavior of the feature still varies enough to have an effect on code that relies on regexes using that feature.
+One issue that has persisted as a major pain point in the study of regular expressions is the lack of a concise summary comparing what features are supported in different regular expression language variants.  This work provides such a summary in this section, and goes on to investigate what features are supported in reasoning tools for regular expressions.  In the tables presented in this section the filled circle (\yes) means that a feature is supported, and the empty circle (\no) means that a feature is not supported.
+% , and in common text editors and IDEs.
 
-As an example, the {\tt re.MULTILINE} flag, or similar, is present in Python, Java, and C\#, but  the Python {\tt re.DOTALL} flag is not present in C\# though Java has an equivalent flag.
+\subsection{Caveats to consider when comparing feature sets}
+The variation among the supported feature sets is not easy to define.  Often the same feature is essentially supported, but nuances exist so that the exact behavior of the feature still varies enough to have an effect on code that relies on regexes using that feature.  One example of this is the OPT feature (e.g., \cverb!(?i)cAsE!), for which different engines have different sets of options.  Python's set of 7 options is small compared to Tcl which has 15 or so.  In Table~\ref{table:rankedFeatureSupport} if the following 3 core options are supported: \cverb!(?ism)!, then the variant will be shown as having that feature.  However in all other cases, to the best knowledge of the author, a strict view is taken when considering if two variants support the same feature - it should have the exact same syntax and behavior in order for the feature to be considered the same feature in two variants.  Documentation of engines varies in detail and quality, so that often the particular behavioral details and full feature set is only known to developers of the engine.  In this attempt to document some of the variations in feature support, no attempt is made to address these minor nuances and tricky details, but instead the focus is on documenting the presence or absence of features at a high level.  Most of the data presented here was determined by directly attempting to use a feature and noticing if either the engine threw an exception, or the expected effect was noticeably missing.  This effort required hundreds of small experiments that will not be documented in detail at this time.  A cursory treatment of where the information came from is provided in Section~\ref{sec:languagesChosen}.  These tables should not be relied upon in life-or-death situations, as some error is certainly possible.  In such applications, a user may want to verify engine behavior using tests, consulting the documentation and source code as needed.
 
-Documentation of engines varies in detail and quality, so that often the particular behavioral details and full feature set is only known to developers of the engine.  In this attempt to document some of the variations in feature support, no attempt is made to address these minor nuances and tricky details, but instead the focus is on documenting the presence or absence of features at a high level.
+\subsection{Choosing languages to compare feature support}
+\label{sec:languagesChosen}
+Instead of using language popularity alone to determine what languages to include, these languages were selected to optimize for the intersection of variety of regular expression languages covered, and ease of testing feature inclusion.  For example, Java and RE2 provide excellent and thorough documentation of their feature sets, and provide two entirely different variants.  Although C and C++ are very popular languages, their regular expression libraries use external standards like ECMA (used by JavaScript) and POSIX ERE, and do not provide a distinct language of their own.  For Python, Perl, Ruby, JavaScript and Java, testing a for a feature can be quickly accomplished in a browser or a terminal.  For RE2, POSIX ERE and .Net no tests were performed, but documentation was good enough, and the language variants seem significant enough to try and include them.  Two notably absent regular expression languages are the NSExpressions variant used by Apple in the Swift and Objective-C languages (no acceptably detailed documentation was found), and the well documented but wildly exotic syntax of Vim Regular Expressions which are very interesting but would unnecessarily inflate the size of the tables. So for 15 (75\%) of the top 20 languages listed \todoNow{elsewhere}, (i.e. not MATLAB, Swift, Objective-C, SQL or Assembly Language), the tables presented here should provide useful information.
 
-\todoMid{moved the analysis of features here, clean and prune later}
-The next four columns, (i.e., \emph{brics}, \emph{hampi}, \emph{Rex}, and \emph{RE2}), map to the four major research projects chosen for our investigation.  We indicate that a project supports a feature with the `\yes' symbol, and indicate that a project does not support the feature with the `\no' symbol.
 
-\subsubsection{Feature Support in Regex Tools}
-While there are many regex tools available, in this work, we focus on the feature support for  four tools, brics, hampi, Rex and RE2, which offer diversity across developers (i.e., Microsoft, Google, open source, and academia) and applications. Further, as we wanted to perform a feature analysis, these four tools and their features are well-documented, allowing for easy comparison.
-
-To create the tool mappings, we consulted documentation for each tool. For brics, we collected the set of supported features using the formal grammar\footurl{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}.  For hampi, we manually inspected the set of regexes included in the {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footurl{https://code.google.com/p/hampi/downloads/list} (this may have been an overestimation, as this included more features than specified by the formal grammar\footurl{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}).  For RE2, we used the  supported feature documentation\footurl{https://re2.googlecode.com/hg/doc/syntax.html}.  For Rex, we collected the feature set empirically because we tried to parse all scraped patterns with Rex for the behavioral analysis
-, and Rex provides comprehensive error feedback for unsupported features.
-
-Of the four projects selected for this analysis, RE2 supports the most studied features (28 features) followed by hampi (25 features),  Rex (21 features), and brics (12 features).  All projects support the 8 most commonly used features except brics, which does not support STR or END.
-
-No projects support the four look-around features LKA, NLKA, LKB and NLKB.  RE2 and hampi support the LZY, NCG, PNG and OPT features, whereas brics and Rex do not.
-
-\subsection{Variation in feature sets among Analysis tools}
-
-\paragraph{Rationale for exploring features supported by Analysis tools} \todoMid{Some paragraph introducing this table}
-
-\input{table/featureVariationTools}
-
-\subsection{Variation in feature sets among languages}
-\label{sec:featureSupport}
-
-\paragraph{Rationale for exploring features supported by different languages} \todoMid{Some paragraph introducing this table}
-
-Note: we exclude substitutions like \$n, only valid in a replacement context.  Also if a feature has the same functionality but different syntax...it is NOT considered the same feature, considering the desire to port patterns across languages, for example \cverb!\Z! in Python is \cverb!\z! in most other variants, and in those variants \cverb!\Z! means something else!  One exception is the OPT feature, for which different engines have different sets of options.  Python's set of 7 options is small compared to Tcl which has 15 or so.  For the feature table, if the following 3 core options are supported: \cverb!(?ism)!, the variant will be shown as having that feature.
-
-Unable to get enough information about Swift's underlying NSRegularExpression to include it in the table - a strong contender for future work!  Also wanted to get Vim's features but do not have time, and it is a very alien feature set!.
-
-% \input{table/featureVariationLanguages}
 \input{table/rankedFeatureSupport}
 
-% \subsection{Brief description of Alien features}
-% This thesis provides detailed descriptions for many Python Regular Expression features in Section~\ref{sec:featureDescriptions}.  The features alien to our main explorations are not described in detail, but are present in Table~\ref{featureVariationLanguages}.  Only an example of the syntax and a reference code is provided in this table, but a cursory description of them by reference code is provided below.
-Python\footurl{https://docs.python.org/2/library/re.html}
-Java\footurl{https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html}
-Automata.Z3\footurl{https://github.com/AutomataDotNet/Automata/blob/master/src/Automata.Tests/SampleRegexes.cs}
-PCREvsPython\footurl{http://stackoverflow.com/questions/3070655/does-regex-differ-from-php-to-python}
-.Net\footurl{http://regexhero.net/reference/}
-POSIX.ERE\footurl{http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html},
-\footurl{http://www.regextester.com/eregsyntax.html}
-%#tag_09_04
-Perl\footurl{https://www.cs.tut.fi/~jkorpela/perl/regexp.html}
-Swift\footurl{https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial}
-Javascript\footurl{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions},\footurl{http://www.ecma-international.org/ecma-262/5.1/}
-%#sec-15.10
-- note that javascript is an implementation of the ecma standard, including r.e. support.
-RE2\footurl{https://github.com/google/re2/wiki/Syntax}
-VIM\footurl{http://vimregex.com/}
+\subsection{Ranked feature support}
+Table~\ref{table:rankedFeatureSupport} compares support for the 34 features studied in this thesis amongst Perl, Python, Ruby, .Net, JavaScript, RE2, Java and POSIX ERE (i.e., grep, sed, etc.).  No languages share the functionality of Python's ENDZ feature (preferring the LNLZ feature for that syntax).  Only RE2 and Perl support Python-style named capture groups, and only Perl supports Python-style named back-references.  JavaScript does not support options (OPT) or positive or negative look-backs (LKB, NLKB respectively).  RE2 does not support any look-arounds (LKB, NLKB, LKA and NLKA) or back-references.  POSIX ERE only supports 15 of the 34 studied features and Ruby does not support vertical whitespace (VWSP), but all remaining features are supported by all the other variants.  The top nine features by rank are supported in all eight variants.  These results support the relevance of the feature set selected for detailed study in this thesis.  The implication here is that patterns written for one engine using this feature set are very likely to be interpreted the same way by other engines, which is good for portability.
 
 \input{table/alienFeatureSupport}
 
+\subsection{Alien feature support}
+Table~\ref{alienFeatureSupport} describes feature support for a selection of 34 features (alien to the studied feature set) chosen from the eight languages being investigated.  A reference code and small example are provided to aid in understanding.  Several of these features actually represent an entire family of up to 12 features, like PXCC (e.g., \cverb![:alpha:]!), EREQ (e.g., \cverb![[=o=]]!), JAVM (e.g., \cverb!\p{javaMirrored}!), UNI and NUNI (e.g., \cverb!\pL! and \cverb!\PM!), but only one feature from such a family is selected for space considerations.  Perl is notable for supporting the most features overall, and POSIX ERE is notable for supporting the smallest number of features.
+
+\subsection{Alien feature descriptions}
+The following  brief descriptions of features alien to the studied feature set are provided to aide in understandability of Table~\ref{table:alienFeatureSupport}.  For a more detailed description, the reader will have to consult the documentation provided by a supporting variant.
+
 \begin{description} \itemsep -1pt
-\item [FTR1] does something \todoMid{finish descriptions for posterity}
+\item[RCUN:] example: \cverb!(?n)! description: recursive call to group n
+\item[RCUZ:] example: \cverb!(?R)! description: recursive call to group 0
+\item[GPLS:] example: \cverb!\g{+1}! description: relative back-reference
+\item[GBRK:] example: \cverb!\g{name}! description: named back-reference
+\item[GSUB:] example: \cverb!\g<name>! description: Ruby-style subroutine call
+\item[KBRK:] example: \cverb!\k<name>! description: .Net-style named back-reference
+\item[IFC:] example: \cverb!(?(cond)X)! description: if conditional
+\item[IFEC:] example: \cverb!(?(cnd)X|else)! description: if else conditional
+\item[ECOD:] example: \cverb!(?{code})! description: embedded code
+\item[ECOM:] example: \cverb!(?#comment)! description: embedded comments
+\item[PRV:] example: \cverb!\G! description: end of previous match position
+\item[LHX:] example: \cverb!\uFFFF! description: long hex values
+\item[POSS:] example: \cverb!a?+! description: possessive modifiers
+\item[NNCG:] example: \cverb!(?<name>X)! description: .Net-style named groups
+\item[MOD:] example: \cverb!(?i)z(?-i)z! description: flag modulation (on and off anywhere)
+\item[ATOM:] example: \cverb!(?>X)! description: atomic or possessive non-capture group
+\item[CCCI:] example: \cverb![a-z&&[^f]]! description: custom character class intersection
+\item[STRA:] example: \cverb!\A! description: absolute beginning of input
+\item[LNLZ:] example: \cverb!\Z"! description: end of input, or before last newline
+\item[FINL:] example: \cverb!\z! description: absolute end of input, like ENDZ
+\item[QUOT:] example: \cverb!\Q...\E! description: quotation
+\item[JAVM:] example: \cverb!\p{javaMirrored}! description: java defaults
+\item[UNI:] example: \cverb!\pL! description: Unicode defaults
+\item[NUNI:] example: \cverb!\PS! description: Unicode negated defaults
+\item[OPTG:] example: \cverb!(?flags:re)! description: flags just for inside this NCG
+\item[EREQ:] example: \cverb![[=o=]]! description: equivalence classes
+\item[PXCC:] example: \cverb![:alpha:]! description: POSIX defaults
+\item[TRIV:] example: \cverb![^]! description: trivial CCC, matches everything
+\item[CCSB:] example: \cverb![a-f-[c]]! description: custom character class subtraction
+\item[VLKB:] example: \cverb!(?<=ab.+)! description: variable-width look-behinds.  harder to implement
+\item[BAL:] example: \cverb!(?<close-open>)! description:  balanced groups (.Net version of recursion)
+\item[NCND:] example: \cverb!(?(<n>)X|else)! description: named conditionals
+\item[BRES:] example: \cverb!(?|(A)|(B))! description: branch numbering reset (A and B capture into the same group number)
+\item[QNG:] example: \cverb!(?'name're)! description: single-quote named groups
 \end{description}
 
-\todoMid{merge these thoughts into this section somewhere}
-Similarly in JavaScript and POSIX ERE, the pattern \verb!"a\Z"! compiles to a regex matching the string \verb!"aZ"!, because the sequence \verb!"\Z"! has no special significance and the backslash is ignored.  In Python Regular Expressions, this sequence does have significance - a feature matching the absolute end of the string (after the last newline).  However, in Java, Perl, .Net and many other variants this sequence has a slightly different meaning (absolute end or before last newline).
+\input{table/featureVariationTools}
 
-LNLZ specifies the position before the final newline in a string, even in Multiline mode.  In Python ENDZ specifies the absolute end of the string.
+\subsection{Feature support in regex analysis tools}
+Tools for analyzing and reasoning about regular expressions are very attractive to language researchers, as well as industries that use regular expressions for mission critical applications (airlines, NASA, FBI, NSA, Oracle, etc.).  The more features supported by an analysis tool, the further research and development can be advanced for all of these domains.  On the other hand, the more features that developers of an analysis tool attempt to support, the more complex the implementation of the tool becomes, so at some point developers of an analysis tool are likely to make a judgment about whether or not to support a feature.  In Table~\ref{table:featureVariationTools}, the features supported by brics, hampi, Rex and Automata.Z3 are compared.  The features of Rex in particular are of importance in this thesis, as Rex was used for the analysis described in Section \todoMid{link}, and lack of support for various features was a major limiting factor for what could be included in the analysis.
 
-Third, we investigate what features are supported by four large projects that aim to support regex usage (brics~\cite{brics}, hampi~\cite{hampi}, Rex~\cite{rex}, and RE2~\cite{re2}), and which features are not supported, but are frequently used by developers.
+What features each tool supports was determined in a variety of ways.  For brics, the set of supported features was collected using the formal grammar\footurl{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}.  For hampi, he set of regexes included in the test suite {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footurl{https://code.google.com/p/hampi/downloads/list} were examined to determine which features hampi supports (this may have been an overestimation, as this included more features than specified by the formal grammar\footurl{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}).  For Rex, the feature set was collected empirically when attempting to use Rex as described in Section  \todoMid{link}.  For Automata.Z3, a file containing sample regexes\footurl{https://github.com/AutomataDotNet/Automata/blob/master/src/Automata.Z3.Tests/SampleRegexes.cs} was examined to determine which features it supports.  This may be an underestimation, as the set of patterns provided is small.  Hampi supports the most features (25 features), followed by Rex (21 features), Automata.Z3 (14 features) and brics (12 features).  Rex and hampi support the 14 most commonly used features, whereas Automata.Z3 supports 11 of these features and bricks supports nine.  No projects support the four look-around features LKA, NLKA, LKB and NLKB.  Hampi supports named back-references, and no other back-reference support is available in any other tool.  Hampi supports the LZY, NCG, PNG and OPT features, whereas brics, Automata.Z3 and Rex do not.
 
-\todoMid{Mention how exploring character details like literals, hex, octal and supported escape specials like bell, vertical wsp, etc is an opportunity for future work}
-One notable omission from Table~\ref{table:featureStats} is the literal feature, which is used  to specify matching any specific character.  An example pattern that contains only one literal token is the pattern \verb!`a'!.  This pattern only matches the lowercase letter `a'.  The literal feature was found in \dbfetch{P_LITERAL_PRESENT}\% of patterns.
 
+% ~\ref{}.
+
+% Python\footurl{https://docs.python.org/2/library/re.html}
+% Java\footurl{https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html}
+% Automata.Z3\footurl{https://github.com/AutomataDotNet/Automata/blob/master/src/Automata.Tests/SampleRegexes.cs}
+% PCREvsPython\footurl{http://stackoverflow.com/questions/3070655/does-regex-differ-from-php-to-python}
+% .Net\footurl{http://regexhero.net/reference/}
+% POSIX.ERE\footurl{http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html},
+% \footurl{http://www.regextester.com/eregsyntax.html}
+% %#tag_09_04
+% Perl\footurl{https://www.cs.tut.fi/~jkorpela/perl/regexp.html}
+% Swift\footurl{https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial}
+% Javascript\footurl{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions},\footurl{http://www.ecma-international.org/ecma-262/5.1/}
+% %#sec-15.10
+% - note that javascript is an implementation of the ecma standard, including r.e. support.
+% RE2\footurl{https://github.com/google/re2/wiki/Syntax}
+% VIM\footurl{http://vimregex.com/}
+
+
+% \subsection{Feature support in text editors}
