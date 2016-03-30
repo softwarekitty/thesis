@@ -39,7 +39,7 @@ $\mu = 67$, $\sigma = 173$
 $\mu = 116$, $\sigma = 275$
 \end{enumerate}
 }}
-\caption{Participant Profiles, $n=180$ \todoLast{can remove this for space} \label{participantprofile}}
+\caption{Participant Profiles, $n=180$ \label{participantprofile}}
 \end{small}
 \end{figure}
 
@@ -56,33 +56,29 @@ Figure~\ref{participantprofile} summarizes the self-reported participant charact
 
 \input{table/testedEdgesTable}
 
-\todoMid{in study section present choices about pairwise vs random selection for nodes.}
-
 \subsection{Analysis}
-For each of the 180 HITs, we computed a matching and composition score for each of the 10 regexes, using the metrics described in Section\todoLast{N}. This allowed us to compute and then average 26-30 values for each metric  for each of the 60 regexes (fewer than 30 values were used if all the responses in a matching question were unsure or a combination of blanks and unsure).
+For each of the 180 HITs, a matching and composition score was computed for each of the 10 regexes, using the metrics described in Section\todoLast{N}.  Since 30 separate participants responded to five string matching problems and one composition problem for each of the 60 regexes, there were 30 independent understandability evaluations for each representation.  An average of 0.53 out of 30 of these responses were NAs per regex, with the maximum number of NAs being four.  These 26-30 independent matching scores for each regex were used to determine if an understandability preference exists for each of the 36 pairwise comparisons.
 
-Each regex was a member of one of 26 groupings of equivalent regexes.
-These groupings allow pairwise comparisons of the metrics values to determine which representation of the regex was most understandable and the direction of a refactoring for understandability.
-% Among all the groups, we performed 42 pairwise comparisons of the matching and composition scores  (i.e., one comparison for each group of size two and three comparisons within each group of size three).
-For example, one group had regexes, \verb!RR*! and \verb!R+!, which  represent a transformation between L2 and L3. The former had an average matching of 86\% and the latter had an average matching of 92\%. The average composition score for the former was 97\% and 100\% for the latter. Thus, the community found \verb!R+! from L3 more understandable.
-There were two other pairwise comparisons performed between the L2 and L3 group, using regexes pair \verb!zaa*! and \verb!za+'!, and regexes pair \verb!\..*! and \verb!\.+'!.
-Considering all three of these regex pairs, the overall matching average for the regexes belonging to L2 was 0.86 and 0.91 for L3.
-The overall composition score for L2 was 0.91 and 0.98 for L3. Thus, the community found L3 to be more understandable than L2, from the perspective of both understandability metrics, suggesting a refactoring from L2 to L3.
+For example, one group had regexes \cverb!RR*! and \cverb!R+!, which  represent a transformation between L2 and L3. The former had an average matching score of 86\% and the latter had an average matching score of 92\%. The average composition score for the former was 97\% and 100\% for the latter. Thus, the community found \cverb!R+! from L3 more understandable.
+There were two other pairwise comparisons performed between the L2 and L3 group, using the pair \cverb!zaa*! and \cverb!za+!, and the pair \cverb!\..*! and \cverb!\.+!.
+Considering all three of these regex pairs, the \emph{overall matching score} for the regexes belonging to L2 was 0.86 and the \emph{overall matching score} for L3 was 0.91.
+The \emph{overall composition score} for L2 was 0.91, with 0.98 for L3. Thus, the community found L3 to be more understandable than L2, from the perspective of both understandability metrics, suggesting a refactoring from L2 to L3.
 
-This information is presented in summary in Table~\ref{table:testedEdgesTable}, with this specific example appearing in the E3 row. The \emph{Index} column enumerates all the pairwise comparisons evaluated in this experiment, \emph{Nodes} lists the two representations, \emph{Pairs} shows how many comparisons were performed, \emph{Match1} gives the overall matching score for the first representation listed and \emph{Match2} gives the overall matching score for the second representation listed. $H_0^{match}$ shows the results of using the Mann-Whitney test of means to compare the matching scores, testing the null hypothesis $H_0$: that $\mu_{match1} = \mu_{match2}$.  The p-values from these tests are presented in this column. The last three columns list the average composition scores for the representations and the relevant p-value, also using the Mann-Whitney test of means.
+This information is presented in summary in Table~\ref{table:testedEdgesTable}, with this specific example appearing in the E3 row. The \emph{Index} column enumerates all the pairwise comparisons evaluated in this experiment, \emph{Nodes} lists the two representations, \emph{Pairs} shows how many comparisons were performed, \emph{Match1} gives the overall matching score for the first representation listed and \emph{Match2} gives the overall matching score for the second representation listed. $H_0^{match}$ shows the results of using the Mann-Whitney test of means to compare the matching scores, testing the null hypothesis $H_0$: that $\mu_{match1} = \mu_{match2}$.  The p-values from these tests are presented in this column. The last three columns display the average composition scores for the representations and the relevant p-value, also using the Mann-Whitney test of means.
 
-Table~\ref{table:testedEdgesTable} presents the results of the understandability analysis. A horizontal line separates the first three edges from the bottom 11. In E1 through E3, there is a statistically significant difference between the representations for at least one of the metrics considering $\alpha = 0.05$.  These represent the strongest evidence for suggesting the directions of refactoring based on the understandability metrics we defined. Specifically, $\overrightarrow{T4 T1}$, $\overrightarrow{D2 D3}$, and $\overrightarrow{L2 L3}$
-are likely to improve understandability.
+\input{table/pairwiseRefactorings}
 
-We note here that participants were able to select \emph{unsure} when they were not sure if a string would be matched by a pattern (Figure~\ref{fig:exampleQuestion}). From a comprehension perspective, this indicates some level of confusion and is worth exploring.
+Table~\ref{table:testedEdgesTable} presents the results of the understandability analysis. A horizontal line separates the first three edges from the bottom 11. In E1 through E3, there is a statistically significant difference between the representations for at least one of the metrics considering $\alpha = 0.05$.  These represent the strongest evidence for suggesting the directions of refactoring based on the understandability metrics defined in this study. Specifically, $\overrightarrow{T4 T1}$, $\overrightarrow{D2 D3}$, and $\overrightarrow{L2 L3}$ are likely to improve understandability.  The specific nodes, regexes, matching scores and compositions scores that led to these refactoring suggestions are shown in Table~\ref{table:pairwiseRefactorings}
+
+Participants were able to select \emph{unsure} when they were not sure if a string would be matched by a regex (Figure~\ref{fig:exampleQuestion}). From a comprehension perspective, this indicates some level of confusion and is worth exploring.
 
 \input{table/unsureResults}
 
-For each pattern, we counted the number of responses containing at least one unsure, representing confusion.
-We then grouped the patterns into their representation nodes and computed an average of unsures per pattern.
-A higher number may indicate difficulty in comprehending a pattern from that node.
+For each regex, the number of responses containing at least one unsure was observed, representing confusion when attempting to answer matching questions for that regex.
+The regexes were then grouped into their representation nodes and an average number of unsures was computed per regex.  For example, four regexes belonged to C5 and the number of unsures for those regexes was: 2,3,3 and 0 so the average number of unsures for C5 was 2.
+A higher number of unsures may indicate difficulty in comprehending a regex from that node.
 Overall, the highest number of unsure responses came from T4 and T2, which present octal and hex representations of characters. The least number of unsure responses were in L3 and D3, which are both shown to be understandable by looking at E2 and E3 in Table~\ref{table:testedEdgesTable}.
 
 These nodes and their average number of unsure responses are organized by quartile in Table~\ref{table:unsureResults}.
 These results also corroborate the refactorings suggested by the understandability analysis for the LIT group (i.e., $\overrightarrow{T4 T1}$), the DBB group (i.e.,  $\overrightarrow{D2 D3}$), and the LWB group (i.e., $\overrightarrow{L2 L3}$) because the more understandable node has the least unsures of its group.
-The findings for D3 and D2 are contradictory, however, as  and further study is needed, and the number of unsures may be too small to indicate anything, except for T2 and T4.  The one pattern from T4 that had the most unsures of any pattern (i.e., 10 out of 30) was \verb!`xyz[\0133-\0140]'!, so this may have been the least understandable pattern that we tested.
+The findings for D3 and D2 are contradictory, however, and further study is needed, as the number of unsures may be too small to indicate anything significant except for T2 and T4.  The one regex from T4 that had the most unsures of any regex (i.e., 10 out of 30) was \cverb!xyz[\0133-\0140]!.  The regex with the lowest composition score (7 out of 30) and matching score (0.54) was \cverb!([\0175\0173])!, which only had 6 unsures.

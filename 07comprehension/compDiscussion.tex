@@ -1,4 +1,11 @@
 \section{Discussion of comprehension results}
+Three statistically significant refactorings $\overrightarrow{T4 T1}$, $\overrightarrow{D2 D3}$, and $\overrightarrow{L2 L3}$ were identified by the results presented in Table~\ref{table:testedEdgesTable}.  A detailed view of the results for these three refactorings is presented in Table~\ref{table:pairwiseRefactorings}.  The first refactoring, $\overrightarrow{T4 T1}$, makes sense because the octal syntax is far more exotic and difficult to understand than plain characters. Composition improves notably from 23\% for \cverb!([\0175\0173])! to 87\% for \cverb!([}{}])!.  This results seems likely to generalize, as there is nothing unusual about the regexes that might cause noise.
+
+The second refactoring $\overrightarrow{D2 D3}$, reduces confusion caused by expanding the entire set of strings specified by the regex into an OR.  If the OR feature is understood, then the regexes in D3 are very straightforward, whereas the QST repetition may take a little thought.  This refactoring is not likely to scale, however, because a slightly more complicated regex like \cverb!a?b*(cd)?e?! would expand to the very long regex \cverb!ab*cde|b*cde|ab*e|b*e|ab*cd|b*cd|ab*|b*! which introduces the new challenge of visually parsing and remembering eight strings.
+
+The third refactoring, $\overrightarrow{L2 L3}$ makes sense because the ADD feature is a very widely used feature, and getting rid of the extra character that may appear zero times makes the minimal-length string more apparent.  Matching scores only improved by 4\%-7\%, and most composing scores only improved by 3\%.  The exception is the composing score of \cverb!\..*! (80\%) vs the composing score of \cverb!\.+! (93\%) showing a 13\% improvement.  This may be partially due to the escaped
+
+
 \subsection{Implications}
 \subsection{Opportunities for future work}
 \subsection{Threats to validity}

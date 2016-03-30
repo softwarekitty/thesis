@@ -1,0 +1,24 @@
+\begin{table}
+\begin{center}
+\caption{Equivalent regexes with a significant difference in readability}
+\label{table:pairwiseRefactorings}
+\begin{small}
+\begin{tabular}
+{lccc c lccc}
+node & regex & match & compose & refactoring & node &regex & match & compose \bigstrut \\
+\noalign{\hrule height 0.08em}
+T4 & \begin{minipage}{0.85in}\begin{verbatim}([\072\073])\end{verbatim}\end{minipage} & 66\% & 50\% & \multirow{ 2}{*}{$\overrightarrow{T4 T1}$} & T1 & \begin{minipage}{0.85in}\begin{verbatim}([:;])\end{verbatim}\end{minipage} & 81\% & 87\% \bigstrut   \\
+T4 & \begin{minipage}{0.85in}\begin{verbatim}([\0175\0173])\end{verbatim}\end{minipage} & 54\% & 23\% & & T1 & \begin{minipage}{0.85in}\begin{verbatim}([}{])\end{verbatim}\end{minipage} & 79\% & 87\%   \bigstrut  \\
+\noalign{\hrule height 0.04em}
+D2 & \begin{minipage}{0.85in}\begin{verbatim}((q4f)?ab)\end{verbatim}\end{minipage} & 79\% & 83\% & \multirow{ 2}{*}{$\overrightarrow{D2 D3}$} & D3 & \begin{minipage}{0.85in}\begin{verbatim}(q4fab|ab)\end{verbatim}\end{minipage} & 85\% & 97\%  \bigstrut   \\
+D2 & \begin{minipage}{0.85in}\begin{verbatim}(deedo(do)?)\end{verbatim}\end{minipage} & 77\% & 93\% & & D3 & \begin{minipage}{0.85in}\begin{verbatim}(deedo|deedodo)\end{verbatim}\end{minipage} & 90\% & 97\%  \bigstrut   \\
+\noalign{\hrule height 0.04em}
+L2 & \begin{minipage}{0.85in}\begin{verbatim}\..*\end{verbatim}\end{minipage} & 85\% & 80\% & \multirow{ 3}{*}{$\overrightarrow{L2 L3}$} & L3 & \begin{minipage}{0.85in}\begin{verbatim}\.+\end{verbatim}\end{minipage} & 92\% & 93\%   \bigstrut  \\
+L2 & \begin{minipage}{0.85in}\begin{verbatim}zaa*\end{verbatim}\end{minipage} & 87\% & 97\% & & L3 & \begin{minipage}{0.85in}\begin{verbatim}za+\end{verbatim}\end{minipage} & 91\% & 100\%  \bigstrut   \\
+L2 & \begin{minipage}{0.85in}\begin{verbatim}RR*\end{verbatim}\end{minipage} & 86\% & 97\% & & L3 & \begin{minipage}{0.85in}\begin{verbatim}R+\end{verbatim}\end{minipage} & 92\%  & 100\%  \bigstrut  \\
+\noalign{\hrule height 0.08em}
+\end{tabular}
+\end{small}
+\end{center}
+\vspace{-12pt}
+\end{table}

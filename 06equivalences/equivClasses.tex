@@ -5,7 +5,7 @@
 This chapter introduces possible refactorings in regular expressions by identifying equivalence classes of Python Regular Expressions, identifying what representations are possible in each equivalence class, and also identifying what transformations between representations are possible. As with source code, in regular expressions there are often multiple ways to express the same semantic concept.
 For example, \cverb!AAA*! matches two \verb!`A'!s followed by zero or more \verb!`A'!s.  This matching behavior is identical to the behavior of the syntactically different regex \cverb!AA+!, which matches two or more \verb!`A'!s.  What is not clear is which representation,  \cverb!AAA*!  or  \cverb!AA+!, is preferred.
 
-Preferences in regex refactorings could come from a number of sources, including which is easier to maintain, easier to understand, or better conforms to community standards, depending on the goals of the programmer.  By investigating which representation appears most frequently in source code, we can establish a community standard and suggest refactorings based on conformance to that standard.
+Preferences in regular expression refactorings could come from a number of sources, including which is easier to maintain, easier to understand, or better conforms to community standards, depending on the goals of the programmer.  By investigating which representation appears most frequently in source code, we can establish a community standard and suggest refactorings based on conformance to that standard.
 
 
 \begin{figure*}[tb]
