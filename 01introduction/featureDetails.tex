@@ -114,9 +114,9 @@ The syntax of this feature may cause much confusion when porting to another lang
 
 \item[LKB:] The \emph{lookback} uses the special syntax \verb!(?<=R)! to check if regex R matches immediately before the current position.  As with LKA, the content matched by the LKB is excluded from group 0.
 
-\item[NLKA:] A \emph{negative lookahead} uses the special syntax \verb!(?!R)! to require that regex R \emph{does not match} immediately after the current position.  Matched content is excluded from group 0.
+\item[NLKA:] A \emph{negative lookahead} uses the special syntax \verb|(?!R)| to require that regex R \emph{does not match} immediately after the current position.  Matched content is excluded from group 0.
 
 
-\item[NLKB:] The \emph{negative lookback} uses the special syntax \verb!(?<!R)! to require that regex R does not match immediately before the current position.  Matched content is excluded from group 0.
+\item[NLKB:] The \emph{negative lookback} uses the special syntax \verb|(?<!R)| to require that regex R does not match immediately before the current position.  Matched content is excluded from group 0.
 \end{description}
 
