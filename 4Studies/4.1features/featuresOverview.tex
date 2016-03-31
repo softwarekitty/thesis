@@ -1,0 +1,17 @@
+\section{Overview of feature frequency experiment}
+
+The primary goal of this experiment was to determine the frequency with which Python Regular Expression features are used in the wild.  In order to obtain data about feature usage frequency, a large number of patterns used to create regexes were required.  One obvious place to obtain these patterns was by looking at source code that calls the {\tt re} module.  One call to this module found in source code (not running live) will be referred to as a \emph{utilization}.  Utilizations are explained in further detail in Section~\ref{sec:utilizations}
+
+With these needs in mind, a tool was implemented that does the following:
+\begin{itemize} \itemsep -1pt
+\item finds projects containing Python on GitHub
+\item clones the repositories containing these projects
+\item builds the AST of source code using files from these projects
+\item populates a database with information about utilizations found
+\end{itemize}
+
+Implementation details of this tool, and some of the challenges faced are discussed in Section~\ref{sec:miningImplementation}.  Once the data about utilizations had been collected, some questions about the utilizations themselves were explored.  This exploration can be read about in Section~\ref{sec:utilizations}.
+
+The patterns obtained from the utilizations were parsed using a PCRE parser to create Table~\ref{table:featureStats}.  This table summarizes the findings of this experiment, that is, for each feature described in Section~\ref{sec:featureDescriptions}, this table shows the number of patterns containing that feature, and the number of projects using that feature in some pattern (as well as other data).  These findings are presented in Section~\ref{sec:corpus}.
+
+With the knowledge of how frequently each feature is used, the sets of features supported by various regular expression analysis tools becomes more interesting.  A moderate survey exploring supported features can be found in Section~\ref{sec:featureSupport}.  Finally a discussion of the impact of this study, opportunities for future work and threats to validity can be found in Section~\ref{sec:featureDiscussion}.

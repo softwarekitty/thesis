@@ -1,0 +1,3582 @@
+\item[] \cverb!-!
+\item[] \cverb!:!
+\item[] \cverb!,!
+\item[] \cverb!/!
+\item[] \cverb!>!
+\item[] \cverb!.!
+\item[] \cverb!_!
+\item[] \cverb!"!
+\item[] \cverb! !
+\item[] \cverb!'!
+\item[] \cverb!<!
+\item[] \cverb!&!
+\item[] \cverb!x!
+\item[] \cverb!=!
+\item[] \cverb!#!
+\item[] \cverb!;!
+\item[] \cverb!$!
+\item[] \cverb!a!
+\item[] \cverb!}!
+\item[] \cverb!{!
+\item[] \cverb!~!
+\item[] \cverb!%!
+\item[] \cverb!@!
+\item[] \cverb!o!
+\item[] \cverb!`!
+\item[] \cverb!B!
+\item[] \cverb!e!
+\item[] \cverb!s!
+\item[] \cverb!r!
+\item[] \cverb!^!
+\item[] \cverb!\s!
+\item[] \cverb!\W!
+\item[] \cverb!\n!
+\item[] \cverb!\S!
+\item[] \cverb!.*!
+\item[] \cverb! +!
+\item[] \cverb!\D!
+\item[] \cverb!\.!
+\item[] \cverb!\r!
+\item[] \cverb!\\!
+\item[] \cverb!--!
+\item[] \cverb!\t!
+\item[] \cverb!</!
+\item[] \cverb!()!
+\item[] \cverb!><!
+\item[] \cverb! *!
+\item[] \cverb@<!@
+\item[] \cverb!\$!
+\item[] \cverb!\?!
+\item[] \cverb!"$!
+\item[] \cverb!\w!
+\item[] \cverb!^/!
+\item[] \cverb!\)!
+\item[] \cverb!\(!
+\item[] \cverb!\[!
+\item[] \cverb!.+!
+\item[] \cverb!x+!
+\item[] \cverb!x*!
+\item[] \cverb!b+!
+\item[] \cverb!b*!
+\item[] \cverb!a+!
+\item[] \cverb!a*!
+\item[] \cverb!:+!
+\item[] \cverb!:*!
+\item[] \cverb!\*!
+\item[] \cverb!\d!
+\item[] \cverb!^$!
+\item[] \cverb!\]!
+\item[] \cverb!\|!
+\item[] \cverb!&&!
+\item[] \cverb!::!
+\item[] \cverb!//!
+\item[] \cverb!,$!
+\item[] \cverb!''!
+\item[] \cverb!\^!
+\item[] \cverb!/$!
+\item[] \cverb!->!
+\item[] \cverb!^#!
+\item[] \cverb!/+!
+\item[] \cverb!<&!
+\item[] \cverb!^%!
+\item[] \cverb!- !
+\item[] \cverb!-$!
+\item[] \cverb!PM!
+\item[] \cverb!:<!
+\item[] \cverb!ba!
+\item[] \cverb!UP!
+\item[] \cverb!_+!
+\item[] \cverb!  !
+\item[] \cverb!``!
+\item[] \cverb!or!
+\item[] \cverb!0D!
+\item[] \cverb!\+!
+\item[] \cverb!\'!
+\item[] \cverb!\{!
+\item[] \cverb!h$!
+\item[] \cverb!^"!
+\item[] \cverb!%i!
+\item[] \cverb!%e!
+\item[] \cverb!: !
+\item[] \cverb!^_!
+\item[] \cverb!..!
+\item[] \cverb!s$!
+\item[] \cverb!\:!
+\item[] \cverb!\}!
+\item[] \cverb!\-!
+\item[] \cverb!\s+!
+\item[] \cverb!\d+!
+\item[] \cverb! *$!
+\item[] \cverb!\w+!
+\item[] \cverb!\s*!
+\item[] \cverb!\W+!
+\item[] \cverb!/\*!
+\item[] \cverb!#.*!
+\item[] \cverb![-]!
+\item[] \cverb!^ +!
+\item[] \cverb!\n+!
+\item[] \cverb! +$!
+\item[] \cverb!^--!
+\item[] \cverb!-->!
+\item[] \cverb!foo!
+\item[] \cverb!  +!
+\item[] \cverb!\-+!
+\item[] \cverb!'.'!
+\item[] \cverb!(.)!
+\item[] \cverb!{|}!
+\item[] \cverb!\*/!
+\item[] \cverb!\n$!
+\item[] \cverb!(a)!
+\item[] \cverb!(:)!
+\item[] \cverb!___!
+\item[] \cverb!0*$!
+\item[] \cverb!\.$!
+\item[] \cverb!\w*!
+\item[] \cverb!\.+!
+\item[] \cverb!;+$!
+\item[] \cverb!a\s!
+\item[] \cverb![:]!
+\item[] \cverb!-.*!
+\item[] \cverb!\\n!
+\item[] \cverb!^/+!
+\item[] \cverb!%.*!
+\item[] \cverb!'.*!
+\item[] \cverb!//$!
+\item[] \cverb!@.*!
+\item[] \cverb!.*/!
+\item[] \cverb!,\S!
+\item[] \cverb!\s$!
+\item[] \cverb!;;+!
+\item[] \cverb!/+$!
+\item[] \cverb!^\.!
+\item[] \cverb!\t+!
+\item[] \cverb! \n!
+\item[] \cverb!\\$!
+\item[] \cverb!^_+!
+\item[] \cverb!and!
+\item[] \cverb!//+!
+\item[] \cverb!^I+!
+\item[] \cverb!---!
+\item[] \cverb!#+$!
+\item[] \cverb!END!
+\item[] \cverb!pid!
+\item[] \cverb!xvd!
+\item[] \cverb!tag!
+\item[] \cverb!o b!
+\item[] \cverb!\\'!
+\item[] \cverb!^-+!
+\item[] \cverb!LUN!
+\item[] \cverb!,|;!
+\item[] \cverb!/=?!
+\item[] \cverb!a.*!
+\item[] \cverb!^\n!
+\item[] \cverb!xen!
+\item[] \cverb!tap!
+\item[] \cverb!set!
+\item[] \cverb!hdc!
+\item[] \cverb!el6!
+\item[] \cverb!_.*!
+\item[] \cverb!^de!
+\item[] \cverb!^Y$!
+\item[] \cverb!^N$!
+\item[] \cverb!/.*!
+\item[] \cverb![@]!
+\item[] \cverb!%20!
+\item[] \cverb!c.*!
+\item[] \cverb!%pi!
+\item[] \cverb!^\S!
+\item[] \cverb!\^@!
+\item[] \cverb!\S*!
+\item[] \cverb!\S+!
+\item[] \cverb!^\s!
+\item[] \cverb!^\w!
+\item[] \cverb!\\`!
+\item[] \cverb!\\-!
+\item[] \cverb!\\"!
+\item[] \cverb!\(\*!
+\item[] \cverb!//.*!
+\item[] \cverb!^\s+!
+\item[] \cverb!\r\n!
+\item[] \cverb![&<]!
+\item[] \cverb!\d+$!
+\item[] \cverb![<>]!
+\item[] \cverb![_-]!
+\item[] \cverb@<!--@
+\item[] \cverb!\s*,!
+\item[] \cverb!^\s*!
+\item[] \cverb!\s+$!
+\item[] \cverb!\.\.!
+\item[] \cverb!Key-!
+\item[] \cverb!,\s*!
+\item[] \cverb!^\d+!
+\item[] \cverb!\w+$!
+\item[] \cverb![.-]!
+\item[] \cverb!\s*#!
+\item[] \cverb!^<>$!
+\item[] \cverb!Xorg!
+\item[] \cverb!HTML!
+\item[] \cverb!var !
+\item[] \cverb!(:+)!
+\item[] \cverb!(:*)!
+\item[] \cverb!(:)*!
+\item[] \cverb!ab+c!
+\item[] \cverb!(\s)!
+\item[] \cverb!50*$!
+\item[] \cverb!\x00!
+\item[] \cverb!^mt$!
+\item[] \cverb!^\-l!
+\item[] \cverb!\(\)!
+\item[] \cverb!\\\\!
+\item[] \cverb!\n\n!
+\item[] \cverb!^lib!
+\item[] \cverb!( +)!
+\item[] \cverb!^\W+!
+\item[] \cverb!^\.+!
+\item[] \cverb!\\\n!
+\item[] \cverb!.*:$!
+\item[] \cverb!pre$!
+\item[] \cverb!dev$!
+\item[] \cverb!_id$!
+\item[] \cverb!\s*$!
+\item[] \cverb!\.o$!
+\item[] \cverb!;\s*!
+\item[] \cverb!^\/+!
+\item[] \cverb![ ]+!
+\item[] \cverb![()]!
+\item[] \cverb![-.]!
+\item[] \cverb!.js$!
+\item[] \cverb!(x*)!
+\item[] \cverb!i.86!
+\item[] \cverb! |\(!
+\item[] \cverb!;+\}!
+\item[] \cverb!\d+-!
+\item[] \cverb@!\s*@
+\item[] \cverb!\}\}!
+\item[] \cverb!#.*$!
+\item[] \cverb![./]!
+\item[] \cverb!FAIL!
+\item[] \cverb!:day!
+\item[] \cverb!,.*$!
+\item[] \cverb!^=+$!
+\item[] \cverb!^a+$!
+\item[] \cverb![eE]!
+\item[] \cverb![;,]!
+\item[] \cverb![,;]!
+\item[] \cverb!(&&)!
+\item[] \cverb!(..)!
+\item[] \cverb!\(\n!
+\item[] \cverb!(\d)!
+\item[] \cverb!\s+#!
+\item[] \cverb!\w+:!
+\item[] \cverb![\s]!
+\item[] \cverb!^6\.!
+\item[] \cverb!\..*!
+\item[] \cverb!^\t*!
+\item[] \cverb!sd\w!
+\item[] \cverb!\.|_!
+\item[] \cverb!.*\\!
+\item[] \cverb!"|\\!
+\item[] \cverb![\t]!
+\item[] \cverb!\[\]!
+\item[] \cverb!zip$!
+\item[] \cverb![ -]!
+\item[] \cverb!mac=!
+\item[] \cverb!idle!
+\item[] \cverb![ ,]!
+\item[] \cverb!\x01!
+\item[] \cverb!date!
+\item[] \cverb!%(.)!
+\item[] \cverb!\x1b!
+\item[] \cverb![mM]!
+\item[] \cverb![kK]!
+\item[] \cverb![gG]!
+\item[] \cverb!lost!
+\item[] \cverb!TIME!
+\item[] \cverb!SUSE!
+\item[] \cverb!fail!
+\item[] \cverb!^run!
+\item[] \cverb!^.+$!
+\item[] \cverb!^0+$!
+\item[] \cverb![ _]!
+\item[] \cverb!</p>!
+\item[] \cverb![/]+!
+\item[] \cverb!".*"!
+\item[] \cverb!(.*)!
+\item[] \cverb!:   !
+\item[] \cverb!^gui!
+\item[] \cverb!^bob!
+\item[] \cverb!^Gui!
+\item[] \cverb!, *<!
+\item[] \cverb!\n+$!
+\item[] \cverb!\s.*!
+\item[] \cverb!\.1$!
+\item[] \cverb!\s|,!
+\item[] \cverb!\W+$!
+\item[] \cverb! \| !
+\item[] \cverb!\xf6!
+\item[] \cverb!(\W)!
+\item[] \cverb!\s*{!
+\item[] \cverb!\s*-!
+\item[] \cverb!@\w+!
+\item[] \cverb!-\d+!
+\item[] \cverb!\n +!
+\item[] \cverb!\S\s!
+\item[] \cverb!\*\S!
+\item[] \cverb!\.\w!
+\item[] \cverb![\\]!
+\item[] \cverb!\\\.!
+\item[] \cverb!\\\$!
+\item[] \cverb!\\(.)!
+\item[] \cverb!^\d+$!
+\item[] \cverb!(\s+)!
+\item[] \cverb!^\s*$!
+\item[] \cverb!^\w+$!
+\item[] \cverb!(\d+)!
+\item[] \cverb!\r?\n!
+\item[] \cverb![*?[]!
+\item[] \cverb!>\s+<!
+\item[] \cverb![\s,]!
+\item[] \cverb!(\w*)!
+\item[] \cverb![\\].!
+\item[] \cverb!\s*\[!
+\item[] \cverb! *, *!
+\item[] \cverb!]\s*>!
+\item[] \cverb!\.\./!
+\item[] \cverb!.\x08!
+\item[] \cverb![-\.]!
+\item[] \cverb!\s*\]!
+\item[] \cverb![\s.]!
+\item[] \cverb!^\s+$!
+\item[] \cverb![/\\]!
+\item[] \cverb!\s*\\!
+\item[] \cverb!^ *\n!
+\item[] \cverb![A-Z]!
+\item[] \cverb![]&<]!
+\item[] \cverb!^\s*#!
+\item[] \cverb!(\w+)!
+\item[] \cverb!\]\]>!
+\item[] \cverb!^-*\n!
+\item[] \cverb!\s\s+!
+\item[] \cverb!".*"$!
+\item[] \cverb!\.py$!
+\item[] \cverb![a-z]!
+\item[] \cverb!'.*'$!
+\item[] \cverb! {2,}!
+\item[] \cverb!/.+/$!
+\item[] \cverb!:\d+$!
+\item[] \cverb!(\W+)!
+\item[] \cverb!\\.|.!
+\item[] \cverb!^cat !
+\item[] \cverb!wuzzy!
+\item[] \cverb!-{2,}!
+\item[] \cverb![ ,]+!
+\item[] \cverb!^x{}$!
+\item[] \cverb!\n\s+!
+\item[] \cverb!(a)?a!
+\item[] \cverb!\[.*$!
+\item[] \cverb!foo\d!
+\item[] \cverb!,?\s+!
+\item[] \cverb!\s(b)!
+\item[] \cverb![^.]*!
+\item[] \cverb!((a))!
+\item[] \cverb!//|/$!
+\item[] \cverb!^--+$!
+\item[] \cverb![<>&]!
+\item[] \cverb!\s*>$!
+\item[] \cverb![\|,]!
+\item[] \cverb![\\/]!
+\item[] \cverb!(;?)$!
+\item[] \cverb![, ]+!
+\item[] \cverb!to-.*!
+\item[] \cverb![^\w]!
+\item[] \cverb!(\t+)!
+\item[] \cverb![\s]+!
+\item[] \cverb!.*\?$!
+\item[] \cverb@.*\!$@
+\item[] \cverb!/\*\*!
+\item[] \cverb!\)\s*!
+\item[] \cverb@[=!]=@
+\item[] \cverb!^.*::!
+\item[] \cverb!^[.-]!
+\item[] \cverb![0-9]!
+\item[] \cverb!dummy!
+\item[] \cverb!^  --!
+\item[] \cverb!:year!
+\item[] \cverb!^_|_$!
+\item[] \cverb![ \t]!
+\item[] \cverb![.\-]!
+\item[] \cverb!,\s*$!
+\item[] \cverb![\W]+!
+\item[] \cverb!:\s*$!
+\item[] \cverb!\n\s*!
+\item[] \cverb!\n\n+!
+\item[] \cverb!\s+\S!
+\item[] \cverb!\(|\)!
+\item[] \cverb!.*}.*!
+\item[] \cverb!:uuid!
+\item[] \cverb!^[67]!
+\item[] \cverb!index!
+\item[] \cverb!AMD64!
+\item[] \cverb!^the !
+\item[] \cverb!\r|\n!
+\item[] \cverb!ERROR!
+\item[] \cverb![[*?]!
+\item[] \cverb!Usage!
+\item[] \cverb!^rebt!
+\item[] \cverb![\n]+!
+\item[] \cverb!&\w+;!
+\item[] \cverb!^@\S*!
+\item[] \cverb!^\w+:!
+\item[] \cverb![^\d]!
+\item[] \cverb!^\s*@!
+\item[] \cverb!^-?\d!
+\item[] \cverb![\W]*!
+\item[] \cverb!\ +\n!
+\item[] \cverb!\w+\(!
+\item[] \cverb![%\\]!
+\item[] \cverb!\.\d+!
+\item[] \cverb!\ \ +!
+\item[] \cverb!\\*\n!
+\item[] \cverb!\\*\#!
+\item[] \cverb!\.|\\!
+\item[] \cverb!=...=!
+\item[] \cverb!^link!
+\item[] \cverb!&amp;!
+\item[] \cverb!file=!
+\item[] \cverb!^==+$!
+\item[] \cverb![. -]!
+\item[] \cverb!total!
+\item[] \cverb![^V_]!
+\item[] \cverb!^### !
+\item[] \cverb!(H|S)!
+\item[] \cverb!100.*!
+\item[] \cverb!</?u>!
+\item[] \cverb![:@/]!
+\item[] \cverb!start!
+\item[] \cverb!test4!
+\item[] \cverb!test3!
+\item[] \cverb!test2!
+\item[] \cverb!\n(.)!
+\item[] \cverb!\r\n?!
+\item[] \cverb!/bcr/!
+\item[] \cverb!\r*\n!
+\item[] \cverb!/(.*)!
+\item[] \cverb!count!
+\item[] \cverb![<>=]!
+\item[] \cverb![/,-]!
+\item[] \cverb!Total!
+\item[] \cverb![-\s]!
+\item[] \cverb!^.*\/!
+\item[] \cverb!-\d+$!
+\item[] \cverb!fd\d+!
+\item[] \cverb!(\S+)!
+\item[] \cverb!.*\*$!
+\item[] \cverb!{\w+}!
+\item[] \cverb![\W_]!
+\item[] \cverb!_\d+$!
+\item[] \cverb!\W%\W!
+\item[] \cverb![\\"]!
+\item[] \cverb!\.\.*!
+\item[] \cverb!^.*\\!
+\item[] \cverb!\W_\(!
+\item[] \cverb![^:]*:!
+\item[] \cverb![-\s]+!
+\item[] \cverb!\n{2,}!
+\item[] \cverb![0-9]+!
+\item[] \cverb!--\s*>!
+\item[] \cverb!^[^(]*!
+\item[] \cverb![\d.]+!
+\item[] \cverb!^(\s*)!
+\item[] \cverb![-/\.]!
+\item[] \cverb!^\s*\n!
+\item[] \cverb!\s{2,}!
+\item[] \cverb!Cancel!
+\item[] \cverb![^0-9]!
+\item[] \cverb!=\w{2}!
+\item[] \cverb!(\\*)"!
+\item[] \cverb!\n\s*$!
+\item[] \cverb!\s*#.*!
+\item[] \cverb!//.*\n!
+\item[] \cverb!\s+\n+!
+\item[] \cverb![\n\r]!
+\item[] \cverb![@{} ]!
+\item[] \cverb!["\'/]!
+\item[] \cverb![ \t]+!
+\item[] \cverb!^(\s+)!
+\item[] \cverb!\$[()]!
+\item[] \cverb!/*(.*)!
+\item[] \cverb![0-9]*!
+\item[] \cverb!^x{3}$!
+\item[] \cverb!^x{1}$!
+\item[] \cverb!"(.*)"!
+\item[] \cverb![ \t]*!
+\item[] \cverb!$(\w+)!
+\item[] \cverb![\-\s]!
+\item[] \cverb![/\\ ]!
+\item[] \cverb!(\d+)$!
+\item[] \cverb![^\w]+!
+\item[] \cverb!\(.*\)!
+\item[] \cverb!(\\+)"!
+\item[] \cverb!\.\d+$!
+\item[] \cverb!^(> )+!
+\item[] \cverb!&nbsp;!
+\item[] \cverb!\.lib$!
+\item[] \cverb!\.dll$!
+\item[] \cverb![\s,]+!
+\item[] \cverb![^a-z]!
+\item[] \cverb!REBOL$!
+\item[] \cverb!\.?0+$!
+\item[] \cverb!ns\d+$!
+\item[] \cverb!\w+:|#!
+\item[] \cverb!\d{3} !
+\item[] \cverb!(\w+)$!
+\item[] \cverb!^(\d+)!
+\item[] \cverb!\s*=.*!
+\item[] \cverb![^\)]+!
+\item[] \cverb![\.\-]!
+\item[] \cverb![ {}$]!
+\item[] \cverb![a-z]+!
+\item[] \cverb!^ruby-!
+\item[] \cverb![?*+]+!
+\item[] \cverb![&<>"]!
+\item[] \cverb![.+-]$!
+\item[] \cverb@[^!-~]@
+\item[] \cverb!^\x1b#!
+\item[] \cverb!^(\w+)!
+\item[] \cverb!(\s*)$!
+\item[] \cverb!\.exe$!
+\item[] \cverb!\.pdb$!
+\item[] \cverb![()\\]!
+\item[] \cverb!^\s*\#!
+\item[] \cverb![\n\t]!
+\item[] \cverb!^[ab]$!
+\item[] \cverb!x86_64!
+\item[] \cverb!([}{])!
+\item[] \cverb!h[23]$!
+\item[] \cverb!<dict>!
+\item[] \cverb!<H[13]!
+\item[] \cverb![\r\n]!
+\item[] \cverb!:month!
+\item[] \cverb![ ]+\t!
+\item[] \cverb!AC(.*)!
+\item[] \cverb![kK]ey!
+\item[] \cverb!<(.*)>!
+\item[] \cverb!^@(.*)!
+\item[] \cverb!vecLib!
+\item[] \cverb!error:!
+\item[] \cverb![A-Z]+!
+\item[] \cverb!^/dev/!
+\item[] \cverb!:title!
+\item[] \cverb!&quot;!
+\item[] \cverb!#(\d+)!
+\item[] \cverb@^`!v\s@
+\item[] \cverb@^`!p\s@
+\item[] \cverb!^\s+.*!
+\item[] \cverb!^.*:\$!
+\item[] \cverb!\.git$!
+\item[] \cverb![./\\]!
+\item[] \cverb!\[.*\]!
+\item[] \cverb!^\$\d+!
+\item[] \cverb!\$\$.*!
+\item[] \cverb![\[\]]!
+\item[] \cverb!\)\s*$!
+\item[] \cverb!\$\{\D!
+\item[] \cverb!ubuntu!
+\item[] \cverb:["!|@]:
+\item[] \cverb!^[#/;]!
+\item[] \cverb!/cgcc/!
+\item[] \cverb!^[^:]+!
+\item[] \cverb!Debian!
+\item[] \cverb!FAIL -!
+\item[] \cverb!biltxt!
+\item[] \cverb!<(.+)>!
+\item[] \cverb!(.*)\n!
+\item[] \cverb!^major!
+\item[] \cverb!Fedora!
+\item[] \cverb!(Y=.*)!
+\item[] \cverb!Usage:!
+\item[] \cverb!^audio!
+\item[] \cverb!diff -!
+\item[] \cverb!shell:!
+\item[] \cverb!([{}])!
+\item[] \cverb!Status!
+\item[] \cverb@<!--.*@
+\item[] \cverb!cirrus!
+\item[] \cverb!^[A-Z]!
+\item[] \cverb![^A-Z]!
+\item[] \cverb!Ubuntu!
+\item[] \cverb![a-z_]!
+\item[] \cverb!^[0-9]!
+\item[] \cverb!__.*__!
+\item[] \cverb!virtio!
+\item[] \cverb!:(\s+)!
+\item[] \cverb![\w']+!
+\item[] \cverb!^P(\d)!
+\item[] \cverb!\w{12}!
+\item[] \cverb!^h\d+$!
+\item[] \cverb![\W_]+!
+\item[] \cverb@#!.*\n@
+\item[] \cverb!(\S+)$!
+\item[] \cverb!#(\S+)!
+\item[] \cverb![,\s]+!
+\item[] \cverb!;(\s+)!
+\item[] \cverb!^(\w*)!
+\item[] \cverb!\?(.*)!
+\item[] \cverb!&#\d+;!
+\item[] \cverb![\._-]!
+\item[] \cverb![^_\w]!
+\item[] \cverb![^ \t]!
+\item[] \cverb!@(\w+)!
+\item[] \cverb![\w ]+!
+\item[] \cverb!(.*)\(!
+\item[] \cverb!\n{3,}!
+\item[] \cverb![_\s]+!
+\item[] \cverb!.py\w$!
+\item[] \cverb!--- \w!
+\item[] \cverb!(\\|")!
+\item[] \cverb!^\|\s*!
+\item[] \cverb![\*\?]!
+\item[] \cverb!\s*,\s!
+\item[] \cverb!^\s*\*!
+\item[] \cverb!\.\.\.!
+\item[] \cverb!\s*,\s*!
+\item[] \cverb!get_wwn!
+\item[] \cverb!get_tag!
+\item[] \cverb!^\w+://!
+\item[] \cverb![?/:|]+!
+\item[] \cverb!&#?\w+;!
+\item[] \cverb!([A-Z])!
+\item[] \cverb!( +|-+)!
+\item[] \cverb!^\d{9}$!
+\item[] \cverb!(\.|\s)!
+\item[] \cverb!^[ \t]*!
+\item[] \cverb![\r\n]+!
+\item[] \cverb@%(?!\()@
+\item[] \cverb!\/\/.*$!
+\item[] \cverb!\s*;\s*!
+\item[] \cverb!\n\s*//!
+\item[] \cverb!\$if\s+!
+\item[] \cverb!\]\]\n?!
+\item[] \cverb!\[\[\n?!
+\item[] \cverb!\n\s+\n!
+\item[] \cverb!"[^"]*"!
+\item[] \cverb!Websafe!
+\item[] \cverb!({)|(})!
+\item[] \cverb!@[a-z]+!
+\item[] \cverb!<[^>]+>!
+\item[] \cverb!^-?\d+$!
+\item[] \cverb!(:)(:*)!
+\item[] \cverb!(a|(b))!
+\item[] \cverb!([b:]+)!
+\item[] \cverb!^\s*@?#!
+\item[] \cverb![-./\s]!
+\item[] \cverb!^\?(.*)!
+\item[] \cverb!^\d{5}$!
+\item[] \cverb!0{6,}\d!
+\item[] \cverb![\s\-]+!
+\item[] \cverb![ \n]*{!
+\item[] \cverb!=[ =]*$!
+\item[] \cverb![<>\'"]!
+\item[] \cverb! {2,}\n!
+\item[] \cverb!-[ -]*$!
+\item[] \cverb!(a)|(b)!
+\item[] \cverb!^[1-5]$!
+\item[] \cverb!\r\n|\r!
+\item[] \cverb!:(\d+)$!
+\item[] \cverb!<[^>]*>!
+\item[] \cverb!<#\d+#>!
+\item[] \cverb!&(\w+);!
+\item[] \cverb!expect$!
+\item[] \cverb!; *q *=!
+\item[] \cverb!#(.*)\n!
+\item[] \cverb!:(\w+)$!
+\item[] \cverb!^.*\.h$!
+\item[] \cverb!SYMBOL_!
+\item[] \cverb![,<>()]!
+\item[] \cverb!(.{60})!
+\item[] \cverb![,;: ]+!
+\item[] \cverb!.*/(.*)!
+\item[] \cverb!p(\d+)$!
+\item[] \cverb@(.+)\!$@
+\item[] \cverb!upstart!
+\item[] \cverb!^[0-9]+!
+\item[] \cverb!^\x1b.$!
+\item[] \cverb![.]{2,}!
+\item[] \cverb!_[A-Z]_!
+\item[] \cverb!([^/]+)!
+\item[] \cverb!digest !
+\item[] \cverb!(\D)[.]!
+\item[] \cverb![.](\D)!
+\item[] \cverb!^\x1b\]!
+\item[] \cverb!^\x1b\[!
+\item[] \cverb!\.html$!
+\item[] \cverb@&(?!\#)@
+\item[] \cverb!\r?\n\d!
+\item[] \cverb!\s*:\s*!
+\item[] \cverb!\s*=\s*!
+\item[] \cverb![ \t\n]!
+\item[] \cverb!3\.1\d+!
+\item[] \cverb!\$(\w+)!
+\item[] \cverb!\\(\d+)!
+\item[] \cverb!\n\s*\n!
+\item[] \cverb!coord =!
+\item[] \cverb!</*key>!
+\item[] \cverb!ntpdate!
+\item[] \cverb!</dict>!
+\item[] \cverb!^([ ]*)!
+\item[] \cverb!Failure!
+\item[] \cverb!^rebt.*!
+\item[] \cverb!{(..+)}!
+\item[] \cverb!\n\n\n+!
+\item[] \cverb!^quit.*!
+\item[] \cverb!^>(.*)$!
+\item[] \cverb!o:(.*)s!
+\item[] \cverb!(#.*)?$!
+\item[] \cverb![\n ]+$!
+\item[] \cverb!%(..?)%!
+\item[] \cverb@^#!(.*)@
+\item[] \cverb!enabled!
+\item[] \cverb!http://!
+\item[] \cverb!^[67]\.!
+\item[] \cverb!.*\.zip!
+\item[] \cverb!.*\.exe!
+\item[] \cverb!.*\.dmg!
+\item[] \cverb![^\w.-]!
+\item[] \cverb!([\.,])!
+\item[] \cverb!'\?(.)'!
+\item[] \cverb!^[78]\.!
+\item[] \cverb!.*\.py$!
+\item[] \cverb!\.jar?$!
+\item[] \cverb!^\d+px$!
+\item[] \cverb!^.*\{\{!
+\item[] \cverb!^\[.*\]!
+\item[] \cverb!\d+-\d+!
+\item[] \cverb@\\(?! )@
+\item[] \cverb!\w+\.rb!
+\item[] \cverb!\\?[()]!
+\item[] \cverb!\$\S+\$!
+\item[] \cverb!^\/\w\/!
+\item[] \cverb!DEFAULT!
+\item[] \cverb!'[^']*'!
+\item[] \cverb![^0-9]+!
+\item[] \cverb!EXAMPLE!
+\item[] \cverb!No open!
+\item[] \cverb!^(X|A)$!
+\item[] \cverb!&#8230;!
+\item[] \cverb!&#8221;!
+\item[] \cverb!&#8220;!
+\item[] \cverb!&#8217;!
+\item[] \cverb!&#8216;!
+\item[] \cverb!&#8212;!
+\item[] \cverb!&#8211;!
+\item[] \cverb!-[^-]*$!
+\item[] \cverb![xh]vc0!
+\item[] \cverb!.tar.gz!
+\item[] \cverb!rc_view!
+\item[] \cverb!^/admin!
+\item[] \cverb!MIGRATE!
+\item[] \cverb!stopped!
+\item[] \cverb!^ (.*)$!
+\item[] \cverb![0-9]*$!
+\item[] \cverb!Red Hat!
+\item[] \cverb!^v[0-9]!
+\item[] \cverb!blocked!
+\item[] \cverb![^\'"]*!
+\item[] \cverb!an open!
+\item[] \cverb!#d8e8ff!
+\item[] \cverb![ -~]*$!
+\item[] \cverb!Index: !
+\item[] \cverb!@dists=!
+\item[] \cverb!v=(.*)$!
+\item[] \cverb!{[^}]*}!
+\item[] \cverb!running!
+\item[] \cverb!^()( +)!
+\item[] \cverb!/dev/sd!
+\item[] \cverb!Party: !
+\item[] \cverb!hwidcmd!
+\item[] \cverb!mapper/!
+\item[] \cverb![aeiou]!
+\item[] \cverb!failed:!
+\item[] \cverb!()(  +)!
+\item[] \cverb![:;,] *!
+\item[] \cverb!content!
+\item[] \cverb!default!
+\item[] \cverb!hwclock!
+\item[] \cverb!(\d{2})!
+\item[] \cverb![ \t:]+!
+\item[] \cverb!\s*#.*$!
+\item[] \cverb!Robot.*!
+\item[] \cverb!Node\s+!
+\item[] \cverb!---\s*$!
+\item[] \cverb!.*\.htm!
+\item[] \cverb!__u\d+$!
+\item[] \cverb!:(\s|$)!
+\item[] \cverb!^\s*#.*!
+\item[] \cverb!.py\w?$!
+\item[] \cverb!^@(\w+)!
+\item[] \cverb!(.*)\*$!
+\item[] \cverb!(\.|::)!
+\item[] \cverb!( +|\n)!
+\item[] \cverb!(\d{4})!
+\item[] \cverb!CPU\d+:!
+\item[] \cverb!(\s|,)+!
+\item[] \cverb!(-\w*)$!
+\item[] \cverb!^(\d\d)!
+\item[] \cverb!^\"|\"$!
+\item[] \cverb!^\S+\s+!
+\item[] \cverb!\(.*\)$!
+\item[] \cverb!\s*/\s*!
+\item[] \cverb!\*(\S+)!
+\item[] \cverb!\d*(\S)!
+\item[] \cverb![\d\.]+!
+\item[] \cverb!^\?\w+$!
+\item[] \cverb!\+(\w+)!
+\item[] \cverb!\s*]\s*!
+\item[] \cverb!([\\'])!
+\item[] \cverb![\'"\\]!
+\item[] \cverb!\@(\w+)!
+\item[] \cverb!\.\.\.+!
+\item[] \cverb!([\\"])!
+\item[] \cverb![\\/\*]!
+\item[] \cverb![^\w\s-]!
+\item[] \cverb!^[0-9]+$!
+\item[] \cverb!-r(\d+)$!
+\item[] \cverb!^[-\w]+$!
+\item[] \cverb!^\d{11}$!
+\item[] \cverb!^[ \t]*$!
+\item[] \cverb@\!([^=])@
+\item[] \cverb!^[\d,]+$!
+\item[] \cverb!([ \t]*)!
+\item[] \cverb!^\d{16}$!
+\item[] \cverb!^\d{12}$!
+\item[] \cverb!,\s*|\s+!
+\item[] \cverb!([0-9]+)!
+\item[] \cverb!cygwin.*!
+\item[] \cverb!Control-!
+\item[] \cverb!^http://!
+\item[] \cverb!^(\s*#*)!
+\item[] \cverb@\r(?!\n)@
+\item[] \cverb!\(\d+ ms!
+\item[] \cverb!/\*.*\*/!
+\item[] \cverb!\$for\s+!
+\item[] \cverb!\$var\s+!
+\item[] \cverb!\n\r?\n$!
+\item[] \cverb!\$\(\$\)!
+\item[] \cverb!^[^-_.]+!
+\item[] \cverb!cc_(.*)$!
+\item[] \cverb!^x{1,4}$!
+\item[] \cverb!^x{1,3}$!
+\item[] \cverb!^x{1,2}$!
+\item[] \cverb!(b)|(:+)!
+\item[] \cverb!<dl><dd>!
+\item[] \cverb!</(\w+)>!
+\item[] \cverb!} (\w+);!
+\item[] \cverb!(["\\`])!
+\item[] \cverb![a-zA-Z]!
+\item[] \cverb!(a)(b)?b!
+\item[] \cverb!\s*(#|$)!
+\item[] \cverb!(\.0+)*$!
+\item[] \cverb![\.0-9]+!
+\item[] \cverb!</?(\w+)!
+\item[] \cverb!\s([^a])!
+\item[] \cverb!([\t ]+)!
+\item[] \cverb!\s*-f\s+!
+\item[] \cverb!\s*-e\s+!
+\item[] \cverb@<!--|-->@
+\item[] \cverb!--[^>]*>!
+\item[] \cverb!^__.*__$!
+\item[] \cverb!\.?[^.]*!
+\item[] \cverb!\((.*)\)!
+\item[] \cverb!^\[.*\]$!
+\item[] \cverb!([\"\\])!
+\item[] \cverb!^'(.*)'$!
+\item[] \cverb!=[^,)]+,!
+\item[] \cverb!_REGEXP_!
+\item[] \cverb!^[a-z]+$!
+\item[] \cverb!(\d+)bit!
+\item[] \cverb!(}?\s*)$!
+\item[] \cverb@[\+\!]+$@
+\item[] \cverb!([^\\] )!
+\item[] \cverb!\[(.*)\]!
+\item[] \cverb!#\w\w\w$!
+\item[] \cverb!\w\w\w\w!
+\item[] \cverb!([\x0c])!
+\item[] \cverb![~:+_ -]!
+\item[] \cverb!<[^<>]*>!
+\item[] \cverb![\t ]+\n!
+\item[] \cverb!sysvinit!
+\item[] \cverb!([A-Z]+)!
+\item[] \cverb!\.setup$!
+\item[] \cverb!^[.](\d)!
+\item[] \cverb!^.+\.js$!
+\item[] \cverb!^[\w_]+$!
+\item[] \cverb!^[^(\[]*!
+\item[] \cverb![^ -~\n]!
+\item[] \cverb!^\s*#.*$!
+\item[] \cverb!\s+in\s+!
+\item[] \cverb!\x00\x01!
+\item[] \cverb!<\?.*\?>!
+\item[] \cverb!\d+\.\d+!
+\item[] \cverb![^0-9, ]!
+\item[] \cverb!No space!
+\item[] \cverb!%[^%]|%$!
+\item[] \cverb!([ ]+)\t!
+\item[] \cverb![-/.: ]+!
+\item[] \cverb!([^-]*)-!
+\item[] \cverb!src (.+)!
+\item[] \cverb!.*[0-9]$!
+\item[] \cverb![Tt ].*$!
+\item[] \cverb!^<(.*)>$!
+\item[] \cverb!^([^ ]+)!
+\item[] \cverb!^==\d+==!
+\item[] \cverb!(\S.+):$!
+\item[] \cverb!(\S+);.*!
+\item[] \cverb!^$|^\s*#!
+\item[] \cverb!\s*=?\s*!
+\item[] \cverb!\w+\.erb!
+\item[] \cverb!&#(\d+);!
+\item[] \cverb!(\"|\\')!
+\item[] \cverb!\.(\d)+$!
+\item[] \cverb!([\s\\])!
+\item[] \cverb!\s*\|\s*!
+\item[] \cverb!\s*\n\s*!
+\item[] \cverb!(%[A-z])!
+\item[] \cverb!.py[co]$!
+\item[] \cverb! error: !
+\item[] \cverb!^compile!
+\item[] \cverb!WIN_UTIL!
+\item[] \cverb![aeiouy]!
+\item[] \cverb!^file://!
+\item[] \cverb!WINUTILS!
+\item[] \cverb!.*SUSE.*!
+\item[] \cverb!Prefiled!
+\item[] \cverb![A-Za-z]!
+\item[] \cverb!00000000!
+\item[] \cverb!10[01].*!
+\item[] \cverb!part_num!
+\item[] \cverb!part_end!
+\item[] \cverb![infINF]!
+\item[] \cverb!\n[ ]+\n!
+\item[] \cverb!^"(.*)"$!
+\item[] \cverb!^.(.*).$!
+\item[] \cverb![:;, ] *!
+\item[] \cverb!:[0-9]*$!
+\item[] \cverb!QEMU_PID!
+\item[] \cverb![:"<>|?]!
+\item[] \cverb![N|n]ame!
+\item[] \cverb!Resigned!
+\item[] \cverb!@arches=!
+\item[] \cverb!foo.*bar!
+\item[] \cverb!shut off!
+\item[] \cverb!\n[ \t]*!
+\item[] \cverb!/dev/vda!
+\item[] \cverb!^Vendor:!
+\item[] \cverb@<![^>]*>@
+\item[] \cverb![&<]|]]>!
+\item[] \cverb!CPU\s+.*!
+\item[] \cverb!\.[0-9]+!
+\item[] \cverb!^(\S+):?!
+\item[] \cverb!^[ -~]*$!
+\item[] \cverb!/\.svn/?!
+\item[] \cverb!__\w+__$!
+\item[] \cverb!\s*-{10}!
+\item[] \cverb![-+]?\d+!
+\item[] \cverb!(\n)( +)!
+\item[] \cverb![+-]?\d+!
+\item[] \cverb!line \d+!
+\item[] \cverb!.*/(\d+)!
+\item[] \cverb!^\w{22}$!
+\item[] \cverb!/b2g\s*$!
+\item[] \cverb!([^\(]+)!
+\item[] \cverb![^\w.-]+!
+\item[] \cverb!^[\d ]+$!
+\item[] \cverb!([\"$`])!
+\item[] \cverb!(&#\d+;)!
+\item[] \cverb!Spider.*!
+\item[] \cverb!as (\w+)!
+\item[] \cverb!\d\.htm$!
+\item[] \cverb!\s*->\s*!
+\item[] \cverb!\|(.*)\|!
+\item[] \cverb!(\w+\W*)!
+\item[] \cverb![^\w\d_]!
+\item[] \cverb!^\s*\*+/!
+\item[] \cverb![$^#\\']!
+\item[] \cverb!\.(\d+)$!
+\item[] \cverb!\s*\[.*$!
+\item[] \cverb!\s*\}\s*!
+\item[] \cverb!\\[\s.-]!
+\item[] \cverb![\r\n\t]!
+\item[] \cverb![\.\-\ ]!
+\item[] \cverb!\n\s*\n*!
+\item[] \cverb!\s*,?\s*!
+\item[] \cverb!\s*\{\s*!
+\item[] \cverb![\.\-\_]!
+\item[] \cverb![\.\-\/]!
+\item[] \cverb!^\s*\/\/!
+\item[] \cverb!^\s*\/\*!
+\item[] \cverb!\. \. \.!
+\item[] \cverb!\$\{.+\}!
+\item[] \cverb!\.models$!
+\item[] \cverb!URL: (.+)!
+\item[] \cverb!&([^;]+);!
+\item[] \cverb!\s*#?\s*$!
+\item[] \cverb!<[a-zA-Z]!
+\item[] \cverb!"([^"]+)"!
+\item[] \cverb!]\s*]\s*>!
+\item[] \cverb!\d([A-Z])!
+\item[] \cverb!<([^>]+)>!
+\item[] \cverb![^0-9A-F]!
+\item[] \cverb!^([ \t]*)!
+\item[] \cverb![][\\()"]!
+\item[] \cverb![A-Za-z]+!
+\item[] \cverb!\$elif\s+!
+\item[] \cverb!\$else\s+!
+\item[] \cverb!v[0-9]+.*!
+\item[] \cverb!lightlink!
+\item[] \cverb!(\033|~{)!
+\item[] \cverb!(\x1b|~{)!
+\item[] \cverb!^[0-9.]+$!
+\item[] \cverb![EW]\d{3}!
+\item[] \cverb!^(\w){3}$!
+\item[] \cverb!^(\w){1}$!
+\item[] \cverb!\S+| +|\n!
+\item[] \cverb!\s*\$\$.*!
+\item[] \cverb!<\S[^>]*>!
+\item[] \cverb![ \t]*(#)!
+\item[] \cverb!\s([^a]*)!
+\item[] \cverb!^..?\...?!
+\item[] \cverb!^[-\w/]+$!
+\item[] \cverb!\([^)]*\)!
+\item[] \cverb!(<[^>]+>)!
+\item[] \cverb!(\w+)(.*)!
+\item[] \cverb!\s+(\d+)$!
+\item[] \cverb!\*(\d+)?$!
+\item[] \cverb!^mongodb !
+\item[] \cverb!^/([^/])/!
+\item[] \cverb!^.{3,20}$!
+\item[] \cverb!^\x1b[()]!
+\item[] \cverb!publish.*!
+\item[] \cverb!^[a-zA-Z]!
+\item[] \cverb!([0-9.]+)!
+\item[] \cverb!\s+const$!
+\item[] \cverb!.*@.*\..*!
+\item[] \cverb!.*-(\w*)$!
+\item[] \cverb!\s*SELECT!
+\item[] \cverb!\(beta\)$!
+\item[] \cverb!(.*)_\d\d!
+\item[] \cverb!\[[^]]*\]!
+\item[] \cverb!^[\t ]*\n!
+\item[] \cverb![\s\(\)]+!
+\item[] \cverb!\((\d+)\)!
+\item[] \cverb![^\w\.\-]!
+\item[] \cverb!{([^}]+)}!
+\item[] \cverb!([^.]*).*!
+\item[] \cverb@<![^<>]*>@
+\item[] \cverb!:filename!
+\item[] \cverb![^a-z0-9]!
+\item[] \cverb!^([^:]+)$!
+\item[] \cverb!(.+)=(.+)!
+\item[] \cverb!.*error.*!
+\item[] \cverb![\n\t\r}]!
+\item[] \cverb!^push .*$!
+\item[] \cverb!^pull .*$!
+\item[] \cverb![pP]ython!
+\item[] \cverb!\npci_add!
+\item[] \cverb!(\.cpp)?$!
+\item[] \cverb!(-)(\d+)$!
+\item[] \cverb!(""")\s*$!
+\item[] \cverb!(''')\s*$!
+\item[] \cverb!.{1,2047}!
+\item[] \cverb!-netdev\s!
+\item[] \cverb!__(\w+)__!
+\item[] \cverb!\[[^]]+]$!
+\item[] \cverb![a-zA-Z]+!
+\item[] \cverb!^.*(\s+)$!
+\item[] \cverb!\${(\w+)}!
+\item[] \cverb!\([^)]+\)!
+\item[] \cverb!([\d\.]+)!
+\item[] \cverb!\d+\s\d+:!
+\item[] \cverb!\((\w+)\)!
+\item[] \cverb@\\(?!\s$)@
+\item[] \cverb!^\${\d+\/!
+\item[] \cverb!\{\{|\}\}!
+\item[] \cverb!:.{2}-.*$!
+\item[] \cverb!vport_ops!
+\item[] \cverb!https?://!
+\item[] \cverb!^[A-Z_]*$!
+\item[] \cverb!District:!
+\item[] \cverb!"([^"]*)"!
+\item[] \cverb!.*postgis!
+\item[] \cverb!^https://!
+\item[] \cverb!^[0-9/]+$!
+\item[] \cverb!%([0-9]+)!
+\item[] \cverb!Enforcing!
+\item[] \cverb!</[a-z]*>!
+\item[] \cverb!Scheduler!
+\item[] \cverb!INFO PASS!
+\item[] \cverb!([?*]+/?)!
+\item[] \cverb!ftp://.*$!
+\item[] \cverb!#F([^#]+)!
+\item[] \cverb!^yt-(.*)$!
+\item[] \cverb!part_size!
+\item[] \cverb!BadgeImpl!
+\item[] \cverb!<br[^>]*>!
+\item[] \cverb!WIN_UTILS!
+\item[] \cverb!`([^`]+`)!
+\item[] \cverb!{([^}]*)}!
+\item[] \cverb!processor!
+\item[] \cverb!Bill Text!
+\item[] \cverb![aeiouy].!
+\item[] \cverb! ([a|b])/!
+\item[] \cverb!CoSponsor!
+\item[] \cverb!  http://!
+\item[] \cverb!^[ \t]*\n!
+\item[] \cverb!repeat\d+!
+\item[] \cverb!(\d+)(.*)!
+\item[] \cverb!^id(\d+)$!
+\item[] \cverb!.+@.+\..+!
+\item[] \cverb!#([\w-]+)!
+\item[] \cverb!\s*#(.*)$!
+\item[] \cverb![^0-9:\.]!
+\item[] \cverb!(\d*)(:?)!
+\item[] \cverb![x-](\d+)!
+\item[] \cverb!(\d{2,3})!
+\item[] \cverb!^\s*/\*.*!
+\item[] \cverb!(\d\.){2}!
+\item[] \cverb!\((H|S)\)!
+\item[] \cverb!(\d+|\D+)!
+\item[] \cverb!\%(-?\w+)!
+\item[] \cverb!\.(\w+)'>!
+\item[] \cverb!\((.*)\)$!
+\item[] \cverb!\\[ntrab]!
+\item[] \cverb!\n[\t ]*$!
+\item[] \cverb!^\s*\*\s*!
+\item[] \cverb!\s*\}\s*$!
+\item[] \cverb!\|(\S+)\|!
+\item[] \cverb!^\w+:\/\/!
+\item[] \cverb!\r\n|\r|\n!
+\item[] \cverb!(\s*){\s*$!
+\item[] \cverb!(\s*)}\s*$!
+\item[] \cverb!\s*(#.*)?$!
+\item[] \cverb!-py\d\.\d$!
+\item[] \cverb!^[_a-zA-Z]!
+\item[] \cverb!<[>a-zA-Z]!
+\item[] \cverb!^\d+\.\d+$!
+\item[] \cverb!&[a-zA-Z#]!
+\item[] \cverb!^(\d{10})$!
+\item[] \cverb![\-\s\(\)]!
+\item[] \cverb!^([^/:]+):!
+\item[] \cverb![ \t\)].*$!
+\item[] \cverb![\w.@+-]+$!
+\item[] \cverb!/ParamTest!
+\item[] \cverb!\$range\s+!
+\item[] \cverb![^A-Z0-9_]!
+\item[] \cverb!^/[-\w/]+$!
+\item[] \cverb![\n@{}&<>]!
+\item[] \cverb!([0-9.]+)$!
+\item[] \cverb!(.*)\|(.*)!
+\item[] \cverb@<\?(?!xml)@
+\item[] \cverb!u?r?["\\']!
+\item[] \cverb!(\W*)(\w*)!
+\item[] \cverb!([\13\14])!
+\item[] \cverb![^a-z0-9]+!
+\item[] \cverb!</form\s*>!
+\item[] \cverb!(\s*\n\s*)!
+\item[] \cverb![^=]+=(.+)!
+\item[] \cverb!^Expected$!
+\item[] \cverb!@(\w*)(.*)!
+\item[] \cverb!\s*<(\w*)>!
+\item[] \cverb!\s*@(\w*):!
+\item[] \cverb!^\((.*)\)$!
+\item[] \cverb@(?![^%])%s@
+\item[] \cverb!^https?://!
+\item[] \cverb!^(\s*)(.*)!
+\item[] \cverb!=[^,)]+\)$!
+\item[] \cverb!\s+(\d+),$!
+\item[] \cverb!(\d+\.\d+)!
+\item[] \cverb!([\$\|\\])!
+\item[] \cverb!^[:~._+-]+!
+\item[] \cverb!^[a-zA-Z_]!
+\item[] \cverb!\s*https?:!
+\item[] \cverb!decode\..+!
+\item[] \cverb![,*")([\]]!
+\item[] \cverb!(.+):(\d+)!
+\item[] \cverb!^([^/])\:/!
+\item[] \cverb!\([^()]*\)!
+\item[] \cverb!\(.*\)\s*$!
+\item[] \cverb!220.*\r\n$!
+\item[] \cverb!lsi53c895a!
+\item[] \cverb!(/status$)!
+\item[] \cverb!Accelerate!
+\item[] \cverb!.*<(.*)>.*!
+\item[] \cverb!<ci.*</ci>!
+\item[] \cverb!connect1 =!
+\item[] \cverb!num_dim.*=!
+\item[] \cverb!^([0-9.]+)!
+\item[] \cverb!(.*):(<.*)!
+\item[] \cverb!DD>([^<]+)!
+\item[] \cverb!#egg=(.*)$!
+\item[] \cverb!(.+):<(.+)!
+\item[] \cverb!(.*)//(.*)!
+\item[] \cverb!^Error:.*$!
+\item[] \cverb!^/[-\w/]*$!
+\item[] \cverb!([sh]db)\s!
+\item[] \cverb!CPU #(\d+)!
+\item[] \cverb!\%\s+(.*)$!
+\item[] \cverb!\d;\s*url=!
+\item[] \cverb!([^\t -~])!
+\item[] \cverb!\d+ (\d+):!
+\item[] \cverb!\*\s[^:]+:!
+\item[] \cverb!\A\s\s\S+,!
+\item[] \cverb!tray.*open!
+\item[] \cverb!@"([^"]+)"!
+\item[] \cverb!.*foo.*bar!
+\item[] \cverb!^([0-9]+)$!
+\item[] \cverb!LR Number:!
+\item[] \cverb!^%q.(.*).$!
+\item[] \cverb!(RHEL.*PC)!
+\item[] \cverb![a-f0-9]+$!
+\item[] \cverb!WIN_VIRTIO!
+\item[] \cverb!>[ \r\n]+<!
+\item[] \cverb!^[0-9]{4}$!
+\item[] \cverb!Roll Calls!
+\item[] \cverb!127.0.0.1:!
+\item[] \cverb!\r|\n|\r\n!
+\item[] \cverb!ERROR FAIL!
+\item[] \cverb!e1000|^ide!
+\item[] \cverb!({[^{}]*})!
+\item[] \cverb!part_start!
+\item[] \cverb!\r?\n\r?\n!
+\item[] \cverb!([^-]*-).*!
+\item[] \cverb!@'([^']+)'!
+\item[] \cverb!^%Q.(.*).$!
+\item[] \cverb![^A-Za-z_]!
+\item[] \cverb!UNEXPECTED!
+\item[] \cverb!--vm-bytes!
+\item[] \cverb!^[0-9]{2}$!
+\item[] \cverb@(!\S*)(.*)@
+\item[] \cverb!:(\s*)\x02!
+\item[] \cverb!^VPATH\s*=!
+\item[] \cverb!URL: (\S+)!
+\item[] \cverb![^-._\w]+$!
+\item[] \cverb!=\s*"(.*)"!
+\item[] \cverb!(\w+)_new$!
+\item[] \cverb!HFS\s+(.+)!
+\item[] \cverb![EWN]\d{3}!
+\item[] \cverb!/dev/vd\S+!
+\item[] \cverb!^.*\*/\s*$!
+\item[] \cverb!^\s*//\s*$!
+\item[] \cverb!\s*([-\+])!
+\item[] \cverb!\\[^ntrab]!
+\item[] \cverb!(.*)\(.*\)!
+\item[] \cverb!^\s*\]\s*$!
+\item[] \cverb!\$\{(.*)\}!
+\item[] \cverb!^\s*\#+\s*!
+\item[] \cverb![^\w\.\- ]!
+\item[] \cverb![\[\]\*\?]!
+\item[] \cverb![\.\-\/\_]!
+\item[] \cverb!\[\d\]\s+=!
+\item[] \cverb![\x80-\xff]!
+\item[] \cverb!(<[^<>]*)/>!
+\item[] \cverb!^\s*plural$!
+\item[] \cverb!(\(|\)|\s+)!
+\item[] \cverb!^(.*)@(.*)$!
+\item[] \cverb!^running .*!
+\item[] \cverb!(\.|\s|/|-)!
+\item[] \cverb!^(.*):(.*)$!
+\item[] \cverb!^[A-Z]{,3}$!
+\item[] \cverb!([A-Za-z])+!
+\item[] \cverb![a-zA-Z]\w*!
+\item[] \cverb![\?|><:/*]"!
+\item[] \cverb@<!\[CDATA\[@
+\item[] \cverb!^(\s*)(\w*)!
+\item[] \cverb!^\s*(#.*)?$!
+\item[] \cverb!^[a-z0-9]+$!
+\item[] \cverb!   \.\.\.+:!
+\item[] \cverb!^\r?\n\r?\n!
+\item[] \cverb!\[([^]]+)\]!
+\item[] \cverb!(^|[^\\])\.!
+\item[] \cverb!XConsortium!
+\item[] \cverb![\x80-\xFF]!
+\item[] \cverb!\\[A-Za-z]+!
+\item[] \cverb![\000-\037]!
+\item[] \cverb!\w+(\.\w+)*!
+\item[] \cverb!Wrote: (.*)!
+\item[] \cverb!: Failure\n!
+\item[] \cverb!^(\w){1,4}$!
+\item[] \cverb!^(\w){1,3}$!
+\item[] \cverb!^(\w){1,2}$!
+\item[] \cverb!^\d[A-F]\d$!
+\item[] \cverb!(^[^\.]+)\.!
+\item[] \cverb!(\S)\s+(\S)!
+\item[] \cverb!^[sgydpn]+$!
+\item[] \cverb!Contents of!
+\item[] \cverb!^[A-Za-z]:$!
+\item[] \cverb!\s*-[ef]\s+!
+\item[] \cverb![^]~%\\{}]+!
+\item[] \cverb![\x00-\x20]!
+\item[] \cverb!\(([^)]+)\)!
+\item[] \cverb![^\\][^\\]*!
+\item[] \cverb![A-Z][a-z]+!
+\item[] \cverb!^ | $|/ | /!
+\item[] \cverb![ \t][ \t]+!
+\item[] \cverb![\x00-\x1f]!
+\item[] \cverb!^[\t ]*\n?$!
+\item[] \cverb!^[\w\-:\$]+!
+\item[] \cverb!([&<"\\'>])!
+\item[] \cverb!(\d+[abc])$!
+\item[] \cverb!<([^\s\w/])!
+\item[] \cverb!^([\w\-:]*)!
+\item[] \cverb!%\((\w+)\)s!
+\item[] \cverb!^\s*\*?\s*$!
+\item[] \cverb!(\(\s|\s\))!
+\item[] \cverb!^   ([^ ]+)!
+\item[] \cverb![-T:/.]|\s+!
+\item[] \cverb!^[\w.@+-]+$!
+\item[] \cverb!\n       \|!
+\item[] \cverb!val \w+\s*:!
+\item[] \cverb!(\D)[.](\D)!
+\item[] \cverb!\[[0-9]+\]$!
+\item[] \cverb!\d+[\.\d+]+!
+\item[] \cverb!\d+.\d+.\d+!
+\item[] \cverb!%[^\r\n\v]*!
+\item[] \cverb!"([^"]*)",?!
+\item[] \cverb!FAIL Exited!
+\item[] \cverb!\ndrive_add!
+\item[] \cverb!^uninst .*$!
+\item[] \cverb!<h1>.*</h1>!
+\item[] \cverb!^BLOCK (.*)!
+\item[] \cverb!<(.*):(.*)>!
+\item[] \cverb!defines.inc!
+\item[] \cverb!wrong|error!
+\item[] \cverb!num_elem.*=!
+\item[] \cverb!([^/]+)\.a$!
+\item[] \cverb!lib(.*)\.so!
+\item[] \cverb![^.]*\.(.*)!
+\item[] \cverb!skips=(\d+)!
+\item[] \cverb!.*node(\d+)!
+\item[] \cverb!^[\w/:+-]+$!
+\item[] \cverb!\s*(\#.*)?$!
+\item[] \cverb!.*\.tar\.gz!
+\item[] \cverb!.*\.tar\.bz!
+\item[] \cverb!^\${\d+[:}]!
+\item[] \cverb!\s*/[/*]\s*!
+\item[] \cverb!.*\s(\d+).*!
+\item[] \cverb!\{([^}]*)\}!
+\item[] \cverb!\s+(\r?\n)$!
+\item[] \cverb!\s*(\d+)\s*!
+\item[] \cverb!Return code!
+\item[] \cverb!^[~a-zA-Z_]!
+\item[] \cverb!^SESSIONID-!
+\item[] \cverb!^x?vd[a-p]$!
+\item[] \cverb![A-Z]*_API !
+\item[] \cverb![0-9][} ]*$!
+\item[] \cverb!([aeiouy])y!
+\item[] \cverb!Bill Status!
+\item[] \cverb![\x01-\x1f]!
+\item[] \cverb!type=(B|R|)!
+\item[] \cverb!Bill Docket!
+\item[] \cverb!^((x?v|s)d)!
+\item[] \cverb!\n([ \t]*)$!
+\item[] \cverb!(at|bl|iz)$!
+\item[] \cverb!^ *([0-9]+)!
+\item[] \cverb!(.*) <(.*)>!
+\item[] \cverb!https?://.*!
+\item[] \cverb!Audio Files!
+\item[] \cverb!DRIVER_PATH!
+\item[] \cverb!127.0.0.1:0!
+\item[] \cverb![1-9][0-9]*!
+\item[] \cverb!:"([0-9]+)"!
+\item[] \cverb![\x7f-\xff]!
+\item[] \cverb!%([YmdHMS])!
+\item[] \cverb!\r\n|\r+|\n!
+\item[] \cverb!DOCTYPE|xml!
+\item[] \cverb!b2g-l10n.js!
+\item[] \cverb!class (\w+)!
+\item[] \cverb!^#include\s!
+\item[] \cverb!(\d+) bytes!
+\item[] \cverb!^(\s*)<.+> !
+\item[] \cverb!([shv]db)\s!
+\item[] \cverb!:\s*(#.*)?$!
+\item[] \cverb!\s*</table>!
+\item[] \cverb!(\.[\d]+)?$!
+\item[] \cverb!\w([A-Z])\.!
+\item[] \cverb!\[.+\] (.+)!
+\item[] \cverb!->\s*(\S+)$!
+\item[] \cverb!\.repeat\d+!
+\item[] \cverb!^([\w\.]+)$!
+\item[] \cverb!^\s*\**\s*$!
+\item[] \cverb!\s*,\s*|\s+!
+\item[] \cverb!\n+|\r+|\f+!
+\item[] \cverb!\d+(\.\d*)?!
+\item[] \cverb!(.*) \(\d\)!
+\item[] \cverb![\t\b\r\f#]!
+\item[] \cverb!^\s*/\*\*\s!
+\item[] \cverb!\\u.{4}|\\.!
+\item[] \cverb!\$\((\w+)\)!
+\item[] \cverb!\s*\*\/\s*$!
+\item[] \cverb!^[ ]*(#.*)?$!
+\item[] \cverb!(\r\n|\r|\n)!
+\item[] \cverb!pack_lun\)\(!
+\item[] \cverb!^\s*(\w+)\s*!
+\item[] \cverb![^a-zA-Z0-9]!
+\item[] \cverb!#egg=([^&]*)!
+\item[] \cverb!\w+(\.\w+)*$!
+\item[] \cverb!^\d{4} \d{6}!
+\item[] \cverb!^[1-9]\d{4}$!
+\item[] \cverb!^([^/:]+)://!
+\item[] \cverb!(\r\n)|\n|\r!
+\item[] \cverb!.*"([^"]+)"$!
+\item[] \cverb@[^ !-<>-~\t]@
+\item[] \cverb!unsigned int!
+\item[] \cverb![_A-Za-z]\w*!
+\item[] \cverb!\d+ tests?\.!
+\item[] \cverb!^\s*[^#\s].*!
+\item[] \cverb![Hh][123456]!
+\item[] \cverb!^(@[a-z]+)?{!
+\item[] \cverb!_flymake\.h$!
+\item[] \cverb!\$<\d+>[/*]?!
+\item[] \cverb!^EndProject$!
+\item[] \cverb!.*kallsyms.*!
+\item[] \cverb!/dev/shm/\S*!
+\item[] \cverb![\x00-\x20]+!
+\item[] \cverb!(\\*)([,;]+)!
+\item[] \cverb![\\"]|[^ -~]!
+\item[] \cverb!\s*/\*\s*\*/!
+\item[] \cverb!^\s*\$\$.*\n!
+\item[] \cverb!\d\D\w\W\s\S!
+\item[] \cverb!^py[0-9]{2}$!
+\item[] \cverb!^[-0-9]+|-+$!
+\item[] \cverb!([^:]+):(.*)!
+\item[] \cverb!\r[ \t]+def !
+\item[] \cverb!\$\$|\${\w+}!
+\item[] \cverb!^((-){80}|)$!
+\item[] \cverb![^A-Za-z0-9]!
+\item[] \cverb!AsciiString$!
+\item[] \cverb![a-zA-Z_]\w*!
+\item[] \cverb!(.+)\.(\w*)$!
+\item[] \cverb!\[([^\]]*)\]!
+\item[] \cverb!\w+\s*:\s*\w!
+\item[] \cverb![0-9-]*(.+)$!
+\item[] \cverb!^([0-9]{4})$!
+\item[] \cverb!(\*|__key__)!
+\item[] \cverb!^(.+):(\d+)$!
+\item[] \cverb!(\w+)://(.*)!
+\item[] \cverb!(\x1b[^m]+m)!
+\item[] \cverb@\.(?![^.]*$)@
+\item[] \cverb!\sassert *\(!
+\item[] \cverb!(.*)\((.*)\)!
+\item[] \cverb!(\S+)\s*(.*)!
+\item[] \cverb!((\d|\w|_)+)!
+\item[] \cverb!^\w(\-?\w)*$!
+\item[] \cverb!10\^\{(.+)\}!
+\item[] \cverb!\(([\d,]+)\)!
+\item[] \cverb!\{([^\}]*)\}!
+\item[] \cverb!([\\()\r\n])!
+\item[] \cverb![^\}\{]+\{\}!
+\item[] \cverb!(([^:]+::)*)!
+\item[] \cverb!^["<].*[>"]$!
+\item[] \cverb!num_nodes.*=!
+\item[] \cverb!^[0-9]+[Ee]$!
+\item[] \cverb!crash|assert!
+\item[] \cverb!\ndevice_add!
+\item[] \cverb!.* = (.*);\n!
+\item[] \cverb!errors=(\d+)!
+\item[] \cverb!([^/]+)\.so$!
+\item[] \cverb!\x1b\[[^h]+h!
+\item[] \cverb!\w+\.feature!
+\item[] \cverb!.*\((.*)\).*!
+\item[] \cverb!\w+\_test.rb!
+\item[] \cverb!(\S+): (\S+)!
+\item[] \cverb!.*\[(.*)\].*!
+\item[] \cverb!\w+\_spec.rb!
+\item[] \cverb!^.+\:.+(\d+)!
+\item[] \cverb!\s+\((.*)\)$!
+\item[] \cverb!(\d+)\.(\d+)!
+\item[] \cverb!(\w+)\|(\w+)!
+\item[] \cverb!^\*\*\d+\*\*!
+\item[] \cverb!^[^A-Za-z_]$!
+\item[] \cverb!sessionToken!
+\item[] \cverb!backing file!
+\item[] \cverb!^.*_test.py$!
+\item[] \cverb!(.*)[-_](.*)!
+\item[] \cverb![^0-9A-Za-z]!
+\item[] \cverb!OUTPUT *(.*)!
+\item[] \cverb![=\x7f-\xff]!
+\item[] \cverb![{ ]*[-+0-9]!
+\item[] \cverb!unrecognized!
+\item[] \cverb!^refs/heads/!
+\item[] \cverb!^http(s)?://!
+\item[] \cverb!&#([0-9]+);?!
+\item[] \cverb!</[<>a-zA-Z]!
+\item[] \cverb!Vector<(.+)>!
+\item[] \cverb!No such file!
+\item[] \cverb!^[hs]d[a-p]$!
+\item[] \cverb!libs/([^/]+)!
+\item[] \cverb!==END TEST==!
+\item[] \cverb!(.*) cache:$!
+\item[] \cverb!([+-]\d{4})$!
+\item[] \cverb![a-zA-Z]\w*$!
+\item[] \cverb!^https?://\w!
+\item[] \cverb!UNSEEN (\d+)!
+\item[] \cverb!href="(\S*)"!
+\item[] \cverb!BillID=(\d*)!
+\item[] \cverb!^s(\d+)(-c)?!
+\item[] \cverb!@([^\'"\s]+)!
+\item[] \cverb@\A#!.*php.*$@
+\item[] \cverb!\x1b\[[^m]*m!
+\item[] \cverb!^[\n\r]{0,1}!
+\item[] \cverb!\*\*([0-9]+)!
+\item[] \cverb!((^|\n)\s*)@!
+\item[] \cverb!((^|\n)\s*)-!
+\item[] \cverb!^SET_(\S*)\(!
+\item[] \cverb![\n\r]{0,1}$!
+\item[] \cverb!(\D)(\d{4})$!
+\item[] \cverb!(\S+)\s*,\s*!
+\item[] \cverb!\$([^\$]+)\$!
+\item[] \cverb!\n\r?[\t ]*$!
+\item[] \cverb!^\d{10}\.\d$!
+\item[] \cverb!\s+(\S+\s*)$!
+\item[] \cverb!(\S+)\s(\S+)!
+\item[] \cverb@\.(?!\s)(\D)@
+\item[] \cverb@(\D)\.(?!\s)@
+\item[] \cverb!\{([-\w]+)\}!
+\item[] \cverb@(\n\s*<\!--)@
+\item[] \cverb![^\w\-\.\/]+!
+\item[] \cverb![<>:"\?\*\|]!
+\item[] \cverb!(\r\n|\n|\r)!
+\item[] \cverb!(\w+)\s*\(\)!
+\item[] \cverb!\/\/[^\n\r]*!
+\item[] \cverb!.*\$\{.+\}.*!
+\item[] \cverb!([\x80-\x9f])!
+\item[] \cverb!<(/?)\s*b\s*>!
+\item[] \cverb!<(/?)\s*i\s*>!
+\item[] \cverb!url="([^"]+)"!
+\item[] \cverb!%\(([^)]*)\)s!
+\item[] \cverb![^a-zA-Z0-9_]!
+\item[] \cverb!^-r\s*([^ ])?!
+\item[] \cverb!-arch\s+\w+\s!
+\item[] \cverb!(\(|\)|\s+|-)!
+\item[] \cverb!(\++|\-+|\^+)!
+\item[] \cverb!^[1-9][0-9]*$!
+\item[] \cverb!%\(([^)]+)\)s!
+\item[] \cverb![^A-Za-z0-9_]!
+\item[] \cverb!(.*  )(\w+)\n!
+\item[] \cverb!^\d+(\.\d+)?$!
+\item[] \cverb![^a-zA-Z0-9]+!
+\item[] \cverb!(\r\n|\r|\n)$!
+\item[] \cverb!\/([A-Za-z]+)!
+\item[] \cverb![_a-zA-Z]\w*$!
+\item[] \cverb!init\((.*)\):!
+\item[] \cverb!^(0x)?[0-9]+$!
+\item[] \cverb!{([^}]*)}(.*)!
+\item[] \cverb!(x|i[3-6])86$!
+\item[] \cverb!((a)|(b))(c)?!
+\item[] \cverb!^[A-F0-9\-]+$!
+\item[] \cverb@(a(?!\s[^a]))@
+\item[] \cverb!U[\dA-F]{5,5}!
+\item[] \cverb!.*/|\.$|\.\.$!
+\item[] \cverb!\$\(VERSION\)!
+\item[] \cverb![-a-zA-Z_@.]+!
+\item[] \cverb!^[a-zA-Z_]\w*!
+\item[] \cverb!(\s*#)|(\s*$)!
+\item[] \cverb!( |\n|^)\.\. !
+\item[] \cverb![0-9]+,[0-9]+!
+\item[] \cverb!_flymake\.cc$!
+\item[] \cverb!^.*\.(c|cpp)$!
+\item[] \cverb!-arch\s+(\S+)!
+\item[] \cverb!nsyms\s+(\d+)!
+\item[] \cverb!^[\r\n]*(\s*)!
+\item[] \cverb!#\s*random\s+!
+\item[] \cverb!\*\s*([0-9]+)!
+\item[] \cverb!(\S+)\s+(\S+)!
+\item[] \cverb!.* warning:.*!
+\item[] \cverb!^[\x01-\x0f]$!
+\item[] \cverb!_(unit)?test$!
+\item[] \cverb!@@BINARYDIR@@!
+\item[] \cverb@\s*#![^\r\n]*@
+\item[] \cverb!(\d+(\.\d+)*)!
+\item[] \cverb!In\ \[\d+\]: !
+\item[] \cverb! DELETED ---$!
+\item[] \cverb!(<[^>]*>)(.*)!
+\item[] \cverb!^--- NEW FILE!
+\item[] \cverb!^Transmitting!
+\item[] \cverb!PROCESS_CHECK!
+\item[] \cverb!ntpdate|w32tm!
+\item[] \cverb![^a-zA-Z.0-9]!
+\item[] \cverb!LIST OF FACES!
+\item[] \cverb![^A-Za-z0-9 ]!
+\item[] \cverb!([A-Z][a-z]+)!
+\item[] \cverb!LIST OF EDGES!
+\item[] \cverb!^_ZThn[0-9]+_!
+\item[] \cverb!\x1b\[[0-9]+m!
+\item[] \cverb!([\w-]+):(.+)!
+\item[] \cverb!length (\d*):!
+\item[] \cverb!macaddr=(\S+)!
+\item[] \cverb!^([ \|0-9-]*)!
+\item[] \cverb!L -(\d+) -\d+!
+\item[] \cverb!(\.c|\.cpp)?$!
+\item[] \cverb!\(([^()]+)\)$!
+\item[] \cverb!-arch\s+(\w+)!
+\item[] \cverb!^(\w+)\s+(.+)!
+\item[] \cverb!\[|\]|\n+|\s+!
+\item[] \cverb!^[\w\.\-\/]*$!
+\item[] \cverb!^\d+(\.\d+)*$!
+\item[] \cverb!import django!
+\item[] \cverb!^.*Abstract.*!
+\item[] \cverb![^a-zA-Z0-9.]!
+\item[] \cverb!^([+-]) (.*)$!
+\item[] \cverb![=?\x7f-\xff]!
+\item[] \cverb!  (http://.*)!
+\item[] \cverb!([^,;]+[,;]?)!
+\item[] \cverb!HOSTNAME=(.*)!
+\item[] \cverb!fourth commit!
+\item[] \cverb!^<p( [^>]+)?>!
+\item[] \cverb!(virtfn[0-9])!
+\item[] \cverb![0-9]+,[0-9]*!
+\item[] \cverb!^([^\t]*)\t\t!
+\item[] \cverb!^/dev/[a-z]+$!
+\item[] \cverb!#(..)(..)(..)!
+\item[] \cverb!^[-+]?[0-9]+$!
+\item[] \cverb!mode=readline!
+\item[] \cverb!backing file:!
+\item[] \cverb!^[0-9]+-(.*)$!
+\item[] \cverb!filename = .*!
+\item[] \cverb!default:.*off!
+\item[] \cverb!([^#:]*#)(.*)!
+\item[] \cverb!second commit!
+\item[] \cverb!^run(.*)Test$!
+\item[] \cverb!(\w+)Manifest!
+\item[] \cverb!--cols=[0-9]+!
+\item[] \cverb!(iex|\.{3})> !
+\item[] \cverb!^initialize\(!
+\item[] \cverb@\A#!.*ruby.*$@
+\item[] \cverb![a-zA-Z_]\w*$!
+\item[] \cverb!<a[^>]*\shref!
+\item[] \cverb!^(.*)\.stgit$!
+\item[] \cverb!processor\s*:!
+\item[] \cverb!^[FE]?[0-9]+$!
+\item[] \cverb!([#$&%_\${}])!
+\item[] \cverb@\A#!.*perl.*$@
+\item[] \cverb!Status: (\S+)!
+\item[] \cverb!--rows=[0-9]+!
+\item[] \cverb@\A#!.*node.*$@
+\item[] \cverb!^<([\w\.]+)>$!
+\item[] \cverb!&(\S*)\s*(.*)!
+\item[] \cverb!ecap\s+(.\w+)!
+\item[] \cverb!^(\+2|\+{2})$!
+\item[] \cverb!Type:\s+(\S+)!
+\item[] \cverb!^(\-2|\-{2})$!
+\item[] \cverb!([\x80-\xFF])!
+\item[] \cverb!::(\s*($|\n))!
+\item[] \cverb!Name:\s+(\S+)!
+\item[] \cverb!\[_POSITION\]!
+\item[] \cverb!PATH.[^\s]+\s!
+\item[] \cverb!\s*\n\s*\n\s*!
+\item[] \cverb!^\s*(\S+)\s*$!
+\item[] \cverb!(\w+\d+)[:\s]!
+\item[] \cverb!\n\s*(\n|$).*!
+\item[] \cverb!\<(\d+)\>(.*)!
+\item[] \cverb!(\d)\.(\d{4})!
+\item[] \cverb!-py(\d\.?\d?)!
+\item[] \cverb!\s*[^\s]+\s*=!
+\item[] \cverb!\s*(\w*)\s*::!
+\item[] \cverb!^\s*(\w+)\s*:!
+\item[] \cverb![/<>:"\|\?\*]!
+\item[] \cverb!\s*\(.*\)\s*$!
+\item[] \cverb@<!\s+([^<>]*)>@
+\item[] \cverb!^[a-f0-9]{40}$!
+\item[] \cverb!^\.\s*(\w+)\s*!
+\item[] \cverb![^A-Za-z0-9.]+!
+\item[] \cverb!Revision: (.+)!
+\item[] \cverb!^[012TF\*]{9}$!
+\item[] \cverb!^[_a-zA-Z]\w*$!
+\item[] \cverb!^GEO-\d{3}LITE!
+\item[] \cverb!^GEO-\d{3}FREE!
+\item[] \cverb!^([^=]*)=(.*)$!
+\item[] \cverb!^(.*)#([^#]*)$!
+\item[] \cverb![\041-\176]+:$!
+\item[] \cverb!--.*([\n\Z]|$)!
+\item[] \cverb!\$[_A-Za-z]\w*!
+\item[] \cverb!^([^:]*):(.*)$!
+\item[] \cverb!\$Port([^=]|$)!
+\item[] \cverb@/\.(?![^.]*$)/@
+\item[] \cverb!([\x00-\x7F])+!
+\item[] \cverb!\\line([iv]+){!
+\item[] \cverb!(\d+\.\d+)(.*)!
+\item[] \cverb!([\x00-\x7f])+!
+\item[] \cverb!([a-z])([A-Z])!
+\item[] \cverb@(a(?!\s[abc]))@
+\item[] \cverb!\{% csrf_token!
+\item[] \cverb!(\w+)=([-\w]+)!
+\item[] \cverb!^\S+@\S+\.\S+$!
+\item[] \cverb!0x[0-9a-fA-F]+!
+\item[] \cverb!^([^/]+)(/.*)$!
+\item[] \cverb!\+=[=+]+=\+ *$!
+\item[] \cverb!^\d+_\d+_?\d*$!
+\item[] \cverb!^https?://\S+$!
+\item[] \cverb!^v..?.?\...?.?!
+\item[] \cverb!\|([\w\|\-]+)$!
+\item[] \cverb![\({\[\]}\)\n]!
+\item[] \cverb!\\\n|\\(\\|<%)!
+\item[] \cverb![^a-zA-Z0-9_-]!
+\item[] \cverb!-(a|b|c)(\d+)$!
+\item[] \cverb@(?![\.\-])dev$@
+\item[] \cverb!(\(|\)|\s+|\+)!
+\item[] \cverb!#\w\w\w\w\w\w$!
+\item[] \cverb![-_a-z0-9]{64}!
+\item[] \cverb!(http://)(\w*)!
+\item[] \cverb!(\d+) ([^=]+)=!
+\item[] \cverb!^[ \t]*[^# \t]!
+\item[] \cverb!unzip: exiting!
+\item[] \cverb!mobile-l10n.js!
+\item[] \cverb![0-9a-fA-F]{2}!
+\item[] \cverb![ \t]*\n[ \t]*!
+\item[] \cverb!(.*){(.*)}(.*)!
+\item[] \cverb!failures=(\d+)!
+\item[] \cverb![0-9]+\.[0-9]+!
+\item[] \cverb!^[a-z0-9_\-]+$!
+\item[] \cverb!^flags\s*:(.*)!
+\item[] \cverb![+-]?(\d*)(.*)!
+\item[] \cverb!(\w+) as (\w+)!
+\item[] \cverb![\+-]?[0-9\.]*!
+\item[] \cverb!cms/page/(\d+)!
+\item[] \cverb!else[ \f\t]+if!
+\item[] \cverb!(\S+)\s+(..+$)!
+\item[] \cverb!^(\d+(\.\d+)*)!
+\item[] \cverb!\s*(-?\d+)\s*$!
+\item[] \cverb!^\.\.(/\.\.)*$!
+\item[] \cverb!(ERROR|FATAL):!
+\item[] \cverb!^[0-9a-f]{40}$!
+\item[] \cverb!Loaded: loaded!
+\item[] \cverb!^(.*)(ed|ing)$!
+\item[] \cverb!^[a-zA-Z0-9]+$!
+\item[] \cverb![$><;[{~`|&()]!
+\item[] \cverb!^Pull: (.*)\n$!
+\item[] \cverb! failed: (.*)$!
+\item[] \cverb![&?]acl($|=|&)!
+\item[] \cverb!^.*##(.*)##.*$!
+\item[] \cverb!files? changed!
+\item[] \cverb!monitor_result!
+\item[] \cverb![a-zA-Z0-9_-]+!
+\item[] \cverb!(^package:)|\s!
+\item[] \cverb!District (\d+)!
+\item[] \cverb@<([^/!])>\s+</@
+\item[] \cverb!(https?://\S+)!
+\item[] \cverb!.*subject=\w+$!
+\item[] \cverb!_flymake\.cpp$!
+\item[] \cverb!([_A-Za-z]\w*)!
+\item[] \cverb!^redo\s+(\d+)$!
+\item[] \cverb!image:\s+(\S+)!
+\item[] \cverb!(.*)\.\w{3,4}$!
+\item[] \cverb!^undo\s+(\d+)$!
+\item[] \cverb!_bio\.cfm\?id=!
+\item[] \cverb!from($|\s+\.+)!
+\item[] \cverb!tag:.*\[(.*)\]!
+\item[] \cverb!LC_ALL.[^\s]\s!
+\item[] \cverb!\d+: (eth\d+):!
+\item[] \cverb!^#format \w*\n!
+\item[] \cverb!Target\s+(\d+)!
+\item[] \cverb!(-?\d+)(\d{3})!
+\item[] \cverb!(\s*[;,\s]\s*)!
+\item[] \cverb!_\[[Ee](\d+)\]!
+\item[] \cverb![\D]*(\d+)\w*$!
+\item[] \cverb![ \t]*\.[ \t]*!
+\item[] \cverb!\(live[^\)]*\)!
+\item[] \cverb!(\S*)\s*RHEL\s!
+\item[] \cverb!\\(t|n|r|"|\\)!
+\item[] \cverb!([\\"]|[^\ -~])!
+\item[] \cverb!.*rlen=([0-9]+)!
+\item[] \cverb!get_fabric_name!
+\item[] \cverb!^[a-zA-Z0-9_]+$!
+\item[] \cverb!([a-z])'([A-Z])!
+\item[] \cverb!^(-?\d+)(\d{3})!
+\item[] \cverb!\?|[-+]?[.\w]+$!
+\item[] \cverb!\s*((\w|[-.])+)!
+\item[] \cverb![ \t\n][ \t\n]+!
+\item[] \cverb!\s*\\\s*(#.*)?$!
+\item[] \cverb!realm="([^"]*)"!
+\item[] \cverb!^\d{4}[A-Z]{2}$!
+\item[] \cverb!^\s*([^=\s;,]+)!
+\item[] \cverb!^-?\d+(\.\d+)?$!
+\item[] \cverb!^(.*):([0-9]+)$!
+\item[] \cverb!^(.*)\?([^?]*)$!
+\item[] \cverb!\+OK.*(<[^>]+>)!
+\item[] \cverb!%\(([^)]*)\)s|.!
+\item[] \cverb!(\d+\.\d+\.\d+)!
+\item[] \cverb!md5=([a-f0-9]+)!
+\item[] \cverb!<url>(.*)</url>!
+\item[] \cverb!^([^:]*): *(.*)!
+\item[] \cverb![^A-Za-z0-9_.-]!
+\item[] \cverb!^/([\w-]+)(/|$)!
+\item[] \cverb!^([^:]*):\t(.*)!
+\item[] \cverb!//\s+Files:(.*)!
+\item[] \cverb!([0-9.]+)(\S*)$!
+\item[] \cverb!//\s+Flags:(.*)!
+\item[] \cverb!\x1b\[(0;3\d)?m!
+\item[] \cverb!\*([a-zA-Z]+)\*!
+\item[] \cverb!(>[ \t]*)(.*\n)!
+\item[] \cverb![^-A-Za-z0-9_.]!
+\item[] \cverb!^//([^/]*)(.*)$!
+\item[] \cverb![^a-zA-Z0-9._-]!
+\item[] \cverb!([0-9]*) planes!
+\item[] \cverb!^(def|class)\s+!
+\item[] \cverb!^...?.?\....?.?!
+\item[] \cverb!\$\{([\w\-]+)\}!
+\item[] \cverb!(final|stable)$!
+\item[] \cverb!^(.*)_([0-9]+)$!
+\item[] \cverb![.~]?([abc])\.?!
+\item[] \cverb@([^*]|\*(?!/))+@
+\item[] \cverb! at 0x[0-9a-f]+!
+\item[] \cverb!"([0-9][.0-9]*)!
+\item[] \cverb!(debian|ubuntu)!
+\item[] \cverb!^places/(\d+)/$!
+\item[] \cverb!^(\d+)([a-z]+)$!
+\item[] \cverb!^Version\s+(.*)!
+\item[] \cverb!\[[a-zA-Z0-9.]:!
+\item[] \cverb!Ran (\d+) tests!
+\item[] \cverb!self:\s*(.*)\s*!
+\item[] \cverb!url\s*\(([^)]+)!
+\item[] \cverb!^r(ev)?\s*(\d+)!
+\item[] \cverb!^mongodb \(.*\)!
+\item[] \cverb!(:|\s)0+\.(\d+)!
+\item[] \cverb!^([ \t\r\f\v]+)!
+\item[] \cverb!\ \ \ \.\.\.+: !
+\item[] \cverb!offset (.*) sec!
+\item[] \cverb!=[a-fA-F0-9]{2}!
+\item[] \cverb!Number of nodes!
+\item[] \cverb!([a-zA-Z0-9]*)$!
+\item[] \cverb!unknown operand!
+\item[] \cverb!>([^<]+)</TITLE!
+\item[] \cverb!^begin [0-7]{3}!
+\item[] \cverb!"([^"]+)"|(\S+)!
+\item[] \cverb!successes=(\d+)!
+\item[] \cverb!^(.+)\.([^\.])*!
+\item[] \cverb!(\s*\=)|(\s*\:)!
+\item[] \cverb!.*\s=\s(\d+)\s;!
+\item[] \cverb!^(unit)?tests?$!
+\item[] \cverb!(filename = ).*!
+\item[] \cverb!register_module!
+\item[] \cverb!.*File exists.*!
+\item[] \cverb!Existing quips:!
+\item[] \cverb!^([A-Z])([A-Z])!
+\item[] \cverb!([0-9]+.[0-9]+)!
+\item[] \cverb!([^A-Z])([A-Z])!
+\item[] \cverb!^get_bill_text?!
+\item[] \cverb!([a-z_]+)_total!
+\item[] \cverb!^([^:]*):[^:]*$!
+\item[] \cverb!ari-[0-9a-f]{8}!
+\item[] \cverb!^[Mm]akefile.*$!
+\item[] \cverb!<([^ ]+)(>| ).*!
+\item[] \cverb!aki-[0-9a-f]{8}!
+\item[] \cverb!^[^:]*:([^:]*)$!
+\item[] \cverb@&(?![A-Za-z]+;)@
+\item[] \cverb![Vv]irtio block!
+\item[] \cverb!disable.*=.*yes!
+\item[] \cverb!^[0-9]+.[0-9]*$!
+\item[] \cverb!^file:///[a-z]:!
+\item[] \cverb!<param([^<>]+)>!
+\item[] \cverb!^\${VISUAL[:}/]!
+\item[] \cverb!request\.module!
+\item[] \cverb@<(?![a-z/?\$!])@
+\item[] \cverb!<[^>]+>|[^\s<]+!
+\item[] \cverb!thread_id=(\d+)!
+\item[] \cverb!Fennec/([\d.]+)!
+\item[] \cverb!&(#?)(x?)(\w+);!
+\item[] \cverb! -[HS]J \d+;? ?!
+\item[] \cverb!({[^}]+})?(\w+)!
+\item[] \cverb!(const)?\s*int$!
+\item[] \cverb!(\d+) megabytes!
+\item[] \cverb!\s*(\d+)  (.*)$!
+\item[] \cverb!\$VersionInfo\$!
+\item[] \cverb!http://(\S+)\s*!
+\item[] \cverb!url\(([^\)]+)\)!
+\item[] \cverb!time="\d+\.\d+"!
+\item[] \cverb!^\d{10}[\.\d]+$!
+\item[] \cverb!^(.*)\*(\d+)\*$!
+\item[] \cverb!\n(.+\S+)\ +\S+!
+\item[] \cverb!\s*\((\d+)\)\s*!
+\item[] \cverb!get_task_tag\)\(!
+\item[] \cverb!stop_session\)\(!
+\item[] \cverb!queue_status\)\(!
+\item[] \cverb!queue_tm_rsp\)\(!
+\item[] \cverb@&(?!(\w+|#\d+);)@
+\item[] \cverb!&#([0-9]+)[^0-9]!
+\item[] \cverb![A-Z][A-Z0-9_]+$!
+\item[] \cverb![][\\()<>@,:;".]!
+\item[] \cverb!\d+ FAILED TESTS!
+\item[] \cverb!([\\"/]|[^\ -~])!
+\item[] \cverb!^[a-zA-Z0-9_-]+$!
+\item[] \cverb!^//([^/?]*)(.*)$!
+\item[] \cverb!(.)([A-Z][a-z]+)!
+\item[] \cverb@[\t ]+(?![^{]*})@
+\item[] \cverb!(\s)@\s*([^\s]+)!
+\item[] \cverb![[({] | []}),;:]!
+\item[] \cverb![\n\r\t\x0b\x0c]!
+\item[] \cverb@(a)(?!\s(abc|a))@
+\item[] \cverb!%+ ?(.*)\n[ \t]*!
+\item[] \cverb![\\]end{([^}]*)}!
+\item[] \cverb!\\([a-zA-Z])+\s+!
+\item[] \cverb!import\s+([^;]+)!
+\item[] \cverb!module\s+([^;]+)!
+\item[] \cverb!^\s*\((.*)\)\s*$!
+\item[] \cverb!^(\s*<[^>]+>\s*)!
+\item[] \cverb!^(\.\.)[\/](.*)$!
+\item[] \cverb@\s*\*(\s+|(?!/))@
+\item[] \cverb![^']*'([^']*)'.*!
+\item[] \cverb!^https://([^/]+)!
+\item[] \cverb!@@PACKAGE_NAME@@!
+\item[] \cverb!^(debian|ubuntu)!
+\item[] \cverb!([a-z\d])([A-Z])!
+\item[] \cverb!<p[^/>]*>\s*</p>!
+\item[] \cverb![uU][rR]?[\\'\"]!
+\item[] \cverb!\s*\(0[0-7]+\).*!
+\item[] \cverb!(.*)\.(\w+:.+\s)!
+\item[] \cverb!([\d\w\-_]+)(.*)!
+\item[] \cverb!\-\-?\w+[\-\w]*$!
+\item[] \cverb!\[(\d?\d?\d?)%\]!
+\item[] \cverb!\"\"\"|\\'\\'\\'!
+\item[] \cverb!^[\'"](.*)[\'"]$!
+\item[] \cverb!^(.*)`(.*)`(.*)$!
+\item[] \cverb!requestContext, !
+\item[] \cverb!^(.*){(.*)}(.*)$!
+\item[] \cverb!project-root.jam!
+\item[] \cverb!^ *(.*) *( *) *$!
+\item[] \cverb!^--out-xml=(.*)$!
+\item[] \cverb!__FAIL(.*)__FAIL!
+\item[] \cverb!project.pbxproj$!
+\item[] \cverb!^(.*)<(.*)>(.*)$!
+\item[] \cverb!/_ah/upload/(.*)!
+\item[] \cverb!'(..+)'\s+(..+$)!
+\item[] \cverb!^[-a-zA-Z0-9_]+$!
+\item[] \cverb!^[a-zA-Z]+(\s|$)!
+\item[] \cverb!^(.+)[:(]\d+[:)]!
+\item[] \cverb!(.*)\[(.*)\](.*)!
+\item[] \cverb!\\?(gettext|_)\(!
+\item[] \cverb![\/][^\/]+[\/]?$!
+\item[] \cverb!pip(\d(\.\d)?)?$!
+\item[] \cverb!\S+\s(\S+)\t(.+)!
+\item[] \cverb!^[cC](\:[\\\/]+)!
+\item[] \cverb![\s\{\}\[\]\(\)]!
+\item[] \cverb!^rmr: hdfs://.*$!
+\item[] \cverb!  ([^:]*):  (.*)!
+\item[] \cverb![Vv]irtio memory!
+\item[] \cverb!(\r\n)|\r|(\n\r)!
+\item[] \cverb!^[-_A-Za-z0-9]+$!
+\item[] \cverb!<id>([^<]+)</id>!
+\item[] \cverb!([a-z]+://|//).*!
+\item[] \cverb!([^<]*)(<[^>]*>)!
+\item[] \cverb!timestamp="(.*)"!
+\item[] \cverb![a-fA-F0-9]{1,4}!
+\item[] \cverb!^(.+)<(.+)>(.*)$!
+\item[] \cverb!^[A-Za-z0-9_-]*$!
+\item[] \cverb!^_[_A-Za-z0-9]*$!
+\item[] \cverb!DISK_CHANGE_SIZE!
+\item[] \cverb!INPUT *(.*\.aux)!
+\item[] \cverb!.*gtest_main.*\n!
+\item[] \cverb!^[a-zA-Z0-9\-]+$!
+\item[] \cverb!^\s*using fop.*$!
+\item[] \cverb@\A#!.*python3.*$@
+\item[] \cverb!,[ ]*([-]?\d+|n)!
+\item[] \cverb!Username="(\w+)"!
+\item[] \cverb!\w+(Class|Iface)!
+\item[] \cverb!^\s*@([a-zA-Z]+)!
+\item[] \cverb!(fe80::[^\s|/]*)!
+\item[] \cverb!(const)?\s*long$!
+\item[] \cverb![^a-zA-Z0-9\_\.]!
+\item[] \cverb!^(Q|QQ)\<(.+)\>$!
+\item[] \cverb!.*[^.]\.\.[^.].*!
+\item[] \cverb!HTTP/(\d+).(\d+)!
+\item[] \cverb!\-|\s|T|t|:|\.|Z!
+\item[] \cverb!\s-drive\s[^\s]+!
+\item[] \cverb!:|\*|\?|"|<|>|\|!
+\item[] \cverb!varchar\((\d+)\)!
+\item[] \cverb!((^|\n)\s*\d+)\.!
+\item[] \cverb!\s*-\s*at\s*-\s*!
+\item[] \cverb@\d+\.\d*(?!\d*d)@
+\item[] \cverb!(^|\\n)([^\\]*)$!
+\item[] \cverb@(\D)\.(?!\s)(\D)@
+\item[] \cverb!^\s*(\w|\d)+\s*$!
+\item[] \cverb!get_default_depth!
+\item[] \cverb!queue_data_in\)\(!
+\item[] \cverb!write_pending\)\(!
+\item[] \cverb!close_session\)\(!
+\item[] \cverb!get_cmd_state\)\(!
+\item[] \cverb!\\[0-3][0-7][0-7]!
+\item[] \cverb!\$(\w+|\{[^}]*\})!
+\item[] \cverb!([.\w-]+)\s*(.*)$!
+\item[] \cverb!-isysroot [^ \t]*!
+\item[] \cverb!^'([^']+)'(\|.*$)!
+\item[] \cverb![&<>\"\x80-\xff]+!
+\item[] \cverb!\*release_cmd\)\(!
+\item[] \cverb!raise\s+\w+\s*(,)!
+\item[] \cverb!\d+\s+dir\s+(\d+)!
+\item[] \cverb![0-9]+(\.[0-9]+)+!
+\item[] \cverb!^\$Version="?1"?;!
+\item[] \cverb!([a-z0-9])([A-Z])!
+\item[] \cverb!([a-zA-Z0-9_$%]+)!
+\item[] \cverb![a-zA-Z0-9_-]{6}$!
+\item[] \cverb!#x([\d|A-F]{4,4})!
+\item[] \cverb![a-f0-9]+\s+<.*:$!
+\item[] \cverb!_(\w(\w|')*)_(.*)!
+\item[] \cverb!%([0-9A-Fa-f]{2})!
+\item[] \cverb!md5=[0-9a-f]{32}$!
+\item[] \cverb!<option value="">!
+\item[] \cverb!\\openout.*`(.*)'!
+\item[] \cverb!&([A-Za-z0-9_]+);!
+\item[] \cverb!\$Revision: (\d+)!
+\item[] \cverb!-isysroot\s+(\S+)!
+\item[] \cverb!([a-zA-Z-]+):\s*$!
+\item[] \cverb!^[-=*_^#]{3,}\s*$!
+\item[] \cverb!((\t)|(    ))(.*)!
+\item[] \cverb!#\s*all-random\s+!
+\item[] \cverb!^.*ld\.so\.cache$!
+\item[] \cverb!([^"\\]|\\(.|$))+!
+\item[] \cverb!([^'\\]|\\(.|$))+!
+\item[] \cverb!^[a-zA-Z0-9_=-]+$!
+\item[] \cverb![a-z]+(_[A-Z]+)?$!
+\item[] \cverb![^A-Z^a-z^0-9^:]+!
+\item[] \cverb!((^|[^%])(%%)*%s)!
+\item[] \cverb!_(unit)?test\.py$!
+\item[] \cverb!(\x1b\[[0-9;]+VK)!
+\item[] \cverb!^([^ ]+) \((.+)\)!
+\item[] \cverb!bytes=(\d+)-(\d+)!
+\item[] \cverb!(\d+)-(\d+)-(\d+)!
+\item[] \cverb!^#[0-9A-Fa-f]{6}$!
+\item[] \cverb!vport[0-9]p[0-9]+!
+\item[] \cverb!^[0-9a-f]{20,40}$!
+\item[] \cverb!([0-9]+):([0-9]+)!
+\item[] \cverb!([^\(]*)(\(.*\))?!
+\item[] \cverb!([\x00-\x1f\x7f])!
+\item[] \cverb!\s+(-\S+)\s+(.*)$!
+\item[] \cverb!\w+\s+\[?(\w+)\]?!
+\item[] \cverb!ks\=[\w\d\:\.\/]+!
+\item[] \cverb![Vv]irtio network!
+\item[] \cverb!test_file_commit2!
+\item[] \cverb!test_file_commit1!
+\item[] \cverb!test_file_commit0!
+\item[] \cverb!^md5=([a-f0-9]+)$!
+\item[] \cverb!^// Copyright .*$!
+\item[] \cverb!([0-9]+)_([0-9]+)!
+\item[] \cverb!glWindowPos.*MESA!
+\item[] \cverb!gl.*Program(s|)NV!
+\item[] \cverb!Report time: (.*)!
+\item[] \cverb!timestamp="[^"]+"!
+\item[] \cverb!ERROR TODO WORKED!
+\item[] \cverb! *"(.*)" *<.*@.*>!
+\item[] \cverb!^[A-Z][A-Z_0-9]*$!
+\item[] \cverb!(.*): reinstated$!
+\item[] \cverb!^([^/]+)/([^/]+)$!
+\item[] \cverb!^[a-zA-Z0-9+-.]+$!
+\item[] \cverb![vhs]d[a-z]*[\d]+!
+\item[] \cverb!^[a-zA-Z0-9_\.]+$!
+\item[] \cverb!^\./site-packages!
+\item[] \cverb!Components\.utils!
+\item[] \cverb!^You have \d+ new!
+\item[] \cverb!Skipping \d+ byte!
+\item[] \cverb!.* FAILED TESTS\n!
+\item[] \cverb!(const)?\s*float$!
+\item[] \cverb!#[ \t]*doctest:.*!
+\item[] \cverb![^A-Za-z0-9_.;\-]!
+\item[] \cverb!(>(\s*>)+)(,|\n$)!
+\item[] \cverb!^[^{]*\}|\{[^}]*$!
+\item[] \cverb!([a-zA-Z]):\\(.*)!
+\item[] \cverb!([% \t\x80-\xff])!
+\item[] \cverb!^\[([^]]+)\](.*)$!
+\item[] \cverb!Files:\n(  .+\n)+!
+\item[] \cverb!doctype\s+: (\w+)!
+\item[] \cverb!^dmd-(\d+)-(\d+).!
+\item[] \cverb![^A-Za-z0-9_\.\-]!
+\item[] \cverb!^template\s*<\s*$!
+\item[] \cverb!\s+([a-zA-Z]+)\s+!
+\item[] \cverb!\[.*\d+ tests.*\n!
+\item[] \cverb!([$\\%&@]+)?(\w+)!
+\item[] \cverb!^\s*\n+\s*\n+\s*$!
+\item[] \cverb!\d{2}/\d{2}/\d{4}!
+\item[] \cverb!(\d+).(\d+).(\d+)!
+\item[] \cverb!(\d{1,3}\.\d{2})%!
+\item[] \cverb!\d{4}-\d{2}-\d{2}!
+\item[] \cverb!\s*\[auto-props\]!
+\item[] \cverb!"(.*)"(\s*\[.*\])!
+\item[] \cverb!\t(\S*)\s+(\S*.*)!
+\item[] \cverb!\w+@(\w+)(\.\w+)*!
+\item[] \cverb!x86\s+\[?(\w+)\]?!
+\item[] \cverb!  (\S+) \((\d+)\)!
+\item[] \cverb!\n[\t ]*\n[\t ]*$!
+\item[] \cverb!\$?(\d+):\$?(\d+)!
+\item[] \cverb!^(\S+)\s+\D*(\d+)!
+\item[] \cverb!repo\=[\:\w\d\/]*!
+\item[] \cverb!\\([.(){}[\]"\\])!
+\item[] \cverb!sess_get_index\)\(!
+\item[] \cverb!sess_logged_in\)\(!
+\item[] \cverb!^\s*endblocktrans$!
+\item[] \cverb!-(20\d\d\d\d\d\d)$!
+\item[] \cverb!^0([1-9]{1})\d{8}$!
+\item[] \cverb!^\s*=\s*([^\s;,]*)!
+\item[] \cverb!(\d+\.\d+(\.\d+)*)!
+\item[] \cverb!^([0-9]+) ?(.*)\n?!
+\item[] \cverb@[^-a-zA-Z0-9!*+/ ]@
+\item[] \cverb!^.*[/\\](.*:)\d+\n!
+\item[] \cverb!0x([0-9a-fA-F]+)L?!
+\item[] \cverb!-py([123]\.[0-9])$!
+\item[] \cverb!^[A-Za-z0-9$./_]+$!
+\item[] \cverb!EndProjectSection$!
+\item[] \cverb! *({.*}) = ({.*})$!
+\item[] \cverb!</?xsl:([^>]*)/?>?!
+\item[] \cverb!^(\d{3})\s(\d{3})$!
+\item[] \cverb![\\]begin{([^}]*)}!
+\item[] \cverb!^([^=]+)=\'(.*)\'$!
+\item[] \cverb!([(\[{])|([)}\])])!
+\item[] \cverb!^scale:\d+\-\d+\:$!
+\item[] \cverb!<url>([^<]+)</url>!
+\item[] \cverb!, ([a-zA-Z0-9_]+)=!
+\item[] \cverb!\(([a-zA-Z0-9_]+)=!
+\item[] \cverb![\.\-](dev|devel)$!
+\item[] \cverb!([\n\r\t\x08\x07])!
+\item[] \cverb!episodenumber(\d+)!
+\item[] \cverb!(\d+)% packet loss!
+\item[] \cverb![^A-Z^a-z^0-9^\/]+!
+\item[] \cverb!wait (\d+) seconds!
+\item[] \cverb!(.*) \(([0-9]+)\)$!
+\item[] \cverb!.*_([vV]\d+\.\d+)$!
+\item[] \cverb!\d*\.\d*\.\d*\.\d*!
+\item[] \cverb!^@[Dd][Aa][Tt][Aa]!
+\item[] \cverb!ERROR[: ]|failed: !
+\item[] \cverb!sources.redhat.com!
+\item[] \cverb!(Jamfile<.*>)%(.*)!
+\item[] \cverb!^[+/0-9A-Za-z]*=*$!
+\item[] \cverb!^([^<]*)(/(<.*))?$!
+\item[] \cverb!(^|/)Change[Ll]og$!
+\item[] \cverb!md[0-9]$|sd[a-z]+$!
+\item[] \cverb!Number of elements!
+\item[] \cverb!filename="([^"]+)"!
+\item[] \cverb!.*libtdsodbc.*\.so!
+\item[] \cverb!^(\w+)=([a-f0-9]+)!
+\item[] \cverb!(\d+)(st|nd|rd|th)!
+\item[] \cverb!<files>\s*</files>!
+\item[] \cverb!\s*define|\s*endef!
+\item[] \cverb!^(.*)\[(.*)\](.*)$!
+\item[] \cverb!MemFree:\s+(\d+).*!
+\item[] \cverb!^(\s*)()(\S+)(.*$)!
+\item[] \cverb!^(.+)(\[[^\]]+\])$!
+\item[] \cverb!\s+(-\S+):\s+(.*)$!
+\item[] \cverb!\/\* END LOOP \*\/!
+\item[] \cverb!^\d+\.\d+(\.\d+)?$!
+\item[] \cverb!call.*mount.*first!
+\item[] \cverb![A-Z0-9$-_.]{3,20}!
+\item[] \cverb![&?]torrent($|=|&)!
+\item[] \cverb!AbstractBadgeImpl$!
+\item[] \cverb!^(.*[/#])([^/#]+)$!
+\item[] \cverb![&?]logging($|=|&)!
+\item[] \cverb@(<!DOCTYPE[^]]*]>)@
+\item[] \cverb!^[0-9A-Za-z-_. ]+$!
+\item[] \cverb!["\'](.+-div)[\'"]!
+\item[] \cverb!Revision: ([0-9]+)!
+\item[] \cverb!([A-Z])([a-z0-9]+)!
+\item[] \cverb!bill=SB|SCR|SJR\d+!
+\item[] \cverb!^[\s\t\n]*([^\n]*)!
+\item[] \cverb!interface[ \t]+\w+!
+\item[] \cverb!# Fadvise: ([\w]+)!
+\item[] \cverb!^(.*)\|(-?[0-9]+)$!
+\item[] \cverb!@\w+( [^{}:\n]+)?:!
+\item[] \cverb!(const)?\s*double$!
+\item[] \cverb!\s*modtime:\s*(.*)!
+\item[] \cverb!([^[]+)\[([^]]+)\]!
+\item[] \cverb!\s+([a-z0-9-]+)\s+!
+\item[] \cverb!^(.*)\s*<(.*)>\s*$!
+\item[] \cverb![^A-Za-z0-9_.:;\-]!
+\item[] \cverb!^\s*#\s*([0-9]+).*!
+\item[] \cverb![\.\-_ ]?[Ee](\d+)!
+\item[] \cverb!^(\w+)\s*=\s*(.+)$!
+\item[] \cverb!^(FF|GF)\((\d+)\)$!
+\item[] \cverb!(\w+)(\.|:)\s*(.*)!
+\item[] \cverb!\(CVS\) ([\d\.]+) !
+\item[] \cverb!^(\w+)\s*:\s+(\d+)!
+\item[] \cverb!\\\?([^\.]+)\.(.*)!
+\item[] \cverb!"(\\\\|\\"|[^"])*"!
+\item[] \cverb!\d+\.\d+\.\d+\.\d+!
+\item[] \cverb![\s\{\}\[\]\(\)\=]!
+\item[] \cverb!(^|.*:)\s*\w*("|\')!
+\item[] \cverb!is_state_remove\)\(!
+\item[] \cverb@^[ -~]{0,200}[!-~]$@
+\item[] \cverb!release_cmd_to_pool!
+\item[] \cverb!new_cmd_failure\)\(!
+\item[] \cverb!^\[\s*(\w+)\s*\]\s*!
+\item[] \cverb!hg\s*pull\s*(.*)\s*!
+\item[] \cverb!(\d+)\.(\d+)\.(\d+)!
+\item[] \cverb!^[1-9]\d{2} ?\d{2}$!
+\item[] \cverb![\?|><:/*"+,;=\[\]]!
+\item[] \cverb! (\d+\.\d+(\.\d+)*)!
+\item[] \cverb!\s*revision="(\d+)"!
+\item[] \cverb!'(\\.[^\\]*|[^\\])'!
+\item[] \cverb!^@([a-z]+)([ \t]|$)!
+\item[] \cverb!\s*([^: ]*)\s*:(.*)!
+\item[] \cverb!^\s*\*\w+(\+\+|--);!
+\item[] \cverb!^(.*)=([-+]?[0-9]+)!
+\item[] \cverb!^(0|-?[1-9][0-9]*)$!
+\item[] \cverb![\t-\r -/:-@[-`{-~]!
+\item[] \cverb!\*(\w(\w|')*)\*(.*)!
+\item[] \cverb!\[\d+ refs\]\r?\n?$!
+\item[] \cverb!\$([a-zA-Z0-9_]*)\$!
+\item[] \cverb@%(?![0-9A-Fa-f]{2})@
+\item[] \cverb!.*\.([a-zA-Z]{3,}$)!
+\item[] \cverb!\s*else\s*:\s*(#|$)!
+\item[] \cverb!["&<>]|[^\x00-\x7f]!
+\item[] \cverb!([\w-]+)([.#])(\w+)!
+\item[] \cverb!\s+{(\d+), (\d+)},$!
+\item[] \cverb!^(\d:)?(\S+)-(\S+)$!
+\item[] \cverb@(<|>|\+(?!\s*\+|$))@
+\item[] \cverb!(\d*\.?\d*)\s*(\S*)!
+\item[] \cverb!<title>(.*)</title>!
+\item[] \cverb!@@PACKAGE_VERSION@@!
+\item[] \cverb!^(CONFIG_\w+)=(.*)$!
+\item[] \cverb@([<>]|&(?![^\s]+;))@
+\item[] \cverb!^[a-zA-Z0-9_]+\.py$!
+\item[] \cverb!^v(ersion)?\s*(\d+)!
+\item[] \cverb!\sSONAME\s+([^\s]+)!
+\item[] \cverb@([!{}:;>+\(\[,])\s+@
+\item[] \cverb!\s*\(\d+[ulUL]*\).*!
+\item[] \cverb!--test-config=(.*)$!
+\item[] \cverb!(-[a-zA-Z])([0-9]*)!
+\item[] \cverb!([A-Za-z]+)([0-9]+)!
+\item[] \cverb!--user-config=(.*)$!
+\item[] \cverb!/(tools|libs)/(.*)$!
+\item[] \cverb!.*libessqlsrv.*\.so!
+\item[] \cverb!__startuptime,(\d*)!
+\item[] \cverb!\\u([0-9a-fA-F]{4})!
+\item[] \cverb!\sfile:\s+"([^"]*)"!
+\item[] \cverb!\\([0-3][0-7][0-7])!
+\item[] \cverb!.*(\.ipy|\.py[w]?)$!
+\item[] \cverb!\s*,?\s*new Array\(!
+\item[] \cverb!<path\[(\d+)\]>(.*)!
+\item[] \cverb!(\w+)-(\w+)\ : (.*)!
+\item[] \cverb!^(\s*)(\S*\s*)(.*$)!
+\item[] \cverb!\[SQLCode\: (\d+)\]!
+\item[] \cverb!([\[\]#$%&_{}^~\\])!
+\item[] \cverb@\s*/\*.*(?!\*/\s*)$@
+\item[] \cverb![&?]location($|=|&)!
+\item[] \cverb!(.*) ([(][^()]*[)])!
+\item[] \cverb!^[aeiouy][^aeiouy]$!
+\item[] \cverb!^(Win|PPC Mac OS X)!
+\item[] \cverb!No bootable device.!
+\item[] \cverb![&?]versions($|=|&)!
+\item[] \cverb!^[-+]?([0][0-7,]*)$!
+\item[] \cverb!projects/([^/]+)/?$!
+\item[] \cverb![A-Z_][a-zA-Z0-9]+$!
+\item[] \cverb!<WSSID>(.+)</WSSID>!
+\item[] \cverb!from django.*import!
+\item[] \cverb!<([^:]+:[^\s"<>]+)>!
+\item[] \cverb!.*\.(gz|xz|7z|bz2)$!
+\item[] \cverb!^\s*(>>>|...) (.*)$!
+\item[] \cverb!Components\.classes!
+\item[] \cverb!pages_to_scan:(\d+)!
+\item[] \cverb!by ([^;(\n]+;?|\w+)!
+\item[] \cverb!Components\.manager!
+\item[] \cverb!^\s*using boostbook!
+\item[] \cverb![0-9]+\s+[+-][0-9]+!
+\item[] \cverb!.*_?column_(\d+)_.+!
+\item[] \cverb!^(.+)&sig=(\w{32})$!
+\item[] \cverb!Components\.results!
+\item[] \cverb!commit [\da-f]{40}$!
+\item[] \cverb!\s*#*\s*pylint:(.*)!
+\item[] \cverb!([:\-\w]*){([^}]+)}!
+\item[] \cverb!Capacity:\s+(\S+.*)!
+\item[] \cverb!^@(\S+)\s*:(.*\n?)$!
+\item[] \cverb!--\d{4}-\d{2}-\d{2}!
+\item[] \cverb!([+-]?[\d\.]+)(\S+)!
+\item[] \cverb!^\d* *([\w.,'\s]+)$!
+\item[] \cverb!(\$\{)\d+(:[^}]+\})!
+\item[] \cverb!((,|^)\s*[\w\-\.]+)!
+\item[] \cverb!\S+\s\((\d+)\s\S+\)!
+\item[] \cverb!\w\w*\d\d\d\d\d.htm!
+\item[] \cverb!.*\.\.\.\s+\.\.\..*!
+\item[] \cverb!shutdown_session\)\(!
+\item[] \cverb!alloc_fabric_acl\)\(!
+\item[] \cverb!(\w+(\.\w+)*)\.(\w*)!
+\item[] \cverb!((^|[^%])(%%)*%[sy])!
+\item[] \cverb!^(\d{9}|(00|\+)\d*)$!
+\item[] \cverb!-py([123]\.?[0-9]?)$!
+\item[] \cverb!^Remaining objects:$!
+\item[] \cverb!#include +"[^/]+\.h"!
+\item[] \cverb!"(.*)".*PRIMARY KEY$!
+\item[] \cverb!^\$\((.*)\)(/(.*)|)$!
+\item[] \cverb![\x00-\x08\x0e-\x1f]!
+\item[] \cverb!((\w|\.)+)\((\d+)\):!
+\item[] \cverb!(.*)\x01(.*)###(.*)$!
+\item[] \cverb!\$[a-zA-Z]+: (.+) \$!
+\item[] \cverb!\s*-e\s+.*#egg=(.*)$!
+\item[] \cverb!^ns:((\w+\.)*(\w+))$!
+\item[] \cverb!\\raisebox\s*{[^}]*}!
+\item[] \cverb@[^A-Za-z0-9_.!~*()-]@
+\item[] \cverb!<root>([^<]*)</root>!
+\item[] \cverb![\000-\037\177-\377]!
+\item[] \cverb!<\/([\w\:\-]+)[^>]*>!
+\item[] \cverb![-+]?(\d+|\d*\.\d+)$!
+\item[] \cverb!([a-z]*) ([^ \r\n]*)!
+\item[] \cverb!\s+{(\d+), labels},$!
+\item[] \cverb!\.?(r|-|-r)\.?(\d+)$!
+\item[] \cverb!^gemsets for ([^ ]+)!
+\item[] \cverb!@@PACKAGE_BASENAME@@!
+\item[] \cverb!@@PACKAGE_PROVIDES@@!
+\item[] \cverb!@@PACKAGE_REVISION@@!
+\item[] \cverb!([A-Z]+)([A-Z][a-z])!
+\item[] \cverb!^[\S]+@[\S]+\.[\S]+$!
+\item[] \cverb!^content-type: (.*)$!
+\item[] \cverb!^##AGENT-WARNING##.*!
+\item[] \cverb![\x00-\x06\x0e-\x1f]!
+\item[] \cverb!^[^ ]*/([^ ]+)( .*)?!
+\item[] \cverb!HTTP/1.[01] ([0-9]+)!
+\item[] \cverb!join_mcast_pid:(\d+)!
+\item[] \cverb!([A-Z]+)\s+:\s+(.*)$!
+\item[] \cverb!(\/+[a-z]*\/[a-z]*$)!
+\item[] \cverb!.*(\.so|\.py[cod]?)$!
+\item[] \cverb!'([..\n]+)'\s+(..+$)!
+\item[] \cverb!^\s*([A-Z_]+): (\d+)!
+\item[] \cverb!VmRSS:[\t ]*(\d+) kB!
+\item[] \cverb!([^/\\]+)\.xcodeproj!
+\item[] \cverb!\/\* BEGIN LOOP \*\/!
+\item[] \cverb!^/(usr/|)(bin|sbin)/!
+\item[] \cverb![\x00-\x1f\x7f-\xff]!
+\item[] \cverb!resource out of date!
+\item[] \cverb!/(developers/)?apps/!
+\item[] \cverb![filesystem|fs] type!
+\item[] \cverb!Subversion Revision:!
+\item[] \cverb![a-zA-Z][a-zA-Z0-9]*!
+\item[] \cverb!href="/pypi/([^/"]*)!
+\item[] \cverb!([a-zA-Z0-9+.-]+)://!
+\item[] \cverb!KAthJax-[0-9a-f]{32}!
+\item[] \cverb!<graphic.*passwd=.*>!
+\item[] \cverb!(="[^"]+")([a-zA-Z])!
+\item[] \cverb!^[-+]?[a-zA-Z0-9_]+$!
+\item[] \cverb!CPU Affinity: +[-y]+!
+\item[] \cverb!@@VERSION>(.*)@@(.*)!
+\item[] \cverb!^Working file: (.*)$!
+\item[] \cverb!HTTP/1.[0-9]+ 200 OK!
+\item[] \cverb![a-zA-Z0-9]+\.[0-9]+!
+\item[] \cverb!^\#([0-9a-fA-F]{6})$!
+\item[] \cverb!.*\?.*token=(.*)(&?)!
+\item[] \cverb!^(.*)\.(diff|patch)$!
+\item[] \cverb!^\s*using doxygen.*$!
+\item[] \cverb!:( *\n     \|\n)\x02!
+\item[] \cverb!Components\.[a-zA-Z]!
+\item[] \cverb@\A#!.*python(?!3).*$@
+\item[] \cverb!.*lib2to3.*\.pickle$!
+\item[] \cverb!^(Y|X|A|N) ([\S ]+)$!
+\item[] \cverb!locate-root\s+"(.*)"!
+\item[] \cverb![$][{]\d+:([^}]+)[}]!
+\item[] \cverb!\(used in test .+\) !
+\item[] \cverb!call\slaunch\sbefore!
+\item[] \cverb!(Saving to:|\s*\d+K)!
+\item[] \cverb!disk size:\s+(\S+.*)!
+\item[] \cverb!file format:\s+(\S+)!
+\item[] \cverb!"(.*)"\s*->\s*"(.*)"!
+\item[] \cverb!#define\sSET_(\S*)\(!
+\item[] \cverb!.*[/\\]bin[.]v2[/\\]!
+\item[] \cverb!\[tag:\s*([\S]+)\s*]!
+\item[] \cverb!\d+(\.)?\d*[eE]-?\d+!
+\item[] \cverb!^(.*)\s*\((.*)\)\s*$!
+\item[] \cverb!^(\d+\.\d+)\.\d+(.*)!
+\item[] \cverb!^\$\w+:\s+(.*)\s+\$$!
+\item[] \cverb!(h|s)\w*(\d\d\d\d\d)!
+\item[] \cverb@\[\[\!\!([^\]]*)\]\]@
+\item[] \cverb!^\d+\.\d+\.\d+\.\d+$!
+\item[] \cverb@\?\?[=/\'\(\)\!<>\-]@
+\item[] \cverb!fall_back_to_erl0\)\(!
+\item[] \cverb!committed-rev="(\d+)"!
+\item[] \cverb!\{@([^\}]*)=([^\}]*)}!
+\item[] \cverb![^\t\r\n -~\xa0-\xff]!
+\item[] \cverb!^([^ \t]+)[ \t]+(.*)$!
+\item[] \cverb!^([^\[\]]+)(\[.*\])?$!
+\item[] \cverb!/usr/local/bin/python!
+\item[] \cverb![`\x00- \x7f-\xa0\s]+!
+\item[] \cverb!^([a-zA-Z0-9_]+)=(.*)!
+\item[] \cverb!Version:.*-r(\d+)\s*$!
+\item[] \cverb!^def\s*(\w+)\s*=(.*)$!
+\item[] \cverb!^DYNAMIC SYMBOL TABLE!
+\item[] \cverb!\{%\s*(block|extends)!
+\item[] \cverb!\s|\+|\-|\*|\/|<<|>>]!
+\item[] \cverb!^[ ]{0,3}[*+-][ ](.*)!
+\item[] \cverb!^[ ]{0,3}\d+\.[ ](.*)!
+\item[] \cverb!\$[a-zA-Z]+: (.+) \$$!
+\item[] \cverb!\\hackscore\s*{[^}]*}!
+\item[] \cverb!^([A-Za-z]:)?[/\\\\]*!
+\item[] \cverb!-isysroot\s+\S+(\s|$)!
+\item[] \cverb@([\w\-]+\s*:)(?!:)\s*@
+\item[] \cverb!(\S+(\.\w+)*)\.(\w*)$!
+\item[] \cverb!^[a-zA-Z0-9-]{1,500}$!
+\item[] \cverb!@@PACKAGE_OBSOLETES@@!
+\item[] \cverb!@@PACKAGE_CONFLICTS@@!
+\item[] \cverb!^[a-zA-Z0-9-]{1,100}$!
+\item[] \cverb!^[a-zA-Z0-9_]+\.[ch]$!
+\item[] \cverb!Content-Length: (\d+)!
+\item[] \cverb@\s+([!{};:>+\(\)\],])@
+\item[] \cverb!TREEVIS ([^ ]+) (.*)$!
+\item[] \cverb!([-0-9.]+)([a-zA-Z]+)!
+\item[] \cverb!^[a-zA-Z0-9_-]{3,20}$!
+\item[] \cverb!ustar *\x00|[ \x00]*$!
+\item[] \cverb!^([^<]+)[<]?(.*)[>]?$!
+\item[] \cverb!^([A-Za-z]+):\s+(.+)$!
+\item[] \cverb!^[a-zA-Z0-9_=.\\/-]+$!
+\item[] \cverb!^[a-zA-Z0-9\.\-:+"]+$!
+\item[] \cverb!\s+Flags for (\S.+):$!
+\item[] \cverb!VmSwap:[\t ]*(\d+) kB!
+\item[] \cverb!(\d+)\+\d records out!
+\item[] \cverb!(\d+)\s+(\d+)\s+(\d+)!
+\item[] \cverb![&?]versioning($|=|&)!
+\item[] \cverb!(^[a-zA-Z]+)([0-9]+)$!
+\item[] \cverb!^(PPC|Intel) Mac OS X!
+\item[] \cverb!glGetVertexAttribfvNV!
+\item[] \cverb!/dev/disk([0-9]+)[^s]!
+\item[] \cverb!In the (House|Senate)!
+\item[] \cverb!(.*): mark as failed$!
+\item[] \cverb!refs/(heads|remotes)/!
+\item[] \cverb!mac=00:00:00:00:00:00!
+\item[] \cverb!ErrorReturnCode_(\d+)!
+\item[] \cverb!:([a-zA-Z_\-]+):(.*)$!
+\item[] \cverb!^\s*(\n\r|\r\n|\r|\n)!
+\item[] \cverb!^\s*using xsltproc.*$!
+\item[] \cverb!/plugin-container\s*$!
+\item[] \cverb!clocksource=[a-z\- ]+!
+\item[] \cverb!^(Z|ZZ|Q|QQ)\[(.+)\]$!
+\item[] \cverb!(<\?xml version.*\?>)!
+\item[] \cverb!Disk*.(\d+)\s+Offline!
+\item[] \cverb![/*?]|\[[^]]*/[^]]*\]!
+\item[] \cverb!dot version ([\d\.]+)!
+\item[] \cverb!(.+)_(\d+)_(\d+)_(.+)!
+\item[] \cverb!\("id", "([0-9]+)"\);!
+\item[] \cverb!\(used in test (.+)\)!
+\item[] \cverb!Allocation:\s+(\S+.*)!
+\item[] \cverb!^[a-zA-Z0-9_:\.\-,]+$!
+\item[] \cverb!^(Z|ZZ|Q|QQ)\((.+)\)$!
+\item[] \cverb!([\w\-\.]+)="([^"]+)"!
+\item[] \cverb!([\w\-\.]+)='([^']+)'!
+\item[] \cverb!^(\d+)L?:|^\((\d+)L?,!
+\item[] \cverb!rel=[\\'"](\w+)[\\'"]!
+\item[] \cverb!vendor_id\s+:\s+(\w+)!
+\item[] \cverb!\[\d+ depth=(-?\d+)\]!
+\item[] \cverb!^(\w+|/|\.|\(|\"|\\')!
+\item[] \cverb!(\w+)\s+(\w+)\s+(\w+)!
+\item[] \cverb!\.\.|^\./|\.$|/\./|^-!
+\item[] \cverb!^(\w+|/|\.|\*|\"|\\')!
+\item[] \cverb![&<>\"\n\r\x80-\xff]+!
+\item[] \cverb![\s\{\}\[\]\(\)\= ,:]!
+\item[] \cverb!get_fabric_proto_ident!
+\item[] \cverb!release_fabric_acl\)\(!
+\item[] \cverb!tpg_get_inst_index\)\(!
+\item[] \cverb!coding[:=]\s*([-\w.]+)!
+\item[] \cverb!^\s*(>>>|\.\.\.) (.*)$!
+\item[] \cverb!^[a-z0-9][-+.a-z0-9]*:!
+\item[] \cverb!\((\S+).py, line (\d+)!
+\item[] \cverb!^(\d{1,3})\.(\d{1,4})$!
+\item[] \cverb!\\openout.*`(.*\.aux)'!
+\item[] \cverb!REG_\w+\s+([^\r]+)\r\n!
+\item[] \cverb!coding[=:]\s*([-\w.]+)!
+\item[] \cverb!(plugins.*|scripts.*)$!
+\item[] \cverb!## PATH PLACEHOLDER ##!
+\item[] \cverb!([ ]+_)|(_[ ]+)|([ ]+)!
+\item[] \cverb![a-zA-Z_][a-zA-Z0-9_]*!
+\item[] \cverb@^%[%!\w]([^:]*)[ \t]*$@
+\item[] \cverb![\?\&]gsessionid=(\w*)!
+\item[] \cverb!#([\$a-zA-Z0-9_\-\&]+)!
+\item[] \cverb!(\s*<[^>]+>[\s\n\r]*)$!
+\item[] \cverb!<a href=[^>]*>([^<]+)<!
+\item[] \cverb!(redhat|fedora|centos)!
+\item[] \cverb!%%HiResBoundingBox: .*!
+\item[] \cverb!(centos|redhat|fedora)!
+\item[] \cverb!\s*https?:.*#egg=(.*)$!
+\item[] \cverb!searchplugins\/.+\.xml!
+\item[] \cverb!\s*# SOURCE LINE (\d+)!
+\item[] \cverb!([abc]|rc)[\-\.](\d+)$!
+\item[] \cverb!00000000 <(v8dbg_.*)>:!
+\item[] \cverb![a-zA-Z_][a-zA-Z_0-9]*!
+\item[] \cverb!available: (\d+) nodes!
+\item[] \cverb!expectedFailures=(\d+)!
+\item[] \cverb!\.(title|a|dd|h[0-9])$!
+\item[] \cverb!^\s*([A-Z_]+) = (\d+)$!
+\item[] \cverb!\s+Flags from (\S.+):$!
+\item[] \cverb!^\s*finally:\s*(#.*)?$!
+\item[] \cverb!.*_runfac(\d*\.?\d*).*!
+\item[] \cverb!G_CONST_RETURN |const !
+\item[] \cverb!__metrics(.*)__metrics!
+\item[] \cverb!^[a-zA-Z0-9_-]{1,500}$!
+\item[] \cverb![\x02\x1f\x16\x0f\x03]!
+\item[] \cverb!/cygdrive/([a-z])/(.*)!
+\item[] \cverb!<[a-zA-Z][a-zA-Z0-9]*/!
+\item[] \cverb!^([a-zA-Z0-9_]+):( |$)!
+\item[] \cverb!Available subcommands:!
+\item[] \cverb!# Iterations: ([0-9]+)!
+\item[] \cverb!^[-+]?0x[0-9a-fA-F,]+$!
+\item[] \cverb!download_url:'([^']+)'!
+\item[] \cverb![A-Za-z_][A-Za-z0-9_]*!
+\item[] \cverb!.*-sdk ([a-zA-Z0-9.]*)!
+\item[] \cverb![a-z_][a-z0-9_]{2,30}$!
+\item[] \cverb!^\s*(#|//[^/]|////).*$!
+\item[] \cverb!Interim result: *(\S+)!
+\item[] \cverb!Components\.interfaces!
+\item[] \cverb!^([A-Za-z ]+):\s+(.+)$!
+\item[] \cverb!test_(.+)\.[json|yaml]!
+\item[] \cverb!clocksource=[a-z \-_]+!
+\item[] \cverb!^\s+color:\s*#4D926F;$!
+\item[] \cverb!\("vid", "([0-9]+)"\);!
+\item[] \cverb!\d+ failur.*\d+ librar!
+\item[] \cverb![\']([a-zA-Z0-9]+)[\']!
+\item[] \cverb!^modules\/(\w+)\/(.*)$!
+\item[] \cverb!(const)?\s*char\s*\*?$!
+\item[] \cverb!MemTotal:\s+(\d+)\s+kB!
+\item[] \cverb!^(}|struct\s+\w+);\s*$!
+\item[] \cverb!%G|\[m|\[[\d;]+[HJnrm]!
+\item[] \cverb!(.*)\[([^\[\]]+)\](.*)!
+\item[] \cverb!^(\w+):\d+\s\((\d+).+$!
+\item[] \cverb!^(\w+)\s*:\s+(\d+.\d+)!
+\item[] \cverb!repo\=cdrom[\:\w\d\/]*!
+\item[] \cverb!get_pr_transport_id\)\(!
+\item[] \cverb!^(\+62|0)[2-9]\d{7,10}$!
+\item[] \cverb!coding[:=]\s*([-\w_.]+)!
+\item[] \cverb!([-\w]+)\s*:\s*([^:;]*)!
+\item[] \cverb![a-zA-Z][-_.a-zA-Z0-9]*!
+\item[] \cverb!\nStack trace:\n(.|\n)*!
+\item[] \cverb![_a-zA-z][_a-zA-Z0-9]*$!
+\item[] \cverb!^egg=([-A-Za-z0-9_.]+)$!
+\item[] \cverb!^([A-Z]+)([1-9][0-9]*)$!
+\item[] \cverb![a-zA-Z_][a-zA-Z0-9_]*$!
+\item[] \cverb!\\document(style|class)!
+\item[] \cverb!^\d{4}-\d{1,2}-\d{1,2}$!
+\item[] \cverb!Out\[(\d+)\]:\s?(.*)\s*!
+\item[] \cverb!In \[(\d+)\]:\s?(.*)\s*!
+\item[] \cverb!(((((((((((x)))))))))))!
+\item[] \cverb!(^|\n)[ ]{0,3}>[ ]?(.*)!
+\item[] \cverb!(Okay|[EW]\d{3}):\s(.*)!
+\item[] \cverb!^\d{15}(\d{2}[0-9xX])?$!
+\item[] \cverb![a-zA-Z][a-zA-Z0-9.-]*$!
+\item[] \cverb!^([^@]*@)?([^:]*)(:.*)?!
+\item[] \cverb![a-zA-Z][-a-zA-Z0-9_:]*!
+\item[] \cverb!^s3:\/\/([^\/]*)\/(.*)$!
+\item[] \cverb!^lib([^/]+)\.(a|dylib)$!
+\item[] \cverb!\s+{(\d+), (0|"\w+")},$!
+\item[] \cverb!\$\{([a-zA-Z0-9\-_]+)\}!
+\item[] \cverb!\.([\$a-zA-Z0-9_\-\&]+)!
+\item[] \cverb!__version__ = '([^']+)'!
+\item[] \cverb!^https?://bitbucket.org!
+\item[] \cverb!^(centos|redhat|fedora)!
+\item[] \cverb@[()]|\s=[^=]|[^=!<>]=\s@
+\item[] \cverb!.*/.*_V(\d+\.\d+)/mongo!
+\item[] \cverb!([A-Z][a-z]+[A-Z][^ ]+)!
+\item[] \cverb!Operation not permitted!
+\item[] \cverb!(driver|source|address)!
+\item[] \cverb!^[0-9A-Za-z._-]{0,100}$!
+\item[] \cverb!^(.*)~([+-][0-9]{2})00$!
+\item[] \cverb!^<type [\'"](.+)[\'"]>$!
+\item[] \cverb!^[a-z0-9][a-z0-9_]{2,}$!
+\item[] \cverb!Change (\d+) submitted.!
+\item[] \cverb!^\s+at 0x[0-9A-Fa-f]+: !
+\item[] \cverb!Send buffer size: (\d+)!
+\item[] \cverb!id:(\d{1}):initdefault:!
+\item[] \cverb!^\s+by 0x[0-9A-Fa-f]+: !
+\item[] \cverb!(^|[\W_])sample\d*[\W_]!
+\item[] \cverb!easy_install(-\d\.\d)?$!
+\item[] \cverb!\\([0-9a-fA-F]{1,6})\s?!
+\item[] \cverb!(\d+)\+(\d+) records in!
+\item[] \cverb!\s*(\d+)\s*,\s*(\d+)\s*!
+\item[] \cverb!\w*:\w*:\w*:\w*:\w*:\w*!
+\item[] \cverb!HTTP\((\.\.(\/\.\.)*)\)!
+\item[] \cverb!(vmlinu[xz]|kernel.img)!
+\item[] \cverb!(Read-only)|(protected)!
+\item[] \cverb!^[a-z][a-z0-9_$()+-/]*$!
+\item[] \cverb![A-Za-z_][A-Za-z0-9_]*$!
+\item[] \cverb![^%]+%[^.]+[.](compile)!
+\item[] \cverb!^[-+]?(0|[1-9][0-9,]*)$!
+\item[] \cverb!<Timeout>(.+)</Timeout>!
+\item[] \cverb!([a-zA-Z]+)([A-Z][a-z])!
+\item[] \cverb!# Command: [/\w_]+ (.*)!
+\item[] \cverb!Last Changed Rev: (\d+)!
+\item[] \cverb!.*lib(n?cursesw?)\.so.*!
+\item[] \cverb@<([^/!][^>]*[^/])>\s+</@
+\item[] \cverb!<tt class="[\w+]"></tt>!
+\item[] \cverb!([idel])|(\d+):|(-?\d+)!
+\item[] \cverb!\s+([A-Z])\s+.*CDFS.*\n!
+\item[] \cverb!QEMU_AUDIO_DRV.[^\s]+\s!
+\item[] \cverb!^[a-zA-Z0-9/_^\-\.:=]+$!
+\item[] \cverb!virtual size:\s+(\S+.*)!
+\item[] \cverb!\s*([^=:]+)(=|:)\s*(.*)!
+\item[] \cverb!VERSION\s*=\s*"([^"]+)"!
+\item[] \cverb!(<\w+ object at )0x\w+>!
+\item[] \cverb!http://([^/]+)(/\S*)\s*!
+\item[] \cverb!(\w+)\s*<((\w|,| |-)+)>!
+\item[] \cverb!(\w+) as (\w+) in (\w+)!
+\item[] \cverb!\d{1,2}/\d{1,2}/\d{4,4}!
+\item[] \cverb!processor\s+:\s*(\d+)\n!
+\item[] \cverb!flags\s+:\s+([\w\s]+)\n!
+\item[] \cverb!\x1b\[(\d\d;){0,2}\d\dm!
+\item[] \cverb!p\s*cnf\s*(\d*)\s*(\d*)!
+\item[] \cverb!^[\"\[`\\']|[\"\]`\\']$!
+\item[] \cverb!^(\d*)\.(\d*)\[(\d+)\]$!
+\item[] \cverb!autoyast\=[\w\d\:\.\/]+!
+\item[] \cverb!^(\w+)\s*:\s+(\d+)\s\w+!
+\item[] \cverb@\[\[([^\]^!][^\]]*)\]\]@
+\item[] \cverb!\nmd5_data = {\n([^}]+)}!
+\item[] \cverb![\x00-\x1f\\"\b\f\n\r\t]!
+\item[] \cverb![a-zA-Z][-_.:a-zA-Z0-9]*!
+\item[] \cverb!write_pending_status\)\(!
+\item[] \cverb!set_fabric_sense_len\)\(!
+\item[] \cverb!get_fabric_sense_len\)\(!
+\item[] \cverb![ \(\)<>@,;:\\"/\[\]\?=]!
+\item[] \cverb!(\d{4})-(\d\d?)-(\d\d?)$!
+\item[] \cverb!.*; charset=([\w\d-]+);?!
+\item[] \cverb!macosx-(\d+)\.(\d+)-(.*)!
+\item[] \cverb![a-zA-Z][-.a-zA-Z0-9:_]*!
+\item[] \cverb!<[a-zA-Z][-.a-zA-Z0-9]*/!
+\item[] \cverb![\x00-\x19\\"\b\f\n\r\t]!
+\item[] \cverb!\d+ tests?, listed below!
+\item[] \cverb!\s*(t_[a-zA-Z_0-9]*)\s*=!
+\item[] \cverb!LINE (\d+) OF FILE (\d+)!
+\item[] \cverb!-- ADDMODULE MARKER 2 --!
+\item[] \cverb!-- ADDMODULE MARKER 1 --!
+\item[] \cverb!((((((((((y))))))))))(.)!
+\item[] \cverb!//\s+Env: TEST_FILE_NAME!
+\item[] \cverb![^\x00-\x21\xff]{1,250}$!
+\item[] \cverb!Local variables in frame!
+\item[] \cverb!\s*([a-f0-9]+):\s*(\S.*)!
+\item[] \cverb!\s*[-\w]+\s*:\s*[^:;]*;?!
+\item[] \cverb!return.*[ \(]..._FAILURE!
+\item[] \cverb!<title>\([^<]*\)</title>!
+\item[] \cverb!## REPLAY PLACEHOLDER ##!
+\item[] \cverb!foo-0.0.0-py[23].\d.egg$!
+\item[] \cverb!^\.\.\s+autosummary::\s*!
+\item[] \cverb!^https?://bitbucket.org/!
+\item[] \cverb!^[a-zA-Z_][a-zA-Z0-9_]*$!
+\item[] \cverb!(exit|quit)(\s*\(.*\))?$!
+\item[] \cverb![\?\&]gsessionid=(\w*\-)!
+\item[] \cverb!#\s*-\*-\s*noplot\s*-\*-!
+\item[] \cverb!\n__com.redhat_drive_add!
+\item[] \cverb!(([^-/]+)-?([^/]+)?)/?.*!
+\item[] \cverb!([0-9]+)([DdHhMm]|[sS]?)!
+\item[] \cverb!Fail(ed|ure in) example:!
+\item[] \cverb![\x00-\x08\x0e-\x1f\x7f]!
+\item[] \cverb!.*OOM max count: (\d+).*!
+\item[] \cverb!^([a-z\._]*) = ([0-9]*)$!
+\item[] \cverb!return code \[([0-9]+)\]!
+\item[] \cverb!([^\(]*)(\((.*)%(.*)\))?!
+\item[] \cverb!(\d+)\+(\d+) records out!
+\item[] \cverb!(\w+)_(\d+)_(\d+)_(\w+)$!
+\item[] \cverb!^(\d+\.|[-*|]|\[\d+\]) .!
+\item[] \cverb!_:([A-Za-z][A-Za-z0-9]*)!
+\item[] \cverb!(https?://|git://)github!
+\item[] \cverb!.*6300ESB Watchdog Timer!
+\item[] \cverb!__([a-z]+)__ = '([^']+)'!
+\item[] \cverb!^ephemeral(\d|[1-9]\d+)$!
+\item[] \cverb!^([0-9a-f]{40})\s+(\S+)$!
+\item[] \cverb!^([+-])(\d{2}):?(\d{2})$!
+\item[] \cverb!\?[a-zA-Z_][a-zA-Z0-9_]*!
+\item[] \cverb!Bill Name:\s+([H|S]F\d+)!
+\item[] \cverb!^\s*from flask import\s+!
+\item[] \cverb!BuildID\s*=\s*"(\d{10})"!
+\item[] \cverb!<title>[^<]*Revision \d+:!
+\item[] \cverb!\S+ (\d+)\.(\d+)\.?(\d+)?!
+\item[] \cverb!^(\d{3})-(\d{3})-(\d{3})$!
+\item[] \cverb!^([-+])?(\d\d?):?(\d\d)?$!
+\item[] \cverb!^[a-zA-Z]([a-zA-Z0-9_]*)$!
+\item[] \cverb!^[A-Za-z_][A-Za-z0-9_.]*$!
+\item[] \cverb!((^|;)\s*charset=)([^;]*)!
+\item[] \cverb!^[a-zA-Z][a-zA-Z0-9\-_]*$!
+\item[] \cverb![A-Z][a-z]+([A-Z][a-z]*)+!
+\item[] \cverb!lost: 0 bytes in 0 blocks!
+\item[] \cverb!^([0-9a-fA-F]{8}) . (.*)$!
+\item[] \cverb!^([a-zA-F0-9_-]*)[\.]?.*$!
+\item[] \cverb!~$|\.bak$|#$|\.cvsignore$!
+\item[] \cverb!^(https?)://([^/]+)(/.*)$!
+\item[] \cverb!%([0-9a-fA-F][0-9a-fA-F])!
+\item[] \cverb!&#(\d+|[xX][0-9a-fA-F]+);!
+\item[] \cverb!#\s*ipdoctest:\s*EXTERNAL!
+\item[] \cverb!\.?(pre|preview|-c)(\d+)$!
+\item[] \cverb!\.?(dev|git|bzr)\.?(\d+)$!
+\item[] \cverb!^#define\s+(\w+)\s+(\d+)$!
+\item[] \cverb!(\$\(([a-zA-Z0-9\-_]+)\))!
+\item[] \cverb!\.[svn|git|hg|scc|vssscc]!
+\item[] \cverb!(nextval\(')([^']+)('.*$)!
+\item[] \cverb!^([a-z]*)(:|%3A)([\w-]*)$!
+\item[] \cverb!^(\s*)(def .+:|class .+:)!
+\item[] \cverb!goog.require\('([^']*)'\)!
+\item[] \cverb!^(\s*@charset [^;]+;\s*)+!
+\item[] \cverb!\d+ hdrcharset=([^\n]+)\n!
+\item[] \cverb!^.*"([\d\w_\+\.\-/]+)".*$!
+\item[] \cverb!asm-([\w\d_\+\.\-]+)(/.*)!
+\item[] \cverb!\[.*\]\sSONAME\s+([^\s]+)!
+\item[] \cverb!^[\w\d_]+\.[\w\d_]+\.\d+$!
+\item[] \cverb!Microsoft Visual Studio 9!
+\item[] \cverb!Microsoft Visual Studio 8!
+\item[] \cverb!0 INFO SimpleTest START.*!
+\item[] \cverb!unexpectedSuccesses=(\d+)!
+\item[] \cverb!^(\s*)(def|class)(\s.*)?$!
+\item[] \cverb!^\s*<CxxTest\s+world>\s*$!
+\item[] \cverb!(\d+)(\s+\d){3,}\s+([TF])!
+\item[] \cverb!(\d+)(\s+\d+){2}\s+([TF])!
+\item[] \cverb@&(#[0-9][0-9]*)(?![0-9;])@
+\item[] \cverb@^[ \t]*[Xv!_][Xv!_ \t]*\n@
+\item[] \cverb!^(Win|Linux|PPC Mac OS X)!
+\item[] \cverb!:([a-zA-Z][a-zA-Z0-9_-]*)!
+\item[] \cverb!(/[a-zA-Z][a-zA-Z0-9]*)+$!
+\item[] \cverb![&?]requestPayment($|=|&)!
+\item[] \cverb!TOTEM_INFO_DURATION=(\d+)!
+\item[] \cverb!# Sched features: ([\w]+)!
+\item[] \cverb!^[JB]?[0-9]+([.][0-9]*)?$!
+\item[] \cverb!Input #0, ([\w,]+)?, from!
+\item[] \cverb!\x1b\[([0-9]+)(;[0-9]+)*m!
+\item[] \cverb!Output written on (.+) \(!
+\item[] \cverb!(((verify))) *\(( *)(\d+)!
+\item[] \cverb!^var _0x[a-f0-9]+ ?\= ?\[!
+\item[] \cverb!["\'](.+)["\']\s*:\s*(.*)!
+\item[] \cverb!(\[(.+des([0-9]+).htm)\])!
+\item[] \cverb!([\-0-9])|([\-0-9]/[0-9])!
+\item[] \cverb!django_compressor\.\w{12}!
+\item[] \cverb!(<function \w+ at )0x\w+>!
+\item[] \cverb!^(.*)\s*<(.*)>\s*(.*)\s*$!
+\item[] \cverb!\[=+\] \d+ tests .* ran.*!
+\item[] \cverb!MemFree:\s+(.\d+)\s+(\w+)!
+\item[] \cverb!\n(.+\S+)\ +\S+\ +(.+\S+)!
+\item[] \cverb!^[\\'\"][^\\'\"]+[\\'\"]$!
+\item[] \cverb![^/\\,{]\*\*|\*\*[^/\\,}]!
+\item[] \cverb!\s*(\w*|\w(\w|\.)*\w)\s*::!
+\item[] \cverb![a-zA-Z][-_.a-zA-Z0-9]*\s*!
+\item[] \cverb!(\\'[^\\']*\\'|"[^"]*")\s*!
+\item[] \cverb!([\w\d\.-]+)\s*([\d]+):.*$!
+\item[] \cverb!^bzr\s*branch\s*-r\s*(\d*)!
+\item[] \cverb!Decimal\('(\d+(\.\d*)?)'\)!
+\item[] \cverb![a-zA-Z_:][-a-zA-Z0-9._:]*!
+\item[] \cverb@[^\w!#$%&'*+,.:;<=>?^`|~-]@
+\item[] \cverb!(\w+)[-_](release|version)!
+\item[] \cverb!\$([a-zA-Z_][a-zA-Z_0-9]*)!
+\item[] \cverb@^#! */usr/local/bin/python@
+\item[] \cverb!/\*([^*]+|\*+[^/])*(\*+/)?!
+\item[] \cverb!^[a-zA-Z_][a-zA-Z0-9_]*[(]!
+\item[] \cverb![a-zA-Z_$][A-Za-z0-9_$..]*!
+\item[] \cverb!#define NODE_PATCH_VERSION!
+\item[] \cverb!#define NODE_MAJOR_VERSION!
+\item[] \cverb!#define NODE_MINOR_VERSION!
+\item[] \cverb!\$([a-zA-Z_][a-zA-Z0-9_]*)!
+\item[] \cverb!\.?(dev-r|dev\.r)\.?(\d+)$!
+\item[] \cverb![\-\.](dev)[\-\.]?r?(\d+)$!
+\item[] \cverb!^([a-zA-Z0-9]+)([-](.*))?$!
+\item[] \cverb!(\x01?\x1b\[[0-9;]*m\x02?)!
+\item[] \cverb!(\x01?\x1b\[[0-9;]+m\x02?)!
+\item[] \cverb!\x01?\x1b\[([0-9;]*)m\x02?!
+\item[] \cverb!\x01?\x1b\[([0-9;]+)m\x02?!
+\item[] \cverb!^#.*coding[:=]\s*([-\w.]+)!
+\item[] \cverb!#\s*coding[:=]\s*([-\w.]+)!
+\item[] \cverb!\s*\(0[xX][0-9a-fA-F]*\).*!
+\item[] \cverb!(3\.1\d+)|(MiKTeX \d+.\d+)!
+\item[] \cverb!^(\w[\s\w'.-]*)(\((.*)\))?!
+\item[] \cverb!Microsoft Visual Studio 11!
+\item[] \cverb!Microsoft Visual Studio 10!
+\item[] \cverb!(.*):\t?........ (.) (.*)$!
+\item[] \cverb!^[ \t]*import[ \t]+([^#]+)!
+\item[] \cverb!_F2PY_STRING_CONSTANT_\d+_!
+\item[] \cverb!^([a-zA-z0-9]+)=([\S\s]*)$!
+\item[] \cverb!Committed revision (\d+)\.!
+\item[] \cverb!^#define ([A-Z]+)\s+(\d+)$!
+\item[] \cverb!(\d+(\.\d+)?) (K|M|G|T)b?$!
+\item[] \cverb!user_pref\("(.*)",\s(.*)\)!
+\item[] \cverb!%.*coding[:=]\s*([-\w\.]+)!
+\item[] \cverb!^.*\(\s*(.*)\s*\).*\](.*)$!
+\item[] \cverb!^([>\w\-]+)\s*:\s*(.*)\s*$!
+\item[] \cverb!\n.*cloud-stack-version=.*!
+\item[] \cverb!#:([a-zA-Z][a-zA-Z0-9_-]*)!
+\item[] \cverb!lost: 0 bytes in 0 blocks.!
+\item[] \cverb!h(e)l[A-Z]lo.*th[^e]*e(r)e!
+\item[] \cverb!/status/object/([0-9]+)/.*!
+\item[] \cverb!^hadoop.*streaming.*\.jar$!
+\item[] \cverb!reset \w+ speed USB device!
+\item[] \cverb!scan_sleep_millisecs:(\d+)!
+\item[] \cverb!\[.* test environment .*\n!
+\item[] \cverb![A-Za-z0-9][A-Za-z0-9\-_]*!
+\item[] \cverb!^\s*([0-9]+:[0-9]+)\s*(.+)!
+\item[] \cverb!LL_CHANNEL\s=\s"(.+)";\s*$!
+\item[] \cverb!^#\s*next_offset=(\S+)\s*$!
+\item[] \cverb!range\([ ]*([-]?\d+|n).*\)!
+\item[] \cverb!(\d+):.*virtio\d+-input.\d!
+\item[] \cverb!^(\S+ \S+ \S+ \S+: )?(.*)$!
+\item[] \cverb!^(\d+)\s+([+-]\d\d:?\d\d)$!
+\item[] \cverb!\s*:?\s*([\w\.]+\s*,?\s*)*!
+\item[] \cverb!(\d+)\.(\d+)\.(\d+)\.(\d+)!
+\item[] \cverb!get_pr_transport_id_len\)\(!
+\item[] \cverb!&(#\d+|#x[0-9a-fA-F]+|\w+);!
+\item[] \cverb![a-zA-Z][-_.:a-zA-Z0-9]*\s*!
+\item[] \cverb!\${([A-Za-z][A-Za-z0-9_]*)}!
+\item[] \cverb!^hg\s*update\s*-r\s*(.*)\s*!
+\item[] \cverb![a-zA-Z][-_.a-zA-Z0-9:]*\s*!
+\item[] \cverb!\d+ tests? from ([a-zA-Z_])!
+\item[] \cverb!^([a-zA-Z0-9_]+)[ \t]*=(.*)!
+\item[] \cverb!^\s*\d+\s(\.\S+)\s+[a-f0-9]!
+\item[] \cverb![ \n]*{(([^{}}]|{[^}]*})*)}!
+\item[] \cverb!^columns .* are not unique$!
+\item[] \cverb!  File "[^"]+", line \d+\n$!
+\item[] \cverb!^\s*language\s*=\s*ObjC\s*;!
+\item[] \cverb!(></)|("")|(\n\s+)\n|(.|\s)!
+\item[] \cverb!(\\\\)|(\$\$)|\$\{([^}]+)\}!
+\item[] \cverb!\.([hc]|py|txt|sln|vcproj)$!
+\item[] \cverb@([=!]=)\s*(None|False|True)@
+\item[] \cverb!^(.*)(@charset \"[^\"]*\";)!
+\item[] \cverb!\.\.|^\./|\.$|/\./|^-|^_ah/!
+\item[] \cverb@([+\-&|!(){}\[\]\^"~*?:\\])@
+\item[] \cverb!rgb\s*\(\s*([0-9,\s]+)\s*\)!
+\item[] \cverb:([=\(\)|\-!@~\"&/\\\^\$\=]):
+\item[] \cverb!^[http|file|chrome|about].*!
+\item[] \cverb!^RADIO/radio[.](.+[.])?img$!
+\item[] \cverb!\tobjectVersion = ([0-9]+);!
+\item[] \cverb!(\S+);\s*filename="([^"]+)"!
+\item[] \cverb!\s?([a-zA-Z_\d]+tset)\s+fed!
+\item[] \cverb!^\s+self\.fail\("I fail"\)$!
+\item[] \cverb!\s*\#\s*include\s+<cxxtest/!
+\item[] \cverb!\s+\(default:\s+\'(.*)\'\)$!
+\item[] \cverb!(Resolving |Connecting to )!
+\item[] \cverb!<ErrorCode>(.+)</ErrorCode>!
+\item[] \cverb!https://github.com/([^/]+)$!
+\item[] \cverb!image/(gif|p?jpeg|(x-)?png)!
+\item[] \cverb!diff: (.+)% (passed|failed)!
+\item[] \cverb!([A-Z][A-Z])([A-Z][0-9a-z])!
+\item[] \cverb!^http://([^/]+).sourceforge!
+\item[] \cverb!([\w]*)([^:=]*:?=?)([sif]?)!
+\item[] \cverb!^\s*(if|try|elif|while|for)!
+\item[] \cverb!alloc_sleep_millisecs:(\d+)!
+\item[] \cverb!^[-+]?[0-9][0-9,]*\.[0-9]*$!
+\item[] \cverb!(a|alpha|b|beta|pre|rc)\d*$!
+\item[] \cverb!<TestThread\(.*, initial\)>!
+\item[] \cverb!^META\-INF/(\w+)\.(rsa|sf)$!
+\item[] \cverb!.*\srelease\s(\d)\.(\d)\s.*!
+\item[] \cverb!https?://[^/]*(/.*reset/\S*)!
+\item[] \cverb!([0-9]+)\.([0-9]+)\.([0-9]+)!
+\item[] \cverb!^\s*#\s*include\s*"(src/.+)"!
+\item[] \cverb!#define\s+ETS_VER\s+([0-9]+)!
+\item[] \cverb!\s*def\s+(t_[a-zA-Z_0-9]*)\(!
+\item[] \cverb!\s*def\s+(p_[a-zA-Z_0-9]*)\(!
+\item[] \cverb!([a-zA-Z\d]+) \[(\d+)\] (.*)!
+\item[] \cverb@(\\*)(\(\?P<[^>]*>|\((?!\?))@
+\item[] \cverb![\x00-\x08\x0b\x0c\x0e-\x1f]!
+\item[] \cverb![\t\n #$%&'()*;<=>?[{|}~]|^$!
+\item[] \cverb!^([^.]*)\.([^:]*):[\t ]+(.*)!
+\item[] \cverb![a-zA-Z_]([a-zA-Z0-9_.]*) *$!
+\item[] \cverb!^%%([^:]*):[ \t]*(.*)[ \t]*$!
+\item[] \cverb:([^*{}\s]@|[^*{}@]|\*(?!/))+:
+\item[] \cverb!^\s*(import |from .+ import)!
+\item[] \cverb!(^[ \t]*>>> |^[ \t]*\.\.\. )!
+\item[] \cverb!^[0-9]{4}-[0-9]{2}-[0-9]{2}$!
+\item[] \cverb!^([MAGCUD_ ][MAGCUD_ ]) (.+)!
+\item[] \cverb!browser.search.order.([1-9])!
+\item[] \cverb!/dev/cdrom-\w+|/dev/cdrom\d*!
+\item[] \cverb!^\s*(([A-Z][a-z]*)+) = (\d+)!
+\item[] \cverb!<a\s*href="(.*)"\s*>(.*)</a>!
+\item[] \cverb!wg_hcyl_pin_(\d*).*_h(\d*).*!
+\item[] \cverb!^\s*<CxxTest\s+preamble>\s*$!
+\item[] \cverb!\^timerConfirmation\^=\^no\^!
+\item[] \cverb!^([ \t]*>>> |^[ \t]*\.\.\. )!
+\item[] \cverb!^.*<(()/[\d\w_\+\.\-/]*)>.*$!
+\item[] \cverb!\s*(-?\d+)\s*-\s*(-?\d+)\s*$!
+\item[] \cverb![^%]+%[^.]+[.](link|archive)!
+\item[] \cverb!^([^: \t\n]+):([1-9][0-9]*):!
+\item[] \cverb!\x03[0-9]{1,2}(,[0-9]{1,2})?!
+\item[] \cverb![&?]versionId=([^&]+)($|=|&)!
+\item[] \cverb!([A-Z]+[a-z]*)([A-Za-z0-9]+)!
+\item[] \cverb!.+\.(html|txt|rst|ical|csv)$!
+\item[] \cverb@\A#!.*(tclsh|wish|expect).*$@
+\item[] \cverb!Backing store path:\s+(/+.+)!
+\item[] \cverb!({[^{}$]*\$[^{}$]*\$[^{}]*})!
+\item[] \cverb!^[A-Za-z_][A-Za-z0-9_\.\-]*$!
+\item[] \cverb!/projects/([-\w]+)/([-\w]+)/!
+\item[] \cverb!^([0-9]+x)*[0-9]*[*]?(s\W)?$!
+\item[] \cverb!(\w+://.*|/.*|\w:\.*|\w:/.*)!
+\item[] \cverb!.*[/\\](.+)(\:\d+|\(\d+\))\:!
+\item[] \cverb!eval\(\w+\(\w+\((\w+)\)\)\);!
+\item[] \cverb!parse_pr_out_transport_id\)\(!
+\item[] \cverb!\$\(([A-Za-z][A-Za-z0-9_]*)\)!
+\item[] \cverb!^.*FT_TRACE_DEF[ \t]*\([ \t]*!
+\item[] \cverb@^#!.*python[0-9.]*([ \t].*)?$@
+\item[] \cverb!(\d+)x(\d+)\+(-?\d+)\+(-?\d+)!
+\item[] \cverb!.*[/\\](.+)(\:\d+|\(\d+\))\: !
+\item[] \cverb!^Remaining object addresses:$!
+\item[] \cverb!^_imp__(.*) in python\d+\.dll!
+\item[] \cverb!^\s*prefix\s+([\w\_\.\-\/]+)$!
+\item[] \cverb!^(Keyed)?(Call|Load|Store)IC_!
+\item[] \cverb!\s*def\s*([_\w][_\w\d]*)\s*\(!
+\item[] \cverb!^[ ]{4,7}((\d+\.)|[*+-])[ ].*!
+\item[] \cverb!static dfa dfas\[(\d+)\] = {$!
+\item[] \cverb!^\s+raise|^\s+return|^\s+pass!
+\item[] \cverb!^https?://github.com/[^/]+/?$!
+\item[] \cverb!#define __NR_(\w*)\s*([0-9]*)!
+\item[] \cverb!browser\.search\.order\.[1-9]!
+\item[] \cverb!\d+ GNU.sparse.offset=(\d+)\n!
+\item[] \cverb!\ngcc version (\d+\.\d+\.\d+)!
+\item[] \cverb!----gnatsweb-attachment----\n!
+\item[] \cverb!^([^.]+)[.]([^.]+)[.]?([^.]*)!
+\item[] \cverb!md[0-9]$|sd[a-z]+$|xvd[a-z]+$!
+\item[] \cverb![\x00-\x08\x0b-\x0c\x0e-\x1f]!
+\item[] \cverb!(\d+),\s*(.+),\s*(.+),\s*(.+)!
+\item[] \cverb!^([^:]+): (\w+) \(([\w\.]+)\)!
+\item[] \cverb!\{\{ plugin_object (\d+) \}\}!
+\item[] \cverb!^[modprobe|insmod].*xen-vbd.*!
+\item[] \cverb!Please choose another session!
+\item[] \cverb!messages -> ([A-Za-z_0-9]+) {!
+\item[] \cverb!Linux version ([0-9.]+-[^ ]+)!
+\item[] \cverb!the LaTeX files are in (.*)\.!
+\item[] \cverb!\W*File "(.*)", line ([0-9]+)!
+\item[] \cverb!^([a-zA-Z]:[^(]*)\(([0-9]+)\)!
+\item[] \cverb!(const-)?([A-Za-z0-9]+)\*?\s+!
+\item[] \cverb!\s*#+.*coding[:=]\s*([-\w.]+)!
+\item[] \cverb!%\s*#.*coding[:=]\s*([-\w.]+)!
+\item[] \cverb@^(\s*#!("[^"]+"|\S+))\s+(.*)$@
+\item[] \cverb!^\s+\(c-name\s+([^\s]+)\s*\)$!
+\item[] \cverb!HTTP/(\d\.\d)\s+(\d+)\s+(.*)$!
+\item[] \cverb!([\w-]+[\w]+)\s+(\w+)\s+(\w+)!
+\item[] \cverb!^([\w., ]+=)?\s*[\w\.]+\(.*\)$!
+\item[] \cverb!^git\s*checkout\s*-q\s*(.*)\s*!
+\item[] \cverb!^\[\s*RUN\s*\].*\.(\w+(/\w+)?)!
+\item[] \cverb!name="([^"]+)" value="([^"]+)"!
+\item[] \cverb!\$\([^\$]*(\$[^\)][^\$]*)*\$\)!
+\item[] \cverb!&#(x?[0-9A-Fa-f]+)[^0-9A-Fa-f]!
+\item[] \cverb!^\s*#\s*include\s*"(gtest/.+)"!
+\item[] \cverb!#s*define\s+HASHVERSION\s+2\s*!
+\item[] \cverb!&#(x?[0-9a-fA-F]+)[^0-9a-fA-F]!
+\item[] \cverb!^[ 0-9a-zA-Z\._\+/\$-]{1,256}$!
+\item[] \cverb![\\'|"|#|\\|\[|\]|\{|\}|\(|\)]!
+\item[] \cverb:([^*{}\s]@|[^*{}@\s]|\*(?!/))+:
+\item[] \cverb!\s+{(\d+), arcs_(\d+)_(\d+)},$!
+\item[] \cverb!(\s*)[^\s]+@[^(\s]+(\s*)\(.+\)!
+\item[] \cverb!text/html|application/x(ht)?ml!
+\item[] \cverb!-([0-9]{4}\.[0-9]{2}|p[0-9]+)$!
+\item[] \cverb!\s*(.+)\s*:\s*([-a-zA-Z]+)\s*$!
+\item[] \cverb!^\s+File .* in runUntilCurrent!
+\item[] \cverb!BUG:.*---\[ end trace .* \]---!
+\item[] \cverb!.*https:\/\/aus2.mozilla.org.*!
+\item[] \cverb!(^\s+Invalid read of size )\d+!
+\item[] \cverb!Registering archive: (\S+)\s*$!
+\item[] \cverb!^\s*#\s*include\s*<(gtest/.+)>!
+\item[] \cverb!\$\(([a-zA-Z_][a-zA-Z0-9_]*)\)!
+\item[] \cverb!(([A-Z_][A-Z0-9_]*)|(__.*__))$!
+\item[] \cverb!method "(.*)" is not supported!
+\item[] \cverb!__start_report(.*)__end_report!
+\item[] \cverb!^// See .* for documentation.$!
+\item[] \cverb!(%?):([a-zA-Z][a-zA-Z0-9_-]*)%!
+\item[] \cverb!([\x00-\x08\x0b\x0c\x0e-\x1f])!
+\item[] \cverb!^[0-9a-f]{40} refs/heads/(.+)$!
+\item[] \cverb:@@VERSION(>|>=|!=)(\d.*)@@(.*):
+\item[] \cverb!TOTEM_INFO_VIDEO_CODEC=([\w]+)!
+\item[] \cverb!(0x[0-9A-Fa-f]+|0\d*|[1-9]\d*)!
+\item[] \cverb!^\s*#\s*include\s*"(gmock/.+)"!
+\item[] \cverb!S(\s+0.0+){2}.*vhost-\d+[\d|+]!
+\item[] \cverb!SNIPPET::([A-Za-z0-9_\-\/\.]+)!
+\item[] \cverb!^(\s+\(copy-func\s+)(\w+)(.*)$!
+\item[] \cverb!^(\s+\(in-module\s+)(\w+)(.*)$!
+\item[] \cverb!{\s*"name"\s*:\s*"([^"]+)"\s*}!
+\item[] \cverb@(\S+[^<|^!|^>])\s*(=+)\s*(\S+)@
+\item[] \cverb!(^[ ]*[+]?[\(\)0-9/\/\.\- ]+$)!
+\item[] \cverb!^\n?namespace\s+\w+\s*{\s*\n?$!
+\item[] \cverb!\s*\*\s*G_CONST_RETURN\s*\*\s*!
+\item[] \cverb@([^\?\!]*\?)?([^\?\!]*\!)?(.*)@
+\item[] \cverb!struct target_core_fabric_ops {!
+\item[] \cverb!set_default_node_attributes\)\(!
+\item[] \cverb!(\d{1,2})\.(\d{1,2})\.(\d{1,2})!
+\item[] \cverb!darwin-(\d+)\.(\d+)\.(\d+)-(.*)!
+\item[] \cverb!\d+ tests? from \d+ test cases?!
+\item[] \cverb!(Out\[[0-9]+\]: )|(   \.\.\.+:)!
+\item[] \cverb!(In \[[0-9]+\]: )|(   \.\.\.+:)!
+\item[] \cverb!#s*define\s+WITH_LIBINTL\s+1\s*!
+\item[] \cverb!^[ ]{0,3}((\d+\.)|[*+-])[ ](.*)!
+\item[] \cverb@&(?!#\d+;|#x[0-9a-fA-F]+;|\w+;)@
+\item[] \cverb![\\]([a-zA-Z]+[*]?) ?({|\s*\n?)!
+\item[] \cverb!^.+[:(]\d+[:)]|^Done processing!
+\item[] \cverb!raise\s+\w+\s*,\s*\w+\s*,\s*\w+!
+\item[] \cverb@^#!.*pythonw?[0-9.]*([ \t].*)?$@
+\item[] \cverb!\d+ GNU.sparse.numbytes=(\d+)\n!
+\item[] \cverb!(^|\})(([^\{\:])+\:)+([^\{]*\{)!
+\item[] \cverb!(\d+)\.(\d+)(\.(\d+))?(b(\d+))?!
+\item[] \cverb!= *([0-9]*.+[0-9]*) ([a-zA-Z]*)!
+\item[] \cverb!^https?://github.com/([^/]+)/?$!
+\item[] \cverb@[-A-Za-z0-9!\#$%&'*+/=?^_`{|}~]@
+\item[] \cverb!<toolset.*version>(\d+)[.](\d*)!
+\item[] \cverb!(^\s+Invalid write of size )\d+!
+\item[] \cverb!==\d+==\s+I\s+refs:\s+([0-9,]+)!
+\item[] \cverb!([A-Z0-9]+) \/\* Resources \*\/!
+\item[] \cverb!(<module 'epydoc_test' from ).*!
+\item[] \cverb!^__[A-Za-z0-9]+[A-Za-z0-9_]*__$!
+\item[] \cverb!#define NODE_VERSION_IS_RELEASE!
+\item[] \cverb!^__[_A-Za-z0-9]*[A-Za-z0-9]+_?$!
+\item[] \cverb!(^RuntimeError:.* naughty.*){2}!
+\item[] \cverb!version *= *([\'"][^\'"]*[\'"])!
+\item[] \cverb!^((unit)?test.*|smoketest)\.py$!
+\item[] \cverb!@%\(([a-zA-Z][a-zA-Z0-9_-]*)\)s!
+\item[] \cverb!\\x([0-9a-fA-F]{2}|[0-9a-fA-F])!
+\item[] \cverb!^[a-zA-Z_]\w*(\.[a-zA-Z_]\w*)*$!
+\item[] \cverb!\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}!
+\item[] \cverb!available:\s+(\d+)\s+nodes\s+.*!
+\item[] \cverb!^(\S+) \(in ([^)]+)\) \((.+)\)$!
+\item[] \cverb!([\x20\x21\x23-\x5B\x5D-\x7E]+)!
+\item[] \cverb!^[\w.\*]+([\s,:;]\s*[\w.\*]+)*$!
+\item[] \cverb!^([\w\.]+) \.\.\. \[([^\]]+)\]$!
+\item[] \cverb!\s*([^\s\(\)"\\'=,\[\]/\?]+)\s*!
+\item[] \cverb![^A-Za-z0-9]Q_OBJECT[^A-Za-z0-9]!
+\item[] \cverb!<title>([^- ]+ - )?Revision \d+:!
+\item[] \cverb!#define\WDB_VERSION_MINOR\W(\d+)!
+\item[] \cverb!#define\WDB_VERSION_MAJOR\W(\d+)!
+\item[] \cverb!^\s*([-\w]+\s*:[^:;]*(;\s*|$))*$!
+\item[] \cverb!SECRET|PASSWORD|PROFANITIES_LIST!
+\item[] \cverb!#define ([A-Z][A-Z0-9_]+) (.*)\n!
+\item[] \cverb!Client UrlCache MMF Ver \d\.\d.*!
+\item[] \cverb!^([a-z]{2,3}(_[a-z]{2,8})*)\.py$!
+\item[] \cverb!gecko\.handlerService\.schemes\.!
+\item[] \cverb!set\s+([-a-zA-Z0-9]+)\s+(.+)\s*$!
+\item[] \cverb!^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d$!
+\item[] \cverb!([0-9A-F]{1,2}:){5}[0-9A-F]{1,2}!
+\item[] \cverb!\n(Contents of the|The section) !
+\item[] \cverb!.*note:.*is clipping its content!
+\item[] \cverb!^[ \t]*from[ \t]+([^ \t]+)[ \t]+!
+\item[] \cverb!undefined symbol: (.*)\t\((.*)\)!
+\item[] \cverb!#define\WDB_VERSION_PATCH\W(\d+)!
+\item[] \cverb!([A-Z0-9]+) \/\* Frameworks \*\/!
+\item[] \cverb!<replaceable>[^<]+</replaceable>!
+\item[] \cverb!<form(.*)name="login"(.*)</form>!
+\item[] \cverb!^.*: Opening '(.*)' for reading$!
+\item[] \cverb!^http://build.mozilla.org/talos/!
+\item[] \cverb!This is file for test of tar-in.!
+\item[] \cverb!.*[^aeiouy][aeiouy][^aeiouywxY]$!
+\item[] \cverb![^%]+%testing[.](capture-output)!
+\item[] \cverb!<([a-zA-Z][a-zA-Z0-9]*)/([^/]*)/!
+\item[] \cverb!^\s*(if|try|elif|while|for|with)!
+\item[] \cverb!^v([0-9]+|[0-9]+\.[0-9]+)(/.*|$)!
+\item[] \cverb!^([0-9]{4})\.([0-9]+)\.([0-9]+)$!
+\item[] \cverb!((fasser(t|ted))) *\(( *)(\d+)()!
+\item[] \cverb!((fassertFailed)()) *\(( *)(\d+)!
+\item[] \cverb@^(<=|>=|<|>|!=|==)?\s*([^\s,]+)$@
+\item[] \cverb!\s*set\s+default\s*=\s*"+(\d+)"+!
+\item[] \cverb!vmlinuz-(\d+)\.(\d+)\.(\d+)-(.*)!
+\item[] \cverb!^@@ -\d+,\d+ \+(\d+),(\d+) @@.*$!
+\item[] \cverb@\s*(<=?|>=?|==|!=)\s*((\w|[-.])+)@
+\item[] \cverb!&(#(\d+|x[\da-fA-F]+)|[\w.:-]+);?!
+\item[] \cverb!^\d{4}-\d\d-\d\d \d\d:\d\d:\d\dZ$!
+\item[] \cverb!^\$([_a-zA-Z]\w*|{[_a-zA-Z]\w*})$!
+\item[] \cverb@operator(==|!=|<|<<|<=|>=|>>|>)\(@
+\item[] \cverb!snapshot-code-name,(\d+),\"(.*)\"!
+\item[] \cverb!(\ ?\ ?\ ?)\[\^([^\]]*)\]:\s*(.*)!
+\item[] \cverb!\A\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ!
+\item[] \cverb!static label labels\[(\d+)\] = {$!
+\item[] \cverb!(tag:blogger.com,1999:blog-)(\w*)!
+\item[] \cverb!const.*char.*versionString\[\].*=!
+\item[] \cverb!([^\w\s]*)\s*(\t|  )\s*([^\w\s]*)!
+\item[] \cverb!&#([xX]?[0-9a-fA-F]+)[^0-9a-fA-F]!
+\item[] \cverb!invalid literal for int().*: '?'?!
+\item[] \cverb!/(tools|libs)/(.*)/(test|example)!
+\item[] \cverb!^Status against revision:\s+(\d+)!
+\item[] \cverb!^\s*(([A-Z][a-z]*)+),?\s*# (\d+)$!
+\item[] \cverb!.*(\d\.\d) \d+ \(experimental\).*!
+\item[] \cverb![a-z][A-Z]{3}([a-z])[A-Z]{3}[a-z]!
+\item[] \cverb!(initrd(.*).img|ramdisk.image.gz)!
+\item[] \cverb!This is file for test of copy-in.!
+\item[] \cverb!This is file for test of tar-out.!
+\item[] \cverb![^aeiouy]*[aeiouy]+[^aeiouy](\w*)!
+\item[] \cverb!^([a-zA-Z_]\w*)(\.[a-zA-Z_]\w*)*$!
+\item[] \cverb!^(\s+\(release-func\s+)(\w+)(.*)$!
+\item[] \cverb![^[]+\[(\d+/[A-Za-z]+/\d+):[^\d]*!
+\item[] \cverb!\\u([0-9A-F]{4})|\\U([0-9A-F]{8})!
+\item[] \cverb!(.*),\s+((\w+\.?) (\d+), (\d{4}))!
+\item[] \cverb!^(\s+\(c-name\s+)([^\s]+)(\s*\))$!
+\item[] \cverb!^(.*)\.(.*)\.(\d+)\.(\d+)\.(\d+)$!
+\item[] \cverb!#\s*-\*-\s+coding:\s+(\w+)\s+-\*-!
+\item[] \cverb!([a-zA-Z][a-zA-Z0-9_]+)\s*=\s*(.*)!
+\item[] \cverb!<([a-zA-Z][-.a-zA-Z0-9]*)/([^/]*)/!
+\item[] \cverb!encoding\s*=\s*[\'"]([^"\']+)["\']!
+\item[] \cverb!.*(kind=)(album|tag|photo|comment)!
+\item[] \cverb!^#import[\s\t]*([^\s^\t]*)[\s\t]*$!
+\item[] \cverb!^libtool: file: .* has no symbols$!
+\item[] \cverb!^([A-Za-z][^:]*):[ \t]*(.*)[ \t]*$!
+\item[] \cverb!^\s*(else|elif|except|finally).*\:!
+\item[] \cverb!([\d\w\-_]+)\s+(\d+)/(tcp|udp)(.*)!
+\item[] \cverb!\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}!
+\item[] \cverb!^[0-9A-Za-z+/]*[0-9A-Za-z+/=]{,2}$!
+\item[] \cverb!Traceback (most recent call last):!
+\item[] \cverb!.*public static final class id {.*!
+\item[] \cverb!window.location.replace\("(.*)"\);!
+\item[] \cverb!(^TypeError:.* return an int.*){2}!
+\item[] \cverb!This is file for test of copy-out.!
+\item[] \cverb!^[-_a-zA-Z0-9.]+:(//[^/]*)?/[^/]*$!
+\item[] \cverb!\s*<entry><type>([^<]+)</></entry>!
+\item[] \cverb!^([a-zA-Z-]+\.[0-9]+)\.[0-9]+.log$!
+\item[] \cverb@^<!-- ##### (\w+) (\w+) ##### -->$@
+\item[] \cverb!addr:(.*)\ *Bcast:(.*)\ *Mask:(.*)!
+\item[] \cverb!ovs-vswitchd \(Open vSwitch\) (.+)!
+\item[] \cverb!((fassertFailed)()) *\(( *)(\d+)()!
+\item[] \cverb!#define\s+ZLIB_VERSION\s+"([^"]*)"!
+\item[] \cverb!\smarkdown(=[\\'"]?[^> ]*[\\'"]?)?!
+\item[] \cverb![a-z]::[^=]|:[a-z]+:|`|\.\.\s*\w+:!
+\item[] \cverb!(\S+):(\d+): \[(\S+)(, \S+)?] (.*)!
+\item[] \cverb!\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ!
+\item[] \cverb!</\s*([a-zA-Z][-.a-zA-Z0-9:_]*)\s*>!
+\item[] \cverb!^(\d{2})[-\.]?(\d{4})[-\.]?(\d{4})$!
+\item[] \cverb!(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)!
+\item[] \cverb!#define ([A-Z][A-Za-z0-9_]+) (.*)\n!
+\item[] \cverb!^https?://github.com/[^/]+/[^/]+/?$!
+\item[] \cverb!<base\s+href\s*=\s*[\'"]?([^\'">]+)!
+\item[] \cverb!^\s+<spontaneous>\s*$|^.*\((\d+)\)$!
+\item[] \cverb!\-\-[A-Za-z][\w\-]*(\.[\w\-]+)*\=.*!
+\item[] \cverb!^struct +[a-zA-Z_][a-zA-Z0-9_]* *{$!
+\item[] \cverb!^([0-9]{4})~([01][0-9])~([0-9]{2})$!
+\item[] \cverb!ELEMENT FACE INTERCONNECTIVITY DATA!
+\item[] \cverb!([^;?#]*)(;[^?#]*)?(\?[^#]*)?(#.*)?!
+\item[] \cverb!Microsoft Visual C\+\+ Toolkit 2003!
+\item[] \cverb![ \t]+([A-Z0-9]+) \/\* (.+) \*\/,\n!
+\item[] \cverb!%(@|d|f|lld|\d+\.?f|\d+\.\d+f|\d+d)!
+\item[] \cverb!(interface|) ([^ ]*) : public (.*)$!
+\item[] \cverb!&([a-zA-Z][a-zA-Z0-9]*)[^a-zA-Z0-9]!
+\item[] \cverb!-d 192.168.[0-9]{1,3}.[0-9]{1,3} -j!
+\item[] \cverb!@([a-zA-Z0-9_][a-zA-Z0-9_]*)\.route!
+\item[] \cverb!(\w+|-+>|=+>|"[^"]+"|\'[^\']+\'|\|)!
+\item[] \cverb!(([umsg]asser(t|ted))) *\(( *)(\d+)!
+\item[] \cverb!"QOOXDOO_PATH"\s*:\s*"([^"]*)"\s*,?!
+\item[] \cverb!^@@ -(\d+),(\d+) \+(\d+),(\d+) @@.*!
+\item[] \cverb!initrd-(\d+)\.(\d+)\.(\d+)-(.*).img!
+\item[] \cverb!\s*([^\s\(\)"\\'\-=,\[\]/\?]*)\s*\[!
+\item[] \cverb!^#define\s{1,}(\w{1,}_H)\s{1,}<(.*)>!
+\item[] \cverb!git\s*remote\s*add\s*origin(.*)\s*-f!
+\item[] \cverb!^0\d(\s|\.)?(\d{2}(\s|\.)?){3}\d{2}$!
+\item[] \cverb![ \t]*([^ \t]+)[ \t]+realm="([^"]*)"!
+\item[] \cverb!^@@ -(\d+),?(\d*) \+(\d+),?(\d*) @@$!
+\item[] \cverb!/[*] #undef ([A-Z][A-Z0-9_]+) [*]/\n!
+\item[] \cverb!"([0-9]*) ([0-9]*) ([0-9]*) ([0-9]*)!
+\item[] \cverb!^\d\d\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ$!
+\item[] \cverb!^#define ASYNC_PROTOCOL_MAJOR\t*(.*)!
+\item[] \cverb!__start_tp_report(.*)__end_tp_report!
+\item[] \cverb!^struct\[([a-zA-Z_][a-zA-Z0-9_]*)\]$!
+\item[] \cverb!(.*[Jj]amfile\.v2)|(.*[Bb]uild\.jam)!
+\item[] \cverb!label(\s*)=(\s*)"\s%tmp(.\w*)*(\s*)"!
+\item[] \cverb!<meta name="title" content="(.*)" />!
+\item[] \cverb!i686-apple-darwin[0-9]*-llvm-gcc-4.2!
+\item[] \cverb@^(Win|PPC Mac OS X|Linux(?! x86_64))@
+\item[] \cverb!<link rel="image_src" href="(.*)" />!
+\item[] \cverb!(([umsgf]asser(t|ted))) *\(( *)(\d+)!
+\item[] \cverb!attachment.cgi\?id=\d+&action=review!
+\item[] \cverb!(\S+)\s*=\s*("([^"]*)"|\'([^\']*)\')!
+\item[] \cverb!^(\+[3-9]{1,}|\+{3,}|\+[1-9][0-9]+)$!
+\item[] \cverb!^(\-[3-9]{1,}|\-{3,}|\-[1-9][0-9]+)$!
+\item[] \cverb!CONSTRAINT (\w+) UNIQUE \(([^\)]+)\)!
+\item[] \cverb![\x00-\x1f\x7f()<>@,;:\[\]={} \t\\"]!
+\item[] \cverb!&([a-zA-Z][-.a-zA-Z0-9]*)[^a-zA-Z0-9]!
+\item[] \cverb!^\[\-+\] \d+ tests? from (\w+(/\w+)?)!
+\item[] \cverb!Shipping="?FedEx"?;\s*\$Path="\/acme"!
+\item[] \cverb|[^A-Za-z0-9\-_.~!*'();:@&=+$,/?%#[\]]|
+\item[] \cverb@^\s*(<=|>=|<|>|!=|==)\s*([^\s,]+)\s*$@
+\item[] \cverb!^\s*#\s*macfreeze:\s*(\S*)\s*(.*)\s*$!
+\item[] \cverb!^\s*\|\s.*\s\|\s*$|^\s*\+[=+-]+\+\s*$!
+\item[] \cverb!([\s:])(0)(px|em|%|in|cm|mm|pc|pt|ex)!
+\item[] \cverb!^[a-z0-9][a-z0-9\._-]{1,253}[a-z0-9]$!
+\item[] \cverb|[^ \r\na-zA-Z0-9\-'()+,./:=?;!*#@$_%]|
+\item[] \cverb!^# and have (\d+) and (\d+) different!
+\item[] \cverb!extra\s*==\s*("([^"]+)"|\'([^\']+)\')!
+\item[] \cverb!([^ ]+) ([^ ]+)(( HTTP/([0-9.]+))$|$)!
+\item[] \cverb!([0-9]+) INFO TEST-START . Shutdown.*!
+\item[] \cverb!sqlalchemy/([a-z_]+/){0,2}[a-z_]+\.py!
+\item[] \cverb!(\s*def\s+\w+\s*)\[(html|plain)\](.*)!
+\item[] \cverb!\nVersion (.+), ([0-9]+).([0-9])+ MBs!
+\item[] \cverb!This is file for test_formatted_part.!
+\item[] \cverb!This is file for test_formatted_disk.!
+\item[] \cverb!unconverted data remains: \.([0-9]+)$!
+\item[] \cverb!^([a-zA-Z_][a-zA-Z0-9_]*)\s*=\s*(.*)$!
+\item[] \cverb!^(..[^\(:]+)?[\(:](\d+)[\):]:?\s*(.*)!
+\item[] \cverb!([0-9]+\.[0-9]+\.[0-9]+)\s*(\(\S*\))?!
+\item[] \cverb!^(\s+\(implements\s+)([^\s]+)(\s*\))$!
+\item[] \cverb!\d\d-[a-zA-Z]{3,3}-\d\d\d\d \d\d:\d\d!
+\item[] \cverb!^\S+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+$!
+\item[] \cverb!([0-9a-f][0-9a-f]-){5}[0-9a-f][0-9a-f]!
+\item[] \cverb!\\(begin|end){([_a-zA-Z]+)}|([()\[\]])!
+\item[] \cverb!\\([abfnrtv?"\\\\']|\d+|x[0-9a-fA-F]+)!
+\item[] \cverb!<li><a href="([^"]*)">([^"]*)</a></li>!
+\item[] \cverb@([<>]|&(?!#\d+;|#x[0-9a-fA-F]+;|\w+;))@
+\item[] \cverb!%[^0-9A-Fa-f]|%[0-9A-Fa-f][^0-9A-Fa-f]!
+\item[] \cverb!browser\.contentHandlers\.types\.[0-5]!
+\item[] \cverb!^#define.*ENGINE_VERSION\t*"DOOM (.*)"!
+\item[] \cverb!^/?[a-zA-Z0-9_-]+(/[a-zA-Z0-9_-]+)?/?$!
+\item[] \cverb!.*lib(stdc\+\+|gcc_s).* => (.*) \(.*\)!
+\item[] \cverb!chrome\/help\/images\/[A-Za-z-_]+\.png!
+\item[] \cverb!\/\* Begin PBXBuildFile section \*\/\n!
+\item[] \cverb!([\d.]+) ([\d.]+) ([\d.]+) (\d+)/(\d+)!
+\item[] \cverb!^[-+]?[0-9]+(\.[0-9]*)?[eE][-+][0-9]+$!
+\item[] \cverb!(\s|&nbsp;)(&|&amp;|&\#38;)(\s|&nbsp;)!
+\item[] \cverb!(grubby version)?(\s)?(\d+)\.(\d+)(.*)!
+\item[] \cverb!^([^<]*)<([^>]*)>\s+(\d+\s+[+-]\d{4})$!
+\item[] \cverb!http(s)?\://([\w\.-]*)(\:(\d+))?(/.*)?!
+\item[] \cverb!^(\s+\(return-type\s+)([^\s]+)(\s*\))$!
+\item[] \cverb!/[*] #undef ([A-Z][A-Za-z0-9_]+) [*]/\n!
+\item[] \cverb!^\s*#\s*include\s*([<"])([^>"]*)[>"].*$!
+\item[] \cverb!\[#x([\d|A-F]{4,4})-#x([\d|A-F]{4,4})\]!
+\item[] \cverb!static state states_(\d+)\[(\d+)\] = {$!
+\item[] \cverb!^\s*#(\d+)\s*(.*) \[(0x[0-9A-Za-z]+)\]$!
+\item[] \cverb!<a u="([A-F0-9]{4})" b="([0-9A-F ]+)"/>!
+\item[] \cverb!^multipart/byteranges; boundary="(.*)"$!
+\item[] \cverb!^(pgpgin|pgpgout|pswpin|pswpout)\s(\d+)!
+\item[] \cverb!^(([^:/?#]+):)?(//([^/?#]*):([^/?#]*))?!
+\item[] \cverb!^(.*)\[(zero|one|two|few|many|other)\]$!
+\item[] \cverb@^(<=|>=|<|>|!=|={2,3}|~=)?\s*([^\s,]+)$@
+\item[] \cverb!refundInfoList.refundInfo\((\d+)\).(.*)!
+\item[] \cverb!<revision>[a-zA-Z0-9\.\-\_]+</revision>!
+\item[] \cverb!\s?["\']([a-zA-Z_"\'\s\d]+)["\']\s+tset!
+\item[] \cverb!importScripts\([\\'"]([^\\'"]+)[\\'"]\)!
+\item[] \cverb!^([a-z]\w*)\s*:?(\s*\(.*\)\s*){0,2}\s*$!
+\item[] \cverb!^\s*[#*=]{4,}\n[a-z0-9 -]+\n[#*=]{4,}\s*!
+\item[] \cverb!^(From |[\041-\071\073-\176]{1,}:|[\t ])!
+\item[] \cverb!^const\s+([a-zA-Z0-9_]+)\s*=\s*([^;]*);$!
+\item[] \cverb!Riding_Rocket_0023.*Rocket_Launcher_0001!
+\item[] \cverb!GET http://([a-zA-Z0-9-_.]+)(:([0-9]+))?!
+\item[] \cverb!^[A-Z0-9][a-z0-9]*(-[A-Z0-9][a-z0-9]*)*$!
+\item[] \cverb!^\s*(def|class|else|elif|except|finally)!
+\item[] \cverb!^[= ]([*> ]) ([^- ]+)-([^ ]+) \[ (.*) \]!
+\item[] \cverb!^([\s*,;/])([\?\w\.\-\+]+\w*\s*)(\(?.*$)!
+\item[] \cverb!(\d+)-(\d\d)-(\d\d)T(\d\d):(\d\d):(\d\d)!
+\item[] \cverb!<type>boost::(lazy_)?(enable|disable)_if!
+\item[] \cverb!Success: created profile .* at '([^']+)'!
+\item[] \cverb!^/?[a-zA-Z0-9_.-]+(/[a-zA-Z0-9_.-]+)*/?$!
+\item[] \cverb@^([,;/%?]|!!?|\s*)\s*([\w\.]+)(\s+.*$|$)@
+\item[] \cverb!get_ipython\(\)\.magic\(u?["\\']%?autopx!
+\item[] \cverb:[\t !"#$%&\\'()*\-/<=>?@\[\\\]^_`{|},.]+:
+\item[] \cverb!<link rel="pingback" href="([^"]+)" ?/?>!
+\item[] \cverb!^SCSI error : <(.+)> return code = (.+)$!
+\item[] \cverb!const char \* const LL_CHANNEL = "(.+)";!
+\item[] \cverb!(const)?.*::basic_string<.*>\s*(\*|\&)?$!
+\item[] \cverb!([A-Za-z0-9_.-]*|"[^"]*")\s+(\S+)\s+(.*)!
+\item[] \cverb!Duration: (\d{2}):(\d{2}):(\d{2}.\d{2}),!
+\item[] \cverb!^\s*(>>> )?(\.\.\. )?from .* import .*\*!
+\item[] \cverb!\S* *\d*-\d*-\d* \d*:\d*:\d* [+-]\d* \w*!
+\item[] \cverb!<p>Paragraph 1\s*</p>\s*<h2>\s*An h2</h2>!
+\item[] \cverb!^(\d{2})(\d{2})(\d{3})(\d{2})(\d{3})(\d)$!
+\item[] \cverb!^[,&^\|\*/\+-]|^is |^not |^in |^and |^or !
+\item[] \cverb!static arc arcs_(\d+)_(\d+)\[(\d+)\] = {$!
+\item[] \cverb!^\s*T_VIRTUAL_CALL: (\d+) calls on (.*):$!
+\item[] \cverb![a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}!
+\item[] \cverb!^const int ASYNC_PROTOCOL_MINOR\t*= (.*);!
+\item[] \cverb!ip(engine|controller)z-\d+\.(log|err|out)!
+\item[] \cverb!^\s*#define SSH_([A-Z_]+)\s+([0-9x]*)\s*$!
+\item[] \cverb!(\d+),\s*(\d+),\s*(\d+),\s*(\d+),\s*(\d+)!
+\item[] \cverb!Versi.+n (.+) ([0-9]+).([0-9])+ megabytes!
+\item[] \cverb!invalid literal for long().*: '?0xOoops'?!
+\item[] \cverb!^restorecon reset (.+) context (.+)->(.+)!
+\item[] \cverb!(([a-z_][a-z0-9_]*)|([A-Z][a-zA-Z0-9]+))$!
+\item[] \cverb!enum\s*{([^}]*)}\s*([A-Z][A-Za-z]*)(\s|;)!
+\item[] \cverb!\([^)]+\)\s*(([A-Za-z0-9_][A-Za-z0-9_]*))!
+\item[] \cverb!^#(ifndef|define|endif\s*//)\s*[\w_]+\s*$!
+\item[] \cverb!href\s*=\s*[\'"]?<([\w\.]+)>[\'"]?\s*(,?)!
+\item[] \cverb!\{(http:\/\/[A-Za-z0-9_\.\/]+\/nzb)\}file!
+\item[] \cverb!<([^>]*)>: \[0x([0-9a-f]+)-0x([0-9a-f]+)\]!
+\item[] \cverb!(.*/|)([^/]+\.[a-z]+:\d+):(\d+:)? warning:!
+\item[] \cverb!(.*  )(\w+)(( &lt;cycle.*&gt;)? \[\d+\])\n!
+\item[] \cverb!SECRET|PASSWORD|PROFANITIES_LIST|SIGNATURE!
+\item[] \cverb!^http://testserver/somewhere/else/\?c=\d+$!
+\item[] \cverb!^[ \t]*(#|%:)[ \t]*(include)[ \t]*(.*)\r*$!
+\item[] \cverb!NPT_SET_LOCAL_LOGGER\s*\([ "]*(\S+)[ "]*\)!
+\item[] \cverb!\\(\\'|\"|\\|[abfnrtv]|x.{0,2}|[0-7]{1,3})!
+\item[] \cverb!^@[Rr][Ee][Ll][Aa][Tt][Ii][Oo][Nn]\s*(\S*)!
+\item[] \cverb!\s?((["][^"]*["]|[\'][^\']*[\'])\s+dluohs)!
+\item[] \cverb!^\s+File .*erroneous\.py", line \d+, in go!
+\item[] \cverb!\/\* Begin PBXFileReference section \*\/\n!
+\item[] \cverb![-+]?(\d+(\.\d*)?|\d*\.\d+)([eE][-+]?\d+)?!
+\item[] \cverb!^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d+$!
+\item[] \cverb!<meta name="description" content="(.*)" />!
+\item[] \cverb!<span id=short-desc-content>([^<]*)</span>!
+\item[] \cverb!^([0-7]{6}) ([a-z]+) ([0-9a-f]{40})\t(.*)$!
+\item[] \cverb!\s*<table id="datatype-pseudotypes-table">!
+\item[] \cverb@\s*(<=?|>=?|===?|!=|~=)\s*((\w|[-.*_!+])+)@
+\item[] \cverb!\s+inet6\s+([0-9a-f:]+)/\d+\s+scope\s+link!
+\item[] \cverb!^(\s+\(parent\s+)(\w+)(\s+\((\w+)\))?(.*)$!
+\item[] \cverb!\s*(\w*(\s*\w+)+)\s*<\s*(\S*(\s*\S+)+)\S*>!
+\item[] \cverb!^(\s+)?\{[\s\w,\[\]\{\}\-\."\\':]+\}(\s+)?$!
+\item[] \cverb!rgb\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)$!
+\item[] \cverb!tag:blogger.com,1999:user-(\d+)\.blog-(\d+)!
+\item[] \cverb!^(.*) ?\[([^ ]*) \+(0x[0-9A-F]{1,8})\](.*)$!
+\item[] \cverb!^[ \t]*#define[ \t]+FT_COMPONENT[ \t]+trace_!
+\item[] \cverb!([sS][eE][tT]\s*\()\s*([^\s]+)\s+"([^"]+)"\)!
+\item[] \cverb!class (\w[^\s:]*)(: public (\w[^\s{]*))?\s*{!
+\item[] \cverb!^https?://github.com/([^/]+)/([^/]+)($|/.*$)!
+\item[] \cverb!goog\.provide\s*\(\s*[\'"]([^\)]+)[\'"]\s*\)!
+\item[] \cverb!goog\.require\s*\(\s*[\'"]([^\)]+)[\'"]\s*\)!
+\item[] \cverb!^([ \t]*In \[\d+\]: |^[ \t]*\ \ \ \.\.\.+: )!
+\item[] \cverb!irb\([a-zA-Z_][a-zA-Z0-9_]*\):\d{3}:\d+[>*] !
+\item[] \cverb!\s*.*#\s*.*define\s.*SQLITE_VERSION\W*"(.*)"!
+\item[] \cverb!((msgasser(t|ted)))\s*\(([^\d]*)(\d+)\s*,?()!
+\item[] \cverb!(^[ \t]*In \[\d+\]: |^[ \t]*\ \ \ \.\.\.+: )!
+\item[] \cverb!Customer="?WILE_E_COYOTE"?;\s*\$Path="\/acme"!
+\item[] \cverb!<span class="date below-more" title="([^"]+)"!
+\item[] \cverb!hsl\(\s*(\d+)\s*,\s*(\d+)%\s*,\s*(\d+)%\s*\)$!
+\item[] \cverb!gecko\.handlerService\.defaultHandlersVersion!
+\item[] \cverb!\\|\/|\||\:|\?|\*|"|<|>|[\x00-\x1f\x7f-\x9f]/!
+\item[] \cverb!.*[\\/]([^\\/]+)[\\/][^\\/]+[\\/]scons[\\/]?$!
+\item[] \cverb!(^\s+Address 0x)[0-9A-Fa-f]+( is not stack'd)!
+\item[] \cverb!^@@ -([0-9]*),([0-9]*) \+([0-9]*),([0-9]*) @@!
+\item[] \cverb!^--\d+-- run: /usr/bin/dsymutil \"shell/js\"$!
+\item[] \cverb!browser\.contentHandlers\.types\.([0-5])\.uri!
+\item[] \cverb!(^/dev/x{0,1}[a-z]{0,1}d{0,1})([a-z]+)[0-9]*$!
+\item[] \cverb!<td style="text-align: right;">[0-9]{1,}</td>!
+\item[] \cverb!^end_request: I/O error, dev (.*), sector .*$!
+\item[] \cverb!^[ \t]*Traceback \(most recent call last\):.*!
+\item[] \cverb!^(\s+\(of-object\s+)(\w+)(\s+\((\w+)\))?(.*)$!
+\item[] \cverb!^(\d{4})[ -]?(\d{4})[ -]?(\d{2})[ -]?(\d{10})$!
+\item[] \cverb!((\\[\\abfnrtv\\'"]|\\[0-9]..|\\x..|\\u....)+)!
+\item[] \cverb!^[\t ]*#[\t ]*include[\t ]+<([a-zA-Z0-9_/\.]+)!
+\item[] \cverb!----- (Start|End) Table ([A-Z](.[0-9])+) -----!
+\item[] \cverb!^http://testserver/somewhere/else/\?c=\d+#baz$!
+\item[] \cverb!rgb\(\s*(\d+)%\s*,\s*(\d+)%\s*,\s*(\d+)%\s*\)$!
+\item[] \cverb!.*: warning: overriding commands for target .+!
+\item[] \cverb!^https?://github.com/[^/]+/[^/]+/tree/[^/]+/?$!
+\item[] \cverb!(tag:blogger.com,1999:blog-)(\w*)(.post-)(\w*)!
+\item[] \cverb!(tag:blogger.com,1999:blog-)(\w*)(.page-)(\w*)!
+\item[] \cverb!^([ \t]*class +[a-zA-Z0-9_]+) *( *) *((=.*)?):!
+\item[] \cverb!^\s+File .*erroneous\.py., line \d+, in setUp$!
+\item[] \cverb!==\d+==\s+possibly\s+lost:\s+([0-9,]+)\s+bytes!
+\item[] \cverb!^([^:]*):([^@]*)@([^:]*):([^/]*)/([^/]*)/?(.*)!
+\item[] \cverb!/usr/bin/qemu-system-x86_64 -machine accel=kvm!
+\item[] \cverb!<meta name="video_width" content="([0-9]+)" />!
+\item[] \cverb!^(fails|needs-focus|random|skip|asserts|fuzzy)!
+\item[] \cverb!bot|http|\.com|crawl|spider|python|curl|yandex!
+\item[] \cverb!ProductVersion:\s+([0-9]+)\.([0-9]+)\.([0-9]+)!
+\item[] \cverb!(([wum]asser(t|ted)))\s*\(([^\d]*)(\d+)\s*,?()!
+\item[] \cverb!^\s*\.\.\s+automodule::\s*([A-Za-z0-9_.]+)\s*$!
+\item[] \cverb!<b>Added:</b> (\d{4}-\d\d-\d\d \d\d:\d\d:\d\d)!
+\item[] \cverb!^[\t ]*#[\t ]*define[\t ]+([a-zA-Z0-9_]+)[\t ]+!
+\item[] \cverb!((User|Msg|MsgAssertion)Exceptio(n))\(( *)(\d+)!
+\item[] \cverb!\.|\\|\/|\||\:|\?|\*|"|<|>|[\x00-\x1f\x7f-\x9f]!
+\item[] \cverb!^@[Aa][Tt][Tt][Rr][Ii][Bb][Uu][Tt][Ee]\s*(..*$)!
+\item[] \cverb!^\s*public static final int ([A-Z_]+) = (\d+);$!
+\item[] \cverb!browser\.contentHandlers\.types\.([0-5])\.title!
+\item[] \cverb!Received: From yyy.com \(\[.*\]\) by localhost;!
+\item[] \cverb!^([a-z0-9.-]+|\[[a-f0-9]*:[a-f0-9:]+\])(:\d+)?$!
+\item[] \cverb!^(.+)[ \._\-]([0-9]{1})([0-9]{2})[\._ -][^\/]*$!
+\item[] \cverb!Versi&oacute;n (.+) ([0-9]+).([0-9])+ megabytes!
+\item[] \cverb!^([^:]*):([^@]*)@([^:]*):([^/]*)/([^/]*)/?(.*)$!
+\item[] \cverb!<meta name="video_height" content="([0-9]+)" />!
+\item[] \cverb![^%]+%testing[.](expect-failure|expect-success)!
+\item[] \cverb!<title>(.*) video by (.*) - Photobucket</title>!
+\item[] \cverb!Number of files successfully Verified: ([0-9]*)!
+\item[] \cverb!^([0-9]{1,3}\.){0,3}[0-9]{1,3}(/[0-9]{1,2}){1}$!
+\item[] \cverb!\s+{(\d+), "(\w+)", (\d+), (\d+), states_(\d+),$!
+\item[] \cverb!(js_Execute|CallHook) ([^ ]+) ([^ ]+ )?([^ ]+ms)!
+\item[] \cverb!^https?://github.com/[^/]+/[^/]+/tree/([^/]+)/?$!
+\item[] \cverb!(_F2PY_STRING_CONSTANT_\d+_|F2PY_EXPR_TUPLE_\d+)!
+\item[] \cverb!==\d+==\s+still\s+reachable:\s+([0-9,]+)\s+bytes!
+\item[] \cverb!<code>(.*)</code><description>(.*)</description>!
+\item[] \cverb![^\r\n\t ]?([^\r\n\t ]| [^\r\n\t ])*[^\r\n\t ]?$!
+\item[] \cverb!<a href="([^"]*)"[^>]* id="lookup_id_defendant1"!
+\item[] \cverb!<a href="([^"]*)"[^>]* id="lookup_id_defendant0"!
+\item[] \cverb!<link rel="video_src" href=".*\?file=([^"]+)" />!
+\item[] \cverb!<(app)\((\?[a-z][a-z]*)\s*,\s*(\?[a-z][a-z]*)\)>!
+\item[] \cverb!^content-type:.*multipart/.*boundary="?([^;"\n]*)!
+\item[] \cverb!<a href="([^"]*)"[^>]* id="lookup_id_inquisition"!
+\item[] \cverb!^\.\.\s+(current)?module::\s*([a-zA-Z0-9_.]+)\s*$!
+\item[] \cverb!https://www.google.com/a/[a-z0-9.-]+/ServiceLogin!
+\item[] \cverb!#define __NR_(\w*)\s*\(__NR_timer_create\+(\w*)\)!
+\item[] \cverb!^content-range: bytes ([0-9]+)-([0-9]+)/([0-9]+)$!
+\item[] \cverb!(TARGET_XPCOM_ABI|OS_TARGET|MOZ_DEBUG)\s*=\s*(.*)!
+\item[] \cverb!^\s+raise RuntimeError\(self.hiddenExceptionMsg\)!
+\item[] \cverb!^(.+)[ \._\-]([0-9]{2})([0-9]{2,3})[\._ -][^\/]*$!
+\item[] \cverb!^sd (.+):(.+):(.+):(.+): Attached scsi disk (.+)$!
+\item[] \cverb!^\s*(>>> )?(\.\.\. )?raise((\s*\(\s*)|\s+)\w+\s*,!
+\item[] \cverb!(\\|\*|\+|\?|\||\{|\}|\[|\]|\(|\)|\^|\$|\.|\#|\ )!
+\item[] \cverb!^[ \t]*(def|class)[ \t]+([a-zA-Z0-9_]+)[ \t]*[:\(]!
+\item[] \cverb!(sha1|sha224|sha384|sha256|sha512|md5)=([a-f0-9]+)!
+\item[] \cverb![ \t]*([A-Z0-9a-z_]+)[ \t]*=[ \t]*([-0-9]+)[, \t]*!
+\item[] \cverb!^http://testserver/somewhere/else/\?foo=bar&c=\d+$!
+\item[] \cverb!Details for werkzeug.testsuite.debug.Foo object at!
+\item[] \cverb!__start_page_load_report(.*)__end_page_load_report!
+\item[] \cverb!^\s+File .*erroneous\.py., line \d+, in test_fail$!
+\item[] \cverb![ \t]+([A-Z0-9]+) \/\* PBXTargetDependency \*\/,\n!
+\item[] \cverb!^lsr: Cannot access .*: No such file or directory.!
+\item[] \cverb!^[a-zA-Z0-9._%-+]+@[a-zA-Z0-9._%-]+.[a-zA-Z]{2,6}$!
+\item[] \cverb!^== Rolled over to ChangeLog-\d{4}-\d{2}-\d{2} ==$!
+\item[] \cverb!^(None or|optional) ([\w\.]+)$|^([\w\.]+) or None$!
+\item[] \cverb!^([A-Z]\w+:[a-z0-9-]+)\s*:?(\s*\(.*\)\s*){0,2}\s*$!
+\item[] \cverb!^[a-zA-Z_][a-zA-Z_0-9]*(\.[a-zA-Z_][a-zA-Z_0-9]*)*$!
+\item[] \cverb!MatplotlibBox:\(([\d.]+)pt\+([\d.]+)pt\)x([\d.]+)pt!
+\item[] \cverb!\s*([0-9a-fA-F]+)\s+([0-9a-fA-F]+)\s+([0-9a-fA-F]+)!
+\item[] \cverb|\<[a-zA-Z0-9\-\_\.\="\'\/\\%\!\@\#\$\^\&\*\(\) ]*\>|
+\item[] \cverb!(mapper|table|column|session|attribute|engine):(.*)!
+\item[] \cverb!Virtual Disk, id \[([0-9]+)\], successfully created!
+\item[] \cverb!^(list|set|sequence|tuple|collection) of ([\w\.]+)$!
+\item[] \cverb!\[0\:0\] -A .* -j ACCEPT -p icmp -s 192.168.11.0/24!
+\item[] \cverb!((msgasser(t|ted)NoTrace))\s*\(([^\d]*)(\d+)\s*,?()!
+\item[] \cverb!^([A-Z]\w+::[a-z0-9-]+)\s*:?(\s*\(.*\)\s*){0,2}\s*$!
+\item[] \cverb!^\s*([\w\s\*]+)\(\s*\*\s*(\w+)\s*\)\s*\(([^()]*)\);!
+\item[] \cverb!ProjectSection\(ProjectDependencies\) = postProject$!
+\item[] \cverb!API|TOKEN|KEY|SECRET|PASS|PROFANITIES_LIST|SIGNATURE!
+\item[] \cverb!([0-9]{4}-[0-9]{2}-[0-9]{2})  ([0-9]{4,5}) {1,2}(.*)!
+\item[] \cverb!#define __ARM_NR_(\w*)\s*\(__ARM_NR_BASE\+\s*(\w*)\)!
+\item[] \cverb!#define __NR_(\w*)\s*\(__NR_SYSCALL_BASE\+\s*(\w*)\)!
+\item[] \cverb!n( mod \d+)? (is|in|within|(not in))( not)? ([^\s]+)!
+\item[] \cverb!^\s*\.\.\s+(current)?module::\s*([a-zA-Z0-9_.]+)\s*$!
+\item[] \cverb!^\* ([^:]*):(:|[ \t]*([^\t,\n.]+)([^ \t\n]*))[ \t\n]*!
+\item[] \cverb!.+\s+"([^\s]+)\s+([^\s]+)\s+HTTP/\d+\.\d+"\s+200\s+.*!
+\item[] \cverb!(\+|-|\*|/|//|\*\*|and|or|xor|=\?|=|==|<>|<|>|<=|>=)$!
+\item[] \cverb!^/(artist|release|track|label|release-group)/([^/]*)$!
+\item[] \cverb!^\s+raise FoolishError, .I am a broken setUp method.$!
+\item[] \cverb! (SENATOR|REPRESENTATIVE)\([Ss]\) ([^,]+(,[^,]+){0,})!
+\item[] \cverb!(\d{4})\.(\d{2})\.(\d{2})\.(\d{2})\.(\d{2})\.(\d{2})$!
+\item[] \cverb!^(\S+)\s+(\S+)\s+(\S+)\s+(\d+.\d+\s\S+)\s+(\d+.\d+.*)!
+\item[] \cverb@\<\!\-\-\#\s?[A-z0-9_-]*\s?\:s?[A-z0-9\s_-]*\s?\-\-\>@
+\item[] \cverb!^macro\s+([a-zA-Z0-9_]+)\s*\(([^)]*)\)\s*=\s*([^;]*);$!
+\item[] \cverb!^http://testserver/somewhere/else/\?foo=bar&c=\d+#baz$!
+\item[] \cverb!^(Mozilla.*(Gecko|KHTML|MSIE|Presto|Trident)|Opera).*$!
+\item[] \cverb!\s*#define\s+([a-zA-Z][a-zA-Z_0-9]*)\s+([a-zA-Z_0-9]+)!
+\item[] \cverb!^\s*([0-9]+:[0-9]+)\s*\|\s*([0-9]+:[0-9]+)\s*\|\s*(.+)!
+\item[] \cverb!^name="(.*)"\s+certificate="(.*)"\s+private_key="(.*)"$!
+\item[] \cverb!Part_Number="?Rocket_Launcher_0001"?;\s*\$Path="\/acme"!
+\item[] \cverb!(/\.)|(//)|([\\:\*\?\""\<\>\|]|[\x00-\x1f]|[\x7f-\x9f])!
+\item[] \cverb:^www\.|^(?!http)\w[^@]+\.(com|edu|gov|int|mil|net|org)$:
+\item[] \cverb!^([ \|0-9-]*)(.*) ?\[([^ ]*) \+(0x[0-9A-F]{1,8})\](.*)$!
+\item[] \cverb!(\w{3}, \d{1,2} \w{3} \d{4} \d\d:\d\d:\d\d) [\+\-]\d{4}!
+\item[] \cverb!irb\([a-zA-Z_][a-zA-Z0-9_]*\):\d{3}:\d+[>*"\'] |>> |\?> !
+\item[] \cverb!(.*)\.([0123456789]+)\.([0123456789]+)\.([0123456789]+)$!
+\item[] \cverb!^(https://nodeload.github.com/[^/]+/[^/]+/)zipball(/.*)$!
+\item[] \cverb!s3n://.*\.elasticmapreduce/libs/state-pusher/[^/]+/fetch!
+\item[] \cverb!(const)\s+((unsigned|signed)?(bool|char|short|int|long))!
+\item[] \cverb!<STREAM APP="(http://.*)" FULLPATH="/?(/.*\.flv\?[^"]*)"!
+\item[] \cverb!FlashCopy Mapping, id \[([0-9]+)\], successfully created!
+\item[] \cverb!((msgasser(t|ted))) *\(( *)(\d+) *, *("\S[^,^"]+\S") *,?!
+\item[] \cverb!\s*__version__\s*=\s*(("([^"]|\\")*"|\'([^\']|\\\')*\'))!
+\item[] \cverb!^(\w+)\s+(\w+)\s+(\w+)\s+(\S+)\s+(([a-fA-F0-9]{2}:?){6})!
+\item[] \cverb!(\d+\.\d+\.\d+\.\d+|\W:{2}\d\W):\d+,\d+\s+([\w\.\-:\d]+)!
+\item[] \cverb!^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?!
+\item[] \cverb!^\s*T_GENERIC_PROTOCOL: (\d+) calls to (.*) with a (.*):$!
+\item[] \cverb!^[ \t]+def +[a-zA-Z0-9_]+ *( *self *, *(( *(.*) *)) *) *:!
+\item[] \cverb!href\s*=\s*"([^>"]*)"[^>]*title\s*=\s*"View larger image"!
+\item[] \cverb!(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2}):(\d{2})(\.\d+)?!
+\item[] \cverb!^(I|E)/(stdout|stderr|GeckoConsole)\s*\(\s*\d+\):\s*(.*)$!
+\item[] \cverb|[\.\-\/\!\@\#\$\%\^\&\*\(\)\+\-"\'\,\;\:\[\]\{\}\<\>\=\_]|
+\item[] \cverb!^(content-type:.*charset=")(us-ascii|iso-8859-[0-9]+)(".*)!
+\item[] \cverb!l_ngettext, u?'\%\(num\)s apple', u?'\%\(num\)s apples', 3!
+\item[] \cverb!^# Your branch is (ahead of|behind) '(.*)' by (\d+) commit!
+\item[] \cverb!^\s*#\s*define\s+OPENSSL_VERSION_NUMBER\s+(0x[0-9a-fA-F]+)!
+\item[] \cverb!^([0-9\.]+)\s*([0-9\.]+)\s*([0-9\.]+)\s*([0-9]+)\/([0-9]+)!
+\item[] \cverb!\s*import\s+(\S+)\.([^\s.]+)\s+as\s+(\S+)(\s+for\s+(\S+))?!
+\item[] \cverb!^[ \t]*(def|class)[ \t]+([a-zA-Z_][a-zA-Z0-9_]*)[ \t]*[:\(]!
+\item[] \cverb!^(dict|dictionary|map|mapping) from ([\w\.]+) to ([\w\.]+)$!
+\item[] \cverb!^\s*(>>> )?(\.\.\. )?raise(\s+(\\'|\")|\s*(\(\s*)+(\\'|\"))!
+\item[] \cverb!\\(ABC|ASCII|C|Cpp|EOF|infinity|NULL|plusminus|POSIX|UNIX)\s!
+\item[] \cverb!^\s+File .*erroneous\.py., line \d+, in testHiddenException$!
+\item[] \cverb!^.+\@(\[?)[a-zA-Z0-9\-\.]+\.([a-zA-Z]{2,3}|[0-9]{1,3})(\]?)$!
+\item[] \cverb![0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}!
+\item[] \cverb!^     Page [1-9][0-9]*[ \t]+\|^.*Last change:.*[1-9][0-9]*\n!
+\item[] \cverb!(([wum]asser(t|ted))) *\(( *)(\d+) *,\s*("\S[^"]+\S")\s*,?.*!
+\item[] \cverb!\d+-\d+-\d+([\s|T|t]\d+:\d+:\d+.\d+(Z|(\s?[\-|\+]\d+:\d+)))?!
+\item[] \cverb!^\$Version="?1"?; Customer="?WILE_E_COYOTE"?; \$Path="/acme"$!
+\item[] \cverb!^\s*var\s+[a-zA-Z_$]\w*\s*=\s*function\s+([a-zA-Z_$]\w*)\s*\(!
+\item[] \cverb!^\s*(>>> )?(\.\.\. )?raise(\s+Exception|\s*(\(\s*)+Exception)!
+\item[] \cverb!^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$!
+\item[] \cverb!(mapperprop|mapper|table|column|session|attribute|engine):(.*)!
+\item[] \cverb!(([wum]asser(t|ted))) *\(( *)(\d+) *,\s*([\S\s+<\(\)"]+) *,?.*!
+\item[] \cverb!^\s+\(field\s+\(type-and-name\s+([^\s]+)\s+([^\s]+)\s*\)\s*\)$!
+\item[] \cverb!^python\s+macro\s+([a-zA-Z0-9_]+)\s*\(([^)]*)\)\s*=\s*([^;]*);$!
+\item[] \cverb! 0001:[0-9a-fA-F]{8}\s*([_\?@$0-9a-zA-Z]*)\s*([0-9a-fA-F]{8}).*!
+\item[] \cverb!([\w.+]+)\s*\(#(\d+),\s*([\w ]+),\s*([\w :]+)\)\s*\[([^\]]+)\]?!
+\item[] \cverb!(\d{4})-([^-]+)-(\d{,2})T(\d{,2}):(\d{2})((\+|-)(\d{,2}:\d{2}))!
+\item[] \cverb!((msgasser(t|ted)NoTrace)) *\(( *)(\d+) *, *("\S[^,^"]+\S") *,?!
+\item[] \cverb!<a class="ot-profile-link-2" href="/u/[^/]+/">([^<]+)</a></span>!
+\item[] \cverb!^([MACDRUG_ ][MACDRUG_ ])(.)(.)   .   [^0-9-]+(\d+|-)(.{23})(.+)!
+\item[] \cverb!.*\n.*f_edx:(.*)\n.*f_ecx:(.*)\n.*extf_edx:(.*)\n.*extf_ecx:(.*)!
+\item[] \cverb!\[0\:0\] -A .* -j ACCEPT -p tcp --dport 80:81 -s 192.168.10.0/24!
+\item[] \cverb!^\s*(GType|GtkType)\s+\n([a-z]\w+_get_type)\s*(\(void\)|\(\)).*$!
+\item[] \cverb!^([\w\d]([\w\d\-]{0,61}[\w\d])?\.)*[\w\d]([\w\d\-]{0,61}[\w\d])?$!
+\item[] \cverb!\s*<entry><token>([^<]+)</token></entry>\s*<entry>([^<]+)</entry>!
+\item[] \cverb@^([:,;#%.\sa-zA-Z0-9!]|\w-\w|\'[\s\w]+\'|"[\s\w]+"|\([\d,\s]+\))*$@
+\item[] \cverb!PART_NUMBER=RIDING_ROCKET_0023;\s*PART_NUMBER=ROCKET_LAUNCHER_0001!
+\item[] \cverb!([\w.+]+)\s*\(#?([^,]+),\s*([\w ]+),\s*([\w :]+)\)\s*\[([^\]]+)\]?!
+\item[] \cverb!\[0\:0\] -A .* -j ACCEPT -p udp --dport 200:299 -s 192.168.99.0/24!
+\item[] \cverb!^.*ERROR org\.apache\.hadoop\.streaming\.StreamJob \(main\): (.*)$!
+\item[] \cverb!^\s+\(value\s+\(name\s+([^\s]+)\)\s+\(c-name\s+([^\s]+)\s*\)\s*\)$!
+\item[] \cverb!^<Point><coordinates>-95.363\d+,29.763\d+,18</coordinates></Point>$!
+\item[] \cverb!^{"type":"Point","coordinates":\[-95.363151,29.763374,18(\.0+)?\]}$!
+\item[] \cverb!^([-]+BEGIN CERTIFICATE[-]+[\r]*\n.*[\r]*^[-]+END CERTIFICATE[-]+)$!
+\item[] \cverb!^\s+self\.fail\("Deliberate failure to mask the hidden exception"\)$!
+\item[] \cverb!(\d+) bytes \(\d+\.*\d* \w*\) copied, (\d+\.*\d*) s, \d+\.*\d* \w./s!
+\item[] \cverb!^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$!
+\item[] \cverb!(\w{,3}), (\d{,4})/(\d{,2})/(\d{2}) (\d{,2}):(\d{2}):(\d{2}) (\w{,3})!
+\item[] \cverb!((DB|User|Msg|MsgAssertion)Exceptio(n))\(( *)(\d+) *,? *(\S+.+\S) *,?!
+\item[] \cverb!(\d+) files? changed, (\d+) insertions?\(\+\), (\d+) deletions?\(\-\)!
+\item[] \cverb!^(\d+\.\d+(\.\d+)*)((a|b|c|rc)(\d+))?(\.(post)(\d+))?(\.(dev)(\d+))?$!
+\item[] \cverb!([\w.+]+)\s*\(#?([^,]+),\s*([\w ]+),\s*([\w :]+)\)\s*\[PyPy [^\]]+\]?!
+\item[] \cverb!(require|define)\s*\(\s*([\\'\"][^\\'\"]+[\\'\"]\s*,)?\s*\[([^\]]+)\]!
+\item[] \cverb!^(\+90|0)? ?(([1-9]\d{2})|\([1-9]\d{2}\)) ?([2-9]\d{2} ?\d{2} ?\d{2})$!
+\item[] \cverb!#define[ \t]+([A-Z0-9a-z_]+)[ \t]+([0-9]+)[ \t]*/\*[ \t]*(.*)[ \t]*\*/!
+\item[] \cverb!^([0-9]{4})~([01][0-9])~([0-9]{2})~([0-9]{1,2})~([0-9]{2})~([0-9]{2})$!
+\item[] \cverb!^Attached scsi disk (.+) at scsi(.+), channel (.+), id (.+), lun (.+)$!
+\item[] \cverb!^\s+\(parameter\s+\(type-and-name\s+([^\s]+)\s+([^\s]+)\s*\)(\s*.*)\)$!
+\item[] \cverb!^((http[s]?):\/)#?\/?([^:\/\s]+)((\/[\w\-\.]+)*\/)*([\w\-\.]+[^#?\s]+)!
+\item[] \cverb!^([01]?[0-9])~([0-9]{2})~([0-9]{4})~([0-9]{1,2})~([0-9]{2})~([0-9]{2})$!
+\item[] \cverb!([^:]*):\s+scsi([0-9]+)\s+channel=([0-9]+)\s+id=([0-9]+)\s+lun=([0-9]+)!
+\item[] \cverb![ \t]*([A-Z0-9a-z_]+)[ \t]*=[ \t]*([-0-9]+)[, \t]*/\*[ \t]*(.*)[ \t]*\*/!
+\item[] \cverb!([A-Z]{3}_ERROR_[A-Z_0-9]+)\s+=?\s*\(?([A-Z_0-9-][A-Z_0-9-+ ]+[A-Z_0-9])!
+\item[] \cverb!\$\{?[a-zA-Z_][a-zA-Z0-9_]*(\([^)]*\))?(\.[a-zA-Z0-9_]+(\([^)]*\))?)*\}?!
+\item[] \cverb!^([0-9a-f]{8})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{4})-([0-9a-f]{12})$!
+\item[] \cverb!([A-Za-z]+)(hat|check|dot|breve|acute|ddot|grave|tilde|mathring|bar|vec)!
+\item[] \cverb!Copyright [\d-]*20[0-1][0-9] the V8 project authors. All rights reserved.!
+\item[] \cverb!^createdb: database creation failed: ERROR:  database ".+" already exists!
+\item[] \cverb!http://example.com/login\?next=http%3A%2F%2Flocalhost%3A[0-9]+%2Fabsolute!
+\item[] \cverb!(BlackBerry|HTC|LG|MOT|Nokia|NOKIAN|PLAYSTATION|PSP|SAMSUNG|SonyEricsson)!
+\item[] \cverb![A-F0-9]{2}:[A-F0-9]{2}:[A-F0-9]{2}:[A-F0-9]{2}:[A-F:0-9]{2}:[A-F:0-9]{2}!
+\item[] \cverb!\[0\:0\] -A .* -j ACCEPT -p icmp -m icmp --icmp-type 8 -s 192.168.11.0/24!
+\item[] \cverb!# StopWatch ([\w]+) total/cumulative duration ([0-9.]+). Samples: ([0-9]+)!
+\item[] \cverb!pip \d(\.[\d])+(\.?(rc|dev|pre|post)\d+)? from (.*) \(python \d(.[\d])+\)$!
+\item[] \cverb!^[\t ]*#[\t ]*define[\t ]+([a-zA-Z0-9_]+)\(([_a-zA-Z][_a-zA-Z0-9]*)\)[\t ]+!
+\item[] \cverb!([^,]+),\s+(\d{2})\s+([^\s]+)\s+(\d{4})\s+(\d{2}):(\d{2}):(\d{2})\s+([^\s]+)!
+\item[] \cverb!^\\(section|subsection|subsubsection|paragraph|subparagraph){(numpy|scipy)\.!
+\item[] \cverb!YEAS -?\s?(\d+)(.*)NAYS -?\s?(\d+)(.*)ABSENT( OR NOT VOTING)? -?\s?(\d+)(.*)!
+\item[] \cverb!^[a-zA-Z]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\.[a-zA-Z]([a-zA-Z0-9-]*[a-zA-Z0-9])?)*$!
+\item[] \cverb@&([a-zA-Z][a-zA-Z0-9]*|#[0-9]*)?|<([a-zA-Z][^<>]*|/([a-zA-Z][^<>]*)?|![^<>]*)?@
+\item[] \cverb!^Project\("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}"\) = "(.*)", "(.*)", "(.*)"$!
+\item[] \cverb!^([ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]) *(\d[ABCEGHJKLMNPRSTVWXYZ]\d)$!
+\item[] \cverb!\[0\:0\] -A .* -j ACCEPT -p tcp -m multiport --dports 80:81 -s 192.168.10.0/24!
+\item[] \cverb!<a class="ot-revision-link" href="/p/[^/]+/source/detail\?r=[0-9]+">([^<]+)</a>!
+\item[] \cverb!(halt|quit|do|load|q|recycle|call|run|ask|parse|view|unview|return|exit|break)$!
+\item[] \cverb!^class ([^,]*), addr (\d\d:\d\d.\d+), pci id (\w{4}:\w{4}) \(sub (\w{4}:\w{4})\)!
+\item[] \cverb!\sCONSTRAINT `[^`]*` FOREIGN KEY \(`([^`]*)`\) REFERENCES `([^`]*)` \(`([^`]*)`\)!
+\item[] \cverb!^(acc|borland|como|cw|dmc|darwin|gcc|hp_cxx|intel|kylix|vc|mgw|qcc|sun|vacpp)\d*$!
+\item[] \cverb!/pypi\?\:action=doap\&amp;name=[a-zA-Z0-9\.\-\_]+\&amp;version=[a-zA-Z0-9\.\-\_]+!
+\item[] \cverb!.. auto(function|method|attribute|class|exception|module)::\s*([A-Za-z0-9_.]+)\s*$!
+\item[] \cverb!<meta[^>]*content\s*=\s*[\'"]?text/html;\s*charset\s*=\s*([^ \'">]+)\s*[\'"]?[^>]*>!
+\item[] \cverb!^([A-Z][A-Z][A-Z])([-+]?[0-9]+)([A-Z][A-Z][A-Z]);([0-9]+)/([0-9]+),([0-9]+)/([0-9]+)$!
+\item[] \cverb!(^\s+Address 0x)[0-9A-Fa-f]+( is )\d+( bytes inside a block of size )[0-9,]+( free'd)!
+\item[] \cverb!^[SMTWF][a-z][a-z], (\d\d) ([JFMASOND][a-z][a-z]) (\d\d\d\d) (\d\d):(\d\d):(\d\d) GMT$!
+\item[] \cverb!^(#[0-9a-f]+|rgb\(\d+%?,\d*%?,?\d*%?\)?|\d{0,2}\.?\d{0,2}(cm|em|ex|in|mm|pc|pt|px|%|,|\))?)$!
+\item[] \cverb!==\d+==\s+malloc/free:\s+[0-9,]+\s+allocs,\s+[0-9,]+\s+frees,\s+([0-9,]+)\s+bytes allocated.!
+\item[] \cverb!UsernameToken Username="([^"]+)", PasswordDigest="([^"]+)", Nonce="([^"]+)", Created="([^"]+)"!
+\item[] \cverb@\s*([a-zA-Z_][-.:a-zA-Z_0-9]*)(\s*=\s*(\\'[^\\']*\\'|"[^"]*"|[-a-zA-Z0-9./:;+*%?!&$\(\)_#=~]*))?@
+\item[] \cverb!([^\"\'=\s])(\s*)#([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])!
+\item[] \cverb!<structure name="([^"]+)" noffset="([^"]+)" install="([^"]*)" ioffset="([^"]+)" voffset="([^"]+)"!
+\item[] \cverb•\s*([a-zA-Z_][-.:a-zA-Z_0-9]*)(\s*=\s*(\\'[^\\']*\\'|"[^"]*"|[-a-zA-Z0-9./,:;+*%?!&$\(\)_#=~@]*))?•
+\item[] \cverb!^(dict|dictionary|map|mapping) from ([\w\.]+) to (list|set|sequence|tuple|collection) of ([\w\.]+)$!
+\item[] \cverb!(I[0-9a-f]{8,40})|([Bb]ug|[Ll][Pp])[\s\#:]*(\d+)|([Bb]lue[Pp]rint|[Bb][Pp])[\s\#:]*([A-Za-z0-9\-]+)!
+\item[] \cverb!^[ \t]*(#|%:)[ \t]*(ifdef|ifndef|if|else|elif|endif|include|import|define|undef|pragma)[ \t]*(.*)\r*$!
+\item[] \cverb![a-zA-Z_][0-9a-zA-Z_+-]*|[0-9+-][0-9a-zA-Z_.+-]*|"([^"\n\\]|\\.)*("|\\?$)|\'([^\'\n\\]|\\.)*(\'|\\?$)!
+\item[] \cverb!<h2 class="ti-5"><a href="http://video\.yahoo\.com/(people|profile)/[0-9]+" beacon=".*">(.*)</a></h2>!
+\item[] \cverb!Host:\s+(\w+)\s+Channel:\s+(\d+)\s+Id:\s+(\d+)\s+Lun:\s+(\d+)\n\s+Vendor:\s+([a-zA-Z0-9_-]+)\s+Model: !
+\item[] \cverb!^(application/(asx|x-(mplayer2|ms-wmp))|video/x-ms-(asf(-plugin)?|wm(p|v|x)?|wvx)|audio/x-ms-w(ax|ma))$!
+\item[] \cverb!^<gml:Point srsName="EPSG:4326"><gml:coordinates>-104\.60925\d+,38\.255001</gml:coordinates></gml:Point>!
+\item[] \cverb!<div class=\'lyricbox\'><span style="padding:1em"><a href="/Category:Instrumental" title="Instrumental">!
+\item[] \cverb•\s*([a-zA-Z_][-:.a-zA-Z_0-9]*)(\s*=\s*(\\'[^\\']*\\'|"[^"]*"|[][\-a-zA-Z0-9./,:;+*%?!&$\(\)_#=~\\'"@]*))?•
+\item[] \cverb!^ *(0x[0-9a-f]+) +0x([0-9a-f]+): +eax=0x([0-9a-f]+) ebx=0x([0-9a-f]+) ecx=0x([0-9a-f]+) edx=0x([0-9a-f]+)$!
+\item[] \cverb@^v?(\d+!)?(\d+(\.\d+)*)((a|b|c|rc)(\d+))?(\.(post)(\d+))?(\.(dev)(\d+))?(\+([a-zA-Z\d]+(\.[a-zA-Z\d]+)?))?$@
+\item[] \cverb!^(WebSocket-Protocol: [\x20-\x7e]+\r\n)?(Cookie: [^\r]*\r\n)*(Cookie2: [^\r]*\r\n)?(Cookie: [^\r]*\r\n)*\r\n!
+\item[] \cverb!^(syn keyword vimCommand contained|syn keyword vimOption contained|syn keyword vimAutoEvent contained)\s+(.*)!
+\item[] \cverb•\s*([a-zA-Z_][-:.a-zA-Z_0-9]*)[$]?(\s*=\s*(\\'[^\\']*\\'|"[^"]*"|[][\-a-zA-Z0-9./,:;+*%?!&$\(\)_#=~\\'"@]*))?•
+\item[] \cverb!^application/x-java-((applet|bean)(;jpi-version=1\.5|;version=(1\.(1(\.[1-3])?|(2|4)(\.[1-2])?|3(\.1)?|5)))?|vm)$!
+\item[] \cverb!((final|abstract)[ \t]+)?((public|private|protected)[ \t]+)?(static[ \t]+)?class[ \t]+\w+((implements|extends)\w+)?!
+\item[] \cverb![\x00\x01\x02\x03\x04\x05\x06\x07\x08\x0b\x0c\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f]!
+\item[] \cverb!(([a-zA-Z0-9\_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?))!
+\item[] \cverb!(\{[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}\} |  # GUID\n                   [a-z0-9-\.\+_]*\@[a-z0-9-\._]+)  # Email format!
+\item[] \cverb!^<gml:Point SrsName="EPSG::4326"><gml:coordinates decimal="\." cs="," ts=" ">-104.609251\d+,38.255001</gml:coordinates></gml:Point>!
+\item[] \cverb!Host:\s+(\w+)\s+Channel:\s+(\d+)\s+Id:\s+(\d+)\s+Lun:\s+(\d+)\n\s+Vendor:\s+([a-zA-Z0-9_-]+)\s+Model:.*\n.*Type:\s+([a-zA-Z0-9_-]+)!
+\item[] \cverb!p|div|h[1-6]|blockquote|pre|table|dl|ol|ul|script|noscript|form|fieldset|iframe|math|ins|del|hr|hr/|style|li|dt|dd|thead|tbody|tr|th|td!
+\item[] \cverb!(([a-zA-Z0-9\_\-\.\+]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?))(\?subject=\S+)?!
+\item[] \cverb!^(MemTotal|MemFree|Buffers|Cached|SwapCached|Active|Inactive|SwapTotal|SwapFree|Dirty|VmallocTotal|VmallocUser|VmallocChunk):\s*(\d+)\s*kB!
+\item[] \cverb!<li>Plot: <a href=".+/admin_views/plot/1/">World Domination</a>\s*<ul>\s*<li>Plot details: <a href=".+/admin_views/plotdetails/1/">almost finished</a>!
+\item[] \cverb!^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$!
+\item[] \cverb!\n                            \s* ([^\s;]+) \s*            #content-coding\n                            (;\s* q \s*=\s* ([0-9\.]+))? #q\n                            !
+\item[] \cverb!^js\(\d+,0x[0-9a-f]+\) malloc: \*\*\* error for object 0x[0-9a-f]+: pointer being freed was not allocated\n\*\*\* set a breakppoint in malloc_error_break to debug\n$!
+\item[] \cverb!^<gml:Point srsName="SDO:4326" xmlns:gml="http://www.opengis.net/gml"><gml:coordinates decimal="\." cs="," ts=" ">-104.60925\d+,38.25500\d+ </gml:coordinates></gml:Point>!
+\item[] \cverb!^(application/(sdp|x-(mpeg|rtsp|sdp))|audio/(3gpp(2)?|AMR|aiff|basic|mid(i)?|mp4|mpeg|vnd\.qcelp|wav|x-(aiff|m4(a|b|p)|midi|mpeg|wav))|image/(pict|png|tiff|x-(macpaint|pict|png|quicktime|sgi|targa|tiff))|video/(3gpp(2)?|flc|mp4|mpeg|quicktime|sd-video|x-mpeg))$!
+\item[] \cverb!\n            ([a-zA-Z]+        #Tag\n            \s?[0-9]+):       #Tag number\n            \s+[+-]           #Temp signed\n            ([0-9]+\.[0-9]+)  #Temp value\n            (\xc2\xb0         #\xb0 match\n            [CF])             #Celsius or Fahrenheit\n            !
+\item[] \cverb!(add|subtract|multiply|divide|remainder|power|and~|or~|xor~|minimum|maximum|negate|complement|absolute|random|head|tail|next|back|skip|at|pick|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|last|path|find|select|make|to|copy\*|insert|remove|change|poke|clear|trim|sort|min|max|abs|cp|copy)$!
+\item[] \cverb!\s*<AccessControlList>\s*<Entries>\s*<Entry>\s*<Scope type="GroupById"><ID>[0-9a-fA-F]+</ID></Scope>\s*<Permission>FULL_CONTROL</Permission>\s*</Entry>\s*<Entry>\s*<Scope type="GroupById"><ID>[0-9a-fA-F]+</ID></Scope>\s*<Permission>FULL_CONTROL</Permission>\s*</Entry>\s*<Entry>\s*<Scope type="GroupById"><ID>[0-9a-fA-F]+</ID></Scope>\s*<Permission>READ</Permission></Entry>\s*</Entries>\s*</AccessControlList>\s*!
+\item[] \cverb!    # mere offset\n                ^\n                &?                                          # possible ampersand\n                (       0                                       # just zero\n                |       [1-9]{1,1}[0-9]*        # decimal\n                |       0[0-7]+                         # octal\n                |       0x[0-9a-f]+                     # hex\n                )\n                $\n                !
+\item[] \cverb!Devices of vm1:\nmachine\n  aid = __0\n  aobject = pci.0\n  parent_bus = ()\n  child_bus = \[.*QPCIBus.*, .*QStrictCustomBus.*\]\n  params:\ni440FX\n  aid = __1\n  aobject = None\n  parent_bus = ({'aobject': 'pci.0'},)\n  child_bus = \[\]\n  params:\n    driver = i440FX\n    addr = 00\n    bus = pci.0\nPIIX4_PM\n  aid = __2\n  aobject = None\n  parent_bus = ({'aobject': 'pci.0'},)\n  child_bus = \[\]\n  params:\n    driver = PIIX4_PM\n    addr = 01.3\n    bus = pci.0\nPIIX3\n  aid = __3\n  aobject = None\n  parent_bus = ({'aobject': 'pci.0'},)\n  child_bus = \[\]\n  params:\n    driver = PIIX3\n    addr = 01\n    bus = pci.0\npiix3-ide\n  aid = __4\n  aobject = None\n  parent_bus = ({'aobject': 'pci.0'},)\n  child_bus = \[.*QIDEBus.*\]\n  params:\n    driver = piix3-ide\n    addr = 01.1\n    bus = pci.0\nfdc\n  aid = __5\n  aobject = None\n  parent_bus = \(\)\n  child_bus = \[.*QFloppyBus.*\]\n  params:!
+\item[] \cverb!(native|alias|all|any|as-string|as-binary|bind|bound\?|case|catch|checksum|comment|debase|dehex|exclude|difference|disarm|either|else|enbase|foreach|remove-each|form|free|get|get-env|if|in|intersect|loop|minimum-of|maximum-of|mold|new-line|new-line\?|not|now|prin|print|reduce|compose|construct|repeat|reverse|save|script\?|set|shift|switch|throw|to-hex|trace|try|type\?|union|unique|unless|unprotect|unset|until|use|value\?|while|compress|decompress|secure|open|close|read|read-io|write-io|write|update|query|wait|input\?|exp|log-10|log-2|log-e|square-root|cosine|sine|tangent|arccosine|arcsine|arctangent|protect|lowercase|uppercase|entab|detab|connected\?|browse|launch|stats|get-modes|set-modes|to-local-file|to-rebol-file|encloak|decloak|create-link|do-browser|bind\?|hide|draw|show|size-text|textinfo|offset-to-caret|caret-to-offset|local-request-file|rgb-to-hsv|hsv-to-rgb|crypt-strength\?|dh-make-key|dh-generate-key|dh-compute-key|dsa-make-key|dsa-generate-key|dsa-make-signature|dsa-verify-signature|rsa-make-key|rsa-generate-key|rsa-encrypt)$!
+\item[] \cverb!(error|source|input|license|help|install|echo|Usage|with|func|throw-on-error|function|does|has|context|probe|\?\?|as-pair|mod|modulo|round|repend|about|set-net|append|join|rejoin|reform|remold|charset|array|replace|move|extract|forskip|forall|alter|first+|also|take|for|forever|dispatch|attempt|what-dir|change-dir|clean-path|list-dir|dirize|rename|split-path|delete|make-dir|delete-dir|in-dir|confirm|dump-obj|upgrade|what|build-tag|process-source|build-markup|decode-cgi|read-cgi|write-user|save-user|set-user-name|protect-system|parse-xml|cvs-date|cvs-version|do-boot|get-net-info|desktop|layout|scroll-para|get-face|alert|set-face|uninstall|unfocus|request-dir|center-face|do-events|net-error|decode-url|parse-header|parse-header-date|parse-email-addrs|import-email|send|build-attach-body|resend|show-popup|hide-popup|open-events|find-key-face|do-face|viewtop|confine|find-window|insert-event-func|remove-event-func|inform|dump-pane|dump-face|flag-face|deflag-face|clear-fields|read-net|vbug|path-thru|read-thru|load-thru|do-thru|launch-thru|load-image|request-download|do-face-alt|set-font|set-para|get-style|set-style|make-face|stylize|choose|hilight-text|hilight-all|unlight-text|focus|scroll-drag|clear-face|reset-face|scroll-face|resize-face|load-stock|load-stock-block|notify|request|flash|request-color|request-pass|request-text|request-list|request-date|request-file|dbug|editor|link-relative-path|emailer|parse-error)$!

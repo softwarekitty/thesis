@@ -3,6 +3,7 @@ package build_corpus;
 import java.util.TreeSet;
 
 import metric.FeatureCount;
+import metric.FeatureDictionary;
 import metric.FeatureSetClass;
 
 import org.antlr.runtime.tree.CommonTree;
@@ -207,6 +208,27 @@ public final class RegexProjectSet implements RankableContent {
 		int threeFromEnd = s.length() - 3;
 		return s.startsWith(tripple) &&
 			s.substring(threeFromEnd).equals(tripple);
+	}
+	
+	public boolean isRexCompatible() {
+		int[] features = this.features.getFeatureCountArray();
+		int[] incompatibleIndices = { FeatureDictionary.I_REP_LAZY,
+				FeatureDictionary.I_LOOK_AHEAD, FeatureDictionary.I_LOOK_AHEAD,
+				FeatureDictionary.I_LOOK_BEHIND,
+				FeatureDictionary.I_LOOK_BEHIND_NEGATIVE,
+				FeatureDictionary.I_LOOK_NON_CAPTURE,
+				FeatureDictionary.I_META_NUMBERED_BACKREFERENCE,
+				FeatureDictionary.I_XTRA_NAMED_BACKREFERENCE,
+				FeatureDictionary.I_POS_NONWORD, FeatureDictionary.I_POS_WORD,
+				FeatureDictionary.I_XTRA_NAMED_GROUP_PYTHON,
+				FeatureDictionary.I_XTRA_OPTIONS,
+				FeatureDictionary.I_XTRA_END_SUBJECTLINE };
+		for (int i : incompatibleIndices) {
+			if (features[i] != 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	
