@@ -1,5 +1,5 @@
 
-\section{Experiment design}
+\subsection{Experiment design}
 
 The overall idea of this study is to present programmers with one of several representations of semantically equivalent regexes and ask comprehension questions. By comparing the understandability of semantically equivalent regexes that have different representations, it should be possible to infer which representations are more desirable and which are more smelly.
 This study was implemented on Amazon's Mechanical Turk with 180 participants.  Each regex was evaluated by 30 participants.
@@ -16,7 +16,7 @@ The regexes used were designed to belong to various nodes of the equivalence cla
 
 \input{table/matchingmetric}
 
-\subsection{Metrics}
+\subsubsection{Metrics}
 The understandability of regexes was measured using two complementary metrics, \emph{matching} and \emph{composition}.
 
 \textbf{Matching:}
@@ -33,13 +33,13 @@ Given a regex, a participant composes a string they think it matches. If the par
 
 To determine a match, each regex was compiled using the \emph{java.util.regex} library. A \emph{java.util.regex.Matcher} {\tt m} object was created for each composed string using the compiled regex.  If {\tt m.find()} returned true, then that composed string was given a score of 1, otherwise it was given a score of 0.
 
-\subsection{Implementation}
+\subsubsection{Implementation}
 This study was implemented on Amazon's Mechanical Turk (MTurk),  a crowdsourcing platform in which requesters can create human intelligence tasks (HITs) for completion by workers. Each HIT is designed to be completed in a fixed amount of time and workers are compensated with money if their work is satisfactory. Requesters can screen workers by requiring each to complete a qualification test prior to completing any HITs.
 
-\subsubsection{Worker Qualification}
+\paragraph{Worker Qualification}
 Workers qualified to participate in the study by answering questions regarding some basics of regex knowledge. These questions were multiple-choice and asked the worker to describe what the following regexes mean: \cverb!a+!, \cverb!(r|z)!, \cverb!\d!, \cverb!q*!, and \cverb![p-s]!. To pass the qualification, workers had to answer four of the five questions correctly.
 
-\subsubsection{Selecting pairwise comparisons}
+\paragraph{Selecting pairwise comparisons}
 
  Using the regexes in the corpus as a guide, ten metagroups were created for this study.  The first six metagroups (re-numbered for simplicity) each contain three pairs of regexes.  The last four metagroups contain two sets of three equivalent regexes.
 
@@ -67,12 +67,12 @@ An example of pairwise comparisons from a triple is a semantic group with regexe
 
 The end result is 35 pairwise comparisons across 14 edges from Figure~\ref{fig:refactoringTree}.
 
-\subsubsection{Composing Tasks}
+\paragraph{Composing Tasks}
 For each of the 26 groups of regexes, five strings were created, where at least one matched and at least one did not match. These strings were used to compute the matching metric.
 
 Once all the regexes and matching strings were collected, we created tasks for the MTurk participants as follows:
 randomly select a regex from each of the 10 metagroups. Randomize the order of these 10 regexes, as well as the order of the matching strings for each regex. After adding a question asking the participant to compose a string that each regex matches, this creates one task on MTurk.   This process was completed until each of the 60 regexes appeared in 30 HITs, resulting in a total of 180 total unique HITs.
 An example of a single regex, the five matching strings and the space for composing a string is shown in Figure~\ref{fig:exampleQuestion}.
-\subsubsection{Worker outcomes}
+\paragraph{Worker outcomes}
 Workers were paid \$3.00 for successfully completing a HIT, and were only allowed to complete  one HIT.  The average completion time for accepted HITs was 682 seconds (11 mins, 22 secs).
 A total of 55 HITs were rejected, and  of those, 48 were rushed through by one person leaving many answers blank, 4 other HITs were also rejected because a worker had submitted more than one HIT, one was rejected for not answering composition sections, and one was rejected because it was missing data for 3 questions.  Rejected HITs were returned to MTurk to be completed by others.

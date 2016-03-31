@@ -1,4 +1,6 @@
-\section{Summary of survey results}
+\subsection{Summary of survey results}
+
+\todoLast{Adjust to match design sections}
 
 The survey was completed by 18 participants (82\% response rate) that identified as software developer/maintainers.
 Respondents have an average of nine years of programming experience ($\sigma = 4.28$).
@@ -16,7 +18,7 @@ Participants answered questions using a 6-point likert scale including very freq
 Averaging across participants, among the most common usages are capturing parts of a string and locating content within a file, with both occurring somewhere between occasionally and frequently.
 
 \input{table/regexPersistingTasks}
-\subsection{Ephemeral vs persistent users}
+\subsubsection{Ephemeral vs persistent users}
 Only 27\% (5)
 % (L,N,P,Q,T) T counts be
 of participants wrote regular expressions that persist (general purpose, scripting, etc.) more frequently than in a text editor or command line tool (where they will not persist).  This result indicates that non-persistent, or \emph{ephemeral} regexes are most frequently used type of regexes.  It also suggests that a distinction can be made between types of regular expression users: those who primarily use regexes that are used once and then forgotten (ephemeral users), and those who primarily use regexes that are maintained as an artifact (persistent users).
@@ -27,7 +29,7 @@ The most frequently performed task according to Table~\ref{table:regextasks} is 
 
 \input{table/cccvsdefault}
 
-\subsection{Feature-specific questions}
+\subsubsection{Feature-specific questions}
 The pattern language for Python, which is used to compose regexes, supports default character classes like the ANY or dot character class: \cverb!.! meaning, `any character except newline'.
 It also supports three other default character classes: \cverb!\d!, \cverb!\w!, \cverb!\s! (and their negations). All of these default character classes can be simulated using the custom character class (CCC) feature, which can create semantically equivalent regexes.
 For example  the decimal character class: \cverb!\d! is equivalent to a CCC containing all 10 digits:  \cverb!\d! $\equiv$ \cverb![0123456789]! $\equiv$ \cverb![0-9]!.
@@ -49,11 +51,11 @@ To further explore how participants use various regex features, participants wer
 
 Results are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy repetition and look-ahead features are rarely used and capture groups and endpoint anchors are occasionally to frequently used.
 
-\subsection{Testing regex and composition tools}
+\subsubsection{Testing regex and composition tools}
 
 Participants were asked if they test their code, test their regex and if they do test their regex, what tools are used (if any).  Using a 7-point likert scale similar to those already described that includes `always' as a seventh point, developers indicated that they test their regexes with the same frequency as they test their code (average response was 5.2, which is between frequently and very frequently).  Half of the  developers indicate that they use external tools to test their regexes, and the other half indicated that they only use tests that they write themselves. Of the nine developers using tools, six mentioned online composition aides such as \url{regex101.com} where a regex and input string are entered, and the input string is highlighted according to what is matched.
 
-\subsection{Pain points}
+\subsubsection{Pain points}
 \label{sec:painPoints}
 In question 27 of the survey, participants were asked an open-ended question about problems with regular expressions: `What pain points have you encountered with regular expressions?'.  Three main categories of response were observed. The most common, ``hard to compose," was represented in 61\% (11) responses. Next, 39\% (7) developers responded that regexes are ``hard to read" and 17\% (3) indicated difficulties with ``inconsistency across implementations," which manifest when using regexes in multiple languages. These responses do not sum to 18 as three developers provided multiple parts in their answers.
 

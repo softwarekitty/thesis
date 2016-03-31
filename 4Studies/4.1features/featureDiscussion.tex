@@ -1,39 +1,17 @@
-\section{Discussion of utilization and feature analysis results}
+\subsection{Discussion of feature analysis results}
 \label{sec:featureDiscussion}
 
-\todoLast{This section is not completed yet - intention is to review it all one more time when other sections are more complete and then write the discussion based on that read.}
-
-\subsection{Implications}
-Think about the part of all regex that use any back-references and so are not representing regular languages (vs those that are).
-\subsection{Opportunities for future work}
-
-\subsubsection{Alternative techniques for building a corpus}
-\label{sec:alternateCorpus}
-any number of different regular expression languages like Perl Regular Expressions, Java Regular Expressions or .Net Regular Expressions.  Also independent of the regular expression language, the regexes studied could come from a variety of sources like sourceforge, bitbucket, a private repository, or even from github using a different technique than the one used to build the corpus (described in
-\todoMid{Mention how exploring character details like literals, hex, octal and supported escape specials like bell, vertical wsp, etc is an opportunity for future work}
-
-
-
-
-\todoMid{ok for discussion of rationale for checking feature sets}
-Similarly in JavaScript and POSIX ERE, the pattern \verb!"a\Z"! compiles to a regex matching the string \verb!"aZ"!, because the sequence \verb!"\Z"! has no special significance and the backslash is ignored.  In Python Regular Expressions, this sequence does have significance - a feature matching the absolute end of the string (after the last newline).  However, in Java, Perl, .Net and many other variants this sequence has a slightly different meaning (absolute end or before last newline).
-The eight most commonly used features, ADD, CG, KLE, CCC, ANY, RNG, STR and END,
-appear in over half the projects.
+\todoLast{this discussion last}
+\subsubsection{Implications}
 CG is more commonly used in patterns than the highest ranked feature (ADD) by a wide margin (over 8\%), even though they appear in similar numbers of projects.
 
+The eight most commonly used features, ADD, CG, KLE, CCC, ANY, RNG, STR and END,
+appear in over half the projects.
 
-Unable to get enough information about Swift's underlying NSRegularExpression to include it in the table - a strong contender for future work!  Also wanted to get Vim's features but do not have time, and it is a very alien feature set!.
+The WRD default was often modified by a few characters - why?
 
+\paragraph{Use Of Backreferences}\todoLast{Think about the part of all regex that use any back-references and so are not representing regular languages (vs those that are).}
 
-% The eight most common features are found in over 50\% of the projects.
-% Shown in Table~\ref{table:featureStats}, the STR and END features are present in over half of the scanned projects containing utilizations.  In our survey, over half (56\%) of the respondents answered that they use endpoint anchors frequently or very frequently, and none of them claimed to never use them.
-
-% The LZY feature  is present in over 36\% of scanned projects with utilizations, and yet was not supported by two of the four major regex projects we explored, brics and RE2.
-% In our developer survey, 11\% (2) of participants use this feature frequently and 6 (33\%) use it occasionally, showing a modest impact on potential users.
-
-% When survey participants were asked if they prefer to always use numbered (BKR) or named (BKRN) back references, 66\% (12) of survey participants said that they always use BKR, and the remaining 33\% (6) said ``it depends."  No participants preferred named capture groups.  BKR is present in 5\% of scanned projects, while BKRN is present in only 1.7\%, which corroborates our findings that numbered  are generally preferred over named capture groups.
-% \input{table/featureStats2}
-
-
-\subsection{Threats to validity}
+\subsubsection{Threats to validity}
 not good enough corpus, human error in testing lang table
+

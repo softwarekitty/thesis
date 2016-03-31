@@ -1,69 +1,30 @@
-\section{Feature Support}
+\subsection{Feature support}
 
 One issue that has persisted as a major pain point in the study of regular expressions is the lack of a concise summary comparing what features are supported in different regular expression language variants.  This work provides such a summary in this section, and goes on to investigate what features are supported in reasoning tools for regular expressions.  In the tables presented in this section the filled circle (\yes) means that a feature is supported, and the empty circle (\no) means that a feature is not supported.
 % , and in common text editors and IDEs.
 
-\subsection{Caveats to consider when comparing feature sets}
+\subsubsection{Caveats to consider when comparing feature sets}
 The variation among the supported feature sets is not easy to define.  Often the same feature is essentially supported, but nuances exist so that the exact behavior of the feature still varies enough to have an effect on code that relies on regexes using that feature.  One example of this is the OPT feature (e.g., \cverb!(?i)cAsE!), for which different engines have different sets of options.  Python's set of 7 options is small compared to Tcl which has 15 or so.  In Table~\ref{table:rankedFeatureSupport} if the following 3 core options are supported: \cverb!(?ism)!, then the variant will be shown as having that feature.  However in all other cases, to the best knowledge of the author, a strict view is taken when considering if two variants support the same feature - it should have the exact same syntax and behavior in order for the feature to be considered the same feature in two variants.  Documentation of engines varies in detail and quality, so that often the particular behavioral details and full feature set is only known to developers of the engine.  In this attempt to document some of the variations in feature support, no attempt is made to address these minor nuances and tricky details, but instead the focus is on documenting the presence or absence of features at a high level.  Most of the data presented here was determined by directly attempting to use a feature and noticing if either the engine threw an exception, or the expected effect was noticeably missing.  This effort required hundreds of small experiments that will not be documented in detail at this time.  A cursory treatment of where the information came from is provided in Section~\ref{sec:languagesChosen}.  These tables should not be relied upon in life-or-death situations, as some error is certainly possible.  In such applications, a user may want to verify engine behavior using tests, consulting the documentation and source code as needed.
 
-\subsection{Choosing languages to compare feature support}
+\subsubsection{Choosing languages to compare feature support}
 \label{sec:languagesChosen}
 Instead of using language popularity alone to determine what languages to include, these languages were selected to optimize for the intersection of variety of regular expression languages covered, and ease of testing feature inclusion.  For example, Java and RE2 provide excellent and thorough documentation of their feature sets, and provide two entirely different variants.  Although C and C++ are very popular languages, their regular expression libraries use external standards like ECMA (used by JavaScript) and POSIX ERE, and do not provide a distinct language of their own.  For Python, Perl, Ruby, JavaScript and Java, testing a for a feature can be quickly accomplished in a browser or a terminal.  For RE2, POSIX ERE and .Net no tests were performed, but documentation was good enough, and the language variants seem significant enough to try and include them.  Two notably absent regular expression languages are the NSExpressions variant used by Apple in the Swift and Objective-C languages (no acceptably detailed documentation was found), and the well documented but wildly exotic syntax of Vim Regular Expressions which are very interesting but would unnecessarily inflate the size of the tables. So for 15 (75\%) of the top 20 languages listed \todoNow{elsewhere}, (i.e. not MATLAB, Swift, Objective-C, SQL or Assembly Language), the tables presented here should provide useful information.
 
 
 \input{table/rankedFeatureSupport}
 
-\subsection{Ranked feature support}
+\subsubsection{Ranked feature support}
 Table~\ref{table:rankedFeatureSupport} compares support for the 34 features studied in this thesis amongst Perl, Python, Ruby, .Net, JavaScript, RE2, Java and POSIX ERE (i.e., grep, sed, etc.).  No languages share the functionality of Python's ENDZ feature (preferring the LNLZ feature for that syntax).  Only RE2 and Perl support Python-style named capture groups, and only Perl supports Python-style named back-references.  JavaScript does not support options (OPT) or positive or negative look-backs (LKB, NLKB respectively).  RE2 does not support any look-arounds (LKB, NLKB, LKA and NLKA) or back-references.  POSIX ERE only supports 15 of the 34 studied features and Ruby does not support vertical whitespace (VWSP), but all remaining features are supported by all the other variants.  The top nine features by rank are supported in all eight variants.  These results support the relevance of the feature set selected for detailed study in this thesis.  The implication here is that patterns written for one engine using this feature set are very likely to be interpreted the same way by other engines, which is good for portability.
 
 \input{table/alienFeatureSupport}
 
-\subsection{Alien feature support}
-Table~\ref{alienFeatureSupport} describes feature support for a selection of 34 features (alien to the studied feature set) chosen from the eight languages being investigated.  A reference code and small example are provided to aid in understanding.  Several of these features actually represent an entire family of up to 12 features, like PXCC (e.g., \cverb![:alpha:]!), EREQ (e.g., \cverb![[=o=]]!), JAVM (e.g., \cverb!\p{javaMirrored}!), UNI and NUNI (e.g., \cverb!\pL! and \cverb!\PM!), but only one feature from such a family is selected for space considerations.  Perl is notable for supporting the most features overall, and POSIX ERE is notable for supporting the smallest number of features.
-
-\subsection{Alien feature descriptions}
-The following  brief descriptions of features alien to the studied feature set are provided to aide in understandability of Table~\ref{table:alienFeatureSupport}.  For a more detailed description, the reader will have to consult the documentation provided by a supporting variant.
-
-\begin{description} \itemsep -1pt
-\item[RCUN:] example: \cverb!(?n)! description: recursive call to group n
-\item[RCUZ:] example: \cverb!(?R)! description: recursive call to group 0
-\item[GPLS:] example: \cverb!\g{+1}! description: relative back-reference
-\item[GBRK:] example: \cverb!\g{name}! description: named back-reference
-\item[GSUB:] example: \cverb!\g<name>! description: Ruby-style subroutine call
-\item[KBRK:] example: \cverb!\k<name>! description: .Net-style named back-reference
-\item[IFC:] example: \cverb!(?(cond)X)! description: if conditional
-\item[IFEC:] example: \cverb!(?(cnd)X|else)! description: if else conditional
-\item[ECOD:] example: \cverb!(?{code})! description: embedded code
-\item[ECOM:] example: \cverb!(?#comment)! description: embedded comments
-\item[PRV:] example: \cverb!\G! description: end of previous match position
-\item[LHX:] example: \cverb!\uFFFF! description: long hex values
-\item[POSS:] example: \cverb!a?+! description: possessive modifiers
-\item[NNCG:] example: \cverb!(?<name>X)! description: .Net-style named groups
-\item[MOD:] example: \cverb!(?i)z(?-i)z! description: flag modulation (on and off anywhere)
-\item[ATOM:] example: \cverb!(?>X)! description: atomic or possessive non-capture group
-\item[CCCI:] example: \cverb![a-z&&[^f]]! description: custom character class intersection
-\item[STRA:] example: \cverb!\A! description: absolute beginning of input
-\item[LNLZ:] example: \cverb!\Z"! description: end of input, or before last newline
-\item[FINL:] example: \cverb!\z! description: absolute end of input, like ENDZ
-\item[QUOT:] example: \cverb!\Q...\E! description: quotation
-\item[JAVM:] example: \cverb!\p{javaMirrored}! description: java defaults
-\item[UNI:] example: \cverb!\pL! description: Unicode defaults
-\item[NUNI:] example: \cverb!\PS! description: Unicode negated defaults
-\item[OPTG:] example: \cverb!(?flags:re)! description: flags just for inside this NCG
-\item[EREQ:] example: \cverb![[=o=]]! description: equivalence classes
-\item[PXCC:] example: \cverb![:alpha:]! description: POSIX defaults
-\item[TRIV:] example: \cverb![^]! description: trivial CCC, matches everything
-\item[CCSB:] example: \cverb![a-f-[c]]! description: custom character class subtraction
-\item[VLKB:] example: \cverb!(?<=ab.+)! description: variable-width look-behinds.  harder to implement
-\item[BAL:] example: \cverb!(?<close-open>)! description:  balanced groups (.Net version of recursion)
-\item[NCND:] example: \cverb!(?(<n>)X|else)! description: named conditionals
-\item[BRES:] example: \cverb!(?|(A)|(B))! description: branch numbering reset (A and B capture into the same group number)
-\item[QNG:] example: \cverb!(?'name're)! description: single-quote named groups
-\end{description}
+\subsubsection{Alien feature support}
+Table~\ref{alienFeatureSupport} describes feature support for a selection of 34 features (alien to the studied feature set) chosen from the eight languages being investigated.  A reference code and small example are provided to aid in understanding.  Several of these features actually represent an entire family of up to 12 features, like PXCC (e.g., \cverb![:alpha:]!), EREQ (e.g., \cverb![[=o=]]!), JAVM (e.g., \cverb!\p{javaMirrored}!), UNI and NUNI (e.g., \cverb!\pL! and \cverb!\PM!), but only one feature from such a family is selected for space considerations.  Perl is notable for supporting the most features overall, and POSIX ERE is notable for supporting the smallest number of features.  A brief explanation of the functionality of these features is available in Section~\ref{sec:alienDescriptions}
 
 \input{table/featureVariationTools}
 
-\subsection{Feature support in regex analysis tools}
+\subsubsection{Feature support in regex analysis tools}
+\label{sec:featureVariationTools}
 Tools for analyzing and reasoning about regular expressions are very attractive to language researchers, as well as industries that use regular expressions for mission critical applications (airlines, NASA, FBI, NSA, Oracle, etc.).  The more features supported by an analysis tool, the further research and development can be advanced for all of these domains.  On the other hand, the more features that developers of an analysis tool attempt to support, the more complex the implementation of the tool becomes, so at some point developers of an analysis tool are likely to make a judgment about whether or not to support a feature.  In Table~\ref{table:featureVariationTools}, the features supported by brics, hampi, Rex and Automata.Z3 are compared.  The features of Rex in particular are of importance in this thesis, as Rex was used for the analysis described in Section \todoMid{link}, and lack of support for various features was a major limiting factor for what could be included in the analysis.
 
 What features each tool supports was determined in a variety of ways.  For brics, the set of supported features was collected using the formal grammar\footurl{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}.  For hampi, he set of regexes included in the test suite {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footurl{https://code.google.com/p/hampi/downloads/list} were examined to determine which features hampi supports (this may have been an overestimation, as this included more features than specified by the formal grammar\footurl{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}).  For Rex, the feature set was collected empirically when attempting to use Rex as described in Section  \todoMid{link}.  For Automata.Z3, a file containing sample regexes\footurl{https://github.com/AutomataDotNet/Automata/blob/master/src/Automata.Z3.Tests/SampleRegexes.cs} was examined to determine which features it supports.  This may be an underestimation, as the set of patterns provided is small.  Hampi supports the most features (25 features), followed by Rex (21 features), Automata.Z3 (14 features) and brics (12 features).  Rex and hampi support the 14 most commonly used features, whereas Automata.Z3 supports 11 of these features and bricks supports nine.  No projects support the four look-around features LKA, NLKA, LKB and NLKB.  Hampi supports named back-references, and no other back-reference support is available in any other tool.  Hampi supports the LZY, NCG, PNG and OPT features, whereas brics, Automata.Z3 and Rex do not.
@@ -88,4 +49,4 @@ What features each tool supports was determined in a variety of ways.  For brics
 % VIM\footurl{http://vimregex.com/}
 
 
-% \subsection{Feature support in text editors}
+% \subsubsection{Feature support in text editors}

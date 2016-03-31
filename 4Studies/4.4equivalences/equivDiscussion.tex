@@ -1,12 +1,10 @@
-\section{Node counting results}
+\subsection{Node counting results}
 
 \input{table/nodeCount}
 
 For each node, Table~\ref{table:nodeCount} presents the number of regexes belonging to that node, and the number of projects containing at least one such regex belonging to that node. The \emph{node} column references the node labels (like `T1') in Figure~\ref{fig:refactoringTree}.  The \emph{description} column briefly describes the rules for node membership, followed by an \emph{example} regex from the corpus. The \emph{nRegexes} column counts the regexes that belong to a given node, followed by the percent of regexes out of 13,597 (the total number of regexes in the corpus). The \emph{nProjects} column counts the projects that contain a regex belonging to the node, followed by the percentage of projects out of 1,544 (the total number of projects scanned that contain at least one regex from the corpus). Recall that the regexes of the corpus are all unique and could appear in multiple projects, hence the project support is used to show how pervasive the node is across the whole community. For example, 2,479 of the regexes belong to the C1 representation, representing 18.2\% of regexes in the corpus. These appear in 810 projects, representing 52.5\%. Regexes belonging to D1 appear in 346 (2.5\%) of the regexes in the corpus, but only 234 (15.2\%) of the projects. In contrast, 39 \emph{fewer} regexes are in node T3, but 34 \emph{more} projects use regexes from T3, indicating that D1 is more concentrated in a few projects and T3 is more widespread across projects.
 
-\section{Discussion}
-
-\subsection{Preferences indicated by community support}
+\subsection{Discussion of refactorings}
 Using the count of regexes in each node provided in Table~\ref{table:nodeCount}, the most preferred nodes for each group are C1, D2, T1, L2, and S2.  In this section the practical issues of refactoring between nodes are explored and several preferences between nodes are identified.
 
 \subsubsection{Community based CCC refactoring}
@@ -47,39 +45,18 @@ Similarly, the most popular regex from T3 \cverb![\x80-\xff]! appears in 81 proj
 \paragraph{T4 to T2 is always recommended}  It is not always possible to use a literal character to specify a character. For characters that cannot be represented directly, a refactoring from T4 to T2 is always recommended.  T2 has more than 34 times as many regexes (479) as T4 (14) and so based on community standards, all of these should be refactored.
 
 \subsubsection{Community based LWB refactoring}
+
 \paragraph{L2 to L3 may be recommended} L2 has 6,017 regexes while L3 has 6,003 and so they are very closely tied in terms of number of regexes.  In terms of projects, L3 has a slight advantage with 1,207 compared to the 1,097 containing some L2 regex.  This indicates a slight preference for L3 over L2, but is not a strong indicator.  Furthermore a refactoring from L2 to L3 requires an additional repeated element in the sequence to be present before the element to which KLE is applied.  For example the regex belonging to L2 \cverb!kk*! has this extra \verb!`k'! that can be used to transform this regex into a regex belonging to L3: \cverb!k+!.  However the regex \cverb!k*! does not have another \verb!`k'!, so no transformation is possible.  Patterns of the 6,017 regexes belonging to L3 were searched using the regex \cverb!([^\\)\]])\1\*!, locating 38 patterns where their corresponding regexes could be transformed this way.  The most popular example (8 projects) was the regex \cverb!(?::*)! which would become \cverb!(?:+)!.
 
 \paragraph{L1 to L3 is recommended for lower bounds}  L1 has only 91 regexes or almost 67 times fewer than L3, so the community supports a refactoring to L3.  The most popular regex in L1 (32 projects) is \cverb!\n{2,}! which can be transformed to \cverb!\n\n+! belonging to L3.  The regex in L1 with the largest lower bound is \cverb![1-9A-HJ-NP-Za-km-z]{26,}\\Z! which when transformed to a regex in L3 would become too long to typeset in this thesis, and that refactoring cannot be recommended.  However only 3 regexes had a lower bound greater than 6 and only 10 had a lower bound greater than 4, so most regexes in L1 are good candidates for refactoring to L3.
 
-\subsubsection{Community based SNG refactoring}
+\paragraph{Community based SNG refactoring}
 \paragraph{refactoring to S2 may be recommended for small repetitions}  Inspecting the contents of S2 reveals that most of these regexes belong to S2 because they contain normal words like \verb!"session"! or \verb!"https"! that happen to have a repetition of characters.  This artificially inflates the size of S2 and presents a challenge when trying to use the community standards rationale to suggest a refactoring to S2 from S1 or S3.  For example, consider the most popular (32 projects) regex from S1: \cverb!^[a-f0-9]{40}$!.  Expanding this out so that it uses sequential repetition would create a very long regex and cannot be recommended.  However transforming the regex \cverb!^(-?\d+)(\d{3})! from S1 yields the regex \cverb!^(-?\d+)(\d\d\d)! which may be recommended by the community standards, but more investigation is needed.
 
 \paragraph{refactoring out of S3 is recommended}
 S3 only has 27 regexes, and all of them seem to be abusing the DBB feature by making the upper and lower bounds identical.  Perhaps these regexes started off with different bounds and were fixed as time went on to have identical bounds.  Due to the inflation of S2, it is not clear whether to recommend a refactoring to S1 or S2.  Perhaps the best recommendation is to refactor low numbers of repetitions of small elements to S2, and all others to S1.
 
-\subsection{Opportunities for future work}
-
-\paragraph{Equivalence Class Models}
-This study uses 5 equivalence classes, each with 3 to 5 nodes.  These equivalence classes are very inclusive of regexes with very different behavior, and are defined largely by the features used by a regex.  Future work could look into much more narrowly defined equivalence models, specific to particular behaviors of the most frequently observed regexes.  For example a node could require the presence of a very specific, frequently used CCC like \cverb![a-zA-Z0-9_-]! which can be refactored to \cverb![\w-]!.
-
-In addition to breaking the five equivalence classes into more granular nodes, future work could model refactorings outside of these groups. Due to the functional variety and significant number of features to consider, this work does not provide a list of all possible refactoring groups.  However the following 5 additional equivalence classes are examples of other possible groups:
-\begin{description}
-\item[Single line option]  \verb!'''(.|\n)+'''! $\equiv$ \verb!(?s)'''(.)+'''!
-\item[Multi line option]  \verb!(?m)G\n! $\equiv$ \verb!(?m)G$!
-\item[Multi line option]  \verb!(?i)[a-z]! $\equiv$ \verb![A-Za-z]!
-\item[Backreferences]  \verb!(X)q\1! $\equiv$ \verb!(?P<name>X)q\g<name>!
-\item[Word Boundaries]  \verb!\bZ! $\equiv$ \verb!((?<=\w)(?=\W)|(?<=\W)(?=\w))Z!
-\end{description}
-
-Future work could also use reasoning tools for regular expressions, like Microsoft's Automata library to identify populations of equivalent regexes with differing representations, even identifying \emph{all} equivalence classes present in a given corpus.
-
-\paragraph{Regex Programming Standards}
-Many organizations enforce coding standards in their repositories to ease understandability.  Using an equivalence class model and the node counting technique described in this chapter could help to objectively develop regular expression standards for a given development community like Mozilla or OpenBSD.
-
-\paragraph{Studying a different corpus}
-A technique similar to the one described in this work could be applied to a different corpus.  Ideas about alternative ways to build a corpus of regexes can be found in Section~\ref{sec:alternateCorpus}).  The concept of a community standard would be reinforced by regexes sourced from a very specific community like only text editor projects, or only shopping cart frameworks.
-
-\subsection{Threats to validity}
+\subsubsection{Threats to validity}
 Because the technique of determining a node count includes manual verification, is possible that some regexes were not removed from a node that should have been removed, or were included when they should not have been.  This does not represent a serious threat, however, because a small number of errors would not significantly change the main results of the work.
 
 The rules used to define the nodes of equivalence classes may have been too permissive, or may have not been designed in the best possible way, resulting in an experiment that fails to detect some other more interesting refactoring that was not considered.  As the first work on regular expression refactoring, this outcome is unavoidable and is not considered a major problem.

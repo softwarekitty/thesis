@@ -1,7 +1,7 @@
-\section{Defining five equivalence classes}
+\subsection{Defining five equivalence classes}
 \label{sec:equivClasses}
 
-\subsection{Conceptual Overview}
+\subsubsection{Conceptual Overview}
 This chapter introduces possible refactorings in regular expressions by identifying equivalence classes of Python Regular Expressions, identifying what representations are possible in each equivalence class, and also identifying what transformations between representations are possible. As with source code, in regular expressions there are often multiple ways to express the same semantic concept.
 For example, \cverb!AAA*! matches two \verb!`A'!s followed by zero or more \verb!`A'!s.  This matching behavior is identical to the behavior of the syntactically different regex \cverb!AA+!, which matches two or more \verb!`A'!s.  What is not clear is which representation,  \cverb!AAA*!  or  \cverb!AA+!, is preferred.
 
@@ -28,7 +28,7 @@ Identifying the best direction for each arrow in the possible refactorings is di
 Figure~\ref{fig:refactoringTree} uses specific examples to more clearly illustrate the characteristics of each node.  However, the \verb!`A'!s in the LWB group abstractly represent any element, and the number of elements is free to vary. We chose the lower bound repetition threshold of 2 for illustration; in practice this could be any number, including zero.
 Next, we describe the characteristics of all nodes of each group in detail:
 
-\subsection{CCC Group}
+\subsubsection{CCC Group}
 The Custom Character Class (CCC) group contains five nodes that each require the expression of a set of characters, as is typical when using the CCC feature.  For example, the regex \cverb!b[ea]t! will match both \verb!"bet"! and \verb!"bat"! because, between the \verb!`b'! and \verb!`t'!, the CCC \cverb![ae]! specifies that either \verb!`a'! or \verb!`e'! (but not both) must be present.
 We use the term \emph{custom} to differentiate these classes created by the user from the default character classes: \cverb!\d!, \cverb!\D!, \cverb!\w!, \cverb!\W!, \cverb!\s!, \cverb!\S! and \cverb!.! provided in Python Regular Expressions.
 Next, we provide descriptions of each node in this equivalence class:
@@ -51,7 +51,7 @@ Because an OR cannot be directly negated, it does not make sense to have an edge
 
 A regex can belong to multiple nodes of the CCC group. For example, \cverb![a-f\d]! belongs to both C1 and C4.  The edge between C1 and C4 represents the opportunity to express the same regex as \cverb![a-f0-9]! by transforming the default digit character class into a range.  This transformed version would only belong to the C1 node.  Not all regexes in C1 contain a default character class that can be factored out.  For example \cverb![a-f]! belongs to C1 but cannot be transformed to an equivalent representation belonging to C4.
 
-\subsection{DBB Group}
+\subsubsection{DBB Group}
 The double-bounded (DBB) group contains all regexes that use some repetition defined by a (non equal) lower and upper boundary.  For example the regex \cverb!pB{1,3}s! requires one \verb!`p'! followed by one to three sequential \verb!`B'!s, then followed by a single \verb!`s'!.  This regex will match \verb!"pBs"!, \verb!"pBBs"!, and \verb!"pBBBs"!.
 
 \begin{description}  \itemsep -1pt
@@ -66,7 +66,7 @@ When a regex belonging to D1 has zero as the lower bound, it can be transformed 
 
 Note that a regex can belong to multiple nodes in the DBB group, for example, \cverb!(a|aa)X?Y{2,4}! belongs to all three nodes: \cverb!Y{2,4}! maps it to D1, \cverb!X?! maps it to D2, and \cverb!(a|aa)! maps it to D3.
 
-\subsection{LIT Group}
+\subsubsection{LIT Group}
 All regexes that are not purely default character classes have to use some literal tokens to specify what characters to match.  In Python and most other languages that support regex libraries, the programmer is able to specify literal tokens in a variety of ways.  Our examples use the ASCII charset, in which all characters can be expressed using hex codes like \verb!\x3A! and octal codes like \verb!\072!.  The LIT group defines transformations among various representations of literals.
 
 \begin{description}  \itemsep -1pt
@@ -79,7 +79,7 @@ An example of a regex belonging to T3 is \cverb![x][y][z]!. This style is used m
 
 Patterns often fall in several of these representations.  For example, \cverb!abc\007! includes literal elements \cverb!a!, \cverb!b!, and \cverb!c!, and also the octal element \cverb!\007!, thus belonging to T1 and T4.
 
-\subsection{LWB Group}
+\subsubsection{LWB Group}
 The LWB group contains all regexes that specify only a lower boundary on the number of repetitions required for a match.
 
 \begin{description}  \itemsep -1pt
@@ -90,7 +90,7 @@ The LWB group contains all regexes that specify only a lower boundary on the num
 
 Regexes can belong to multiple nodes in the LWB group.  Within \cverb!A+B*!, the \cverb!A+! maps this regex to L3 and \cverb!B*! maps it to L2. Refactorings from L1 to L3, and L2 to L3 are not possible when the lower bound is zero and the regex is not repeated in sequence.  For example neither \cverb!A{0,}! from L1, nor \cverb!A*! from L2 express behavior that can be represented using the ADD feature.
 
-\subsection{SNG Group} This equivalence class contains three nodes, each expressing SNG repetition in different ways.
+\subsubsection{SNG Group} This equivalence class contains three nodes, each expressing SNG repetition in different ways.
 
 \begin{description}  \itemsep -1pt
 \item[S1:] Any regex using the SNG feature like \cverb!S{3}! belongs to the S1 node. This example regex defines the string \verb!"SSS"! where three \verb!`S'! characters appear in a row.
@@ -100,7 +100,7 @@ Regexes can belong to multiple nodes in the LWB group.  Within \cverb!A+B*!, the
 
 The important factor distinguishing this group from DBB and LWB is that there is a single finite number of repetitions, rather than a bounded range on the number of repetitions (DBB) or a lower bound on the number of repetitions (LWB).
 
-\subsection{Example regex}
+\subsubsection{Example regex}
 Regexes will often belong to many representations in the equivalence classes described here, and often multiple representations within an equivalence class.
 Using an example from a Python project, the regex \cverb![^ ]*\.[A-Z]{3}! is a member of S1, L2, C1, C3, and T1. This is because \cverb![^ ]! maps it to C3, \cverb![^ ]*! maps it to L2, \cverb![A-Z]! maps it to C1, \cverb!\.! maps it to T1, and \cverb![A-Z]{3}! maps it to S1.
 As examples of refactorings, moving from S1 to S2 would be possible by replacing \cverb![A-Z]{3}! with \cverb![A-Z][A-Z][A-Z]!.  Moving from L2 to L1 would mean replacing \cverb![^ ]*! with \cverb![^ ]{0,}!, resulting in a refactored regex of: \cverb![^ ]{0,}\.[A-Z][A-Z][A-Z]!.

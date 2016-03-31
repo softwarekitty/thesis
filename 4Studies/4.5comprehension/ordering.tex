@@ -1,16 +1,16 @@
-\section{Design of topological sort}
+\subsection{Design of topological sort}
 \label{sec:ordering}
 
-\subsection{Conceptual Basis}
+\subsubsection{Conceptual Basis}
 
 We suggest directions for the refactorings, for example, from \cverb!aa*!  to  \cverb!a+!, based on two high-level concepts: which representation appears most frequently in source code (conformance to community standards) and which is more understandable by programmers, based on comprehension tests completed by 180 study participants.
 Our results identify preferred representations for four of the five equivalence classes based on mutual agreement between community standards and understandability, with three of those being statistically significant. For the fifth group on double-bounded repetitions, two recommendations are given depending on the goals of the programmer.
-\subsection{Implementation details}
+\subsubsection{Implementation details}
 
-\section{Total ordering of representations}
+\subsection{Total ordering of representations}
 To determine the overall trends in the data, we created total orderings on the representation nodes in each equivalence class (Figure~\ref{fig:refactoringTree})  with respect to the community standards and understandability metrics.
 
-\subsection{Analysis}
+\subsubsection{Analysis}
 At a high level, these total orderings were achieved by building directed graphs with the representations as nodes and edge directions determined by the metrics: patterns and projects for community standards and matching and composition for understandability. Then, within each graph, we performed a topological sort to obtain total node orderings.
 
 The graphs for community support are based on Table~\ref{table:nodeCount} and the graphs for understandability are based on Table~\ref{table:testedEdgesTable}. The following sections describe the processes for building and and topologically sorting the graphs.
@@ -26,7 +26,7 @@ The graphs for community support are based on Table~\ref{table:nodeCount} and th
 
 \todoMid{insert the rest of the graphs?}
 
-\subsubsection{Building the Graphs}
+\paragraph{Building the Graphs}
 In the community standards graph, we represent a directed edge  $\overrightarrow{C2  C1}$ when  nPatterns(C1) $>$ nPatterns(C2) \emph{and}  nProjects(C1) $>$ nProjects(C2).
 When there is a conflict between nPatterns and nProjects, as is the case between L2 and L3 where L2 is found in more patterns and L3 is found in more projects, an undirected edge $\overline{L2L3}$ is used.
 This represents that there was no winner based on the two metrics.
@@ -35,7 +35,7 @@ Note that with the CCC group, there is no edge between C3 and C5 because there i
 
 In the understandability graph, we represent a directed edge  $\overrightarrow{C2C1}$ when match(C1) $>$ match(C2) \emph{and} compose(C1) $>$ compose(C2). When there is a conflict between match and compose, as is the case with T1 and T3 where match(T1) is higher but compose(T3) is higher, an undirected edge $\overline{T1T3}$ is used. When one metric has a tie, as is the case with composition in E9, we resort to the matching metric to determine  $\overrightarrow{C5C1}$. An example understandability graph for the CCC is shown in Figure~\ref{fig:graphsforanalysis}b.
 
-\subsubsection{Topological Sorting}
+\paragraph{Topological Sorting}
 Once the graphs are built for each equivalence class and each set of metrics, community standards and understandability, we apply a modified version of Kahn's topological sorting algorithm to obtain a total ordering on the nodes, as shown in Algorithm~\ref{topological}. The first modification is to remove all undirected edges since Kahn's operates over a directed graph.
 
 In Kahn's algorithm, all nodes without incoming edges are added to a set $S$ (Line~\ref{addnoincomingtos}), which represents the order in which nodes are explored in the graph. For each $n$ node in $S$ (Line~\ref{beginwhile}), all edges from $n$ are removed and $n$ is added to the topologically sorted list $L$ (Line~\ref{addntoL}). If there exists a node $m$ that has no incoming edges, it is added to $S$.  In the end, $L$ is a topologically sorted list.
@@ -70,7 +70,7 @@ Breaking ties on the community standards graph involves choosing the representat
 
 Breaking ties in the understandability graph uses the metrics. Based on Table~\ref{table:testedEdgesTable}, we compute the average matching score for all instances of each representation, and do the same for the composition score. For example, C4 appears in E5, E12 and E13 with an overall average matching score of 0.81 and composition score of 24.3. C5 appears in E4 and E9 with an average matching of 0.87 and composition of 28.28. Thus, C5 is favored to C4 and appears higher in the sorting.
 
-\subsection{Results}
+\subsubsection{Results}
 After running the topological sort in Algorithm~\ref{topological} with tiebreakers, we have a total ordering on nodes for each graph, shown in Table~\ref{topologicalResults}.  For example, given the graphs in Figure~\ref{fig:graphsforanalysis}a and Figure~\ref{fig:graphsforanalysis}b, the topological sorts are {\tt C1 C3 C2 C4 C5} and {\tt C1 C5 C4 C2 C3}, respectively.
 
 \input{table/topologicalResults}

@@ -1,12 +1,12 @@
-\section{Discussion of cluster categories}
-\subsection{Implications}
+\subsection{Discussion of cluster categories}
+\subsubsection{Implications}
 When tool designers are considering what features to include, data about usage in practice is valuable.  Behavioral similarity clustering  helps to discern these behaviors by looking beyond the structural details of specific patterns and seeing trends in  matching behavior. We are also able to find out what features are being used in these behavioral trends so that we can make assertions about why certain features are important.
 We used the behavior of individual patterns to form clusters, and identified six main categories for the clusters.
  Overall, we see that many clusters are defined by the presence of particular tokens, such as the colon for the cluster in Table~\ref{table:exampleCluster}.
 We identified six main categories that define regex behavior at a high level: matching with alternatives, matching literal characters, matching with sequences, matching with endpoint anchors, parsing contents of brackets or braces, or searching and capturing code, and can be considered in conjunction with the self-described regex activities from the survey in Table~\ref{tab:regexactivities} to be representative of common uses for regexes.
 One of the six common cluster categories, \emph{Code Search and Variable Capturing}, has a very specific purpose of parsing source code files. This shows a very specific and common use of regular expressions in practice.
 
-\subsubsection{Finding Specific Content}
+\paragraph{Finding Specific Content}
 Two categorical clusters, \emph{Specific Characters Must Match} and \emph{Two or More Characters in Sequence}, deal with identifying the presence of specific character(s).
 While multiple character matching subsumes single character matching, the overarching theme is that these regexes are looking to validate strings based on the presence of very specific content, as would be done for many common activities listed in Table~\ref{tab:regexactivities}, such as, ``Locating content within a file or files."
 More study is needed into what content is most frequently searched for, but from our cluster analysis we found that version numbers, twitter or user handles, hex values, decimal numbers, capitalized words, and particular combinations of whitespace, slashes and other delimiters were discernible targets.
@@ -35,5 +35,5 @@ Capturing the contents of brackets and searching for delimiter characters were s
 %taking break at line 1200
 
 
-\subsection{Opportunities for future work}
-\subsection{Threats to validity}
+\subsubsection{Opportunities for future work}
+\subsubsection{Threats to validity}

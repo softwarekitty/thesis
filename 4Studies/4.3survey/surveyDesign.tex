@@ -1,8 +1,20 @@
-\section{Survey design based on feature analysis}
+\subsection{Survey design}
 
-To understand the context of when and how programmers use regular expressions,
-a survey was designed and implemented using Google Forms containing 30 questions~\ref{fig:surveyPDF1}. The questions asked about regex usage frequency, technical environment, tasks regexes were used for, pain points, and the use of various language
-features.
-Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
+To understand the context of when and how programmers use regular expressions, a survey was designed and implemented using Google Forms containing 30 questions~\ref{fig:surveyPDF1}. The questions asked about regex usage frequency, technical environment, tasks regexes were used for, pain points, and the use of various language
+features. Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
 
+\subsubsection{Question topics}
+\paragraph{Self-qualifying questions} Participants were first asked if they are a developer or maintainer of software, and if they had used regexes in a work environment.  If a negative response to either of those questions was received, the Google Form skipped to the end with a `thank you' message.  These questions helped to guarantee that only people who self-identify as developers who use regex can participate.
+
+\paragraph{Estimating composition frequency} The number of regexes used by a developer per year overall can be used as an indication of interest in regular expressions.  However, in trial surveys, recalling the number of regexes used was challenging.  This was addressed by first prompting recall per-environment, and per-task before asking for the overall number.  The question of how many regexes are composed by developers in particular contexts and for particular tasks is also of interest, because it provides a way to quantify the relative importance of supporting those contexts and tasks.
+
+\paragraph{Feature usage questions} To provide another perspective on feature usage frequency, developers were asked about the frequency of use for some features not supported by some analysis tools (as described in Section~\ref{sec:featureVariationTools}).  They were also asked about which features they prefer to use when two equivalent options will both work, providing information to inform refactoring recommendations.  One question asked about the what participants use the WRD default character class for, because many close variants of this default were observed in the corpus.
+
+\paragraph{Testing and composition tools} Because regexes can be hard to understand and cause bugs in code, participants were asked about their testing of regexes and testing of code in general, so that a comparison could be made.  Participants were also asked about what tools they use to test regexes.
+
+\paragraph{Parsing HTML} Because parsing a markup language like HTML using regular expressions is a common mistake\footurl{http://stackoverflow.com/questions/1732348}, (typically an HTML parser is a better choice) participants were asked if they had ever tried to parse HTML or XML.  A separate questions asked if, when parsing text, participants prefer to use regular expressions or write a custom parser.
+
+\paragraph{Pain points and free responses} Participants were asked open-ended questions about what pain points they have experienced and what else they have to say about using regexes.  The intention of these questions was to provide an opportunity for information not covered by other questions to arise.
+
+\subsubsection{Participants}
 The goal of the survey was to understand the practices of professional developers. Thus, the survey was deployed to 22 professional developers at Dwolla, a small software company that provides tools for online and mobile payment management. While this sample comes from a single company, we note anecdotally that Dwolla is a start-up and most of the developers worked previously for other software companies, and thus bring their past experiences with them. Surveyed developers have nine years of experience, on average, indicating the results may generalize beyond a single, small software company, but further study is needed.

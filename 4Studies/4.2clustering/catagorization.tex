@@ -1,19 +1,19 @@
-\section{Categorization of clusters}
-\subsection{Implementation details}
-\subsection{Results}
+\subsection{Categorization of clusters}
+\subsubsection{Implementation details}
+\subsubsection{Results}
 
 
 We manually mapped the top 100 largest clusters based on the number of projects into 6 behavioral categories (determined by inspection).  The largest cluster was left out, as it was composed of patterns that trivially matched almost any string, like \verb!`b*'! and \verb!`^'!.  The remaining 99 clusters were all categorized. These clusters are briefly summarized in Table~\ref{tab:clustercats}, showing the name of the category and the number of clusters it represents, patterns in those clusters, and projects. The most common category is \emph{Multi Matches}, which contains clusters that have alternate behaviors (e.g., matching a comma or a semicolon, as in \verb!`,|;'(18)!). Each cluster was mapped to exactly one category. Next, we describe the categories, ordered by the number of projects the regex patterns map to.
 
 \input{table/clustercats}
 
-\subsubsection{Multiple Matching Alternatives}
+\paragraph{Multiple Matching Alternatives}
 The patterns in these clusters match under a variety of conditions by using a character class or a disjunctive \verb!|!.
 For example:
 \verb!`(\W)'(89)! matches any alphanumeric character, \verb!`(\s)'(89)! matches any whitespace character, \verb!`\d'(58)! matches any numeric character, and \verb!`,|;'(18)! matches a comma or semicolon.  Most of these clusters are represented by patterns that use default character classes, as opposed to custom character classes.  This provides further support for our survey results to the question, \emph{Do you prefer to use custom character classes or default character classes more often?}, in which a majority of participants indicated they use the default classes more than custom.
 This category contains 21 clusters, each appearing in an average of 33 projects.
 
-\subsubsection{Specific Character Must Match}
+\paragraph{Specific Character Must Match}
 \label{cluster:single}
 Each cluster in this category requires one specific character to match, for example:
 \verb!`\n\s*'(42)! matches only if a newline is found, \verb!`:+'(31)! matches only if a colon is found, \verb!`%'(22)!, matches only if a percent sign is found and \verb!`}'(14)! matches only if a right curly brace is found.
@@ -23,7 +23,7 @@ The commonality of this cluster category contrasts with the survey in
 This category contains 17 clusters, each appearing in an average of 17.1 projects.
  These clusters have a combined total of 103 patterns, with at least one pattern present in 184 projects.
 
-\subsubsection{Anchored Patterns}
+\paragraph{Anchored Patterns}
 Each of the clusters uses at least one endpoint anchor to require matches to be absolutely positioned, for example:
 \verb!`(\w+)$'(35)! captures the word characters at the end of the input, \verb!`^\s'(16)! matches a whitespace at the beginning of the input, and \verb!`^-?\d+$'(17)! requires that the entire input is an (optionally negative) integer.
 These anchors are the only way in regexes to guarantee that a character does (or does not) appear at a particular location by specifying what is allowed. As an example, \verb!^[-_A-Za-z0-9]+$! says that from beginning to end, only \verb![-_A-Za-z0-9]! characters are allowed, so it will fail to match if undesirable characters, such as \verb!?!, appear anywhere in the string.
@@ -36,7 +36,7 @@ These clusters have a combined total of 85 patterns, with at least one pattern p
 \verb!.*[0-9]$!
 \todoMid{ is creating an ultimatum about the end being a digit.  Without the endpoint anchors, I don't see how one could specify absolutes about an input. }
 
-\subsubsection{Content of Brackets and Parenthesis}
+\paragraph{Content of Brackets and Parenthesis}
 \label{cluster:contentparens}
 The clusters in this category center around finding a pair of characters that surround content, often also capturing that content. For example,
 \verb!`\(.*\)'(29)! matches when content is surrounded by parentheses and \verb!`".*"'(25)! matches  when content is surrounded by double quotes.  The cluster \verb!`<(.+)>'(23)! matches and captures content surrounded by angled brackets.
@@ -46,7 +46,7 @@ This category contains 10 clusters, each appearing in an average of 18.4 project
 \verb!`\[.*\]'(22)!
 \todoMid{matches when content is surrounded by square brackets}
 
-\subsubsection{Two or More Characters in Sequence}
+\paragraph{Two or More Characters in Sequence}
 \label{cluster:multiple}
 These clusters require several characters in a row to match some pattern, for example:
 \verb!`\d+\.\d+'(30)! requires one or more digits followed by a period character, followed by one or more digits.  The cluster \verb!`  '(17)! requires two spaces in a row,
@@ -57,7 +57,7 @@ These clusters have a combined total of 40 patterns, with at least one pattern p
 
 \todoMid{Again, it might be interesting to look at what particular sequences are looking like.  I think I mention this again in the discussion, but should we put it here instead?}
 
-\subsubsection{Code Search and Variable Capturing}
+\paragraph{Code Search and Variable Capturing}
 \label{cluster:search}
 These clusters show a recognizable effort to parse source code or URLs. For example,
 \verb!`^https?://'(23)! matches a web address, and \verb!`(.+)=(.+)'(9)! matches an assignment statement, capturing both the variable name and value.
