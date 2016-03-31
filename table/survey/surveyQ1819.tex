@@ -1,0 +1,50 @@
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+ & \cverb!.*! vs \cverb!.+! &\begin{minipage}{3in} Why do you prefer that?\end{minipage}\\
+\noalign{\hrule height 0.08em}
+A & use \cverb!.*! more than \cverb!.+! &\begin{minipage}{3in} It always affects my use case somehow, I just find that I need * more often.\end{minipage}\\
+\hline
+B &  &\begin{minipage}{3in} \end{minipage}\\
+\hline
+C & use \cverb!.+! more than \cverb!.*! &\begin{minipage}{3in} \cverb!.+! provides a more explicit idea of your intention.\end{minipage}\\
+\hline
+D & use \cverb!.+! more than \cverb!.*! &\begin{minipage}{3in} Try to avoid greedy matching to match as little as possible and make regexes as specific as possible.\end{minipage}\\
+\hline
+E &  &\begin{minipage}{3in} \end{minipage}\\
+\hline
+F & always use \cverb!.*! &\begin{minipage}{3in} Easier to remember, works in basic regex-like string searches like bash\end{minipage}\\
+\hline
+G & always use \cverb!.*! &\begin{minipage}{3in} Asterisk reminds me of assholes described in novels by Kurt Vonnegut.\end{minipage}\\
+\hline
+H & always use \cverb!.*! &\begin{minipage}{3in} Familiar\end{minipage}\\
+\hline
+I & always use \cverb!.+! &\begin{minipage}{3in} If i'm expecting content between the commas I would write my regex so that it has the same expectation\end{minipage}\\
+\hline
+J & use \cverb!.+! more than \cverb!.*! &\begin{minipage}{3in} Greedy matching tends to poor performance so I usually lean more to lazy expressions.\end{minipage}\\
+\hline
+K & use \cverb!.*! more than \cverb!.+! &\begin{minipage}{3in} habit\end{minipage}\\
+\hline
+L & use \cverb!.*! more than \cverb!.+! &\begin{minipage}{3in} Because I'm stupid and it's what I'm used to.\end{minipage}\\
+\hline
+M & always use \cverb!.*! &\begin{minipage}{3in} not sure\end{minipage}\\
+\hline
+N & always use \cverb!.+! &\begin{minipage}{3in} The statement says we know there will always be content and * is meant to match 0 or more times and + is for 1 or more so it is more correct to stick with + in this scenario.\end{minipage}\\
+\hline
+O & use \cverb!.*! more than \cverb!.+! &\begin{minipage}{3in} I don't care which one, as long as the rule is valid.\end{minipage}\\
+\hline
+P & use \cverb!.*! more than \cverb!.+! &\begin{minipage}{3in} just used to using * i guess. if it truly results in the same outcome i'd just default to that.\end{minipage}\\
+\hline
+Q & always use \cverb!.*! &\begin{minipage}{3in} ????\end{minipage}\\
+\hline
+R & use \cverb!.+! more than \cverb!.*! &\begin{minipage}{3in} Describes my expectation more clearly\end{minipage}\\
+\hline
+S & always use \cverb!.*! &\begin{minipage}{3in} I don't believe that you will really know whether there will be content, but I only use + when I want to enforce that there will be something there.\end{minipage}\\
+\hline
+T & always use \cverb!.*! &\begin{minipage}{3in} I am slightly skeptical that there will always be content between the commas...and I'm making an assumption that empty content is okay.\end{minipage}\\
+\noalign{\hrule height 0.08em}
+\end{tabular}
+\label{table:surveyQ1819}
+\caption{\small{ADD vs KLE preference: Q18: If you know it won't affect your use case would you prefer to use '.*' or '.+' ? Q19: Why do you prefer that? }}
+\end{table}

@@ -1,0 +1,51 @@
+ \begin{table}
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+ & regex vs custom parser &\begin{minipage}{4.5in} if it depends, explain why\end{minipage}\\
+\noalign{\hrule height 0.08em}
+A & it depends &\begin{minipage}{4.5in} parsers are more powerful than regex, if the problem can be solved with regex I prefer regex - but regex can't be used for some things.\end{minipage}\\
+\hline
+B &  &\begin{minipage}{4.5in} \end{minipage}\\
+\hline
+C & use only custom parser &\begin{minipage}{4.5in} \end{minipage}\\
+\hline
+D & use only regex &\begin{minipage}{4.5in} \end{minipage}\\
+\hline
+E &  &\begin{minipage}{4.5in} \end{minipage}\\
+\hline
+F & use only custom parser &\begin{minipage}{4.5in} \end{minipage}\\
+\hline
+G & it depends &\begin{minipage}{4.5in} It depends on what is appropriate.\end{minipage}\\
+\hline
+H & it depends &\begin{minipage}{4.5in} Complexity of the parsing. If there are many parts to match on, I will lean towards a custom parser.\end{minipage}\\
+\hline
+I & it depends &\begin{minipage}{4.5in} If I can do the same thing w/o regex I will lean towards not using regex unless regex makes my code simpler\end{minipage}\\
+\hline
+J & it depends &\begin{minipage}{4.5in} If this is a one off application than a regex will work fine. If the application will be parsing large amounts of data and needs to be fast or high throughput then a parser might be better. It really depends on the speed of the parsing and the complexity of the regex.\end{minipage}\\
+\hline
+K & use only regex &\begin{minipage}{4.5in} \end{minipage}\\
+\hline
+L & it depends &\begin{minipage}{4.5in} \end{minipage}\\
+\hline
+M & it depends &\begin{minipage}{4.5in} Depends on the complexity of the problem\end{minipage}\\
+\hline
+N & it depends &\begin{minipage}{4.5in} The complexity of the parsing and the consistency of the parseable data makes a big difference. The more ordered the text we are parsing the more likely a parse might be preferable. I believe regex is more valuable in scenarios where the text is less ordered and thus harder to parse effectively. Regex is a finder not a parser.\end{minipage}\\
+\hline
+O & it depends &\begin{minipage}{4.5in} A lot of simple parsing problems involve reading a CSV or fixed length file, which regex is not the best tool for. Input validation, etc. are fine for regex\end{minipage}\\
+\hline
+P & it depends &\begin{minipage}{4.5in} depends on the complexity of the regex. they can get hairy sometimes, and it might be clearer in my mind to solve the problem with a program.\end{minipage}\\
+\hline
+Q & use only custom parser &\begin{minipage}{4.5in} \end{minipage}\\
+\hline
+R & it depends &\begin{minipage}{4.5in} Sometimes a simple substring is easier and more readable when coming back to the code again later\end{minipage}\\
+\hline
+S & it depends &\begin{minipage}{4.5in} whichever seems simpler\end{minipage}\\
+\hline
+T & use only custom parser &\begin{minipage}{4.5in} \end{minipage}\\
+\noalign{\hrule height 0.08em}
+\end{tabular}
+\label{table:surveyQ1617}
+\caption{\small{regex vs parser Q16: To solve a small parsing problem would you prefer to write a regex or write a parser in a general purpose language?, Q17: If you chose 'it depends', please explain why.}}
+\end{table}
+
