@@ -1,0 +1,88 @@
+Rules are that you must first scan for higher-priority categories before doing any auto replace, to make sure greedy condition is satisfied
+Once a regex no longer matches higher level categories, an auto replace is ok
+
+Ut
+(?i)^U(\t.*(?<!P)<\s*a.*>.*)$	76
+(?i)^U(\t.*(?<!P)<\s*td.*>.*)$	19
+(?i)^U(\t.*(?<!P)<!--.*>.*)$	26
+(?i)^U(\t.*(?<!P)<\s*img.*>.*)$	16
+(?i)^U(\t.*(?<!P)<\s*div.*>.*)$	17
+(?i)^U(\t.*(?<!P)<\s*th.*>.*)$	4
+(?i)^U(\t.*(?<!P)<\s*h\d+.*>.*)$	17
+
+Ux
+(?i)^U(\t.*(?<!P)<\s*\w+\s*>.*)$	92
+
+U
+(?i)^U(\t.*(?<!P)<\s*\w+\s*>.*)$	investigataions...
+
+Ut
+(?i)^U(\t.*(?<!P)<\s*(p|b|br|li)\s*>.*)$	37
+(?i)^U(\t.*(?<!P)<\s*(body|tbody|tr|html|pre|script|tt|title|s|nobr)\s*>.*)$	43
+(?i)^U(\t.*(?<!P)<\s*(code|head|source)\s*>.*)$	6
+
+
+Ut
+(?i)^U(\t.*(?<!P)<\s*(p|b|br|li|code|head|source|body|tbody|tr|html|pre|script|tt|title|span|nobr|s)\b[^\n>]+\s*>.*)$	61 (21 matched with Ut) 
+(?i)^U(\t.*(?<!P)<\s*\w+\b[^\n>]+\s*>.*)$	aprox 90 manually identified from search results
+
+Ux
+(?i)^U(\t.*(?<!P)<\s*\w+\b[^\n>]+\s*>.*)$ aprox 85
+
+Ut
+(?i)^U(\t.*(?<!P)<\s*/[^\n>]+\s*>.*)$	29
+(?i)^U(\t.*href.*)$	37
+(?i)^U(\t.*\bid\s*=.*)$	4 manually identified
+
+Uw
+(?i)^U(\t.*http.*)$	267
+(?i)^U(\t.*(?<![\w|])url(?![\w|]).*)$	26
+(?i)^U(\t.*\bIP\b.*)$	6
+
+Um
+(?i)^U.?(\t'(.|\\[^dws])'[^\n']+)$	32
+
+Uk
+(?i)^U(\t.*std::.*)$	51
+
+Uu
+(?i)^U(\t.*\\x[0-9a-f][0-9a-f].*)$ 461
+
+
+making sure no tags or xml are hit by =: (manually check)
+(?i)^U\t(.*(<.*>).*=.*|.*=.*(<.*>).*)$
+
+U=
+(?i)^U(\t.*=.*)$ 1398
+
+Ub
+(?i)^U(\t.*(?<![P|])<.+>.*)$	189
+
+Ue
+(?i)^U(\t.*exception.*)$	12
+
+check: (?i)^U(\t.*(?<!P)<\w+>.*['"].*)$ not found!
+
+Uw
+^U(\t['"].*&\w.*['"].*)$	15
+
+
+searching for words, except those used as named group labels (P)
+^U(\t['"][^P\n]*[^P\n\W]{2,}[^P\n]*['"].*)$
+
+Ub
+^U(\t.*\\\\\([.][+*]\\\\\).*)$	23
+
+Uk
+^U(\t['"].*\b(import|include|init|def|class|define|end|foreach|module|import|raise|return|if|else)\b.*['"].*)$	281
+
+Ub
+^U(\t.*\\\\\([.][+*]\??\\\\\).*)$	14
+
+
+
+(?i)^U(\t.*(?<![P|])<(?![=<]).+>.*)$
+(?i)^U(\t.*(\[\d-\d\]\{\d\}|\\d\{\d\}|\[\d-\d\]\{\d,\d\}).*)$
+(?i)^U(\t.*(url|http|www).*)$
+(?i)^U(\t.*\\\\\\\\.*)$
+(?i)^U(\t.*<.*>.*)$
