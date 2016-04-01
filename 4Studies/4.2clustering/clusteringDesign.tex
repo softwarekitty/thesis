@@ -1,9 +1,55 @@
 \subsection{Experimental design}
 
 \subsubsection{Conceptual basis}
+Regular expression languages are infinite and exhibit substantial variety, but programmers are likely to use them for a limited number of purposes.  The goal of this study is to identify categories of regular expression usage and the frequency of usage in these categories so that designers of regular expression languages and end-user tools can better support what is most useful to programmers.  This study employs a sequence of two categorization attempts to achieve its goal.
+\begin{itemize}\itemsep -1pt
+\item[1] determine an objective behavioral similarity score for all pairs of regexes, and find clusters of highly similar regexes, so that a large number of regexes can be seen as a modest number of clusters, and then manually categorize these clusters
+\item[2] thoroughly examine the regexes to create a categorization technique informed by the behavioral categories determined in step 1, and then manually categorize regexes based on inspection alone
+\end{itemize}
 
-An ideal analysis of regex behavioral similarity would use subsumption or containment analysis. However, we struggled to find a tool that could facilitate such an analysis. Further, regular expressions in code libraries (e.g., for Python, Java) are not the same as regular languages in formal language theory. Some features of regular expression libraries, such as backreferences, make the libraries more expressive than regular languages. This allows a regular expression pattern to match, for example, repeat words, such as ``cabcab", using the pattern {\tt ([a-z]+)\verb!\!1}. However, building an automaton to recognize such a pattern and to facilitate containment analysis, is infeasible.
-For these reasons, we developed a similarity analysis based on string matching.
+\subsubsection{Implementation details for }
+\paragraph{Commonly observed categories} The following categories were observed after examining half of the corpus:
+\begin{itemize}
+\item[ L ] LONG     too long to deal with
+
+Web stuff
+\item[ b ] brackets  capturing or matching all content within brackets like \cverb!<.*?>! or \cverb!<[^>]*?>!
+\item[ w ] web       parsing urls, IP addresses and web protocols
+\item[ t ] tags      scanning for HTML tag content like `a href='
+
+assignment
+\item[ C ] (Capture) capture a variable assignment using `='
+\item[ = ] operator  recognize a line of code (has `=', `+' or operators) without capturing
+
+non-free long strings
+\item[ e ] error     scanning for an expected error message prefix like `Invalid object:'
+\item[ o ] or        scanning for keywords using an OR like password|secret|hash
+\item[ k ] keyword   recognize code keywords without operators or an OR of keywords
+\item[ l ] label     finding a plain label like `LIST OF EDGES' or `WIN_UTILS'
+
+semi-free strings with delimiters
+\item[ x ] extension  recognize a filename or extension
+\item[ f ] file       recognize a file path with particular contents
+\item[ r ] row        recognize some line that is a log file or row
+
+mostly-free strings
+\item[ i ] identifier    identifiers (alphanumeric) with a restriction (must be capitol first, have a `@')
+\item[ p ] punctuation   finding a punctuation for de-serialization, like `:',`_',`|'
+\item[ d ] dates         parsing a simple string code like a date format
+\item[ n ] numbers       parsing a phone number, ssn, numeric date, regular number
+\item[ a ] anchored         free, except anchored on one or both sides like \cverb!^\\d+\$!
+
+
+completely free strings
+\item[ u ] unicode     hex ranges, probably looking for Unicode
+\item[ s ] space       whitespace only - no intent detectable
+\item[ v ] vanilla     digits and words or slashes, optionally space - no intent detectable
+\item[ y ] why?        does not do anything - no intent detectable
+
+
+\todoMid{continue this intro}
+
+\paragraph{Determining behavioral similarity} An ideal analysis of regex behavioral similarity would use subsumption or containment analysis. However, a tool that could facilitate an analysis of the corpus could not be found.  This is likely due to features like back-references, positional anchors and look-arounds that are ubiquitously excluded from the feature sets of regex analysis tools that are able to build automata and thereby perform containment analysis.  For this reason, a new technique using string matching was developed that can create a similarity score between two regexes with existing technology.
 
 \begin{figure}[tb]
 \centering
@@ -25,7 +71,7 @@ For these reasons, we developed a similarity analysis based on string matching.
 
 \subsubsection{Overview of process}
 
-Our similarity analysis clusters regular expressions by their behavioral similarity on matched strings.
+The similarity analysis used in this study clusters regular expressions by their behavioral similarity on matched strings.
 Consider two unspecified patterns {\tt A} and {\tt B}, a set {\tt mA} of 100 strings that pattern {\tt A} matches, and a set {\tt mB} of 100 strings that pattern {\tt B} matches.
 If pattern {\tt B} matches 90 of the 100 strings in the set {\tt mA}, then {\tt B} is 90\% similar to {\tt A}.
 If pattern {\tt A} only matches 50 of the strings in {\tt mB}, then {\tt A} is 50\% similar to {\tt B}.
