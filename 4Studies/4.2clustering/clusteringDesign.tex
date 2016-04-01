@@ -16,26 +16,24 @@ The following categorization scheme was created after three visual scans of the 
 \begin{itemize}
 anchors are ignored for less free regexes
 
+zero freedom
+\item[ . ] marooned      a single character
+\item[ r ] repeating     simple language of repeating sequence like \cverb!a+! (no defaults)
+\item[ h ] hex           using \cverb!\x[a-f0-9][a-f0-9]! or similar
+\item[ f ] file       recognize a file filename with an extension
+
 web based
 \item[ t ] tags      scanning for known HTML tags like \cverb!<div>.*!
 \item[ x ] xml       non-HTML tags usually composed of whole words or with attributes
-\item[ w ] web       parsing urls, IP addresses and web protocols
-
-zero freedom
-\item[ . ] marooned      a single character
-\item[ h ] hex           using \cverb!\x[a-f0-9][a-f0-9]! or similar
+\item[ w ] web       parsing urls, (possibly local) paths, IP addresses and web protocols
 
 code based
 \item[ = ] operator  recognize a line of code (has `=', `+' or operators) without capturing
-\item[ m ] message     scanning for an expected message phrase, not just a keyword
-\item[ k ] keyword   recognize code keywords like 'include' or `std::bitset' or functions like out.println() without operators
+\item[ m ] message      scanning for an expected message phrase, not just a keyword
+\item[ g ] args         recognize a shell command or arguments (usually with arguments)
+\item[ c ] code         recognize source code contents like 'include' or `std::bitset' or functions like out.println() without operators
 \item[ b ] brackets  capturing or matching all content within brackets like \cverb!<.*?>! or \cverb!<[^>]*?>!
-
-
-non-free-clustering long strings - all on approximately the same level
-\item[ g ] args       recognize a shell command (usually with arguments)
-\item[ l ] label     finding a plain label like `LIST OF EDGES' or `WIN_UTILS'
-\item[ f ] file       recognize a file path or filename with particular contents
+\item[ l ] label      finding a plain label like `LIST OF EDGES' or `WIN_UTILS'
 
 mostly-free-clustering regular strings
 
@@ -50,11 +48,11 @@ anchored prefix for fre-clustering strings a, so \cverb!\s*! is s for `space', b
 
 \item[ p ] punctuation   contains punctuation (not just slashes), maybe with whitespace like, \cverb!\s*,\s*!
 
+
 catch-all (no anchor prefix)
 \item[ L ] LONG        too long to deal with
-\item[ q ] question    regular pattern but hard to identify
+\item[ q ] question    effective regular pattern but does not fit into any category
 \item[ v ] vanilla     vanilla defaults and mixes, maybe punctuation but not as required, like \cverb![-\s]+!
-\item[ y ] why?        does not do anything - no intent detectable
 
 
 

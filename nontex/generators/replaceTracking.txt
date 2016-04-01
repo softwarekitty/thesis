@@ -42,7 +42,7 @@ Uw
 Um
 (?i)^U.?(\t'(.|\\[^dws])'[^\n']+)$	32
 
-Uk
+Up
 (?i)^U(\t.*std::.*)$	51
 
 Uu
@@ -58,7 +58,7 @@ U=
 Ub
 (?i)^U(\t.*(?<![P|])<.+>.*)$	189
 
-Ue
+Um
 (?i)^U(\t.*exception.*)$	12
 
 check: (?i)^U(\t.*(?<!P)<\w+>.*['"].*)$ not found!
@@ -73,13 +73,46 @@ searching for words, except those used as named group labels (P)
 Ub
 ^U(\t.*\\\\\([.][+*]\\\\\).*)$	23
 
-Uk
+Up
 ^U(\t['"].*\b(import|include|init|def|class|define|end|foreach|module|import|raise|return|if|else)\b.*['"].*)$	281
 
 Ub
 ^U(\t.*\\\\\([.][+*]\??\\\\\).*)$	14
 
+count remianing
+(?i)^U(\t.*)$
 
+
+Ud
+^U(\t['"].*tz.*)$	10
+^U(\t['"].*(month|day|year|hour).*)$	35
+
+
+
+find the named groups to get them out of the way
+^U(\t['"].*\(\?P<[^\n>]+>.*)$
+
+
+finding paths
+^U(\t['"].*\)/.*)$
+
+
+
+Uf
+^U(\t.*\.exe.*)$	6
+^U(\t.*\.h\b.*)$	6
+^U(\t.*\\\\\.py\b.*)$	40
+^U(\t.*\\\\\.(gif|c|cpp|java|cs|css|sh)\b.*)$	12
+^U(\t.*\\\\\.(jpg|r|git|svn|hg|scc|json|yaml|mp3)\b.*)$	11
+
+
+Ub
+^U(\t.*\\\\\[[.][+*]\??\\\\\].*)$	15
+
+Ur
+^U(\t['"].[*+]['"][\d\s,]+)$	15
+
+^U(\t['"].*\\\\\\\\.*['"].*)$
 
 (?i)^U(\t.*(?<![P|])<(?![=<]).+>.*)$
 (?i)^U(\t.*(\[\d-\d\]\{\d\}|\\d\{\d\}|\[\d-\d\]\{\d,\d\}).*)$
