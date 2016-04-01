@@ -1,20 +1,20 @@
 \section{Refactoring Regexes}
 
-\subsection{Equivalence Models}
+\subsection{Equivalence models}
 
-\subsection{Understandability Measures}
+\subsection{Understandability measures}
 
-\subsection{Regex Refactoring for Performance}
+\subsection{Regex refactoring for performance}
 The representation of regexes may have a strong impact on the runtime performance of a chosen regex engine. Prior work has sought to expedite the processing of regexes over large bodies of text~\cite{Baeza-Yates:1996:FTS:235809.235810}.
 Refactoring regexes for performance would complement those efforts.
 Further study is needed to determine which representations are most efficient, leading to a whole new area of study on regex refactoring for performance, a topic already explored for
 Depending on the efficiency of an organization's chosen regex engine, an organization may want to enforce standards for efficiency.
 , or for compatibility with a regex analysis tool like Z3, HAMPI, BRICS or REX.
 
-\subsection{Regex Migration Libraries}
+\subsection{Regex migration libraries}
 We have identified opportunities
 to improve the understandability of regexes in existing code bases by looking for some of the less understandable regex representations, which can be thought of as antipatterns, and refactoring to the more common or understandable representations.
 Building migration libraries is a promising direction of future work to ease the manual burden of this process, similar in spirit to prior work on class library migration~\cite{Balaban:2005:RSC:1103845.1094832}.
 
-\subsection{Refactoring For Obfuscation}
+\subsection{Refactoring for obfuscation}
 Maintainers of code that is intentionally obfuscated for security purposes may want to develop regexes that they understand and then automatically transform them into the least understandable regex possible.
