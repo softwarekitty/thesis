@@ -52,7 +52,7 @@ public class AppendixHelper {
 
 	}
 	
-	private static String wrap(RegexProjectSet regex){
+	public static String wrap(RegexProjectSet regex){
 		char[] charsToUse = { '!', '@', '|', ':'};
 		String un = regex.getUnescapedPattern();
 		for(int i=0;i<charsToUse.length;i++){

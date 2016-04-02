@@ -6,7 +6,7 @@ The goal of this experiment was to collect regexes from a variety of projects to
 \subsubsection{Selecting projects to mine for utilizations}
 Using the GitHub API, \dbfetch{nProjScanned} projects containing Python code were mined for utilizations as described in Section~\ref{sec:miningImplementation}.  This section describes how these projects were selected.
 
-Every time a new repository is created on GitHub, a new unique identifier (strictly greater than existing identifiers) is generated and assigned to that repository.  This work refers to these identifiers using the shorthand: \emph{repo ID}.  At the time the mining for utilizations used in this study was performed, the largest repo ID was between 32 million and 33 million.  Dividing these repo IDs into four groups each of size $2^23 = 8,388,608$ (with the fourth group being a little larger than that), the second group, which spans the range 8,388,608 - 16,777,215 was split into 32 sections so that starting indices were 262,144 repo IDs apart.  The original intention was to mine the entire second $1/4$ of the first 32 million repo IDs, but due to the challenges described in Section~\ref{sec:miningChallenges}, only the first 100 or so projects from each of the 32 starting points was mined.  Instead of spending the majority of available time on perfecting a mining technique, the determination was made to analyze the data that had already been gathered.
+Every time a new repository is created on GitHub, a new unique identifier (strictly greater than existing identifiers) is generated and assigned to that repository.  This work refers to these identifiers using the shorthand: \emph{repo ID}.  At the time the mining for utilizations used in this study was performed, the largest repo ID was between 32 million and 33 million.  Dividing these repo IDs into four groups each of size $2^{23} = 8,388,608$ (with the fourth group being a little larger than that), the second group, which spans the range 8,388,608 - 16,777,215 was split into 32 sections so that starting indices were 262,144 repo IDs apart.  The original intention was to mine the entire second $1/4$ of the first 32 million repo IDs, but due to the challenges described in Section~\ref{sec:miningChallenges}, only the first 100 or so projects from each of the 32 starting points was mined.  Instead of spending the majority of available time on perfecting a mining technique, the determination was made to analyze the data that had already been gathered.
 
 \input{table/saturation}
 
@@ -16,21 +16,21 @@ Out of the \dbfetch{nProjScanned}\ projects scanned, \dbfetch{percentProjectsUsi
 Of projects containing at least one utilization, the average utilizations per project was 32 and the maximum  was 1,427.  The project with the most utilizations is a C\# project\footurl{https://github.com/Ouroboros/Arianrhod} that maintains a collection of source code for 20 Python libraries, including larger libraries like {\tt pip}, {\tt celery} and {\tt ipython}.  These larger Python libraries contain many utilizations.
 From Table~\ref{table:saturation}, it can also be seen that each project had an average of 11 files containing any utilization, and each of these files had an average of 2 utilizations.
 
-\begin{figure}[tb]
+\begin{figure}
 \centering
-\includegraphics[width=0.9\columnwidth]{nontex/illustrations/partFlags.eps}
-\vspace{-6pt}
-\caption{Which behavioral flags are used?}
-\vspace{-6pt}
+  \centering
+  \includegraphics[width=.72\textwidth]{nontex/illustrations/partFlags.eps}
+  \caption{Which behavioral flags are used?}
+  \vspace{-6pt}
 \label{fig:partFlags}
 \end{figure}
 
-\begin{figure}[tb]
+\begin{figure}
 \centering
-\includegraphics[width=\columnwidth]{nontex/illustrations/partFunctions.eps}
-\vspace{-12pt}
-\caption{How often are  {\tt re} functions used?}
-\vspace{-6pt}
+  \centering
+  \includegraphics[width=.70\textwidth]{nontex/illustrations/partFunctions.eps}
+  \caption{Which behavioral flags are used?}
+  \vspace{-6pt}
 \label{fig:partFunctions}
 \end{figure}
 
@@ -80,9 +80,10 @@ For each escaped pattern, the PCRE-parser produces a tree of feature tokens, whi
 
 Once all patterns were transformed into vectors, each feature was examined independently for all patterns, tracking the number of patterns, files and projects that the each feature appears in at least once.
 
-\input{table/featureStatsOnly}
+\input{table/features/featureStatsOnly}
 
 \subsubsection{Feature usage within the corpus}
+\label{sec:featureResults}
 Table~\ref{table:featureStatsOnly} displays feature usage from the corpus in terms of the number of patterns, files and projects, as well as in terms of tokens used.
 
 The first column, \emph{rank}, lists the rank of a feature (relative to other features) in terms of the number of projects in which it appears. The next column, \emph{code}, gives a succinct reference string for the feature as described in Section~\ref{sec:featureDescriptions}. The \emph{example} column provides a short example of how the feature can be used.The next six columns contain usage statistics providing a variety of perspectives on how frequently the features are used in the observed population.

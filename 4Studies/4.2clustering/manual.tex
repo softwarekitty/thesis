@@ -8,17 +8,17 @@ The following categorization scheme was created after three visual scans of the 
 anchors are ignored for less free regexes
 
 zero freedom
-\item[ r ] repeating     simple language of repeating sequence like \cverb!a+! (no defaults)
-\item[ h ] hex           using \cverb!\x[a-f0-9][a-f0-9]!, octal or unicode
-\item[ f ] file       recognize a file filename with an extension
+\item[ r ] repeating        simple language of repeating sequence like \cverb!a+! (no defaults)
+\item[ u ] Unicode          using \cverb!\x[a-f0-9][a-f0-9]!, octal or unicode
+\item[ f ] file             recognize a file filename with an extension
 
 web based
-\item[ t ] tags      scanning for known HTML tags like \cverb!<div>.*!
+\item[ h ] html      scanning for known HTML tags like \cverb!<div>.*!
 \item[ x ] xml       non-HTML tags usually composed of whole words or with attributes
 \item[ w ] web       parsing urls, (possibly local) paths, html escape chars, IP addresses and web protocols
 
 code based
-\item[ = ] operator  recognize a line of code (has `=', `+' or operators) without capturing
+\item[ = ] operator     recognize a line of code (has `=', `+' or operators) without capturing
 \item[ m ] message      a phrase containing variable information
 \item[ g ] args         recognize a shell command or arguments (usually with arguments)
 \item[ c ] code         recognize source code contents like 'include' or `std::bitset' or functions like out.println() without `='

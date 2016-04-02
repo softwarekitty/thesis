@@ -1,0 +1,197 @@
+\section*{Top five complete clusters}
+\label{sec:top5CompleteClusters}
+
+This section displays the top five clusters so that a sense of the similarity of regexes within a cluster created by mcl can be obtained by the reader.  Note that cluster 0 is excluded because it contains regexes that trivially match everything like \cverb!^!.  The following five lists describe the number of projects that contain a regex, followed by the regex.
+
+\subsection*{Cluster One}
+Cluster one has 39 patterns, is present in 95 projects, and the shortest regex is \cverb!..!.
+\begin{multicols}{2}
+\begin{description}[noitemsep,topsep=0pt]
+\item[09] \cverb!\w+(\.\w+)*!
+\item[09] \cverb!([a-zA-Z0-9_$%]+)!
+\item[08] (Too long to display)
+\item[07] \cverb![a-zA-Z]!
+\item[07] \cverb![-a-zA-Z_@.]+!
+\item[06] \cverb!^[\w\-:\$]+!
+\item[06] \cverb![a-zA-Z][-a-zA-Z0-9_:]*!
+\item[05] \cverb!(\w+)(.*)!
+\item[05] \cverb![a-zA-Z_]\w*!
+\item[05] \cverb![a-zA-Z_][a-zA-Z0-9_]*!
+\item[05] \cverb![a-zA-Z_$][A-Za-z0-9_$..]*!
+\item[05] (Too long to display)
+\item[04] \cverb![a-z]+!
+\item[04] \cverb!([A-Z]+)!
+\item[04] \cverb!((\d|\w|_)+)!
+\item[04] \cverb!([\d\w\-_]+)(.*)!
+\item[03] \cverb!(..)!
+\item[03] \cverb![A-Z]+!
+\item[03] \cverb![a-zA-Z]+!
+\item[03] \cverb![a-zA-Z_][a-zA-Z_0-9]*!
+\item[03] (Too long to display)
+\item[03] (Too long to display)
+\item[02] \cverb!..!
+\item[02] \cverb![a-z_]!
+\item[02] \cverb![\w ]+!
+\item[02] \cverb![\w']+!
+\item[02] \cverb!^.(.*).$!
+\item[02] \cverb![A-Za-z]!
+\item[02] \cverb!(\w+\W*)!
+\item[02] \cverb![a-zA-Z0-9_-]+!
+\item[02] \cverb!([_A-Za-z]\w*)!
+\item[02] \cverb!({[^}]+})?(\w+)!
+\item[02] \cverb!([$\\%&@]+)?(\w+)!
+\item[02] \cverb![a-zA-Z][a-zA-Z0-9]*!
+\item[02] \cverb![A-Za-z_][A-Za-z0-9_]*!
+\item[02] \cverb!((,|^)\s*[\w\-\.]+)!
+\item[02] \cverb![A-Za-z0-9][A-Za-z0-9\-_]*!
+\item[02] (Too long to display)
+\item[02] (Too long to display)
+\end{description}
+\end{multicols}
+
+\subsection*{Cluster Two}
+Cluster two has 36 patterns, is present in 89 projects, and the shortest regex is \cverb!(\W)!.
+\begin{multicols}{2}
+\begin{description}[noitemsep,topsep=0pt]
+\item[09] \cverb!(\W+)!
+\item[08] \cverb![^A-Za-z0-9_.-]!
+\item[08] \cverb![\t-\r -/:-@[-`{-~]!
+\item[07] \cverb![^\w]+!
+\item[07] \cverb![^a-z0-9]+!
+\item[06] \cverb![^-A-Za-z0-9_.]!
+\item[06] \cverb![^a-zA-Z0-9._-]!
+\item[06] \cverb![^A-Za-z0-9_.!~*()-]!
+\item[05] \cverb![^\w]!
+\item[05] \cverb![^A-Za-z0-9]!
+\item[05] \cverb![^a-zA-Z0-9_-]!
+\item[04] \cverb![\W]+!
+\item[04] \cverb![^\w\.\-]!
+\item[04] \cverb![^A-Z^a-z^0-9^:]+!
+\item[04] \cverb![^A-Z^a-z^0-9^\/]+!
+\item[04] (Too long to display)
+\item[03] \cverb![^\w.-]!
+\item[03] \cverb![^a-z0-9]!
+\item[03] \cverb![^A-Za-z0-9 ]!
+\item[03] \cverb![^a-zA-Z.0-9]!
+\item[02] \cverb!(\W)!
+\item[02] \cverb![\W_]!
+\item[02] \cverb![^_\w]!
+\item[02] \cverb![\W_]+!
+\item[02] \cverb![^\w.-]+!
+\item[02] \cverb![^A-Za-z_]!
+\item[02] \cverb![^\w\d_]!
+\item[02] \cverb![^0-9A-Za-z]!
+\item[02] \cverb![^a-zA-Z0-9.]!
+\item[02] \cverb![^\w\.\- ]!
+\item[02] \cverb![^\w\-\.\/]+!
+\item[02] \cverb!^\s*(\S+)\s*$!
+\item[02] \cverb![^A-Za-z0-9_\.\-]!
+\item[02] \cverb![^A-Za-z0-9_.;\-]!
+\item[02] \cverb![^A-Za-z0-9_.:;\-]!
+\item[02] (Too long to display)
+\end{description}
+\end{multicols}
+
+\subsection*{Cluster Three}
+Cluster 3 has 33 patterns, is present in 89 projects, and the shortest regex is \cverb!(\s)!.
+\begin{multicols}{2}
+\begin{description}[noitemsep,topsep=0pt]
+\item[09] \cverb![ \t]+!
+\item[08] \cverb!(\s)!
+\item[08] \cverb![-./\s]!
+\item[08] \cverb![\-\s]!
+\item[08] \cverb![\s\-]+!
+\item[08] \cverb![\n\r\t\x0b\x0c]!
+\item[07] \cverb!,?\s+!
+\item[07] \cverb!\s([^a])!
+\item[07] \cverb!([\t ]+)!
+\item[07] \cverb!\s([^a]*)!
+\item[06] \cverb![\s,]+!
+\item[05] \cverb![\s]+!
+\item[05] \cverb!((\t)|(    ))(.*)!
+\item[04] \cverb![ \t]!
+\item[04] \cverb!\s+\S!
+\item[04] \cverb![ \t\n]!
+\item[04] \cverb![\s\(\)]+!
+\item[03] \cverb![\s]!
+\item[03] \cverb!\[|\]|\n+|\s+!
+\item[02] \cverb!\s|,!
+\item[02] \cverb!\s.*!
+\item[02] \cverb!\S\s!
+\item[02] \cverb![-\s]!
+\item[02] \cverb![,\s]+!
+\item[02] \cverb!( +|\n)!
+\item[02] \cverb![ \t:]+!
+\item[02] \cverb!(\s|,)+!
+\item[02] \cverb!^\S+\s+!
+\item[02] \cverb!\s*,\s*|\s+!
+\item[02] \cverb!\s+(\S+\s*)$!
+\item[02] \cverb!(^package:)|\s!
+\item[02] \cverb!(\s*[;,\s]\s*)!
+\item[02] \cverb!([% \t\x80-\xff])!
+\end{description}
+\end{multicols}
+
+\subsection*{Cluster Four}
+Cluster four has 27 patterns, is present in 74 projects, and the shortest regex is \cverb!\S+!.
+\begin{multicols}{2}
+\begin{description}[noitemsep,topsep=0pt]
+\item[09] \cverb!^[^-_.]+!
+\item[08] \cverb!^([a-zA-F0-9_-]*)[\.]?.*$!
+\item[05] \cverb![^a-z]!
+\item[04] \cverb!(\S+)\s*(.*)!
+\item[04] \cverb!^[ \t]*[^# \t]!
+\item[03] \cverb![^\d]!
+\item[03] \cverb![^0-9, ]!
+\item[03] \cverb!^([^ ]+)!
+\item[03] \cverb!^([^:]+)$!
+\item[03] \cverb!^ *(.*) *( *) *$!
+\item[03] \cverb!"([^"]+)"|(\S+)!
+\item[03] \cverb!^([^<]*)(/(<.*))?$!
+\item[03] \cverb!^(\s*)()(\S+)(.*$)!
+\item[03] \cverb!(([^-/]+)-?([^/]+)?)/?.*!
+\item[02] \cverb!\S+!
+\item[02] \cverb!^.+$!
+\item[02] \cverb!^\S!
+\item[02] \cverb!(\S+)!
+\item[02] \cverb![^A-Z]!
+\item[02] \cverb![^0-9]+!
+\item[02] \cverb!\d*(\S)!
+\item[02] \cverb!^(\S+):?!
+\item[02] \cverb![^0-9:\.]!
+\item[02] \cverb!<[^>]+>|[^\s<]+!
+\item[02] \cverb!^(\S+ \S+ \S+ \S+: )?(.*)$!
+\item[02] \cverb!([\x20\x21\x23-\x5B\x5D-\x7E]+)!
+\item[02] \cverb!\s*([^\s\(\)"\\'=,\[\]/\?]+)\s*!
+\end{description}
+\end{multicols}
+
+\subsection*{Cluster Five}
+Cluster five has 23 patterns, is present in 58 projects, and the shortest regex is \cverb!\d!.
+\begin{multicols}{2}
+\begin{description}[noitemsep,topsep=0pt]
+\item[08] \cverb!\d!
+\item[08] \cverb!([0-9.]+)(\S*)$!
+\item[07] \cverb![\.0-9]+!
+\item[04] \cverb![0-9]!
+\item[04] \cverb!([0-9.]+)!
+\item[04] \cverb!(\d+(\.\d+)*)!
+\item[03] \cverb!(\d)!
+\item[03] \cverb!([\d\.]+)!
+\item[03] \cverb![0-9a-fA-F]{2}!
+\item[03] \cverb!\s*(\d+)\s*!
+\item[03] \cverb!([0-9]+)([DdHhMm]|[sS]?)!
+\item[03] (Too long to display)
+\item[02] \cverb![\d\.]+!
+\item[02] \cverb![+-]?\d+!
+\item[02] \cverb![-+]?\d+!
+\item[02] \cverb!(\d+)(.*)!
+\item[02] \cverb![1-9][0-9]*!
+\item[02] \cverb![{ ]*[-+0-9]!
+\item[02] \cverb!\d+(\.\d*)?!
+\item[02] \cverb!([+-]?[\d\.]+)(\S+)!
+\item[02] \cverb!([idel])|(\d+):|(-?\d+)!
+\item[02] \cverb!([\-0-9])|([\-0-9]/[0-9])!
+\item[02] \cverb!(0x[0-9A-Fa-f]+|0\d*|[1-9]\d*)!
+\end{description}
+\end{multicols}
