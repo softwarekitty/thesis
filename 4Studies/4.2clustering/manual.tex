@@ -1,0 +1,50 @@
+\subsubsection{Implementation details for manual categorization}
+The following categorization scheme was created after three visual scans of the top 3000 regexes (by number of projects), and eight iterative manual categorization passes over the top 130 regexes:
+
+\paragraph{Commonly observed categories} In this work, regexes will belong to the first category in the ordered list described here (categories are greedy).  Very long regexes (over 100 chars long) are treated as their own category without further investigation (unless recognized very easily), because their behavior is significantly complex so as not to properly belong to any other category.  From behavioral clustering, it was determined that web-based, bracket-parsing and code-based categories cluster strongly.  For other regexes, the degree of freedom limits the clustering technique: regexes composed of long strings with very little abstraction are not free to cluster by conceptual category because their string matching behavior rarely overlaps.  Some regexes contain recognizable words but also contain substantial abstract sections, usually to parse a file or a line representing a row of data.  Some regular patterns like dates, phone numbers and emails don't contain words but have a recognizable form.  A large portion of regexes contain just one or two characters, or character classes that may be used for de-serialization or delimiter-based work, but are hard to guess the exact application for.  In these free-clustering regexes, anchors often make a big difference, and will be considered at the same time.  Finally, a few catch-all categories for regexes that are difficult to guess the application for are used.  The first category is questions, which have a regularity the purpose of which is hard to understand such as \cverb![a-f0-9]{40}!.  , vanilla, such as \cverb![^\w\s-]!, \cverb!\d+!, \cverb!! or \cverb!! which
+
+
+\begin{itemize}
+anchors are ignored for less free regexes
+
+zero freedom
+\item[ r ] repeating     simple language of repeating sequence like \cverb!a+! (no defaults)
+\item[ h ] hex           using \cverb!\x[a-f0-9][a-f0-9]!, octal or unicode
+\item[ f ] file       recognize a file filename with an extension
+
+web based
+\item[ t ] tags      scanning for known HTML tags like \cverb!<div>.*!
+\item[ x ] xml       non-HTML tags usually composed of whole words or with attributes
+\item[ w ] web       parsing urls, (possibly local) paths, html escape chars, IP addresses and web protocols
+
+code based
+\item[ = ] operator  recognize a line of code (has `=', `+' or operators) without capturing
+\item[ m ] message      scanning for an expected message phrase, not just a keyword
+\item[ g ] args         recognize a shell command or arguments (usually with arguments)
+\item[ c ] code         recognize source code contents like 'include' or `std::bitset' or functions like out.println() without operators
+\item[ b ] brackets  capturing or matching all content within brackets like \cverb!<.*?>! or \cverb!<[^>]*?>!
+\item[ l ] label      finding a plain label like `LIST OF EDGES' or `WIN_UTILS'
+
+mostly-free-clustering regular strings
+
+\item[ d ] dates         parsing a simple string code like a date format
+\item[ n ] numbers       parsing a phone number, ssn, numeric date, regular number
+\item[ i ] identifier    identifiers (alphanumeric) with a restriction (must be capitol first, have a `@'), or dealing with word-default variants - functionally is also a tuple
+
+free-clustering strings
+anchored prefix for fre-clustering strings a, so \cverb!\s*! is s for `space', but \cverb!^\s*$! is `as' because of \cverb!^! and \cverb!$! (only needs one anchor to require an anchor prefix).
+\item[ \\ ] backslash    dealing mostly with backslashes like \cverb!\\(.)! - easy to recognize because the pattern for this will contain four backslashes: \verb!"\\\\"!
+\item[ s ] space         whitespace only
+
+\item[ p ] punctuation   contains punctuation (not just slashes), maybe with whitespace like, \cverb!\s*,\s*!
+\item[ o ] ordinary         simple one or a handful of chars, like [aeiou] or (a|b)
+
+
+catch-all (no anchor prefix)
+\item[ L ] LONG        too long to deal with, standard is 140 chars (a tweet)
+\item[ q ] question    effective regular pattern but does not fit into any category
+\item[ v ] vanilla     vanilla defaults and mixes, maybe punctuation but not as required, like \cverb![-\s]+!
+
+
+
+\todoMid{continue this intro}

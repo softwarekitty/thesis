@@ -87,6 +87,9 @@ Ud
 ^U(\t['"].*tz.*)$	10
 ^U(\t['"].*(month|day|year|hour).*)$	35
 
+U\
+^U(\t['"].*\\\\\\\\.*['"].*)$	45
+
 
 
 find the named groups to get them out of the way
