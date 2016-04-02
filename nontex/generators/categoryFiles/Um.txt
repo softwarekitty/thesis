@@ -1,0 +1,141 @@
+Um nPatterns: 140 nProjects: 164
+'.+SPHEROID\\[\\"(?P<name>.+)\\",(?P<major>\\d+(\\.\\d+)?),(?P<flattening>\\d{3}\\.\\d+),'	302,323,355,422,849,866,878,1004,1012,1086,1158,1184,1495,1517,1580,1634
+'^(?P<residence>\\d{10})(?P<origin>\\w{1,3})[-\\ ]?(?P<birthday>\\d{7})[-\\ ]?(?P<validity>\\d{7})[-\\ ]?(?P<checksum>\\d{1})$'	302,323,355,422,849,866,878,1004,1012,1086,1158,1184,1495,1517,1634
+'(.*/|)([^/]+\\.[a-z]+:\\d+):(\\d+:)? warning:'	1040,1103,1105,1106,1131,1237,1306,1356,1400,1556,1610,1622,1624,1627
+'^(?P<initial>\\d{1})(?P<yy>\\d\\d)(?P<mm>\\d\\d)(?P<dd>\\d\\d)(?P<mid>\\d{4})(?P<checksum>\\d{1})'	302,323,355,422,849,866,878,1004,1012,1086,1158,1495,1517,1634
+'Version:.*-r(\\d+)\\s*$'	662,1033,1087,1257,1415,1536,1580,1594,1634
+'^Remaining object addresses:$'	12,412,759,852,961,1054,1087,1221,1511
+': Failure\\n'	416,852,994,1007,1301,1511,1560,1598
+'lost: 0 bytes in 0 blocks'	306,322,464,467,505,534,1404,1466
+'Copyright [\\d-]*20[0-1][0-9] the V8 project authors. All rights reserved.'	306,322,464,467,505,534,1404,1466
+'^scale:\\d+\\-\\d+\\:$'	82,89,302,1004,1074,1075,1495
+'^columns .* are not unique$'	147,181,278,296,432,819,1366
+'^createdb: database creation failed: ERROR:  database ".+" already exists'	302,849,878,1012,1086,1158,1184
+'  File "[^"]+", line \\d+\\n$'	113,251,498,1087,1267,1555
+'Client UrlCache MMF Ver \\d\\.\\d.*'	225,287,510,602,774,1509
+'Event\\.(?P<n>\\d+)\\.(?P<param>\\w+)'	546,830,1028,1039,1223,1420
+'^.+[:(]\\d+[:)]|^Done processing'	467,505,534,1404,1466
+'(\\d+)% packet loss'	560,1189,1317,1501
+'^gemsets for ([^ ]+)'	614,947,996,1491
+'\\s*# SOURCE LINE (\\d+)'	433,927,1003,1202
+'\ngcc version (\\d+\\.\\d+\\.\\d+)'	467,505,534,1466
+'^# and have (\\d+) and (\\d+) different'	212,1031,1154,1156
+'.*: warning: overriding commands for target .+'	1116,1451,1471,1480
+"^# Your branch is (ahead of|behind) '(.*)' by (\\d+) commit"	212,1031,1154,1156
+'(?ms)^(?P<package>[^#]\\S+)[\t ]+(?P<question>\\S+)[\t ]+(?P<type>\\S+)[\t ]+(?P<value>[^\n]*)$'	614,947,996,1491
+'\\s+Flags for (\\S.+):$'	1223,1420,1495
+'(\\d+)\\+\\d records out'	560,1317,1501
+'Send buffer size: (\\d+)'	560,1317,1501
+'\\s+Flags from (\\S.+):$'	1223,1420,1495
+'.*OOM max count: (\\d+).*'	1007,1015,1032
+'(\\d+)\\+(\\d+) records out'	560,1317,1501
+'Committed revision (\\d+)\\.'	122,1015,1032
+'BUG:.*---\\[ end trace .* \\]---'	560,1317,1501
+'.*note:.*is clipping its content'	534,1007,1466
+'(^\\s+Invalid read of size )\\d+'	1007,1015,1032
+'Registering archive: (\\S+)\\s*$'	122,1015,1032
+'Firefox version: (?P<ffver>.*)\\n'	1007,1015,1032
+"invalid literal for int().*: '?'?"	12,1087,1580
+'(^\\s+Invalid write of size )\\d+'	1007,1015,1032
+'Active connections: (?P<conn>\\d+)'	1183,1506,1510
+'undefined symbol: (.*)\t\\((.*)\\)'	515,1245,1373
+'^Status against revision:\\s+(\\d+)'	122,1015,1032
+'Firefox builddate: (?P<ffdate>.*)\\n'	1007,1015,1032
+'Sync version: (?P<syncversion>.*)\\n'	1007,1015,1032
+'([0-9]+) INFO TEST-START . Shutdown.*'	1007,1015,1032
+"Success: created profile .* at '([^']+)'"	1007,1015,1032
+"(^\\s+Address 0x)[0-9A-Fa-f]+( is not stack'd)"	1007,1015,1032
+'{markers: (?P<markers>\\[.*?\\]),\\s*polylines:'	147,181,456
+"Change (?P<num>\\d+) on \\S+ by \\S+@\\S+ '.+'$"	122,1015,1032
+'Change \\d+ by (?P<who>\\S+)@\\S+ on (?P<when>.+)$'	122,1015,1032
+'Received: From yyy.com \\(\\[.*\\]\\) by localhost;'	557,1223,1420
+'Microsoft SQL Server.*? - (\\d+).(\\d+).(\\d+).(\\d+)'	1415,1469,1580
+'^(.*?)test phase (?P<matchphase>\\d+): (?P<matchstatus>.*)$'	1007,1015,1032
+'released on (\\w+\\s+\\d+\\w+\\s+\\d+)(?:, codename (.*))?(?i)'	337,992,1112
+'--- NOTE: IN THIS TESTCASE, WE EXPECT EXIT CODE ((?:-|\\d)+) ---'	1007,1015,1032
+'(?P<error>.+?) at .+? line (?P<line>\\d+)(, near "(?P<near>.+?)")?'	304,1025,1322
+'Reading: (?P<reading>\\d+) Writing: (?P<writing>\\d+) Waiting: (?P<waiting>\\d+)'	1183,1506,1510
+"(^\\s+Address 0x)[0-9A-Fa-f]+( is )\\d+( bytes inside a block of size )[0-9,]+( free'd)"	1007,1015,1032
+'^(syn keyword vimCommand contained|syn keyword vimOption contained|syn keyword vimAutoEvent contained)\\s+(.*)'	147,181,1087
+'.*File exists.*'	440,542
+'^file:///[a-z]:'	1199,1300
+'^\\s*using fop.*$'	241,1249
+'Report time: (.*)'	241,1249
+'^You have \\d+ new'	296,819
+'Skipping \\d+ byte'	1025,1326
+'.* FAILED TESTS\\n'	1007,1301
+'pages_to_scan:(\\d+)'	1317,1501
+'by ([^;(\n]+;?|\\w+)'	109,182
+'CPU Affinity: +[-y]+'	1317,1501
+'^Working file: (.*)$'	12,1087
+'^pull with (\\w+).*?$'	305,1025
+'^\\s*using doxygen.*$'	241,1249
+'^\\s*using xsltproc.*$'	241,1249
+'disk size:\\s+(\\S+.*)'	1317,1501
+'file format:\\s+(\\S+)'	1317,1501
+'Interim result: *(\\S+)'	1317,1501
+'dot version ([\\d\\.]+)'	757,1087
+'(?sm)^! Emergency stop.*'	757,1087
+'Last Changed Rev: (\\d+)'	1246,1540
+'.*6300ESB Watchdog Timer'	1317,1501
+'virtual size:\\s+(\\S+.*)'	1317,1501
+'Bill Name:\\s+([H|S]F\\d+)'	109,182
+'# Sched features: ([\\w]+)'	1116,1141
+'Output written on (.+) \\('	295,1496
+'reset \\w+ speed USB device'	1317,1501
+'\\[.* test environment .*\\n'	1007,1301
+'(?sm)\\A.*?!( LaTeX Error:)?'	757,1087
+'Linux version ([0-9.]+-[^ ]+)'	1116,1141
+'Backing store path:\\s+(/+.+)'	1317,1501
+'method "(.*)" is not supported'	171,1381
+'the LaTeX files are in (.*)\\.'	295,1496
+'^// See .* for documentation.$'	241,1249
+'(?P<pending_builds>\\d) pending'	1199,1300
+'\\*\\*\\* Error compiling (?:.*)'	1263,1580
+"^.*: Opening '(.*)' for reading$"	440,542
+'attempt model run (.*?) one more '	671,678
+'model run (.*?) completed on node'	671,678
+'model run (.*?) commencing on node'	671,678
+'available:\\s+(\\d+)\\s+nodes\\s+.*'	1317,1501
+'((fassertFailed)()) *\\(( *)(\\d+)()'	1459,1531
+'^(\\S+) \\(in ([^)]+)\\) \\((.+)\\)$'	1015,1032
+'model run failure on node (.*?); will'	671,678
+'\nVersion (.+), ([0-9]+).([0-9])+ MBs'	1148,1469
+'unconverted data remains: \\.([0-9]+)$'	1004,1262
+'Line:(?P<line>\\d+)\\s*(?P<message>.+)'	1199,1300
+'Forks/Queues \\((?P<descendants>\\d+)\\)'	354,379
+"invalid literal for long().*: '?0xOoops'?"	12,1087
+'^restorecon reset (.+) context (.+)->(.+)'	1317,1501
+'(grubby version)?(\\s)?(\\d+)\\.(\\d+)(.*)'	1317,1501
+'.*?Error: (?P<error>.+) on line (?P<line>\\d+)'	1025,1322
+'Number of files successfully Verified: ([0-9]*)'	1317,1501
+'^[ \\t]*Traceback \\(most recent call last\\):.*'	757,1087
+'^sd (.+):(.+):(.+):(.+): Attached scsi disk (.+)$'	492,1364
+'^lsr: Cannot access .*: No such file or directory.'	440,542
+'transaction\\[(?P<number>\\d+)\\]\\.(?P<name>\\w+)'	391,872
+'Virtual Disk, id \\[([0-9]+)\\], successfully created'	1223,1420
+'^(list|set|sequence|tuple|collection) of ([\\w\\.]+)$'	757,1087
+'postfix-(?P<queue>[^/]+)/(?P<process>[^[]+)\\[\\d+\\]:'	440,542
+'^\\s+raise FoolishError, .I am a broken setUp method.$'	1223,1420
+"name '(?P<symbol>[A-Za-z_][A-Za-z0-9_]*)' is not defined"	518,787
+'FlashCopy Mapping, id \\[([0-9]+)\\], successfully created'	1223,1420
+'^line\\s(?P<line>\\d+)\\scolumn\\s\\d+\\s-\\s(?P<error>.+)'	1025,1322
+'.*?Error: Parse error on line (?P<line>\\d+): (?P<error>.+)'	1025,1322
+'^     Page [1-9][0-9]*[ \t]+\\|^.*Last change:.*[1-9][0-9]*\n'	12,1087
+'(mapperprop|mapper|table|column|session|attribute|engine):(.*)'	1415,1580
+'Tools and libraries NOT available at test time:\\n\\s*(.*?)\\n'	747,1330
+'Line (?P<line>\\d+),\\s*E:(?P<errnum>\\d+):\\s*(?P<message>.+)'	1025,1322
+'use\\s+encoding(?:::source)?\\s+([\'"])(?P<encoding>[\\w-]+)\\1'	305,1505
+'^(dict|dictionary|map|mapping) from ([\\w\\.]+) to ([\\w\\.]+)$'	757,1087
+'^(I|E)/(stdout|stderr|GeckoConsole)\\s*\\(\\s*\\d+\\):\\s*(.*)$'	919,1007
+'FOREIGN KEY \\((.*?)\\) REFERENCES (?:(.*?)\\.)?(.*?)\\((.*?)\\)'	113,1469
+'((msgasser(t|ted)NoTrace)) *\\(( *)(\\d+) *, *("\\S[^,^"]+\\S") *,?'	1459,1531
+'^Attached scsi disk (.+) at scsi(.+), channel (.+), id (.+), lun (.+)$'	492,1364
+'^([-]+BEGIN CERTIFICATE[-]+[\\r]*\\n.*[\\r]*^[-]+END CERTIFICATE[-]+)$'	1087,1580
+'^.*ERROR org\\.apache\\.hadoop\\.streaming\\.StreamJob \\(main\\): (.*)$'	440,542
+'# StopWatch ([\\w]+) total/cumulative duration ([0-9.]+). Samples: ([0-9]+)'	1116,1141
+'(WARNING|ERROR|INFO) \\(l.(?P<line>[0-9]+), c.(?P<column>[0-9]+)\\): (?P<rest>.*)'	332,689
+'YEAS -?\\s?(\\d+)(.*)NAYS -?\\s?(\\d+)(.*)ABSENT( OR NOT VOTING)? -?\\s?(\\d+)(.*)'	109,182
+'\\[(?P<pbp>.+)\\] (?P<error>.+?) at line (?P<line>\\d+), column (?P<column>\\d+).+?'	1025,1322
+'^Parse error:\\s*syntax error,\\s*(?P<error>.+?)\\s+in\\s+.+?\\s*line\\s+(?P<line>\\d+)'	304,305
+'^Parse error:\\s*(?:\\w+ error,\\s*)?(?P<error>.+?)\\s+in\\s+.+?\\s*line\\s+(?P<line>\\d+)'	1025,1322

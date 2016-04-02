@@ -19,17 +19,17 @@ web based
 
 code based
 \item[ = ] operator  recognize a line of code (has `=', `+' or operators) without capturing
-\item[ m ] message      scanning for an expected message phrase, not just a keyword
+\item[ m ] message      a phrase containing variable information
 \item[ g ] args         recognize a shell command or arguments (usually with arguments)
-\item[ c ] code         recognize source code contents like 'include' or `std::bitset' or functions like out.println() without operators
+\item[ c ] code         recognize source code contents like 'include' or `std::bitset' or functions like out.println() without `='
 \item[ b ] brackets  capturing or matching all content within brackets like \cverb!<.*?>! or \cverb!<[^>]*?>!
-\item[ l ] label      finding a plain label like `LIST OF EDGES' or `WIN_UTILS'
+\item[ l ] label        a phrase that could be used to find labeled data
 
 mostly-free-clustering regular strings
 
 \item[ d ] dates         parsing a simple string code like a date format
 \item[ n ] numbers       parsing a phone number, ssn, numeric date, regular number
-\item[ i ] identifier    identifiers (alphanumeric) with a restriction (must be capitol first, have a `@'), or dealing with word-default variants - functionally is also a tuple
+\item[ i ] identifier    identifiers (alphanumeric) with a restriction (must be capitol first, have a `@'), or dealing with word-default variants - functionally is also a tuple.  There is a fuzzy line between a message and an identifier - a message is just an identifier with phrases in place of rules
 
 free-clustering strings
 anchored prefix for fre-clustering strings a, so \cverb!\s*! is s for `space', but \cverb!^\s*$! is `as' because of \cverb!^! and \cverb!$! (only needs one anchor to require an anchor prefix).
@@ -43,7 +43,7 @@ anchored prefix for fre-clustering strings a, so \cverb!\s*! is s for `space', b
 catch-all (no anchor prefix)
 \item[ L ] LONG        too long to deal with, standard is 140 chars (a tweet)
 \item[ q ] question    effective regular pattern but does not fit into any category
-\item[ v ] vanilla     vanilla defaults and mixes, maybe punctuation but not as required, like \cverb![-\s]+!
+\item[ v ] vanilla     a regex is vanilla if it would be hard not to match it, like \cverb!\w+!
 
 
 
