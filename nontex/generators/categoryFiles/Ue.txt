@@ -1,0 +1,11 @@
+Ue nPatterns: 10 nProjects: 21
+'\\d+ tests?, listed below'	416,592,852,896,994,1007,1301,1403,1511,1560,1598
+'\\nStack trace:\\n(.|\\n)*'	416,592,852,896,994,1007,1301,1403,1511,1560,1598
+'Stack trace:(.|\\n)*?\\n\\n'	416,592,852,896,994,1007,1301,1403,1511,1560,1598
+'\\d+ tests? from ([a-zA-Z_])'	416,592,852,896,994,1007,1301,1403,1511,1560,1598
+'\\d+ tests? from \\d+ test cases?'	416,592,852,896,994,1007,1301,1403,1511,1560,1598
+'.. auto(function|method|attribute|class|exception|module)::\\s*([A-Za-z0-9_.]+)\\s*$'	356,436,538,1247,1288
+'^\\s+raise RuntimeError\\(self.hiddenExceptionMsg\\)'	557,1223,1420
+'^\\s+File .*erroneous\\.py., line \\d+, in testHiddenException$'	557,1223,1420
+'^\\s+self\\.fail\\("Deliberate failure to mask the hidden exception"\\)$'	557,1223,1420
+'^\\s*(>>> )?(\\.\\.\\. )?raise(\\s+Exception|\\s*(\\(\\s*)+Exception)'	518,787

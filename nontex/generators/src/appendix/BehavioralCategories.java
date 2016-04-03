@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,8 +24,11 @@ import exceptions.QuoteRuleException;
 
 public class BehavioralCategories {
 	public static final String homePath = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/";
-	private static final String behavioralPath = homePath +
+	public static final String behavioralPath = homePath +
 		"analysis/behavioral_clustering/";
+	public static final String analysisPath = homePath +
+			"analysis/";
+	public static String filtered_corpus_path = homePath + "csharp/filteredCorpus.txt";
 
 	// after getting the behavioral graph in csharp,
 	// output a human-readable dump of clusters found.
@@ -50,14 +54,14 @@ public class BehavioralCategories {
 			k_value + ")";
 		String mclInput = fullInputFilePath + " -I " + df.format(i_value) +
 			newOptions + " --abc -o " + fullOutputFilePath;
-		String filtered_corpus_path = homePath + "csharp/filteredCorpus.txt";
+
 
 		HashMap<String, Integer> patternIndexMap = getPatternIndexMap();
 		// HashMap<Integer, Integer> javaCSIndexMap = getJavaCSIndexMap();
 		TreeSet<RegexProjectSet> corpus = CorpusUtil.reloadCorpus();
 		HashMap<Integer, RegexProjectSet> lookup = getLookup(filtered_corpus_path, corpus, patternIndexMap);
 		TreeSet<Cluster> behavioralClusters = getClustersFromFile(fullInputFilePath, fullOutputFilePath, mclInput, lookup);
-		dumpCategories(behavioralClusters, "clusterCategoryDump.tex");
+		dumpCategories(behavioralClusters, "clusterCategoryDump.tex", patternIndexMap,corpus);
 	}
 
 	// this is the result of rushed design - needing to map one type of index
@@ -170,7 +174,7 @@ public class BehavioralCategories {
 		return clusters;
 	}
 
-	private static HashMap<Integer, RegexProjectSet> getLookup(
+	public static HashMap<Integer, RegexProjectSet> getLookup(
 			String filtered_corpus_path, TreeSet<RegexProjectSet> corpus,
 			HashMap<String, Integer> patternIndexMap) {
 		HashMap<Integer, RegexProjectSet> lookup = new HashMap<Integer, RegexProjectSet>();
@@ -184,7 +188,7 @@ public class BehavioralCategories {
 		return lookup;
 	}
 
-	private static HashMap<String, Integer> getPatternIndexMap()
+	public static HashMap<String, Integer> getPatternIndexMap()
 			throws IOException {
 		HashMap<String, Integer> patternIndexMap = new HashMap<String, Integer>();
 		String content = FileUtils.readFileToString(new File(homePath +
@@ -206,75 +210,58 @@ public class BehavioralCategories {
 		return patternIndexMap;
 	}
 
-	static String[] categoryNames = { "Code Search and Variable Capturing",
-			"Content Of Brackets and Parenthesis", "Anchored Patterns",
-			"Requiring Two or More Characters In Sequence",
-			"Requiring a Specific Character to Match",
-			"Multiple Matching Alternatives", "Uncategorized" };
+	static String[] categoryNames = { "Web And XML Related",
+			"Path And File Related", "Code Related", "Labels",
+			"Non-Free Ordinary Strings", "Bracket Capturing", "Messages",
+			"Identifiers", "Tuples And Punctuation", "Numbers And Dates",
+			"Space", "Vanilla Characters", "Uncategorized" };
+	
+	// "Web And XML Related" https, &#0xff;, etc, doctype
+	static ArrayList<Integer> list0 = new ArrayList<Integer>(Arrays.asList(447,4050));
+	
+	// "Path And File Related" /usr/bin/.*\.py.  
+	static ArrayList<Integer> list1 = new ArrayList<Integer>(Arrays.asList(8896));
+	
+	// "Code Or Shell Related"  include, a=(b)
+	static ArrayList<Integer> list2 = new ArrayList<Integer>(Arrays.asList(11588,11676));
+	
+	// "Labels"
+	static ArrayList<Integer> list3 = new ArrayList<Integer>(Arrays.asList(12563,12556));
+	
+	// "Non-Free Ordinary Strings" a+, [aeiou]
+	static ArrayList<Integer> list4 = new ArrayList<Integer>(Arrays.asList(6039));
+	
+	// "Bracket Capturing"
+	static ArrayList<Integer> list5 = new ArrayList<Integer>(Arrays.asList(3948,4015));
+	
+	// "Messages"
+	static ArrayList<Integer> list6 = new ArrayList<Integer>(Arrays.asList(7777));
+	
+	// "Identifiers" - may have a delmiter, but focus is on a semi-free string following rules
+	static ArrayList<Integer> list7 = new ArrayList<Integer>(Arrays.asList(2572));
+	
+	// "Tuples And Punctuation" - focus is on a delimiter, rest of content is free, often captured
+	static ArrayList<Integer> list8 = new ArrayList<Integer>(Arrays.asList(1573));
+	
+	// "Numbers And Dates"
+	static ArrayList<Integer> list9 = new ArrayList<Integer>(Arrays.asList(418,7665,11055,710));
+	
+	// "Space"
+	static ArrayList<Integer> list10 = new ArrayList<Integer>(Arrays.asList(8233));
+	
+	// "Vanilla Characters"
+	static ArrayList<Integer> list11 = new ArrayList<Integer>(Arrays.asList(6302,7250));
+	//static LinkedList<List<Integer>> categoryOracle = new LinkedList<List<Integer>>(Arrays.asList(list3));
 
-	// `^https?://'(23), `&#(x?[0-9A-Fa-f]+)[^0-9A-Fa-f]'(18),
-	// `<base\s+href\s*=\s*[\'"]?([^\'">]+)'(17),
-	// `SECRET|PASSWORD|PROFANITIES_LIST'(13),
-	// `^([a-zA-Z0-9_]+)=(.*)'(12), `\$\{([\w\-]+)\}'(11), `https?://'(9),
-	// `http://'(9), `(.+)=(.+)'(9), `var'(9), `HTML'(9), `Xorg'(9),
-	// `Websafe'(9),
-	// `cc_(.*)$'(9), `lightlink'(9)
-	static ArrayList<String> list0 = new ArrayList<String>(Arrays.asList(
-			"^(http|ftp):\\/\\/[\\w.\\-]+\\/(\\S*)", "^https?://", "&#(x?[0-9A-Fa-f]+)[^0-9A-Fa-f]", 
-			"<base\\s+href\\s*=\\s*[\\'\"]?([^\\'\">]+)", "\\nmd5_data = {\\n([^}]+)}", "SECRET|PASSWORD|PROFANITIES_LIST", 
-			"^([a-zA-Z0-9_]+)=(.*)", "\\$\\{([\\w\\-]+)\\}", "https?://", "http://", "(.+)=(.+)", "var", "HTML", "Xorg", 
-			"Websafe", "cc_(.*)$", "lightlink", "^(?P<remote_ip>[^ ]+) (?P<http_user>[^ ]+) (?P<http_user2>[^ ]+) (?P<req_date>[^ ]+) (?P<timezone>[^ ]+) \"(?P<request>[^ ]+) (?P<url>[^ ]+) (?P<http_protocol>[^ ]+) (?P<init_retcode>[^ ]+)",
-			"(?P<year>\\d{4})-(?P<month>\\d{1,2})-(?P<day>\\d{1,2})[T ](?P<hour>\\d{1,2}):(?P<minute>\\d{1,2})(?::(?P<second>\\d{1,2})(?:\\.(?P<microsecond>\\d{1,6})\\d{0,6})?)?(?P<tzinfo>Z|[+-]\\d{2}(?::?\\d{2})?)?$",
-			"(?P<year>[0-9]{4})([-/.])(?P<month>[0-9]{2})\2(?P<day>[0-9]{2})$",
-			"<textarea name=\"text\"[\\W]*rows=\"25\"[\\W]id=\"text\"",
-			"^(\\s*)#\\s*begin\\s+wxGlade:\\s*([a-zA-Z_][\\w:]*?)::(\\w+)\\s*$",
-			" failures today: (\\w+)",
-			"QtGui\\.QApplication.translate\\(.*?, (.*?), None, QtGui\\.QApplication\\.UnicodeUTF8\\)",
-			"^(?:nfs://)?(?P<host>([a-zA-Z][\\w\\.^-]*|\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}))(?::(?P<port>\\d*))?(?P<dir>/[\\w/]*)?$",
-			"^(.*\\n)*def\\s+step_init\\s*\\(\\s*\\)\\s*:"
-			
-			));
-
-	// `\(.*\)'(29), `{[^}]*}'(27), `".*"'(25), `<(.+)>'(23), `\[.*\]'(22),
-	// `<(.*)>'(21), `\([^)]+\)'(10), `'.''(9), `/.+/$'(9), `'.*'$'(9)
-	static ArrayList<String> list1 = new ArrayList<String>(Arrays.asList("\\(.*\\)", "{[^}]*}", "\".*\"", "<(.+)>", "\\[.*\\]", "<(.*)>", "\\([^)]+\\)", "'.'", "/.+/$", "'.*'$"));
-
-	// `(\w+)$'(35), `^[-\w/]+$'(30), `^[a-zA-Z]'(17), `^-?\d+$'(17),
-	// `^\s'(16), `:\d+$'(16), `^\s*\#'(15), `^[\w_]+$'(14), `^(\d+)'(14),
-	// '^\w'(13), `^/'(13), `^\W+'(11), `^[\w.@+-]+$'(10), `(\d+)$'(10),
-	// `^[a-zA-Z][a-zA-Z0-9\-_]*$'(10), `^[ -~]*$'(10), `.*\!$'(10)
-	static ArrayList<String> list2 = new ArrayList<String>(Arrays.asList("^\\s*$","(\\w+)$", "^[-\\w/]+$", "^[a-zA-Z]", "^-?\\d+$", "^\\s", ":\\d+$", "^\\s*\\#", "^[\\w_]+$", "^(\\d+)", "^\\w", "^/", "^\\W+", "^[\\w.@+-]+$", "(\\d+)$", "^[a-zA-Z][a-zA-Z0-9\\-_]*$", "^[ -~]*$", ".*\\!$", "#.*$", "\\.\\d+$"));
-
-	// `\d+\.\d+'(30), ` '(17), `//'(16), `(\S)\s+(\S)'(16), `(\033|~{)'(14),
-	// `([a-z\d])([A-Z])'(13), `%([0-9A-Fa-f]{2})'(13), `\.\d+$'(12),
-	// `\\"'(11), `\$\$.*'(11), `([A-Z][a-z]+[A-Z][^ ]+)'(11), `[ \t][
-	// \t]+'(10),
-	// `\\[A-Za-z]+'(9), `[A-Z][a-z]+'(9), `\*/'(9), `@[a-z]+'(9),
-	// `\$[()]'(9), `v[0-9]+.*'(9)
-	static ArrayList<String> list3 = new ArrayList<String>(Arrays.asList("[a-zA-Z][-_.:a-zA-Z0-9]*", "failures today: (\\w+)", "\\d+\\.\\d+", "  ", "//", "(\\S)\\s+(\\S)", "(\\033|~{)", "([a-z\\d])([A-Z])", "%([0-9A-Fa-f]{2})", "\\\\\"", "\\$\\$.*", "([A-Z][a-z]+[A-Z][^ ]+)", "[ \\t][ \\t]+", "[A-Za-z]+", "[A-Z][a-z]+", "\\*/", "@[a-z]+", "\\$[()]", "v[0-9]+.*"));
-
-	// `\n\s*'(42), `/+'(39), `:+'(31), `\.+'(24),
-	// `( +)'(24), `%'(22), `{'(21), `\|'(19), `\-'(17), `@'(17),
-	// `#.*$'(16), `\['(14), `}'(14), `\('(12), `a+'(10),
-	// `\t+'(10), `\)'(9), `\]'(9)
-	static ArrayList<String> list4 = new ArrayList<String>(Arrays.asList("\\s*,\\s*","\\n","\\n\\s*", "/+", ":+", "\\.+", "( +)", "%", "{", "\\|", "\\-", "@", "\\[", "}", "\\(", "a+", "\\t+", "\\)", "\\]"));
-
-	// `..'(95), `(\W)'(89), `(\s)'(89), `\S+'(74), `\d'(58),
-	// `"|\\'(35), `[\000-\037]'(31), ,`[\\/]'(31) `[\({\[\]}\)\n]'(21),
-	// `[^!-~]'(19), `[ ,]'(19), `[\\"]|[^ -~]'(19), `{|}'(18),
-	// `,|;'(18), `[<>&]'(16), `[-.]'(12), `[()]'(11),
-	// `(["\\`])'(10), `\s*=.*'(9), `[@{} ]'(9), `["\'/]'(9)
-	static ArrayList<String> list5 = new ArrayList<String>(Arrays.asList("(\\s+)","([\\{-\\~\\[-\\` -\\&\\(-\\+\\:-\\@\\/])","[\\x00-\\x1f\\\\\"\\b\\f\\n\\r\\t]","\\W","[\\x80-\\xff]","\\s","\\s+", "..", "(\\W)", "(\\s)", "\\S+", "\\d", "\"|\\\\", "[\\000-\\037]", "[\\\\/]", "[\\({\\[\\]}\\)\\n]", "[^!-~]", "[ ,]", "[\\\\\"]|[^ -~]", "{|}", ",|;", "[<>&]", "[-.]", "[()]", "([\"\\\\`])", "\\s*=.*", "[@{} ]", "[\"\\'/]"));
-	static LinkedList<List<String>> categoryOracle = new LinkedList<List<String>>(Arrays.asList(list0, list1, list2, list3, list4, list5));
+	static LinkedList<List<Integer>> categoryOracle = new LinkedList<List<Integer>>(Arrays.asList(list0, list1, list2, list3, list4, list5, list6, list7, list8, list9, list10, list11));
 
 	private static boolean addClusterToCategoryClusters(Cluster cluster,
-			List<Category> categories) {
-		String shortest = cluster.getShortest().getUnescapedPattern();
-
+			List<Category> categories, HashMap<String, Integer> patternIndexMap) {
+		Integer javaIndex = patternIndexMap.get(cluster.getHeaviest().getContent());
 		int i = 0;
 		for (; i < categoryOracle.size(); i++) {
-			List<String> categoryMembers = categoryOracle.get(i);
-			if (categoryMembers.contains(shortest)) {
+			List<Integer> categoryMembers = categoryOracle.get(i);
+			if (categoryMembers.contains(javaIndex)) {
 				categories.get(i).add(cluster);
 				return true;
 			}
@@ -284,7 +271,10 @@ public class BehavioralCategories {
 	}
 
 	private static void dumpCategories(TreeSet<Cluster> behavioralClusters,
-			String outFilename) throws ClassNotFoundException, SQLException {
+			String outFilename, HashMap<String, Integer> patternIndexMap, TreeSet<RegexProjectSet> corpus)
+			throws ClassNotFoundException, SQLException, IllegalArgumentException, IOException, QuoteRuleException, PythonParsingException {
+		HashMap<Integer, TreeSet<RegexProjectSet>> projectPatternMM = CorpusUtil.reloadProjectPatternMM(corpus);
+		
 		StringBuilder sb = new StringBuilder();
 
 		List<Category> categoryClusters = new LinkedList<Category>();
@@ -292,33 +282,65 @@ public class BehavioralCategories {
 			categoryClusters.add(new Category());
 		}
 
-		int totalPatterns = 0;
+		int touchedPatterns = 0;
 		int categorizedClusters = 0;
 		TreeSet<Integer> allProjectIDs = new TreeSet<Integer>();
+		Cluster allCategorizedRegexes = new Cluster();
 		Category nonCategorizedClusters = new Category();
+		
+		//main loop
 		for (Cluster cluster : behavioralClusters) {
-			int nPatterns = cluster.size();
-			totalPatterns += nPatterns;
+			touchedPatterns += cluster.size();
 			allProjectIDs.addAll(cluster.getAllProjectIDs());
-			if (addClusterToCategoryClusters(cluster, categoryClusters)) {
+			if (addClusterToCategoryClusters(cluster, categoryClusters, patternIndexMap)) {
 				categorizedClusters++;
+				allCategorizedRegexes.addAll(cluster);
 			} else {
 				nonCategorizedClusters.add(cluster);
 			}
 		}
-
-		sb.append("Cluster stats:\n\ntotalClusters: " +
-			behavioralClusters.size() + "\nCategorizedClusters: " +
-			categorizedClusters + "\nTotalPatterns: " + totalPatterns +
-			"\ntotalnProjects: " + allProjectIDs.size() + "\n\n");
-		sb.append(getCategoryProjectInfo(categoryClusters) + "\n\n\n");
+		
+		//measuring coverage
+		int totallyCoveredProjects = 0;
+		int partiallyCoveredProjects = 0;
+		int nProjectsLoaded = projectPatternMM.size();
+		for(Entry<Integer, TreeSet<RegexProjectSet>> entry : projectPatternMM.entrySet()){
+			TreeSet<RegexProjectSet> regexes = entry.getValue();
+			TreeSet<RegexProjectSet> regexesCopy = new TreeSet<RegexProjectSet>();
+			regexesCopy.addAll(regexes);
+			regexesCopy.removeAll(allCategorizedRegexes);
+			if(regexesCopy.isEmpty()){
+				totallyCoveredProjects++;
+			}else if(regexes.size() - regexesCopy.size() >0){
+				partiallyCoveredProjects++;
+			}
+		}
+		int untouchedProjects = nProjectsLoaded-(partiallyCoveredProjects+totallyCoveredProjects);
+		
+		
+		//print a summary report
+		sb.append("Cluster stats:\n\ntotalClusters: " +behavioralClusters.size() + 
+			"\nCategorizedClusters: " + categorizedClusters + 
+			"\nTotalPatterns: " + corpus.size() + " (in the corpus)" +
+			"\nTouchedPatterns: " + touchedPatterns + " (by some cluster)" +
+			"\nnTotalProjects: " + nProjectsLoaded + " (containing a corpus regex)" +
+			"\nnProjectsTouched: " + allProjectIDs.size() +" (by some cluster)" +
+			"\ntotallyCoveredProjects: " + totallyCoveredProjects +" (by categorized regexes)" +
+			"\npartiallyCoveredProjects: " + partiallyCoveredProjects +" (by categorized regexes)" +
+			"\nuntouchedProjects: " + untouchedProjects + " (no category touches these)" +
+			"\n\n");
+		
+		//get the bulk of data
+		sb.append(getCategoryProjectInfo(categoryClusters, patternIndexMap) +
+			"\n\n\n");
 		File output = new File(behavioralPath, outFilename);
 		IOUtil.createAndWrite(output, sb.toString());
 	}
 
 	// this builds the giant string printed in the cluster dump
 	// by printing all clusters in each category
-	private static String getCategoryProjectInfo(List<Category> categories)
+	private static String getCategoryProjectInfo(List<Category> categories,
+			HashMap<String, Integer> patternIndexMap)
 			throws ClassNotFoundException, SQLException {
 		StringBuilder sb = new StringBuilder();
 		String categoryHeader = "\\begin{multicols}{2}\n\\begin{description}[noitemsep,topsep=0pt]\n";
@@ -340,11 +362,11 @@ public class BehavioralCategories {
 				"\nnProjectsTotal: " +
 				nProjectsTotal +
 				"\nshortest: " +
-				AppendixHelper.wrap(category.getCombinedClusters().getShortest()) +
+				AppendixHelper.wrap(category.getCombinedClusters().getShorty()) +
 				"\n\n");
 			i++;
 			for (Cluster currentCluster : category) {
-				sb.append(currentCluster.getItemLineLatex());
+				sb.append(currentCluster.getItemLineLatex(patternIndexMap));
 			}
 			sb.append(categoryFooter);
 		}

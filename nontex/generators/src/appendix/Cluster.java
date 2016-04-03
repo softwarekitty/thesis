@@ -1,5 +1,6 @@
 package appendix;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.TreeSet;
 
@@ -16,11 +17,15 @@ public class Cluster extends TreeSet<RegexProjectSet> implements Comparable<Clus
 		allProjectIDs = new TreeSet<Integer>();
 	}
 	
-	public String getItemLineLatex(){
+	public String getItemLineLatex(HashMap<String, Integer> patternIndexMap){
 		StringBuilder sb = new StringBuilder();
+		
+		RegexProjectSet shorty = getHeaviest();
+		Integer index = patternIndexMap.get(shorty.getContent());
+		sb.append(", "+index+" ");
 		sb.append("\\item ");
 		sb.append("["+getDescription()+"] ");
-		sb.append(AppendixHelper.wrap(getShortest()));
+		sb.append(AppendixHelper.wrap(shorty));
 		sb.append("\n");
 		return sb.toString();
 	}
@@ -44,7 +49,11 @@ public class Cluster extends TreeSet<RegexProjectSet> implements Comparable<Clus
 		return allProjectIDs.size();
 	}
 
-	public RegexProjectSet getShortest() {
+	public RegexProjectSet getHeaviest() {
+		return this.first();
+	}
+	
+	public RegexProjectSet getShorty() {
 		if(shortest!=null){
 			return shortest;
 		}else{
