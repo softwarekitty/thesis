@@ -1,6 +1,18 @@
 \section{Refactoring Regexes}
 
 \subsection{Equivalence models}
+This study uses 5 equivalence classes, each with 3 to 5 nodes.  These equivalence classes are very inclusive of regexes with very different behavior, and are defined largely by the features used by a regex.  Future work could look into much more narrowly defined equivalence models, specific to particular behaviors of the most frequently observed regexes.  For example a node could require the presence of a very specific, frequently used CCC like \cverb![a-zA-Z0-9_-]! which can be refactored to \cverb![\w-]!.
+
+In addition to breaking the five equivalence classes into more granular nodes, future work could model refactorings outside of these groups. Due to the functional variety and significant number of features to consider, this work does not provide a list of all possible refactoring groups.  However the following 5 additional equivalence classes are examples of other possible groups:
+\begin{description}
+\item[Single line option]  \verb!'''(.|\n)+'''! $\equiv$ \verb!(?s)'''(.)+'''!
+\item[Multi line option]  \verb!(?m)G\n! $\equiv$ \verb!(?m)G$!
+\item[Multi line option]  \verb!(?i)[a-z]! $\equiv$ \verb![A-Za-z]!
+\item[Backreferences]  \verb!(X)q\1! $\equiv$ \verb!(?P<name>X)q\g<name>!
+\item[Word Boundaries]  \verb!\bZ! $\equiv$ \verb!((?<=\w)(?=\W)|(?<=\W)(?=\w))Z!
+\end{description}
+
+Future work could also use reasoning tools for regular expressions, like Microsoft's Automata library to identify populations of equivalent regexes with differing representations, even identifying \emph{all} equivalence classes present in a given corpus.
 
 \subsection{Understandability measures}
 
@@ -18,3 +30,6 @@ Building migration libraries is a promising direction of future work to ease the
 
 \subsection{Refactoring for obfuscation}
 Maintainers of code that is intentionally obfuscated for security purposes may want to develop regexes that they understand and then automatically transform them into the least understandable regex possible.
+
+\paragraph{Regex Programming Standards}
+Many organizations enforce coding standards in their repositories to ease understandability.  Using an equivalence class model and the node counting technique described in this chapter could help to objectively develop regular expression standards for a given development community like Mozilla or OpenBSD.
