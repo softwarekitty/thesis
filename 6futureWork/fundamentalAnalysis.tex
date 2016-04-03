@@ -1,24 +1,26 @@
-\section{Feature analysis}
+\section{Fundamental Research Opportunities}
 
-Unable to get enough information about Swift's underlying NSRegularExpression to include it in the table - a strong contender for future work!  Also wanted to get Vim's features but do not have time, and it is a very alien feature set!.
+\subsection{Comparison opportunities}
+The analysis techniques developed in this work can be applied to a very wide variety of data sets to obtain empirical comparisons.  Focusing on a particular community can obtain results that are likely to be impactful for that community.
 
-\subsection{Ordinary characters}
+\paragraph{Suggested comparisons}  Within one data source (like GitHub) and one programming language (like Python) or one regular expression language (like EMCAScript), different types of projects could be compared to discover differences in usage that can be attributable to project type.  Similarly holding other variables constant and allowing the 1. data source, 2. programming language or regular expression language variant, 3. project size, 4. developer maturity level, 5. file-level bug-counts,  or 6. file-level time since creation to vary could reveal details about how usage of regular expressions (in context of these variables) affects the software development community. Many other comparisons are likely possible, and this is all left for future work.
 
-\subsection{Comparing populations}
+\paragraph{Evolution of regexes}  When a particular piece of code contains a regex, it is possible for that regex to be altered over the course of time, and for these alterations (visible via commit logs or similar) to indicate what details are important for a regex to cover that are often missed in early versions, as well as many possible insights into preferred representations for refactoring.
 
-\subsection{Taxonomy and history}
 
-\paragraph{Portability Guides}
-Similarly in JavaScript and POSIX ERE, the pattern \verb!"a\Z"! compiles to a regex matching the string \verb!"aZ"!, because the sequence \verb!"\Z"! has no special significance and the backslash is ignored.  In Python Regular Expressions, this sequence does have significance - a feature matching the absolute end of the string (after the last newline).  However, in Java, Perl, .Net and many other variants this sequence has a slightly different meaning (absolute end or before last newline).
+\subsection{Extending feature analysis}
+\paragraph{Ordinary characters}  This work focused mostly on features that provide string specification capabilities other than how to specify characters (i.e., the KLE and BKR feature frequencies were counted, but octal, hex and literal representation frequencies were not counted).  Yet the comprehension evaluations indicated that the strongest refactoring opportunity for understandability was $\overrightarrow{T4 T1}$, which is a refactoring of how to express characters.  Furthermore, when comparing feature support of different languages, one substantial and unexpected difference between variants observed by the author was the difference in available escaped invisible characters.  Yet these escape characters were not included in this study, with the exception of VWSP (\verb!\v!).  These omissions do not reduce the impact of the results presented, but provide an opportunity for additional impactful discoveries to be made in future work.
 
-\subsubsection{Ephemeral regex exploration}
-In some environments, such as command line or text editor, regexes are used extensively by the surveyed developers (Section\todoLast{N}), but these regular expressions do not persist. Thus, using a repository analysis for feature usage only illustrates part of how regexes are used in practice. Exploring how the feature usage differs between environments would help inform tool developers about how to best support regex usage in context, and is left for future work.
+\paragraph{Feature set comparisons} Additionally, future research is needed into the feature sets of different variants, extending the work done in this thesis presented in Table~\ref{table:rankedFeatureSupport} an Table~\ref{table:alienFeatureSupport}.  Several very popular variants are not represented in these tables, including the NSRegularExpression variant (used by Swift and Objecive-C), the MathWorks variant (used in MATLAB), the D Regular expressions variant, the TRE variant, VIM Regular Expressions and several others.
 
-\paragraph{Alternative techniques for building a corpus}
-\label{sec:alternateCorpus}
-any number of different regular expression languages like Perl Regular Expressions, Java Regular Expressions or .Net Regular Expressions.  Also independent of the regular expression language, the regexes studied could come from a variety of sources like sourceforge, bitbucket, a private repository, or even from github using a different technique than the one used to build the corpus (described in
-\todoMid{Mention how exploring character details like literals, hex, octal and supported escape specials like bell, vertical wsp, etc is an opportunity for future work}
+\paragraph{Portability Guides} At the time of this writing, the best resources for users wishing to port patterns from one regular expression language to another are tools like RegexBuddy~\citep{RegexBuddy}.  More study is needed to fully document the language details and make it possible for users to transform regular expressions across languages without accidentally changing the meaning of the regex.  For example, in JavaScript and POSIX ERE, the pattern \verb!"a\Z"! compiles to a regex matching the string \verb!"aZ"!, because the pattern fragment \verb!\Z! has no special significance and the backslash is ignored.  In Python Regular Expressions, this fragment does have significance - a feature matching the absolute end of the string (after the last newline).  However, in Java, Perl, .Net and many other variants this sequence has a slightly different meaning (absolute end or before last newline).
 
-\paragraph{Studying a different corpus}
-A technique similar to the one described in this work could be applied to a different corpus.  Ideas about alternative ways to build a corpus of regexes can be found in Section~\ref{sec:alternateCorpus}).  The concept of a community standard would be reinforced by regexes sourced from a very specific community like only text editor projects, or only shopping cart frameworks.
+\paragraph{Ephemeral regex exploration} In some environments, such as command line or text editor, regexes are used extensively by the surveyed developers, but these regular expressions do not persist (Section~\ref{sec:surveyResults})\todoMid{change to closer section reference}. Thus, using a repository analysis for feature usage only illustrates part of how regexes are used in practice. Exploring how the feature usage differs between environments would help inform tool developers about how to best support regex usage in context, and is left for future work.
+
+\subsection{Taxonomy and formal language studies}
+\paragraph{Language analysis} The man page for Regex(7) says `Having two kinds of REs is a botch.'~\citep{regexManual}.  As shown in this work, there are certainly more than two kinds of regular expression languages at this time, and the number of languages is bound to grow.  Documentation on the relationships between these languages, their evolution over time, and details about their differences is sorely lacking.  This presents an opportunity for language researchers to apply known techniques such as Bayesian phylogenic analysis~\citep{Kitchen2703} to regular expression languages, and to improve the general awareness of regular expression languages.
+
+\paragraph{Formal containment} Because many newer regular expression languages draw their feature sets from previous variants, many feature sets of older languages may be formal subsets of newer languages.  This presents an opportunity for future work in formally expressing the behavior of variants with the intent of determining where containment is possible.  An engine supporting the features of all languages may not be possible, but would be a powerful tool, and so more language is needed into the formal relationship between variants.
+
+
 
