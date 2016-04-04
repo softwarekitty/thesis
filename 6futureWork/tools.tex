@@ -1,14 +1,31 @@
-\section{Composition}
-
-\subsection{Study of composition challenges}  In Section~\ref{sec:surveyResults}\todoMid{closer reference},
-
-\subsection{Bracket parsers}
-One category of clusters, \emph{Content of Brackets and Parenthesis}, parses the contents of angle brackets, which may indicate developers are using regexes to parse HTML or XML.  As the contents of angle brackets are usually unconstrained, regexes are a poor replacement for XML or HTML parsers.  This may be a missed opportunity for the regex users to take advantage of more robust tools. More research is needed into how regex users discover best practices and how aware they are of how regexes should and should not be used.
-
 \section{Semantic Search}
+Given a large set of regexes, and a set of strings specified to either not-match or match, the problem of semantic search is to find the regexes that meet the matching and non-matching specifications.  This would be useful if, for example, a programmer wants to find a regex to perform some complex, already-solved task and would rather re-use an existing correct regex, than re-invent the wheel.  The brute-force approach will work, checking every regex against every string to determine if a match exists, and returning the regexes that meet the specification.  However, in order to be viable the technique must scale to accommodate a very large number of regexes, or the searched set would be unlikely to contain a useful regex.  Also, for a task complex enough to require semantic search, a very large number of string matching specifications should be expected.
 
-\subsection{Finding a filter set}
+Ideally, a relatively small number of regexes could be used to navigate the set of regexes, finding the regexes that do match the specifications without performing very many evaluations.
 
-\subsection{Automated regex repair}
-Regular expression errors are common and have produced thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}. This provides an opportunity to introduce automated repair techniques for regular expressions.
-Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cite{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes through mutation operators could lead to big changes in behavior, so we hypothesize that using the semantic clusters identified in Section\todoLast{N} to identify potential repair candidates could efficiently and effectively converge on a repair candidate.
+\subsection{Finding a filter set} One technique devised by the author (but never implemented) for minimizing the number of regexes that need to be evaluated to solve semantic search is described here as `finding a filter set'.  This is left as an opportunity for future work.
+
+The intuition is best demonstrated with an example.  The regex \cverb!::! consists of only two \verb!`:'! characters, and the five regexes \cverb!::\(.*\)!, \cverb!\s*::\s*!, \cverb!e*d::!, \cverb!std::regex! and \cverb!d:{2,6}! also all contain two \verb!`:'! characters, but describe a more limited set of strings.  Now the first semantic search is performed by user A: find a regex that matches \verb!"abc"!.
+
+Let \cverb!`::'! be the top filter for the other five regexes, and \cverb!e*d::! be a second layer of filter for the last two.  The top filter is checked first, and it does not match the string, so no further evaluations are needed (no result is returned).
+
+Now user B performs another search: match \verb!" :: "!.  This string is matched by the top filter, so the next three must be evaluated.  The regex \cverb!::\(.*\)! requires a parenthesis character so it does not match.  The regex \cverb!\s*::\s*! does match the string, and the second layer filter, \cverb!e*d::! does not match the space characters on either side.  Because the second layer filter does not match, the last two regexes do not need to be evaluated.
+
+Formally, \cverb!::! describes a set of strings that \emph{subsume}, or \emph{contain} the sets of strings described by the other five regexes, so it can be used as a filter.  However, the regex \cverb!:! also subsumes these five regexes, but is not as good of a filter, because it is narrower, and therefore blocks fewer unnecessary searches.   Furthermore, the regex \cverb!.! has the same width as \cverb!:!, but blocks even fewer unnecessary searches.
+
+Finding a filter set on one level can be formally described as follows:
+
+Consider a universe $R$ of regexes, and strings $s$ from the set $S$ over alphabet $\Sigma$.
+
+Each $r\in R$ has matching function $r.m(s)$ returning true if $r$ matches $s$ (using the definition of matching described in Section~\ref{sec:matchingDefined}), false otherwise.
+
+Now find $n$ \emph{effective} filters $f_i \in U$, $ 0\leq i< n$, where each filter maps to a minimally-overlapping, roughly equal-sized region of $U$: $U_i$.
+
+A filter $f_i$ is \emph{effective} if $\forall s\in S$, $ \neg f_i.m(s) \implies (\forall r_i \in U_i$, $ \neg r_i.m(s))$.
+
+The best filter is the regex lowest in the subsumption tree to subsume a set.  Finding the best filters for a given set of regexes is likely to be computationally intensive, but the benefit of the filtering approach is that once good filters are found, the searching solution remains solved.  All additional detail is left as an opportunity for future work.
+
+\subsection{Automated regex repair}  Regular expression errors are common and have produced thousands of bug reports~\cite{Spishak:2012:TSR:2318202.2318207}. This provides an opportunity to introduce automated repair techniques for regular expressions.
+Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cite{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes through mutation operators could lead to big changes in behavior, but using transformations within a behaviorally similar cluster (as described in Section~\ref{sec:clusteringDesign}) to identify potential repair candidates could efficiently and effectively converge on a repair candidate.  Semantic search can also be used in running code to find candidates, where live-running tests suites are intercepted to find the string specifications needed for a correct repair.
+
+
