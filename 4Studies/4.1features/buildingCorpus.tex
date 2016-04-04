@@ -1,0 +1,14 @@
+\subsection{Building the corpus}
+\subsubsection{Selecting a body of patterns from a set of utilizations}
+\paragraph{Behavioral flags and patterns with variables excluded} To guarantee that the behavior of regexes used for analysis depended only on the pattern extracted from a utilization, the \dbfetch{percentBadFlags}\%  of utilizations using flags were excluded from further analysis.  An additional \dbfetch{percentInvalidPattern}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable).
+
+\paragraph{Normalizing patterns} All distinct patterns from the remaining \dbfetch{percentCleanUsages}\% (\dbfetch{nCleanUsages}) of utilizations were pre-processed by removing Python quotes (\verb!`\\W!' becomes \verb!\\W!), and unescaping escaped characters (\verb!\\W! becomes \verb!\W!).  After these filtering steps, \dbfetch{nDistinctPatterns} distinct patterns remained.
+
+\subsubsection{Parsing Python Regular Expression patterns using a PCRE parser}
+\paragraph{All studied features are recognizable} The collection of distinct patterns formed by this process was parsed into tokens using an ANTLR-based, open source PCRE parser\footurl{https://github.com/bkiers/pcre-parser}.  A comparison of the features supported by this parser (Perl features) and Python is provided in Table~\ref{table:rankedFeatureSupport}, and indicates that all but the ENDZ feature have identical syntax and meaning.  Fortunately, the syntax of the ENDZ feature (e.g., \cverb!R\Z!) matches the syntax of the LNLZ feature (e.g., \cverb!R\Z!) so that in practice, the parser used can correctly identify all studied features.  To clarify the difference, if a newline is the last character in a string, ENDZ will match after that newline, and LNLZ will match before that newline.
+
+\paragraph{Excluded patterns} This parser was unable to support 0.53\% (\dbfetch{N_UNICODE}) of the patterns due to unsupported Unicode characters.
+%unicode is 73 patterns or 0.53 percent
+Another 0.12\% (17) of the patterns used PCRE features not valid in Python.  Two additional patterns used the commenting feature, ECOM, which is valid in Python but is excluded to keep the analysis more succinct.  An additional 0.16\% (22) of the patterns were excluded because they were empty or otherwise malformed so as to cause a parsing error.  In total, these excluded patterns represent 0.83\% (114) of the 13,711 distinct patterns obtained.  Excluded patterns are listed in Section~\ref{sec:excludedPatterns}.
+
+\paragraph{Corpus defined} The \dbfetch{nCorpus} distinct pattern strings that remain were each assigned a weight value equal to the number of distinct projects the pattern appeared in.  We  refer to this set of weighted, distinct pattern strings as the \emph{corpus}.

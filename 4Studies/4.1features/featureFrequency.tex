@@ -1,0 +1,17 @@
+\subsection{Frequency of feature usages}
+\input{table/features/featureStatsOnly}
+
+\label{sec:featureResults}
+Table~\ref{table:featureStatsOnly} displays feature usage from the corpus in terms of the number of patterns, files and projects, as well as in terms of tokens used.
+
+The first column, \emph{rank}, lists the rank of a feature (relative to other features) in terms of the number of projects in which it appears. The next column, \emph{code}, gives a succinct reference string for the feature as described in Section~\ref{sec:featureDescriptions}. The \emph{example} column provides a short example of how the feature can be used.The next six columns contain usage statistics providing a variety of perspectives on how frequently the features are used in the observed population.
+
+The \emph{\% projects} column contains the percentage of projects  using a feature out of the 1,645 projects scanned that contain at least one pattern in the corpus.  The \emph{nProjects} column provides the number of projects that contain at least one usage of a feature.  Assuming that one project generally corresponds to some high-level goal of a programmer or a team of programmers, these values provide a sense of how frequently a feature is \emph{part of a software solution} in even the slightest way.  Because of the generality of this measure and the goal of this study to gauge how features of regular expressions are used in general, these values are used to determine the rank of a feature.
+
+The \emph{nFiles} column specifies the number of files that contain at least one observed usage of the feature.  For reference, recall that a total of \dbfetch{nFilesUsingRegex} files were scanned that contain at least one feature usage.  Assuming that programmers organize code into separate files based on what the code needs to do, this number can provide insight into the variety of different conceptually separate \emph{task categories} a feature is used for.
+
+The \emph{nPatterns} column contains the number of patterns in which a feature was observed. Each regex is compiled from a particular pattern and performs at least one function desired by a programmer.  Therefore the number of patterns composed using a feature can provide insight into the number of \emph{specific tasks} a feature is used for.
+
+The \emph{nTokens} column, gives the total number of tokens observed for a feature, combining the token counts of all patterns in the corpus.  This value provides a sense of how often the language feature is used \emph{for any task}.
+
+The last column, \emph{maxTokens}, gives the maximum number of times that a feature appears in a single regex.  Assuming that a feature that a programmer finds convenient is used more frequently in a given regex, this value provides a sense of \emph{convenience} provided by the feature.

@@ -1,0 +1,28 @@
+\subsection{Analyzing the corpus of regexes}
+\label{sec:corpusAnalyzing}
+
+\subsubsection{Studied feature set}
+
+\input{table/features/featureDescriptions}
+
+This thesis will focus on the features and syntax described in Table~\ref{table:featureDescriptions}.  Every regex in the corpus only uses features from this feature set.  A detailed introduction to the functionality of these features as studied in this thesis is provided in Section~\ref{sec:featureDescriptions}.  The features of Python Regular Expressions analyzed fall into four categories:
+
+\begin{enumerate} \itemsep -1pt
+\item{Elements are individual characters, character classes and logical groups.  Elements can be operated on by operators.}
+\item{Options fundamentally modify the behavior of the engine.}
+\item{Repetition modifiers, implicit concatenation and logical OR are operators. The order of operations is described in Section~\ref{sec:orderOfOperations}}.
+\item{Positions refer to a position between characters.  They make assertions about the string on one or both sides of their position.}
+\end{enumerate}
+
+\subsubsection{Parsing feature tokens}
+For each escaped pattern, the PCRE-parser produces a tree of feature tokens, which is converted to a vector by counting the number of each token in the tree.  For a simple example, consider the patterns in Figure~\ref{fig:featureParsing}.  The pattern \verb!"^m+(f(z)*)+"! contains four different types of tokens. It has the KLE operator (\verb!*!), the ADD operator (\verb!+!), two CG elements (\verb!(...)!), and the STR position (\verb!^!). A detailed description of all studied features is provided in Section~\ref{sec:featureDescriptions}.
+
+\begin{figure}[hb]
+\centering
+\includegraphics[height=0.6in]{nontex/illustrations/featureParsing.eps}
+\caption{Two patterns parsed into feature vectors}
+\label{fig:featureParsing}
+\vspace{-12pt}
+\end{figure}
+
+Once all patterns were transformed into vectors, each feature was examined independently for all patterns, tracking the number of patterns, files and projects that the each feature appears in at least once.

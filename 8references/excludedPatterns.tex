@@ -1,0 +1,180 @@
+\section*{Patterns Excluded From Analysis}
+\label{sec:excludedPatterns}
+
+This section contains the 114 patterns obtained from Python projects that were excluded from analysis for various reasons.  Extra-long patterns are truncated, with the number of truncated characters displayed, so 20 truncated characters would be displayed like \verb!...<20>!.  These patterns are formatted like regexes to help visualize empty space or patterns, but may or may not actually be able to compile to valid regexes.
+
+\subsection*{19 Patterns using alien or rare features}
+\paragraph{6: IFC (If conditionals)}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \cverb!^(\()?([^()]+)(?(1)\))$!
+\item \cverb@(?<=[\w)\]"\']|([ ]))(===?|!==?|[<>]=?)(?=[\w({\["\']|(?(1)\b\b|[ ]))@
+\item \cverb!(?<=[\w)\]"\']|([ ]))(=|[-+*/%^&|]=|<<=|>>>?=)(?=[\w({\["\']|(?(1)\b\b|[ ]))!
+\item \cverb!(?<=[\w)\]"\']|([ ]))([-+*/%^]|&&?|\|\|?|<<|>>>?)(?=[\w({\["\']|(?(1)\b\b|[ ]))!
+\item \cverb!([^()]+?)\s*(\()?(\d{4})(?(2)\))$!
+\item \cverb@^((?:https?://)?(?:youtu\\.be/|(?:\\w+\\.)?youtube(?:-nocookie)?\\.com/)@\verb!...<108>!
+\end{itemize}
+
+
+\vspace{-2mm}
+\paragraph{3: IFEC (If-else conditionals)}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \cverb!^(?:(a)|c)((?(1)b|d))$!
+\item \cverb!^(?:(a)|c)((?(1)|d))$!
+\item \cverb!(?:(\\[)|\\.|^)((?(1)[^]]*|[^.[]*))(?(1)(?:\\]|$)([^.[]+)?)!
+\end{itemize}
+
+\vspace{-2mm}
+\paragraph{5: NCND (Named conditions)}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \cverb!(?P<g1>a)(?P<g2>b)?((?(g2)c|d))!
+\item \cverb!(?P<quote>)(?(quote))!
+\item \cverb!\A(?P<head>.*?)(?P<escape>\\*)(?P<symbol>\$(?P<brace_open>\{)?!\verb!...<51>!
+\item \cverb!\A(?P<sign>__)?(?P<is_time>T)?(?P<amount>\d+)(?P<unit>(?(is_time)[SMH]|[DW]))?\Z!
+\item \cverb!\\$(?P<_bracket_>\{)?((?(_bracket_)(?:\\\}|[^\}])*|(?:\$|[A-Z]+!\verb!...<32>!
+\end{itemize}
+
+\vspace{-2mm}
+\paragraph{2: ECOM (Comments)}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \cverb!(?:http://)?(?:\w+\.)?depositfiles.com/(?:../(?#locale))?files/(.+)!
+\item \cverb@\n                     (?:\\W|^)    (?# Break or beginning)\n@\verb!...<455>!
+\end{itemize}
+
+\vspace{-2mm}
+\paragraph{PXCC (Posix character classes)} one pattern like \verb!"([[:alpha:]]+://)?"!
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \cverb!([[:alpha:]]+://)?(([[:alnum:]]+)(:[^:@]+)?@)?([^:]+)(:[[:digit:]]+)?(/.*)?!
+\end{itemize}
+
+\vspace{-2mm}
+\paragraph{LHX (Long hex)} two patterns like \verb!"\uFF0E"!
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \cverb!(?P<g1>a)(?P<g2>b)?((?(g2)c|d))!
+\item \cverb!(?P<quote>)(?(quote))!
+\end{itemize}
+
+\paragraph{IFC (If conditionals)} six patterns like \verb!"(?(2)\))"!
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \cverb!^(\()?([^()]+)(?(1)\))$!
+\item \cverb@(?<=[\w)\]"\']|([ ]))(===?|!==?|[<>]=?)(?=[\w({\["\']|(?(1)\b\b|[ ]))@
+\item \cverb!(?<=[\w)\]"\']|([ ]))(=|[-+*/%^&|]=|<<=|>>>?=)(?=[\w({\["\']|(?(1)\b\b|[ ]))!
+\item \cverb!(?<=[\w)\]"\']|([ ]))([-+*/%^]|&&?|\|\|?|<<|>>>?)(?=[\w({\["\']|(?(1)\b\b|[ ]))!
+\item \cverb!([^()]+?)\s*(\()?(\d{4})(?(2)\))$!
+\item \cverb@^((?:https?://)?(?:youtu\\.be/|(?:\\w+\\.)?youtube(?:-nocookie)?\\.com/)@\verb!...<107>!
+\end{itemize}
+
+\subsection*{22 Patterns causing some parsing error}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \cverb!!
+\item \cverb!*!
+\item \cverb!\u!
+\item \cverb![]!
+\item \cverb![ \n]*[[]!
+\item \cverb!--.*[\n\Z]!
+\item \cverb!\here.(\w*)!
+\item \cverb!?(i)reftest!
+\item \cverb!\$\Id[^$]*\$!
+\item \cverb!.NET[\/\]VC7!
+\item \cverb!?(i)mochitest!
+\item \cverb!NET 2003[\/\]VC7!
+\item \cverb![\ud800-\udfff]!
+\item \cverb!\citation\{([^\}]+)\}!
+\end{itemize}
+\end{multicols}
+
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \cverb![^\t\n\r -~\x85\xa0-\\uD7FF\\uE000-\\uFFFD]!
+\item \cverb!\n    (?P<SN>.*?)         # NG(SN)!\verb!...<520>!
+\item \cverb!^\n\s*((?:-|\w|\&|\*)+)  # return type\n\s+!\verb!...<166>!
+\item \cverb!class _EOF!\verb!...<27,347>! (astroid captured a whole file)
+\item \cverb!\n(?P<ret>(-|\\w|\\&|\\*)+\\s*)  # return type\n\\s+!\verb!...<170>!
+\item \cverb![\x00-\x08]|[\x0b-\x0c]|[\x0e-\x19]|[\ud800-\udfff]|[\ufffe-\uffff]!
+\item \cverb@([\ud800-\udbff](?![\udc00-\udfff])|(?<![\ud800-\udbff])[\udc00-\udfff])@
+\item \cverb![\x01-\x08\x0b\x0e-\x1f\x7f-\x9f\ud800-\udfff\ufdd0-\ufdef\ufffe!\verb!...<327>!
+\end{itemize}
+
+\subsection*{73 Patterns requiring Unicode support to parse}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \cverb@(?u)([^\w\.\'\-\/,&])@
+\item \cverb@(?u)[^-\w.]@
+\item \cverb@(?u)\((CODE|ID)[^\)]*\)@
+\item \cverb@(?u)\b\w{2,25}\b@
+\item \cverb@(?u)\w+@
+\item \cverb@([-\s]+)(?u)@
+\item \cverb@(\$+\w*|[^\W\d]\w*)(?u)@
+\item \cverb@/\*.*?\*/(?us)@
+\item \cverb@<(.+?)(\s.*?)?>.*?</.+?>(?uism)@
+\item \cverb@\s+(?u)@
+\item \cverb@\s+(?um)@
+\item \cverb@\w+(?u)@
+\item \cverb@(?P<fn>[^\u59d3]+)\u59d3?@
+\item \cverb@(?u)#(x?\d+)@
+\item \cverb@(?u)%\(.+?\)s@
+\item \cverb@(?u)&(.+?);@
+\item \cverb@(?u)\b\w\w+\b@
+\item \cverb@([\u2222\u2223])@
+\item \cverb@([\x80-\uffff])@
+\item \cverb@[.\u3002\uff0e\uff61]@
+\item \cverb@[0-9\uff10-\uff19]{1,2}\u5206@
+\item \cverb@[0-9\uff10-\uff19]{1,2}\u65e5@
+\item \cverb@[0-9\uff10-\uff19]{1,2}\u6642@
+\item \cverb@[0-9\uff10-\uff19]{1,2}\u6708@
+\item \cverb@[0-9\uff10-\uff19]{2}\u5e74@
+\item \cverb@[0-9\uff10-\uff19]{4}\u5e74@
+\item \cverb@[\-\u30fc]@
+\item \cverb@[\\\"\a\b\f\r\v\x80-\uffff]@
+\item \cverb@[\n \u200b]@
+\item \cverb@[\n\u2029]@
+\item \cverb@[\u0430-\u044f]+@
+\item \cverb@[\u0430-\u044fa-z]+@
+\item \cverb@[\u0621\u0624\u0626]@
+\item \cverb@[\u064b-\u0652]@
+\item \cverb@[\u2014\u2018]@
+\item \cverb@[\u201c\u201d]@
+\item \cverb@[^\t\n\r -\ud7ff\ue000-\ufffd]@
+\item \cverb@\n[^\n\u2029]*$@
+\item \cverb@\u0432\u0447\u0435\u0440\u0430@
+\item \cverb@\u2019@
+\item \cverb@\u6642\u534a@
+\item \cverb@\u7b7e\u5230(\d+)\u5929@
+\item \cverb@\u8f6c\u53d1\u5fae\u535a@
+\item \cverb@^[\u0622\u0623\u0625]@
+\item \cverb@[\\\"\a\b\f\r\v\t\n\x80-\uffff]@
+\item \cverb@[\x00-\x1f\\"\b\f\n\r\t\u2028\u2029]@
+\item \cverb@\u5348\u5f8c|PM|\uff30\uff2d|pm|PM@
+\item \cverb@[^\t\n\r -~\x85\xa0-\ud7ff\ue000-\ufffd]@
+\item \cverb@(?u)^ \t]*==[ \t]*(\w)[ \t]*==[ \t]*\n@
+\item \cverb@\u0440\u0443\u0441\u0441\u043a\u0438\u0439@
+\item \cverb@\u0441\u0435\u0433\u043e\u0434\u043d\u044f@
+\item \cverb@([\x20\x21\x23-\x5B\x5D-\x7E\xa0-\uffff]+)@
+\end{itemize}
+\end{multicols}
+
+
+
+
+\begin{itemize}[noitemsep,topsep=0pt]
+\item \cverb@\u5e73\u6210|[Hh][0-9\uff10-\uff19]{2}\u5e74@
+\item \cverb@<B\s+CLASS="function"\s*>(.*?)\(\)</B\s*>(?uism)@
+\item \cverb@[\\'"`\u2018\u2019\u201c\u201d\u2032\u2033\u2034]+@
+\item \cverb@[0-9\uff10-\uff19]{1,2}[:\uff1a][0-9\uff10-\uff19]{1,2}@
+\item \cverb@(?u)/\\|\/|\||\:|\?|\*|"|<|>|[^\u0000-\u001f\u007f-\u009f]/@
+\item \cverb@(?u)\.|\\|\/|\||\:|\?|\*|"|<|>|[^\u0000-\u001f\u007f-\u009f]@
+\item \cverb@[0-9\uff10-\uff19]{1,2}[/\uff0f\-\u30fc][0-9\uff10-\uff19]{1,2}@
+\item \cverb@\u043e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432@\verb!...<38>!
+\item \cverb![\x00-,/:-@\[-\^`\{-\xb6\xb8-\xbf\xd7\xf7\u0132-\u0133!\verb!...<2769>!
+\item \cverb![\x00-@\[-\^`\{-\xbf\xd7\xf7\u0132-\u0133\u013f-\u0140!\verb!...<2013>!
+\item \cverb@\u0441\u0434\u0430\u0435\u0442\u0441\u044f \u0432 \u0441@\verb!...<86>!
+\item \cverb@(\u0434\u043e\u043c\u0438\u043a|\u0434\u043e\u043c\u0438\u043a@\verb!...<557>!
+\item \cverb@[0-9\uff10-\uff19]{4}[/\uff0f\-\u30fc][0-9\uff10-\uff19]{1,2}@\verb!...<40>!
+\item \cverb•[\t +!#$%&()*\-/<=>?@\[\\\]^_{|}:;,.\u2026\u2012\u2013\u2014\u2015\xab\xbb]+•
+\item \cverb@\u05d4\u05e6\u05e2\u05ea ([^\(,]*)(.*?\((.*?)\))?(.*?\((.*?)\))?(.*?,(.*))?@
+\item \cverb@([0-9]+)/([0-9]+)/([0-9]+)[\s\S]\u05d1\u05e9\u05e2\u05d4[\s\S]([0-9]+):([0-9]+)@
+\item \cverb@\u05d4\u05d3\u05d9\u05d5\u05e0\u05d9\u05dd \u05d1\u05ea\u05d0\u05e8\u05d9\u05da@
+\item \cverb@[\s!?,\u3002\uff1b\uff0c\uff1a\u201c \u201d\uff08 \uff09\u3001\uff1f\u300a\u300b\xb7.]@
+\item \cverb@[\s!?,\u3002\uff1b\uff0c\uff1a\u201c \u201d\uff08 \uff09\u3001\uff1f\u300a\u300b\xb7.]+@
+\item \cverb@[\s!?,\u3002\uff1b\uff0c\uff1a\u201c \u201d\uff08 \uff09\u3001\uff1f\u300a\u300b\xb7]@
+\item \cverb@[\s!?,\u3002\uff1b\uff0c\uff1a\u201c \u201d\uff08 \uff09\u3001\uff1f\u300a\u300b\xb7]+@
+\end{itemize}
