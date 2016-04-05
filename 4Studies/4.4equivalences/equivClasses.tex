@@ -23,7 +23,7 @@ Each equivalence class has multiple \emph{nodes} which each represent different 
 
 As an example of one equivalence class, consider the LWB group.  Each node in the LWB group has a lower bound on repetitions. Regexes \cverb!A{2,}!, \cverb!AAA*! and \cverb!AA+! are semantically equivalent regexes belonging to the nodes L1, L2 and L3, respectively.
 The undirected edges between nodes define possible refactorings.
-Identifying the best direction for each arrow in the possible refactorings is discussed in Section~\ref{sec:ordering}.
+% Identifying the best direction for each arrow in the possible refactorings is discussed in Section~\ref{sec:ordering}.
 
 Figure~\ref{fig:refactoringTree} uses specific examples to more clearly illustrate the characteristics of each node.  However, the \verb!`A'!s in the LWB group abstractly represent any element, and the number of elements is free to vary. We chose the lower bound repetition threshold of 2 for illustration; in practice this could be any number, including zero.
 Next, we describe the characteristics of all nodes of each group in detail:

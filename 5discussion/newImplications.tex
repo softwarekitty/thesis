@@ -4,6 +4,9 @@ The features of Rex in particular are of importance in this thesis, as Rex was u
 
 contrast developer preferences with refactorings from sections
 
+Backslash explosion - how does it affect readability?
+
+
 
 % \paragraph{Use Of Backreferences}\todoLast{Think about the part of all regex that use any back-references and so are not representing regular languages (vs those that are).}
 
@@ -28,3 +31,17 @@ When asked if they have ever used the OPT feature (\verb!(?i)!), 78\% (14) said 
  I use split all the time, usually splitting on a comma or tab, but this needs to be flexable, why not regex?  This qualifies as worthwhile for future work.
 
  \subsection{Can't see the forest for the antecdotal evidence}
+
+ % There are many more ways to approach understandability, such as deciding what content is captured by a regex, identifying all the matched substrings in a block of text, deciding which regexes in a set are equivalent, finding the minimum modification to some text so that a given regex will match it, and many more.  One of the most straightforward ways to address understandability is to directly ask software professionals which from a list of equivalent regexes they prefer and why.  It may also be meaningful to provide some code that exists around a regex as context.  The example regexes we used were inspired by real regexes, but at least one side of the refactoring was contrived and we did not focus on any specific community (the 1544 projects we obtained regexes from were randomly obtained).  If understandability measurements used regexes sampled from the codebase of a specific community(most frequently observed regexes, most buggy regexes, regexes on the hottest execution paths, etc.), and measured the understanding of programming professionals working in that community, then the measurements and the refactorings they imply would be more likely to have a direct and certain positive impact.
+
+
+% the most preferred nodes for each group are C1, D2, T1, L2, and S2.  In this section the practical issues of
+% With one exception, these are the same for recommendations based on projects. The difference is that L3 appears in more projects than L2, so it is not clear which is more desirable based on community standards.
+
+
+% \paragraph{Understandability}
+% We identified and utilized three new ways to measure understandability of regexes: deciding if certain strings match or not, composing strings that are supposed to match, and measuring the frequency of a regex type in a community.
+% In another study, we did a survey where software professionals indicated that understandability of regexes they find in source code is a major pain point.  In this study, our participants indicated that they read about twice as many regexes as they compose.  What is the impact on maintainers, developers and contributors to open-source projects of not being able to understand a regex that they find in the code they are working with?  Presumably this is a frustrating experience - how much does a confusing regex slow down a software professional?  What bugs or other negative factors can be attributed to or associated with regexes that are difficult to understand?  How often does this happen and in what settings?  Future work could tailor an in-depth exploration of the overall costs of confusing regexes and the potential benefits of refactoring or other treatments for confusing regexes.
+
+% Presently, we are not aware of coding standards for regular expressions, but this work suggests that enforcing standard representations for various regex constructs could ease comprehension.
+
