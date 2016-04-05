@@ -1,26 +1,14 @@
 \subsection{Discussion of survey results}
-\subsubsection{Implications}
 
+\subsubsection{Implications}
 The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regexes being hard to read and hard to write, and express a respect for the power of regexes but also a hesitancy or caution concerning their use.  This supports the need for research into regular expressions to improve the state-of-the-art.
 
 Common uses of regexes include locating content within a file, capturing parts of strings, and parsing user input.  Although ephemeral users are more common than persistent users, persistent users tend to use regexes more frequently than ephemeral users in a variety of tasks types, especially in counting substrings, parsing user input, capturing strings and parsing generated text.  This implies that improving the state-of-the-art for different classes of regular expression users will mean focusing on different goals.
 
-\subsubsection{Opportunities for future work}
-
-\paragraph{Studying ephemeral regexes}
-Although these ephemeral regexes are more numerous than those used in general-purpose languages, collecting them for analysis presents a unique challenge, and may require the cooperation of an institution or collective.  Future work could
+In terms of refactoring implications, developers communicated a preference for using default character classes when possible, using numbered capture groups over named capture groups, and choosing KLE over ADD if all else is equal.
 
 \subsubsection{Threats to validity}
+The greatest threat to validity is that this is a small sample set.  This threat is mitigated by corroborating results with other studies, so that combined the results can be interpreted with confidence.
+Another threat to validity is that survey participants may tend to say what they believe they are supposed to say.  This threat is mitigated by the disclaimer given at the beginning of the survey to `answer as accurately as possible, not guessing what is the desired answer and providing that'.  Also, the (overall) sincere and professional tone of responses indicates that respondents took the survey seriously, providing quality answers.
 
-
-% Self-identification data is available in Table~\ref{table:surveyQ01T3}, as is data for techincal~\ref{table:surveyQ04} and actvity~\ref{table:surveyQ05} usage frequency.  Five feature usage data~\ref{table:surveyQ09T13}, general usage frequency data~\ref{table:surveyQ078}, back-reference preferences data~\ref{table:surveyQ2021}, .
-
-
-% The eight most common features are found in over 50\% of the projects.
-% Shown in Table~\ref{table:featureStats}, the STR and END features are present in over half of the scanned projects containing utilizations.  In our survey, over half (56\%) of the respondents answered that they use endpoint anchors frequently or very frequently, and none of them claimed to never use them.
-
-% The LZY feature  is present in over 36\% of scanned projects with utilizations, and yet was not supported by two of the four major regex projects we explored, brics and RE2.
-% In our developer survey, 11\% (2) of participants use this feature frequently and 6 (33\%) use it occasionally, showing a modest impact on potential users.
-
-% When survey participants were asked if they prefer to always use numbered (BKR) or named (BKRN) back references, 66\% (12) of survey participants said that they always use BKR, and the remaining 33\% (6) said ``it depends."  No participants preferred named capture groups.  BKR is present in 5\% of scanned projects, while BKRN is present in only 1.7\%, which corroborates our findings that numbered  are generally preferred over named capture groups.
 

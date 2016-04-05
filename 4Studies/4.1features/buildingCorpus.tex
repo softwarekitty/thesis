@@ -1,6 +1,6 @@
 \subsection{Building the corpus}
 \subsubsection{Selecting a body of patterns from a set of utilizations}
-\paragraph{Behavioral flags and patterns with variables excluded} To guarantee that the behavior of regexes used for analysis depended only on the pattern extracted from a utilization, the \dbfetch{percentBadFlags}\%  of utilizations using flags were excluded from further analysis.  An additional \dbfetch{percentInvalidPattern}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable).
+\paragraph{Patterns with behavioral flags and variables are excluded} To guarantee that the behavior of regexes used for analysis depended only on the pattern extracted from a utilization, the \dbfetch{percentBadFlags}\%  of utilizations using behavioral flags (default and debug do not affect engine behavior) were excluded from further analysis.  An additional \dbfetch{percentInvalidPattern}\% of utilizations contained patterns that could not be compiled because the pattern was non-static (e.g., used some runtime variable).
 
 \paragraph{Normalizing patterns} All distinct patterns from the remaining \dbfetch{percentCleanUsages}\% (\dbfetch{nCleanUsages}) of utilizations were pre-processed by removing Python quotes (\verb!`\\W!' becomes \verb!\\W!), and unescaping escaped characters (\verb!\\W! becomes \verb!\W!).  After these filtering steps, \dbfetch{nDistinctPatterns} distinct patterns remained.
 

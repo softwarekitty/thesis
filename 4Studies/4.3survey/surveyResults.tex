@@ -1,62 +1,60 @@
 \subsection{Summary of survey results}
 \label{sec:surveyResults}
 
-\todoLast{Adjust to match design sections}
+\paragraph{Self-qualifying questions} The survey was completed by 18 participants (82\% response rate) that identified as software developer/maintainers.  Respondents have an average of nine years of programming experience ($\sigma = 4.28$).  Complete response data is available in Table~\ref{table:surveyQ01T3}.
 
-The survey was completed by 18 participants (82\% response rate) that identified as software developer/maintainers.
-Respondents have an average of nine years of programming experience ($\sigma = 4.28$).
-On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly.
-Table~\ref{tab:regexenviron} shows how frequently participants compose regexes using each of several languages and technical environments.
-Six (33\%) of the survey participants report to compose regexes using general purpose programming languages (e.g., Java, C, C\#) 1-5 times per year and five (28\%) do this 6-10 times per year.  For command line usage in tools such as grep, 6 (33\%) participants use regexes 51+ times per year. Yet, regexes were rarely used in query languages like SQL. Upon further investigation, it turns out the surveyed developers were not on teams that dealt heavily with a database.
+\subsubsection{Contextual usage frequency}
+\paragraph{Estimating composition frequency}\label{sec:compositionFrequency} On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly.  Complete response data is available in Table~\ref{table:surveyQ078}.
 
 \input{table/regexenviron}
 
+Table~\ref{tab:regexenviron} summarizes how frequently participants compose regexes using each of several languages and technical environments (complete response data is available in Table~\ref{table:surveyQ04}.)  Six (33\%) of the survey participants report to compose regexes using general purpose programming languages (e.g., Java, C, C\#) 1-5 times per year and five (28\%) do this 6-10 times per year.  For command line usage in tools such as grep, 6 (33\%) participants use regexes 51+ times per year. Yet, regexes were rarely used in query languages like SQL. Upon further investigation, it turns out the surveyed developers were not on teams that dealt heavily with a database.
+
 \input{table/regextasks}
 
-Table~\ref{table:regextasks} shows how frequently, on average, the participants use
+Table~\ref{table:regextasks} summarizes how frequently, on average, the participants use
 regexes for various tasks.
-Participants answered questions using a 6-point likert scale including very frequently~(6), frequently~(5), occasionally~(4), rarely~(3), very rarely~(2), and never~(1).
-Averaging across participants, among the most common usages are capturing parts of a string and locating content within a file, with both occurring somewhere between occasionally and frequently.
-
-\input{table/regexPersistingTasks}
-\subsubsection{Ephemeral vs persistent users}
-Only 27\% (5)
-% (L,N,P,Q,T) T counts be
-of participants wrote regular expressions that persist (general purpose, scripting, etc.) more frequently than in a text editor or command line tool (where they will not persist).  This result indicates that non-persistent, or \emph{ephemeral} regexes are most frequently used type of regexes.  It also suggests that a distinction can be made between types of regular expression users: those who primarily use regexes that are used once and then forgotten (ephemeral users), and those who primarily use regexes that are maintained as an artifact (persistent users).
-
-The most frequently performed task according to Table~\ref{table:regextasks} is `locating content within a file or files'.  This result agrees with the idea that regexes are used more often in text editors and command line tools than in general purpose languages, since locating content is often done within a text editor.  The five participants who write persistent regexes more often also answered the task frequency questions differently.  Table~\ref{table:regexPersistingTasks} describes the tasks more frequently performed by persistent users than by ephemeral users.
+Participants answered questions using a 6-point likert scale including very frequently~(6), frequently~(5), occasionally~(4), rarely~(3), very rarely~(2), and never~(1).  Complete response data is available in Table~\ref{table:surveyQ05}.  Averaging across participants, among the most common usages are capturing parts of a string and locating content within a file, with both occurring somewhere between occasionally and frequently.
 
 \input{table/regexfeaturegroups}
 
+\subsubsection{Feature usage questions}
+
+\paragraph{Rarely used OPT and DBB features}  When asked if they have ever used the OPT feature (\verb!(?i)!), 78\% (14) said that they had never used it, with the rest saying they had.  However the reverse is true for the DBB feature, with 78\% (14) saying they \emph{had} used it before, and the rest saying they had not.  Complete response data is available in Table~\ref{table:surveyQ2529}.
+
+\paragraph{Use of the WRD default}  A special investigation was made into the WRD default after a trend in the corpus was observed where, with some frequency, custom character classes are made that slightly modify the WRD default.  For example, the regex \cverb![\w-]! might be used to represent characters allowed in a username.
+Participants were asked what they use the WRD default character class for, but the intention of the question may not have been clear enough, because 50\% (9) participants said they don't know or don't use it, and 44\% (8) participants said they use it to match WRD characters.  However, one participant said `often we pair it with other characters we know are found in traditional writing such as punctuation marks.'.  Complete response data is available in Table~\ref{table:surveyQ28}.
+
+\paragraph{Features poorly supported by analysis tools} Participants were asked about how frequently they used five feature groups poorly supported by analysis tools.  Their responses are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy repetition and look-ahead features are rarely used and capture groups and endpoint anchors are occasionally to frequently used. Complete response data is available in~\ref{table:surveyQ09T13}.
+
+\subsubsection{Refactoring preference questions}
+\paragraph{Pairing ANY with KLE or ADD}  Participants were asked if, given a guarantee that it would not affect their use case, they would prefer to use ANY with KLE (\verb!*!) or with ADD (\verb!+!).  Participants generally preferred to use KLE, with 39\% (7) saying `always use \cverb!.*!', 28\% (5) saying `use \cverb!.*! more than \cverb!.+!', 22\% (4) saying `use \cverb!.+! more than \cverb!.*!', and 11\% (2) saying  `always use \cverb!.+!'.
+Semantically, there is a difference between these two, which triggered a rich, skeptical response in the section asking them to explain their preference.  Aside from this understandable skepticism, those who preferred ADD were referring to the expected content, and those who preferred KLE said that they are `used to using' KLE or `need \verb!*! more often'.  Complete response data is available in Table~\ref{table:surveyQ1819}.
+
+\paragraph{CCC vs defaults} Semantically equivalent regexes can be created using the CCC (\verb![...]!) feature, or using default character classes like DEC (\verb!\d!) (e.g, \cverb![0-9]! $\equiv$ \cverb!\d!).  Survey participants were asked if they use only CCC, use CCC more than default, use both equally, use default more than CCC or use only default.  Results for this question are shown in Table~\ref{tab:cccvsdefault}, with 67\% (12) indicating that they use defaults the most.
+Participants who favored CCC indicated that ``it is more explicit," whereas the participants who favored default character classes said,  ``it is less verbose" and ``I like using built-in code."  Complete response data is available in Table~\ref{table:surveyQ1415}.
+
+\paragraph{Named vs Numbered Backreferences}  Participants were asked whether, assuming a backreference was needed, they would `always use numbered backreferences', `it depends', or  `always use named backreferences'.  No participants said that they would always use named backrefernces, with 33\% (6) participants saying `it depends', and 67\% (12) saying they would always use numbered backreferences.  For the three participants who responded to why `it depends', two said that the more captures they need, the more likely they are to use named backreferences.  The third response seemed to indicate that they have never needed to use backreferences. Complete response data is available in Table~\ref{table:surveyQ2021}.
+
 \input{table/cccvsdefault}
 
-\subsubsection{Feature-specific questions}
-The pattern language for Python, which is used to compose regexes, supports default character classes like the ANY or dot character class: \cverb!.! meaning, `any character except newline'.
-It also supports three other default character classes: \cverb!\d!, \cverb!\w!, \cverb!\s! (and their negations). All of these default character classes can be simulated using the custom character class (CCC) feature, which can create semantically equivalent regexes.
-For example  the decimal character class: \cverb!\d! is equivalent to a CCC containing all 10 digits:  \cverb!\d! $\equiv$ \cverb![0123456789]! $\equiv$ \cverb![0-9]!.
+\subsubsection{Best practices questions}
+\paragraph{Testing and composition tools} Participants answered these questions using a 7-point likert scale using always (7) as a seventh point in addition to the the six points outlined in Section~\ref{sec:compositionFrequency}.
 
-Other default character classes such as the word character class: \cverb!\w! may not be as intuitive to encode in a CCC: \cverb![a-zA-Z0-9_]!.
+Developers were asked how frequently they test their code, with 89\% (16) indicating that they test their code at least frequently (5 said `frequently', 7 said `very frequently', 4 said `always').  The two outliers indicated `occasionally' and `never'.
 
-Survey participants were asked if they use only CCC, use CCC more than default, use both equally, use default more than CCC or use only default.  Results for this question are shown in Table~\ref{tab:cccvsdefault}, with 67\% (12) indicating that they use default the most.
+Developers were also asked how frequently they test their regexes, with 89\% (16) indicating that they test their code at least occasionally (4 said `occasionally', 5 said `frequently', 4 said `very frequently' and 3 said `always').  The two outliers indicated `rarely' and `very rarely'.
 
-Participants who favored CCC indicated that ``it is more explicit," whereas the participants who favored default character classes said,  ``it is less verbose" and ``I like using built-in code."
+Comparing testing frequency between regex and other code for each participant, 39\% (7) test code more frequently than regex, 44\% (8) test both with the same frequency, and 17\% (3) test regex more frequently than code.
 
-To further explore how participants use various regex features, participants were asked five questions about how frequently they use specific related groups of features:
-\begin{itemize} \itemsep -2pt
-   \item endpoint anchors (STR, END): \cverb!^! and \cverb!$!
-   \item capture groups(CG): \cverb!(capture me)!
-   \item word boundaries (WNW): \cverb!word\b!
-   \item (negative) look-ahead/behinds (LKA, NLKA, LKB, NLKB): \cverb!a(?=bc)!, \cverb!(?<!x)yz!, \cverb!(?<=a)!, \cverb|a(?!yz)|
-   \item lazy repetition (LZY): \cverb!ab+?!, \cverb!xy{2,3}?!
-\end{itemize}
+When asking if they use testing tools, 50\% (9) indicated that they use some tool, with 33\% (6) using an online tool like \url{regex101.com} where a regex and input string are entered, and the input string is highlighted according to what is matched.  The remaining 17\% (3) developers who used testing tools used Scalacheck, Regexlib and IDE plugins.
+Of the 9 developers who did not use testing tools, 17\% (3) indicated that they write their own tests for their regexes, and 33\% (6) answered `none'.  Complete response data is available in in Table~\ref{table:surveyQ22T24}.
 
-Results are shown in Table~\ref{tab:regexfeaturegroups}, indicating that lazy repetition and look-ahead features are rarely used and capture groups and endpoint anchors are occasionally to frequently used.
+\paragraph{Parsing HTML} Participants were asked if they would rather use a custom parser or a regex, and why.  Later they were asked if they had ever used regex to parse HTML, but actually these three questions were related, because using regex to parse HTML (instead of a custom parser), is a common mistake.
+Only 28\% (5) of the participants admitted to using regex on HTML.  When asked if they would `use only custom parser' or `use only regex', or `it depends', 22\% (4) said they would favor the parser, and only 11\% (2) said they would favor regex.  The remaining 67\% (12) said `it depends'.  Of those who said it depends, there was much agreement that parsers are more powerful, better at handling complexity, and provide more readable code.  Regexes were mentioned positively for handling less structured inputs, form validation and `one-off' programs.  Complete response data is available in Table~\ref{table:surveyQ161726}.
 
-\subsubsection{Testing regex and composition tools}
 
-Participants were asked if they test their code, test their regex and if they do test their regex, what tools are used (if any).  Using a 7-point likert scale similar to those already described that includes `always' as a seventh point, developers indicated that they test their regexes with the same frequency as they test their code (average response was 5.2, which is between frequently and very frequently).  Half of the  developers indicate that they use external tools to test their regexes, and the other half indicated that they only use tests that they write themselves. Of the nine developers using tools, six mentioned online composition aides such as \url{regex101.com} where a regex and input string are entered, and the input string is highlighted according to what is matched.
 
-\subsubsection{Pain points}
-\label{sec:painPoints}
-In question 27 of the survey, participants were asked an open-ended question about problems with regular expressions: `What pain points have you encountered with regular expressions?'.  Three main categories of response were observed. The most common, ``hard to compose," was represented in 61\% (11) responses. Next, 39\% (7) developers responded that regexes are ``hard to read" and 17\% (3) indicated difficulties with ``inconsistency across implementations," which manifest when using regexes in multiple languages. These responses do not sum to 18 as three developers provided multiple parts in their answers.
+\paragraph{Pain points and free responses}\label{sec:painPoints}  Participants were asked an open-ended question about problems with regular expressions: `What pain points have you encountered with regular expressions?'.  Three main categories of response were observed. The most common, ``hard to compose," was represented in 61\% (11) responses. Next, 39\% (7) developers responded that regexes are ``hard to read" and 17\% (3) indicated difficulties with ``inconsistency across implementations," which manifest when using regexes in multiple languages. These responses do not sum to 18 as three developers provided multiple parts in their answers.  Complete response data is available in Table~\ref{table:surveyQ27}.
 
+\paragraph{Anything else to add}  Participants were given a chance to add anything else that had not been asked about.  Many comments conveyed a sense of mixed feelings - that regex are useful but require caution.  Complete response data is available in Table~\ref{table:surveyQ30}.
