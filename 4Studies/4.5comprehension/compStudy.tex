@@ -37,19 +37,19 @@ To determine a match, each regex was compiled using the \emph{java.util.regex} l
 This study was implemented on Amazon's Mechanical Turk (MTurk),  a crowdsourcing platform in which requesters can create human intelligence tasks (HITs) for completion by workers. Each HIT is designed to be completed in a fixed amount of time and workers are compensated with money if their work is satisfactory. Requesters can screen workers by requiring each to complete a qualification test prior to completing any HITs.
 
 \paragraph{Worker Qualification}
-Workers qualified to participate in the study by answering questions regarding some basics of regex knowledge. These questions were multiple-choice and asked the worker to describe what the following regexes mean: \cverb!a+!, \cverb!(r|z)!, \cverb!\d!, \cverb!q*!, and \cverb![p-s]!. To pass the qualification, workers had to answer four of the five questions correctly.
+Workers qualified to participate in the study by answering questions regarding some basics of regex knowledge. These questions were multiple-choice and asked the worker to describe what the following regexes mean: \cverb!a+!, \cverb!(r|z)!, \cverb!\d!, \cverb!q*!, and \cverb![p-s]!. To pass the qualification, workers had to answer four of the five questions correctly.  The qualification is available in Appendix~\ref{app:MTqualifyingTest}.
 
 \paragraph{Selecting pairwise comparisons}
 
- Using the regexes in the corpus as a guide, ten metagroups were created for this study.  The first six metagroups (re-numbered for simplicity) each contain three pairs of regexes.  The last four metagroups contain two sets of three equivalent regexes.
+ Using the regexes in the corpus as a guide, ten metagroups were created for this study.  The first six metagroups (re-numbered for simplicity) each contain three pairs of regexes.  The last four metagroups contain two sets of three equivalent regexes.  A list of the specific regexes selected for these metagroups is available in Appendix~\ref{app:MTstudyInput}.
 
 \begin{multicols}{2}
 \begin{itemize}[noitemsep,topsep=0pt]
-\item[M1] S1 vs S2
-\item[M2] C1 vs C4, focusing on DEC
-\item[M3] C1 vs C4, focusing on WRD
-\item[M4] C4 vs (C3 or C2)
-\item[M5] L2 vs L3
+\item[M1]  S1 vs S2
+\item[M2]  C1 vs C4, focusing on DEC
+\item[M3]  C1 vs C4, focusing on WRD
+\item[M4]  C4 vs (C3 or C2)
+\item[M5]  L2 vs L3
 \item[M6]  T1 vs T3
 \item[M7]  D1 vs D2 vs D3
 \item[M8]  C1 vs C2 vs C5
@@ -68,10 +68,10 @@ An example of pairwise comparisons from a triple is a semantic group with regexe
 The end result is 35 pairwise comparisons across 14 edges from Figure~\ref{fig:refactoringTree}.
 
 \paragraph{Composing Tasks}
-For each of the 26 groups of regexes, five strings were created, where at least one matched and at least one did not match. These strings were used to compute the matching metric.
+For each of the 26 groups of regexes, five strings were created, where at least one matched and at least one did not match. These strings were used to compute the matching metric. A list of the specific strings created is available in Appendix~\ref{app:MTstudyInput}.
 
-Once all the regexes and matching strings were collected, we created tasks for the MTurk participants as follows:
-randomly select a regex from each of the 10 metagroups. Randomize the order of these 10 regexes, as well as the order of the matching strings for each regex. After adding a question asking the participant to compose a string that each regex matches, this creates one task on MTurk.   This process was completed until each of the 60 regexes appeared in 30 HITs, resulting in a total of 180 total unique HITs.
+Once all the regexes and matching strings were collected, tasks for the MTurk participants were created as follows: randomly select a regex from each of the 10 metagroups. Randomize the order of these 10 regexes, as well as the order of the matching strings for each regex. The randomly selected regexes and shuffled matchings strings populate a template (Appendix~\ref{app:MTtemplate}).  This template also includes a request for participants to compose a string that matches each of the 10 regexes.  Each populated template created one HIT.
+This process was completed until each of the 60 regexes appeared in 30 HITs, resulting in a total of 180 total unique HITs.
 An example of a single regex, the five matching strings and the space for composing a string is shown in Figure~\ref{fig:exampleQuestion}.
 \paragraph{Worker outcomes}
 Workers were paid \$3.00 for successfully completing a HIT, and were only allowed to complete  one HIT.  The average completion time for accepted HITs was 682 seconds (11 mins, 22 secs).

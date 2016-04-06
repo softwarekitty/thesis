@@ -1,5 +1,5 @@
 \section*{Description Of Studied Features}
-\label{sec:featureDescriptions}
+\label{app:featureDescriptions}
 
 \subsection*{Elements}
 
@@ -40,7 +40,7 @@ In addition to providing logical grouping, the text matched by the contents of t
 \end{description}
 
 \subsection*{Options}
-\label{sec:options}
+\label{app:options}
 \begin{description} \itemsep -1pt
 \item[OPT:] The \emph{options} feature allows the user to modify the engine's matching behavior within the regex itself, instead of using flag arguments passed to the regex engine.  For example the regex \cverb!(?i)[a-z]! uses the option \cverb!(?i)! which switches on the ignore-case flag, so that this regex will match \verb!"lower"! and \verb!"UPPER"!.  Other options include \cverb!(?s)! for single-line mode making ANY match all characters, \cverb!(?m)! for multiline mode, making STR and END match the beginning and ending of every line, \cverb!(?l)! may change the meaning of default character classes if a locale has been set, \cverb!(?x)! ignores whitespace between \emph{tokens} and \cverb!(?u)!.  In Python Regular Expressions, options can appear anywhere within the regex and will have the same effect.
 \end{description}
@@ -63,7 +63,7 @@ In addition to providing logical grouping, the text matched by the contents of t
 \end{description}
 
 \subsubsection*{Order of operations}
-\label{sec:orderOfOperations}
+\label{app:orderOfOperations}
 The order of operations is:
 \begin{enumerate}\itemsep -1pt
 \item repetition features

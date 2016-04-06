@@ -4,11 +4,11 @@
 
 \input{table/features/libraryStandards}
 
-One issue that has persisted as a major pain point in the study of regular expressions is the lack of a concise summary comparing what features are supported in different regular expression language variants.  This section provides such a summary, and goes on to investigate what features are supported in reasoning tools for regular expressions.  In the tables presented in this section the filled circle (\yes) means that a feature is supported, and the empty circle (\no) means that a feature is not supported (cavats about comparing features are described in Section~\ref{sec:caveats}).
+One issue that has persisted as a major pain point in the study of regular expressions is the lack of a concise summary comparing what features are supported in different regular expression language variants.  This section provides such a summary, and goes on to investigate what features are supported in reasoning tools for regular expressions.  In the tables presented in this section the filled circle (\yes) means that a feature is supported, and the empty circle (\no) means that a feature is not supported (cavats about comparing features are described in Appendix~\ref{app:caveats}).
 % , and in common text editors and IDEs.
 
 \subsubsection{Libraries providing regular expression functionality}
-For most popular programming languages, various regular expression functions are provided using standard libraries or are built into the language.  Table~\ref{table:libraryStandards} describes the standard regular expression libraries or built-ins \emph{provided as a core language feature} for all but three of the top 20 most popular languages ordered according to the TIOBE\footurl{http://www.tiobe.com/tiobe_index} index. The C, Visual Basic and Assembly Language languages (ranks 2, 12 and 13, respectively) do not provide built-in regular expression support and so are not shown.  Alternative libraries are discussed in Section~\ref{sec:alternateLibraries}.
+For most popular programming languages, various regular expression functions are provided using standard libraries or are built into the language.  Table~\ref{table:libraryStandards} describes the standard regular expression libraries or built-ins \emph{provided as a core language feature} for all but three of the top 20 most popular languages ordered according to the TIOBE\footurl{http://www.tiobe.com/tiobe_index} index. The C, Visual Basic and Assembly Language languages (ranks 2, 12 and 13, respectively) do not provide built-in regular expression support and so are not shown.  Alternative libraries are discussed in Appendix~\ref{app:alternateLibraries}.
 
 
 
@@ -17,18 +17,19 @@ For most popular programming languages, various regular expression functions are
 \afterpage{\clearpage}
 
 \subsubsection{Ranked feature support}
-Table~\ref{table:rankedFeatureSupport} compares support for the 34 features studied in this thesis amongst Perl, Python, Ruby, .Net, JavaScript, RE2, Java and POSIX ERE (i.e., grep, sed, etc.) as determined through consulting documentation and performing experiments.  More details about the techniques used to decide if a feature is supported by a language or not are discussed in Section~\ref{sec:sourcesAndTechniques}.  The rationale for selecting these languages is discussed in Section~\ref{sec:languagesChosen}.
+\label{sec:rankedFeatureSupport}
+Table~\ref{table:rankedFeatureSupport} compares support for the 34 features studied in this thesis amongst Perl, Python, Ruby, .Net, JavaScript, RE2, Java and POSIX ERE (i.e., grep, sed, etc.) as determined through consulting documentation and performing experiments.  More details about the techniques used to decide if a feature is supported by a language or not are discussed in Appendix~\ref{app:sourcesAndTechniques}.  The rationale for selecting these languages is discussed in Appendix~\ref{app:languagesChosen}.
 
 No languages share the functionality of Python's ENDZ feature (preferring the LNLZ feature for that syntax).  Only RE2 and Perl support Python-style named capture groups, and only Perl supports Python-style named back-references.  JavaScript does not support options (OPT) or positive or negative look-backs (LKB, NLKB respectively).  RE2 does not support any look-arounds (LKB, NLKB, LKA and NLKA) or back-references.  POSIX ERE only supports 15 of the 34 studied features and Ruby does not support vertical whitespace (VWSP), but all remaining features are supported by all the other variants.  The top nine features by rank are supported in all eight variants.
 
-\paragraph{The studied feature set is representative}  These results support the relevance of the feature set selected for detailed study in this thesis.  The implication here is that patterns written for one engine using this feature set are very likely to be interpreted the same way by other engines, which is good for portability.
+\paragraph{The studied feature set is representative}  These results support the relevance of the feature set selected for detailed study in this thesis, and the selection of Python for this investigation.  The implication here is that patterns written for one engine using this feature set are very likely to be interpreted the same way by other engines, which is good for portability.  Portability was discovered to be a pain point for developers, as discussed in Section~\ref{sec:painPoints}.
 
 \afterpage{\clearpage}
 
-\input{table/features/alienFeatureSupport}
+\input{table/features/unrankedFeatureSupport}
 
-\subsubsection{Alien feature support}
-Table~\ref{table:alienFeatureSupport} describes feature support for a selection of 34 \emph{alien} features (not in the studied feature set) chosen from the eight languages being investigated.  A reference code and small example are provided to aid in understanding.  Several of these features actually represent an entire family of up to 12 features, like PXCC (e.g., \cverb![:alpha:]!), EREQ (e.g., \cverb![[=o=]]!), JAVM (e.g., \cverb!\p{javaMirrored}!), UNI and NUNI (e.g., \cverb!\pL! and \cverb!\PM!), but only one feature from such a family is selected for space considerations.  Perl is notable for supporting the most features overall, and POSIX ERE is notable for supporting the smallest number of features.  A brief explanation of the functionality of these features is available in Section~\ref{sec:alienDescriptions}
+\subsubsection{Unranked feature support}
+Table~\ref{table:unrankedFeatureSupport} describes feature support for a selection of 34 \emph{unranked} features (not in the studied feature set) chosen from the eight languages being investigated.  A reference code and small example are provided to aid in understanding.  Several of these features actually represent an entire family of up to 12 features, like PXCC (e.g., \cverb![:alpha:]!), EREQ (e.g., \cverb![[=o=]]!), JAVM (e.g., \cverb!\p{javaMirrored}!), UNI and NUNI (e.g., \cverb!\pL! and \cverb!\PM!), but only one feature from such a family is selected for space considerations.  Perl is notable for supporting the most features overall, and POSIX ERE is notable for supporting the smallest number of features.  A brief explanation of the functionality of these features is available in Appendix~\ref{app:unrankedDescriptions}
 
 \input{table/features/featuresInTools}
 
@@ -36,5 +37,5 @@ Table~\ref{table:alienFeatureSupport} describes feature support for a selection 
 \label{sec:featuresInTools}
 Tools for analyzing and reasoning about regular expressions are very attractive to language researchers, and may have industry applications for critical systems.  The more features supported by an analysis tool, the more regexes it can analyze.  On the other hand, the more features that developers of an analysis tool attempt to support, the more complex the implementation of the tool becomes.
 
-At some point developers of an analysis tool will need to choose a feature set to support.  In Table~\ref{table:featuresInTools}, the features supported by brics, hampi, Rex and Automata.Z3 are compared.  Details about how feature support was determined are provided in Section~\ref{sec:determiningToolFeatures}.
+At some point developers of an analysis tool will need to choose a feature set to support.  In Table~\ref{table:featuresInTools}, the features supported by brics, hampi, Rex and Automata.Z3 are compared.  Details about how feature support was determined are provided in Appendix~\ref{app:determiningToolFeatures}.
 Hampi supports the most features (25 features), followed by Rex (21 features), Automata.Z3 (14 features) and brics (12 features).  Rex and hampi support the 14 most commonly used features, whereas Automata.Z3 supports 11 of these features and bricks supports nine.  No projects support the four look-around features LKA, NLKA, LKB and NLKB.  Hampi supports named back-references, and no other back-reference support is available in any other tool.  Hampi supports the LZY, NCG, PNG and OPT features, whereas brics, Automata.Z3 and Rex do not.

@@ -1,5 +1,5 @@
 \section*{GitHub mining implementation}
-\label{sec:miningImplementation}
+\label{app:miningImplementation}
 
 The GitHub mining tool, named {\tt tour\_de\_source} was written in an object-oriented style by a programmer with relatively little experience in Python.
 
@@ -118,7 +118,7 @@ Early implementations of tour\_de\_source stored project metadata in a separate 
 \end{description}
 
 \subsection*{Challenges in implementation}
-\label{sec:miningChallenges}
+\label{app:miningChallenges}
 
 \paragraph{Python garbage collector ignores integers}  It was a surprise to find out that the memory used by tour\_de\_source only grew as mining went on.  Every time that astroid built a new AST, memory consumed would climb by many megabytes, with jumps as large as 350 megabytes observed.  The machines running tour\_de\_source only had 16 gigabytes of memory, and so they could only mine utilizations from a few hundred projects before failing.  Every effort was made to profile the system and find a memory leak, without positive results.  The only viable explanation found is that an AST can have a very large number of nodes, each identified by a unique integer, and none of the memory used to store these integers is reclaimed after the maps go out of scope.
 

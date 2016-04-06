@@ -39,8 +39,9 @@
 \RequirePackage{pifont}
 \newcommand{\xmark}{\ding{53}}
 
-\RequirePackage{fancyvrb,newverbs,ascii,inconsolata}
+\RequirePackage{fancyvrb,newverbs}
 \definecolor{cverbbg}{gray}{0.93}
+\definecolor{tverbbg}{gray}{0.97}
 \newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
 \newverbcommand{\cverb}
   {\setbox\verbbox\hbox\bgroup}
@@ -48,6 +49,7 @@
 \newverbcommand{\gverb}
 {\color{gray}}
 {}
+
 %  {\color{cverbbg}}
 %  {}  
 
