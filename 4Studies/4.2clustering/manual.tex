@@ -48,53 +48,63 @@ catch-all (no anchor prefix)
 
 The logical order is arranged so that special knowledge domains, like code keywords take precedence - this is so that the portion of the population that is using regexes in a particular way can be observed (not lumped into a more general category).  This guiding principal leads to the following order of identified categories (i.e., if more than one category could be used, which to use):
 
-disqualified for categorization:
+disqualified for categorization: 2
 \begin{itemize}
 \item[ L ] LONG        too long to deal with, standard is 140 chars (a tweet)
 \item[ u ] Unicode          using \cverb!\x[a-f0-9][a-f0-9]!, octal or unicode
 \end{itemize}
 
-can conceptually contain other categories, i.e., code can deal with html, but it's really code.
+containers: 5
 \begin{itemize}
 \item[ c ] known programming language keywords and/or syntax in optional code fragment, maybe containing any of the following
 \item[ g ] shell commands or arguments, indicated by the -arg syntax and tool keywords, or emphasizing `-' alone for this purpose
 \item[ h ] requires valid HTML tags or attributes like <div>,  href=...
 \item[ x ] requires populated XML-like tags or attributes, including non-html assignments like shoe=running
 \item[ = ] expresses some operator or assignment syntax, language not known (or it would be a c, g or h)
+\end{itemize}
+
+specialized regular forms: 4
+\begin{itemize}
 \item[ / ] forward-slashy paths, including local and web paths, and protocol or file system prefixes like https: or , and patterns emphasizing the `/' character alone for this purpose.  Theoretically this could contain html or xml tags, but html containing slashy paths should be categorized as h, and that seems more likely.
+\item[ f ] deals with known file extensions, or apparent ones prefixed by a period, or patterns emphasizing the `.'  alone for this purpose.  This includes .c, .xml and .html if not used in containing code.
+\item[ t ] requires a syntax representing time, like a date format
+\item[ n ] numbers - in a syntax like telephone numbers, scientific numbers, or just \\d emphasized with the intent to capture a free number
 \end{itemize}
 
-exclusive specialized regular forms
+generalized regular forms: 4
 \begin{itemize}
-\item[ f ] exclusively deals with known file extensions, or apparent ones prefixed by a period, or patterns emphasizing the `.'  alone for this purpose.  This includes .c, .xml and .html if not used in containing code.  This is a specialized identifier/message so it goes first.
-\item[ i ] exclusively deals with identifiers, which must follow rules (not free).  These can be numerical only, can have a short label/delimiter or act like a message capturing the important part of the username.  But they are specialized and used specifically to identify a user, part number, library book, etc.
-\item[ b ] exclusively bracket parsing (without a message context)
-\item[ t ] exclusively requires a syntax representing time, like a date format
-\item[ n ] exclusively numbers - in a syntax like telephone numbers, or just \\d emphasized with the intent to capture a free number
-\item[ > ] exclusively requires some SGML <angle bracket language syntax> like bracket comments <!-- --!>, or opening or closing brackets, including the single bracket characters `<' and `>'
+\item[ i ] identifiers - a non-free, rule bound section and optional label/delim .  These are specialized and used specifically to identify a user, part number, library book, etc.
+\item[ m ] messages requires a label or delimiter section, and a free section, which often is captured (including in brackets also parens, etc.).  This includes things like `your file is (.*)\\.py' which have a filename, but are not exclusively filenames
+\item[ b ] contains bracket parsing
+\item[ > ] requires some SGML <angle bracket language syntax> like bracket comments <!-- --!>, or opening or closing brackets, including the single bracket characters `<' and `>'
 \end{itemize}
 
-simple non-delimeter forms
+
+specialized exact: 2
 \begin{itemize}
-\item[ l ] label  exclusively  a literal sequence of more than one character, like `oh hai'
-\item[ r ] repeating  exclusively a simple language of repeating sequence or chars like \cverb!;+! or \cverb!a[efg]*!(no defaults)
-\item[ o ] ordinary   exclusively simple one or a handful of chars, like [aeiou] or (a|b), does not seem like a delimiter
+\item[ l ] label  exclusively a literal sequence of more than one character, like `oh hai', and nothing else
+\item[ s ] space  requires one or more whitespace, including newlines, returns, tabs and invisibles, and nothing else
 \end{itemize}
 
-near-exclusive on char type
+
+specialized inexact: 3
 \begin{itemize}
-\item[ \\ ] near-exclusively  backslash  pattern requires at least one literal backslash, which when escaped looks like \verb!"\\\\"!
-\item[ s ] near-exclusively space - all whitespace, including newlines, returns, tabs and invisibles.  Can contain other chars if whitespace is emphasized, but those chars better not look like important delimiters
-\item[ d ] near-exclusively delimiters - a catch all for shorter patterns with a small number of non-alphanumeric chars.  The intuition is that these can be used to locate and potentially separate tuples, or expected data.
-\item[ v ] near-exclusively vanilla - a regex is vanilla if it would be hard not to match it, like \cverb!\w+! and \cverb!.*!
+\item[ \\ ] backslash  requires a finite number of literal backslashes, which when escaped looks like \verb!"\\\\"!
+\item[ d ] delimiter requires one or a finite number of punctuation chars.  The intuition is that these can be used to locate and potentially separate tuples, or expected data.
+\item[ o ] ordinary   requires a finite number of ordinary chars, like [aeiou] or (a|b){3,4}
 \end{itemize}
 
-especially free forms
+
+generalized inexact: 2
 \begin{itemize}
-\item[ m ] messages, really just a label or syntax-shape including free expected content, can be captured (including in brackets also parens, etc.).  This includes things like `your file is (.*)\\.py' which have a filename, but are not exclusively filenames, or similarly with the other specialized forms
+\item[ v ] vanilla - a regex is vanilla if it would be hard not to match it, like \cverb!\w+!, \cverb!.*!, \cverb!\S!, \cverb![0-9A-z-*&^#@&,./]!.  Optionally repeats.  CCCs with 10 or fewer chars are no longer vanilla.
+\item[ r ] repeating - has repetition like \cverb!;+! or \cverb!a[efg]*!.  Because this is so low, it should not contain digits, space or word char classes, or large char classes.
+similarly with the other specialized forms
+\end{itemize}
+
+\begin{itemize}
 \item[ q ] question    substantial regular pattern but does not fit into any category
 \end{itemize}
-
 
 
 

@@ -23,12 +23,10 @@ import exceptions.PythonParsingException;
 import exceptions.QuoteRuleException;
 
 public class BehavioralCategories {
-	public static final String homePath = "/Users/carlchapman/Documents/SoftwareProjects/tour_de_source/";
-	public static final String behavioralPath = homePath +
-		"analysis/behavioral_clustering/";
-	public static final String analysisPath = homePath +
-			"analysis/";
-	public static String filtered_corpus_path = homePath + "csharp/filteredCorpus.txt";
+	public static final String homePath = "/Users/carlchapman/git/thesis/nontex/generators/";
+	public static String filtered_corpus_path = homePath + "filteredCorpus.txt";
+	public static String abcPath = homePath +
+			"behavioralSimilarityGraph.abc";
 
 	// after getting the behavioral graph in csharp,
 	// output a human-readable dump of clusters found.
@@ -37,9 +35,7 @@ public class BehavioralCategories {
 			IllegalArgumentException, QuoteRuleException,
 			PythonParsingException {
 
-		String fullInputFilePath = behavioralPath +
-			"behavioralSimilarityGraph.abc";
-		File finalGraphFile = new File(fullInputFilePath);
+		File finalGraphFile = new File(abcPath);
 
 		DecimalFormat df = new DecimalFormat("0.00");
 		double i_value = 1.8;
@@ -48,11 +44,11 @@ public class BehavioralCategories {
 
 		String suffix = "_i" + df.format(i_value) + "_p" + df.format(p_value) +
 			"_k" + k_value + "_";
-		String fullOutputFilePath = behavioralPath +
+		String fullOutputFilePath = homePath +
 			"behavioralSimilarityClusters" + suffix + ".txt";
 		String newOptions = " -tf gq(" + df.format(p_value) + ") -tf #knn(" +
 			k_value + ")";
-		String mclInput = fullInputFilePath + " -I " + df.format(i_value) +
+		String mclInput = abcPath + " -I " + df.format(i_value) +
 			newOptions + " --abc -o " + fullOutputFilePath;
 
 
@@ -60,7 +56,7 @@ public class BehavioralCategories {
 		// HashMap<Integer, Integer> javaCSIndexMap = getJavaCSIndexMap();
 		TreeSet<RegexProjectSet> corpus = CorpusUtil.reloadCorpus();
 		HashMap<Integer, RegexProjectSet> lookup = getLookup(filtered_corpus_path, corpus, patternIndexMap);
-		TreeSet<Cluster> behavioralClusters = getClustersFromFile(fullInputFilePath, fullOutputFilePath, mclInput, lookup);
+		TreeSet<Cluster> behavioralClusters = getClustersFromFile(abcPath, fullOutputFilePath, mclInput, lookup);
 		dumpCategories(behavioralClusters, "clusterCategoryDump.tex", patternIndexMap,corpus);
 	}
 
@@ -192,7 +188,7 @@ public class BehavioralCategories {
 			throws IOException {
 		HashMap<String, Integer> patternIndexMap = new HashMap<String, Integer>();
 		String content = FileUtils.readFileToString(new File(homePath +
-			"analysis/analysis_output/exportedCorpusRaw.txt"), "UTF-8");
+			"exportedCorpusRaw.txt"), "UTF-8");
 		Pattern finder = Pattern.compile("(\\d+)\\t(\\d+)\\t(.*)");
 		Matcher pairMatcher = finder.matcher(content);
 		while (pairMatcher.find()) {
@@ -220,38 +216,49 @@ public class BehavioralCategories {
 	static ArrayList<Integer> list0 = new ArrayList<Integer>(Arrays.asList(447,4050, 4270, 9767));
 	
 	// "Path And File Related" /usr/bin/.*\.py.  
-	static ArrayList<Integer> list1 = new ArrayList<Integer>(Arrays.asList(8896));
+	static ArrayList<Integer> list1 = new ArrayList<Integer>(Arrays.asList(447,4050));
 	
 	// "Code Or Shell Related"  include, a=(b) (keywords divert here over message)
 	static ArrayList<Integer> list2 = new ArrayList<Integer>(Arrays.asList(11588,11676, 
 			7918, 6471, 3505, 2883, 9105, 8789 , 12301, 322, 3138, 1392 , 1347, 10124, 
-			11766  ));
+			11766,
+			2979));//fake 4
 	
 	// "Labels"
 	static ArrayList<Integer> list3 = new ArrayList<Integer>(Arrays.asList(12563,12556, 
 			12558, 12562, 12565, 12555, 12564, 13299, 13135, 13507, 12291, 12554, 13241, 
 			13242, 13258, 12557, 12144, 13173, 13061, 13303, 13250, 13136, 13137, 12807, 
-			13251));
+			13251,
+			5653));
 	
 	// "Non-Free Ordinary Strings" a+, [aeiou]
-	static ArrayList<Integer> list4 = new ArrayList<Integer>(Arrays.asList(6039, 10778, 13514));
+	static ArrayList<Integer> list4 = new ArrayList<Integer>(Arrays.asList(6039, 10778, 
+			13514,
+			8692));
 	
 	// "Bracket Capturing" (not lone bracket delimieters)
 	static ArrayList<Integer> list5 = new ArrayList<Integer>(Arrays.asList(3948,4015, 8771,  
-			8971, 8869, 11778 ));
+			8971, 8869, 11778,
+			13553));
 	
 	// "Messages"
-	static ArrayList<Integer> list6 = new ArrayList<Integer>(Arrays.asList(7777, 2626));
+	static ArrayList<Integer> list6 = new ArrayList<Integer>(Arrays.asList(7777, 
+			2626,
+			13440));
 	
 	// "Identifiers" - may have a delmiter, but focus is on a semi-free string following rules
 	static ArrayList<Integer> list7 = new ArrayList<Integer>(Arrays.asList(2572, 6579, 
-			6575, 450, 11018));
+			6575, 450, 
+			11018,
+			13346));
 	
 	// "Delimiters" - for Tuples And Punctuation, even \n, rest of content is free, often captured
 	static ArrayList<Integer> list8 = new ArrayList<Integer>(Arrays.asList(1573,  
 			 9145, 6204, 6879, 8070, 9090, 6381, 1580, 6462 , 3286 , 9425, 2508, 7935, 7947, 
 			 3832, 7759, 1908, 2987, 1019, 4550, 119, 7940, 12015, 497, 6304, 178, 3916, 
-			 3903, 412, 60, 4520, 7414, 3067, 8341, 3037, 6517, 3918, 49, 8731  ));
+			 3903, 412, 60, 4520, 7414, 3067, 8341, 3037, 6517, 3918, 49, 
+			 8731,
+			 447,4050, 4270, 9767));
 	
 	// "Numbers And Dates"
 	static ArrayList<Integer> list9 = new ArrayList<Integer>(Arrays.asList(418,7665,11055,710));
@@ -302,6 +309,8 @@ public class BehavioralCategories {
 		
 		//main loop
 		for (Cluster cluster : behavioralClusters) {
+			String clusterShortestCode = "" + patternIndexMap.get(cluster.getShorty().getContent());
+			System.out.println(clusterShortestCode);
 			touchedPatterns += cluster.size();
 			allProjectIDs.addAll(cluster.getAllProjectIDs());
 			if (addClusterToCategoryClusters(cluster, categoryClusters, patternIndexMap)) {
@@ -310,6 +319,11 @@ public class BehavioralCategories {
 			} else {
 				nonCategorizedClusters.add(cluster);
 			}
+		}
+		
+		int p = 0;
+		for(Category cat : categoryClusters){
+			System.out.println("p: "+ p++ + " size: "+cat.size());
 		}
 		
 		//measuring coverage
@@ -345,7 +359,7 @@ public class BehavioralCategories {
 		//get the bulk of data
 		sb.append(getCategoryProjectInfo(categoryClusters, patternIndexMap) +
 			"\n\n\n");
-		File output = new File(behavioralPath, outFilename);
+		File output = new File(homePath, outFilename);
 		IOUtil.createAndWrite(output, sb.toString());
 	}
 
@@ -359,10 +373,13 @@ public class BehavioralCategories {
 		String categoryFooter = "\\end{description}\n\\end{multicols}\n\n\n\n";
 		int i = 1;
 		for (Category category : categories) {
+			System.out.println("category.i: "+i);
 			sb.append(categoryHeader);
 			int nClusters = category.size();
 			int nPatternsTotal = category.getCombinedClusters().getNPatterns();
 			int nProjectsTotal = category.getCombinedClusters().getNProjects();
+			RegexProjectSet shorty = category.getCombinedClusters().getShorty();
+			String categoryShortest = shorty==null?"NO CONTENT" : AppendixHelper.wrap(shorty);
 			sb.append("categoryCluster " +
 				i +
 				" stats:\nname: " +
@@ -374,7 +391,7 @@ public class BehavioralCategories {
 				"\nnProjectsTotal: " +
 				nProjectsTotal +
 				"\nshortest: " +
-				AppendixHelper.wrap(category.getCombinedClusters().getShorty()) +
+				categoryShortest +
 				"\n\n");
 			i++;
 			for (Cluster currentCluster : category) {

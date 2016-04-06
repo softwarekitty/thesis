@@ -153,7 +153,7 @@ public class CorpusUtil {
 		HashMap<String, Integer> patternIndexMap = BehavioralCategories.getPatternIndexMap();
 		HashMap<Integer, RegexProjectSet> lookup = BehavioralCategories.getLookup(BehavioralCategories.filtered_corpus_path, corpus, patternIndexMap);
 
-		File dumpWithIndices = new File(BehavioralCategories.analysisPath, "projectIDPatternIDMultiMap.txt");
+		File dumpWithIndices = new File(BehavioralCategories.homePath, "projectIDPatternIDMultiMap.txt");
 		String serializedProjectPatternMM = FileUtils.readFileToString(dumpWithIndices, "UTF-8");
 		Pattern finder = Pattern.compile("(\\d+)\\t(.*)");
 		Matcher pairMatcher = finder.matcher(serializedProjectPatternMM);
@@ -221,11 +221,12 @@ public class CorpusUtil {
 //			IllegalArgumentException, SQLException, QuoteRuleException,
 //			PythonParsingException, IOException {
 //		HashMap<String, Integer> patternIndexMap = BehavioralCategories.getPatternIndexMap();
+//		TreeSet<RegexProjectSet> corpus = reloadCorpus();
 //
 //		// now building a reloadable file that maps projectIDs to their
 //		// patterns' javaIDs
 //		StringBuilder sb = new StringBuilder();
-//		File dumpWithIndices = new File(BehavioralCategories.analysisPath, "projectIDPatternIDMultiMap.txt");
+//		File dumpWithIndices = new File(BehavioralCategories.homePath, "projectIDPatternIDMultiMap.txt");
 //		HashMap<Integer, TreeSet<RegexProjectSet>> initial = initializeProjectPatternMM(connectionString,patternIndexMap);
 //
 //		StringBuilder contents = new StringBuilder();
@@ -234,7 +235,7 @@ public class CorpusUtil {
 //				getCSV(e.getValue(),patternIndexMap) + "\n");
 //		}
 //		IOUtil.createAndWrite(dumpWithIndices, contents.toString());
-//		HashMap<Integer, TreeSet<RegexProjectSet>> reloaded = reloadProjectPatternMM();
+//		HashMap<Integer, TreeSet<RegexProjectSet>> reloaded = reloadProjectPatternMM(corpus);
 //		System.out.println(reloaded.equals(initial));
 //	}
 
