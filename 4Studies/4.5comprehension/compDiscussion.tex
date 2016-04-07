@@ -7,6 +7,8 @@ The second refactoring $\overrightarrow{D2 D3}$, reduces confusion caused by the
 
 This refactoring is not likely to scale, however, because a slightly more complicated regex like \cverb!a?b*(cd)?e?! would expand to the very long regex \cverb!ab*cde|b*cde|ab*e|b*e|ab*cd|b*cd|ab*|b*! which introduces the new challenge of visually parsing and remembering eight strings.
 
+Refactorings out of C2 displayed a strong trend for improving understandability.  In However, more study is needed to determine if a refactoring from C2 to C5 is always recommended.  On possible explanation for the difference between regex pairs is that longer regexes did not benefit from a transformation to C5, which further increases the length of the regex.  But for shorter regexes this difference is less substantial (fewer \bverb!|! tokens are added), so the benefits of moving to C5 outweigh the problems of adding length.
+
 
 \subsubsection{Threats to validity}
 Mechanical turk may not be an ideal source for regex comprehension study participants.  This threat was mitigated by requiring workers to pass a pre-qualification test, and by checking the composed regexes for potential validity before accepting any HIT, as mentioned in Section~\ref{sec:workerStatistics}.

@@ -3,12 +3,6 @@
 
 Regular expression languages are infinite and exhibit substantial variety, but programmers are likely to use them for a limited number of purposes.  The goal of this study is to answer the question, `What behavioral categories can be observed in regex?' so that designers of regular expression languages and end-user tools can better support what is most useful to programmers.  In this study, a regex similarity measurement technique was devised and used to group regex with similar behavior into clusters.  The clusters representing the most projects were then in turn manually grouped into general categories of behavior.
 
-% This study employs a sequence of two categorization attempts to achieve its goal.
-% \begin{itemize}\itemsep -1pt
-% \item[1] determine an objective behavioral similarity score for all pairs of regexes, and find clusters of highly similar regexes, so that a large number of regexes can be seen as a modest number of clusters, and then manually categorize these clusters
-% \item[2] using the categories from step 1 as a guide in understanding how behavior will cluster, create a categorization technique by iterative attempts and then manually categorize regexes based on inspection alone
-% \end{itemize}
-
 \subsubsection{Determining behavioral similarity}
 An ideal analysis of regex behavioral similarity would use subsumption or containment analysis. However, a tool that could facilitate such an analysis of the corpus could not be found.  For this reason, a new technique using string matching was developed that can create a similarity score between two regexes with existing technology.
 
@@ -33,7 +27,7 @@ An ideal analysis of regex behavioral similarity would use subsumption or contai
 \subsubsection{Building a similarity matrix}
 \label{sec:buildingSimilarity}
 The similarity analysis used in this study clusters regular expressions by their behavioral similarity on matched strings.  Consider two unspecified regexes \cverb!A! and \cverb!B!.
-Now consider a set of 100 strings that match \cverb!A!, named \underline{\tt A100m}.  If \cverb!B! matches 90 strings in \underline{\tt A100m}, then If \cverb!B! is 90\% similar to If \cverb!A!.  Similarly, consider a set of 100 strings that match \cverb!B!, named \underline{\tt B100m}.  If \cverb!A! matches 50 strings in \underline{\tt B100m}, then If \cverb!A! is 50\% similar to If \cverb!B!.  Notice that by this definition, each regex is 100\% similar to itself.  Similarity scores are used to create a similarity matrix as shown in Figure~\ref{fig:minimalMatrix}.
+Now consider a set of 100 strings that match \cverb!A!, named \underline{\tt A100m}.  If \cverb!B! matches 90 strings in \underline{\tt A100m}, then If \cverb!B! is 90\% similar to \cverb!A!.  Similarly, consider a set of 100 strings that match \cverb!B!, named \underline{\tt B100m}.  If \cverb!A! matches 50 strings in \underline{\tt B100m}, then If \cverb!A! is 50\% similar to If \cverb!B!.  Notice that by this definition, each regex is 100\% similar to itself.  Similarity scores are used to create a similarity matrix as shown in Figure~\ref{fig:minimalMatrix}.
 
 Once the similarity matrix is built, the values of cells reflected across the diagonal of the matrix are averaged to create a half-matrix of undirected similarity edges, as illustrated in Figure~\ref{fig:matrixToGraph}.
 This facilitates clustering using the  Markov Clustering (MCL) algorithm\footurl{http://micans.org/mcl/}.

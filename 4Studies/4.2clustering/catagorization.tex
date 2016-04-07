@@ -1,23 +1,21 @@
-\subsection{Initial categorization of behavioral clusters}
+\subsection{Categorization of behavioral clusters}
 From 2,871 distinct regexes, MCL clustering identified 186 clusters with 2 or more regexes, and 2,042 clusters of size 1.
 The average size of clusters larger than size one was 4.5.  Each regex belongs to exactly one cluster.  Five example clusters are available in Appendix~\ref{app:top5CompleteClusters}.
-
-A report was prepared from the output of mcl providing the pattern of each regex in each cluster, the number of projects that the regex appears in, the number of projects containing at least one regex from the cluster (how clusters are ranked), and statistics about what features are most used in that cluster.
+% A report was prepared from the output of mcl providing the pattern of each regex in each cluster, the number of projects that the regex appears in, the number of projects containing at least one regex from the cluster (how clusters are ranked), and statistics about what features are most used in that cluster.
 
 \input{table/exampleCluster}
+
 \subsubsection{Representing a cluster with the shortest regex}
 Table~\ref{table:exampleCluster} provides an example of a behavioral cluster containing 12 regexes. At least one regex from this cluster is present in 31 different projects.  All regexes in this cluster share the literal \cverb!:! character. The smallest regex, \cverb!:+!,  matches one or more colons.
 
 Another regex from this cluster, \cverb!([^:]+):(.*)!, requires at least one non-colon character to occur before a colon character.  The behavioral similarity score between these two regexes was below the minimum of 0.75 because Rex generated many strings for \cverb!:+! that start with one or more colons.  However the overall similarity between the regex requiring a non-colon and other regexes in this cluster caused it to be clustered with this group.
 
-The smallest regex in a cluster provides insight about key characteristic that all the regexes in the cluster have in common.  A shorter regex will tend to have less extraneous behavior because it is specifying less behavior, yet, in order for the smallest regex to be clustered, it had to match most of the strings created by Rex from many other regexes within the cluster, and so one minor discovery about clusters of regexes is that {the smallest regex is useful as a representative of the cluster}.
+The smallest regex in a cluster provides insight about key characteristic that all the regexes in the cluster have in common.  A shorter regex will tend to have less extraneous behavior because it is specifying less behavior, yet, in order for the smallest regex to be clustered, it had to match most of the strings created by Rex from many other regexes within the cluster, and so one minor discovery about clusters of regexes is that {the smallest regex is useful as a representative of the cluster}.  In this thesis, clusters will be represented using a shorthand composed of the shortest regex in the cluster followed by the number projects (and number of patterns in angle brackets).  For Example, the cluster in Table~\ref{table:exampleCluster} will be represented as \cverb!:+!\cstat{31}{12}.
 
-For the rest of this thesis, a cluster will be represented by one of the shortest regexes that the cluster contains, followed by parenthesis containing the number of projects any member of the cluster appears in, and the number of patterns it contains in angle brackets.  For Example, the cluster in Table~\ref{table:exampleCluster} will be represented as \cverb!:+!\cstat{31}{12}.  This representation is not an attempt to express all notable behavior of regexes within a cluster, but is a useful and meaningful abbreviation.
-Other regexes in the cluster may exhibit more diverse behavior, for example \cverb!([^: ]+):(.*)! requires a non-colon character to appear before a colon character.
+\input{table/clustercats}
 
 The top 100 largest clusters based on the number of projects were manually sorted into 6 behavioral categories (determined by inspection).  The largest cluster was left out, as it was composed of patterns that trivially matched almost any string, like \cverb!b*! and \cverb!^!.  The remaining 99 clusters were all categorized. These clusters are briefly summarized in Table~\ref{tab:clustercats}, showing the name of the category and the number of clusters it represents, patterns in those clusters, and projects. The most common category is \emph{Multi Matches}, which contains clusters that have alternate behaviors (e.g., matching a comma or a semicolon, as in \cverb!,|;!\cstat{18}{5}. Each of the aforementioned 99 clusters was mapped to exactly one category.
 
-\input{table/clustercats}
 
 \subsubsection{Six initial categories of behaviorally similar clusters}
 \label{sec:categoriesDefined}
