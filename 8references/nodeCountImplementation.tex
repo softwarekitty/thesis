@@ -1,18 +1,19 @@
-\subsubsection{Artifact details}
+\section*{Artifact details}
 \label{app:nodeCountImplementation}
 The implementation is written in Java 8, and depends on antlr 3.5.2 because the PCRE parser used\footurl{https://github.com/bkiers/pcre-parser} uses antlr to identify the features present in a pattern.  Details about the corpus used can be found in Section~\ref{sec:featureUsage}.  For this experiment, the corpus was re-loaded from a text file.  Tests verify that this re-loaded corpus is identical to the corpus built from scratch.
 
-Each regex in the corpus contains the original pattern used to compile the regex, a {\tt org.antlr.runtime.tree.CommonTree} (parse tree) created by the PCRE parser from the pattern, and a set of integers used to identify the set of Python projects that used this regex in at least one utilization.
+Each regex in the corpus contains the original pattern used to compile the regex, a
+\\*{\tt org.antlr.runtime.tree.CommonTree} (parse tree) created by the PCRE parser from the pattern, and a set of integers used to identify the set of Python projects that used this regex in at least one utilization.
 
-\paragraph{Tokenstreams}
+\subsection{Tokenstreams}
 A \emph{tokenstream} is a string that can be generated from a regex's parse tree to represent the parsed regex as a string. Unlike the pattern used to compile the regex, all ambiguities due to multiple meanings of characters, balanced parenthesis, etc. have already been resolved by the parser. This sequence of tokens is still a context free language with nested, balanced \verb!DOWN! and \verb!UP! tokens, therefore it cannot be fully described or parsed using Java Regular Expressions (which do not support the recursion feature or similar).  However, the tokenstream can be searched for necessary conditions when constructing filters to identify candidacy for node membership, and regexes that are erroneously added to a node can be removed manually, as described in Section~\ref{sec:nodeCountOverview}.
 
 Each leaf of the parse tree is assigned a text representation based on the token names used by the parser.  The `bullet' character was chosen as a delimiter that is not present in any text representation.  Invisible characters and Unicode characters like the `bullet' are represented using a hex representation of their bytes.  The tokenstream is created by joining the text representation of each leaf with the delimiter, as shown in Figure\todoMid{N}.
 
 
-\subsubsection{Implementation details of determining node membership}
+\section{Implementation details of determining node membership}
 
-\paragraph{Membership based only on feature presence}
+\subsection{Membership based only on feature presence}
 The nodes which only require a check for the presence of a feature to determine membership are described here:
 \begin{description} \itemsep -1pt
 \item[D2] requires QST (zero-or-one repetition using question mark)
@@ -23,7 +24,7 @@ The nodes which only require a check for the presence of a feature to determine 
 \item[C3] requires NCCC (a negated custom character class, where a \verb!`^'! negates a CCC like \cverb![^X]!)
 \end{description}
 
-\paragraph{Membership based on a feature presence and search of the pattern}
+\subsection{Membership based on a feature presence and search of the pattern}
 \begin{description} \itemsep -1pt
 \item[S3] requires DBB, and requires the regex's pattern to match \cverb!\{(\d+),\1\}! which guarantees that both bounds of DBB are the same by capturing the first bound in \cverb!(\d+)! and then back-referencing the captured number.
 \item[T2] requires the presence of some hex character representation in the pattern, which is verified by searching the regex's pattern with the regex \cverb!\\x[a-f0-9A-F]{2}!.
@@ -35,7 +36,7 @@ In this regex, the lookbehind \cverb!(?<=[|])! and lookahead \cverb!(?=[|])! mat
 The space and slash characters are excluded from the sequence described by \cverb!([^ \\]+)! in order to exclude common false positives like \verb!"some text  |more text"! and \verb!"\\|/"!, which match the regex but do not belong to D3.  Note that these false positives were manually verified as described in Section~\ref{sec:nodeCountOverview}, ensuring that in the corpus used, no valid members of D3 were excluded.  However it is possible for this filter to exclude a regex with a pattern like \verb!"(  | )"! or \verb!"(\\\\|\\)"! which should belong to D3.
 \end{description}
 
-\paragraph{Membership based on a feature presence and filters}
+\subsection{Membership based on a feature presence and filters}
 \begin{description} \itemsep -1pt
 \item[D1] requires DBB (curly braces with two numbers separated by a comma inside), where the two numbers are different.  When these two numbers are the same, then the regex cannot be refactored within the DBB group, but instead belongs to the S3 node.  It is likely impossible to directly specify that two numbers are different in Java Regular Expressions, but it is possible to identify when two numbers are the same using back-references, and eliminate only these.  So the same regex used to identify members of S3: \cverb!\{(\d+),\1\}! was used to find all such same-bound parts of a pattern and replace them with \verb!"{$1}"!, where \verb!$1! is referencing the digit captured by \cverb!(\d+)}!.  In effect this step is actually performing a refactoring from S3 to S1.  All patterns that still contain DBB syntax must belong to D1, so the modified pattern is then searched using \cverb!\{\d+,\d+\}! to determine membership in D1.
 

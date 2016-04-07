@@ -1,6 +1,9 @@
 \subsubsection{Implementation details for manual categorization}
 The following categorization scheme was created after three visual scans of the top 3000 regexes (by number of projects), and eight iterative manual categorization passes over the top 130 regexes:
 
+\subsection{20 refined categories}
+\label{sec:20refinedCategories}
+
 \paragraph{Commonly observed categories} In this work, regexes will belong to the first category in the ordered list described here (categories are greedy).  Very long regexes (over 100 chars long) are treated as their own category without further investigation (unless recognized very easily), because their behavior is significantly complex so as not to properly belong to any other category.  From behavioral clustering, it was determined that web-based, bracket-parsing and code-based categories cluster strongly.  For other regexes, the degree of freedom limits the clustering technique: regexes composed of long strings with very little abstraction are not free to cluster by conceptual category because their string matching behavior rarely overlaps.  Some regexes contain recognizable words but also contain substantial abstract sections, usually to parse a file or a line representing a row of data.  Some regular patterns like dates, phone numbers and emails don't contain words but have a recognizable form.  A large portion of regexes contain just one or two characters, or character classes that may be used for de-serialization or delimiter-based work, but are hard to guess the exact application for.  In these free-clustering regexes, anchors often make a big difference, and will be considered at the same time.  Finally, a few catch-all categories for regexes that are difficult to guess the application for are used.  The first category is questions, which have a regularity the purpose of which is hard to understand such as \cverb![a-f0-9]{40}!.  , vanilla, such as \cverb![^\w\s-]!, \cverb!\d+!, \cverb!! or \cverb!! which
 
 
@@ -75,14 +78,14 @@ generalized regular forms: 4
 \begin{itemize}
 \item[ i ] identifiers - a non-free, rule bound section and optional label/delim .  These are specialized and used specifically to identify a user, part number, library book, etc.
 \item[ m ] messages requires a label or delimiter section, and a free section, which often is captured (including in brackets also parens, etc.).  This includes things like `your file is (.*)\\.py' which have a filename, but are not exclusively filenames
-\item[ b ] contains bracket parsing
-\item[ > ] requires some SGML <angle bracket language syntax> like bracket comments <!-- --!>, or opening or closing brackets, including the single bracket characters `<' and `>'
+\item[ b ] contains bracket contents parsing, including curly, parenthesis, angle and square brackets
+\item[ > ] requires some SGML <angle bracket language syntax>, like bracket comments <!-- --!>, or opening or closing brackets, including the single bracket characters `<' and `>'
 \end{itemize}
 
 
 specialized exact: 2
 \begin{itemize}
-\item[ l ] label  exclusively a literal sequence of more than one character, like `oh hai', and nothing else
+\item[ l ] label  a literal sequence of more than one character, like `oh hai', and nothing else
 \item[ s ] space  requires one or more whitespace, including newlines, returns, tabs and invisibles, and nothing else
 \end{itemize}
 
@@ -99,28 +102,12 @@ generalized inexact: 2
 \begin{itemize}
 \item[ v ] vanilla - a regex is vanilla if it would be hard not to match it, like \cverb!\w+!, \cverb!.*!, \cverb!\S!, \cverb![0-9A-z-*&^#@&,./]!.  Optionally repeats.  CCCs with 10 or fewer chars are no longer vanilla.
 \item[ r ] repeating - has repetition like \cverb!;+! or \cverb!a[efg]*!.  Because this is so low, it should not contain digits, space or word char classes, or large char classes.
-similarly with the other specialized forms
 \end{itemize}
 
+undetermined: 1
 \begin{itemize}
 \item[ q ] question    substantial regular pattern but does not fit into any category
 \end{itemize}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

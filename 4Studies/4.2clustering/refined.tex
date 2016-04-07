@@ -1,0 +1,83 @@
+\subsection{20 Refined categories described}
+\label{sec:20refinedCategories}
+
+With some ideas about how to differentiate regexes using the six categories formed from the top 99 clusters, a new effort was launched to use these categories to partition the original corpus, looking at all individual regexes, not just the shortest regexes representing a cluster.
+
+After many iterations, the following 20 usage categories (and 3 types of uncategorized regexes) were determined to fit the regexes in the corpus very well.  These categories are listed in the order that the categorization scheme consumes regexes.  That is, going from the top of the list to the bottom of the list, the first category that a regex fits in is the category it belongs to, even if it could belong to another category if this greedy strategy was not taken.  One over-arching organizational idea is that, if any ambiguity exists, the more general category that might contain other categories is used first.  Another idea is that string specifications that are \emph{required} do much more to decide a category than optional specifications.  For example, in \cverb!;[ab]*!, the \cverb!;! is what determines what cluster it belongs to, because the \bverb![ab]*! could be ignored when comparing sets of strings.  This idea comes from many investigations into why regexes were clustered together, looking closely at the string matching data created by Rex as discussed in Section~\ref{sec:buildingSimilarity}.
+
+\subsubsection{Disqualified for categorization (2)}
+To keep this categorization attempt practical, long regexes (over 140 characters long) were excluded, and regexes  using hex or octal literals were excluded (because of the effort required to look up and decipher these characters).
+\begin{description}
+\item[ L : LONG ] Regexes that are too long to deal with, meaning regexes over 140 characters.
+\item[ u : UNICODE ] Regexes using hex or octal like \cverb!\x7F\177!, but not counting regular patterns designed to recognize coded versions of these like, \cverb!\\x[a-f0-9][a-f0-9]!.  Such regexes belong to the CODE category.
+\end{description}
+
+\subsubsection{Exact (2)}
+These categories are absolutely recognizable, and simple.  They are specialized to some purpose and describe a very limited string set.  The intended use is not entirely clear, and less complex, but these categories will consume regexes before those below them because they are so pure and recognizable.
+\begin{description}
+\item[ l : LABEL ] A label regex is a literal sequence of more than one character, like `oh hai', and nothing else.
+\item[ s : SPACE ] A space regex requires one or more whitespace-type character, including newlines, returns, tabs and invisibles, and nothing else.
+\end{description}
+
+\subsubsection{Containers (7)}
+Containers are regexes that may have multiple layers of recognizable syntax.  For example, \cverb!^var\s+(\w+)\s+=["']https://.*["'']! is a regex that will match lines of code that put a url into a string variable.  So the CODE-layer of syntax is containing another layer of syntax: the PATH syntax dealing with paths.  All of these categories may contain lower levels of syntax, and display a very specific intent, so they will consume a regex first.
+\begin{description}
+\item[ c : CODE ] Code regexes require known programming language keywords and/or syntax in optional code fragment, maybe containing any type of other recognizable category.
+\item[ a : ARGS ] Arguments are indicated by the \verb!-arg! syntax, known shell commands and tool keywords like \verb!grep!, or regexes emphasizing \verb!`-'!, (but not all regexes containing \verb!`-'!), which could be used for the purpose of finding arguments.
+\item[ h : HTML ] This category equires valid HTML tags or attributes like \verb!<div>!,  \verb!href=...!, etc.
+\item[ x : XML ] The XML category requires populated XML-like tags or attributes, including attribute assignments of non-html attributes like \verb!<foot shoe="running">!.
+\item[ = : ASSIGNMENT ] Assignment expresses some operator or assignment syntax, with the language not known (or it would be a c, g, h or x).
+\item[ i : IDENTIFIER ] Identifier regexes describe strings that contain a regular, rule-bound portion and an optional label or delimiter.  These have very specific requirements and are used to identify a user, part number, library book, etc.
+\item[ m : MESSAGE ] Message regexes require a label or delimiter section, and a free section, which often is captured (including in brackets also parens, etc.).  An example regex is \cverb!your file is: (.*)\\.py!, where the label is \cverb!your file is: !, and the free portion is the \cverb!(.*)!, where the content of the message is expected to be.  Notice that this category may often contain other categories, like the FILE category in the example (\cverb!\\.py!).
+\end{description}
+
+\subsubsection{Specialized (6)}
+Specialized regexes deal with some very recognizable regular pattern, with some freedom for elements in the pattern to vary, but some restriction to a meaningful form.  These regexes are are more highly specialized, indicating a very particular intent, so they are consumed before less specific forms.
+\begin{description}
+\item[ p : PATH ] Paths are regexes dealing with forward slash paths and related ideas, including local and web paths, and protocol or file system prefixes like https:, and patterns emphasizing the `/' character alone for this purpose.
+\item[ f : FILE ] Files are regexes that deal with known file extensions, or apparent ones prefixed by a period, or patterns emphasizing the \verb!`.'!  alone for this purpose.  This includes .c, .xml and .html if not used in containing code.
+\item[ t : TIME ] Time regexes require a syntax representing time, like a date format.
+\item[ n : NUMBER ] Number regexes represent any numbers - in a syntax like telephone numbers, scientific numbers, or just \bverb!\d! emphasized with the intent to capture a free number
+\item[ b : BRACKETS ] Bracket regexes are designed to parse any kind of balanced delimiter, including curly, parenthesis, angle and square brackets.
+\item[ $>$ : SGML ] SGML regexes require some SGML (angle bracket language syntax), like bracket comments \verb@<!-- --!>@, or opening or closing brackets, including the single bracket characters \verb!`<'! and \verb!`>'!.
+\end{description}
+
+\subsubsection{Inexact (2)}
+Inexact regexes do not have a specific enough intent to belong to any other category.  Vanilla regexes do not require as much to match a string - they may even match every string. Repeating patterns are included here because after several attempts at categorizing regexes, this group emerged as existent, although the use case is not clear and these may in fact be academic examples.
+\begin{description}
+\item[ v : VANILLA ] A regex is vanilla if it would be hard not to match it, like \cverb!\w+!, \cverb!.*!, \cverb!\S!, \cverb![0-9A-z-*&^#@&,./]!.  Vanilla regexes may or may not have an upper bound on the number of characters, but will have a low lower bound, sometimes being zero.  Required CCCs with 6 or more chars are vanilla (so \cverb![a-f]! is vanilla because the CCC is required to match, but \cverb!\\x[a-f]*! is not).  Determining the `best' number of characters to use for this limitation may require further study - this study leans towards categorizing regexes as vanilla more often to make other character classes more distinct.  Notice that pure numbers and pure spaces are already consumed, so this limit applies to mixtures of numbers or spaces or punctuation or ordinary characters.
+\item[ r : REPEATING ] A repeating regex has repetition like \cverb!;+! or \cverb!a[efg]*!.  This category is below space, numbers and vanilla, so it should not contain digits, space or word char classes, or large char classes.
+\end{description}
+
+\subsubsection{Finite (3)}
+Finite regexes require some specific character or characters to appear a finite number of times (not unbounded).
+\begin{description}
+\item[ \\ : BACKSLASH ]   A Backslash regex requires a finite number of literal backslashes, which when escaped look like \verb!"\\\\"!
+\item[ d : DELIMITER ] A delimiter regex requires one or a finite number of punctuation chars.  The intuition is that these can be used to locate and potentially separate tuples, or expected data.
+\item[ o : ORDINARY ] An ordinary regex requires a finite number of ordinary chars, like \cverb![aeiou]! or \cverb!(a|b){3,4}!
+\end{description}
+
+\subsubsection{Undetermined (1)}
+When a regex cannot easily be categorized, it belongs to a special category.  It may become clear what category these regexes may actually belong to, on further examination, or they may really not belong to any of the above categories, indicating that one or more categories may be need to be added to this list.
+\begin{description}
+\item[ q : QUESTION ] question    substantial regular pattern but does not fit into any category
+\end{description}
+
+
+\subsection{Refined category analysis}
+
+\subsubsection{Refined category membership analysis}
+\label{sec:refinedMembership}
+
+
+\todoLast{in progress}
+
+
+
+
+\subsubsection{Features associated with refined categories}
+\label{sec:categoryFeatures}
+
+
+
+\todoLast{in progress}

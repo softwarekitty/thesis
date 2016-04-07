@@ -4,7 +4,7 @@
 This section displays the top five clusters so that a sense of the similarity of regexes within a cluster created by mcl can be obtained by the reader.  Note that cluster 0 is excluded because it contains regexes that trivially match everything like \cverb!^!.  The following five lists describe the number of projects that contain a regex, followed by the regex.
 
 \subsection*{Cluster One}
-Cluster one has 39 patterns, is present in 95 projects, and the shortest regex is \cverb!..!.
+Cluster one has 39 patterns, is present in 95 projects, and the shortest regex is \cverb!..!.  All regexes in this cluster will match two rather free characters, as exemplified by \cverb!..!.  Taking another regex as an example, \cverb!\w+(\.\w+)*! will match any two WRD characters.  The KLE modified group, \cverb!(\.\w+)*! does not strictly affect the clustering behavior because if this matches zero times, it still matches.
 \begin{multicols}{2}
 \begin{description}[noitemsep,topsep=0pt]
 \item[09] \cverb!\w+(\.\w+)*!
@@ -50,7 +50,7 @@ Cluster one has 39 patterns, is present in 95 projects, and the shortest regex i
 \end{multicols}
 
 \subsection*{Cluster Two}
-Cluster two has 36 patterns, is present in 89 projects, and the shortest regex is \cverb!(\W)!.
+Cluster two has 36 patterns, is present in 89 projects, and the shortest regex is \cverb!(\W)!.  All regexes in this cluster will obtain a match with one NWRD character, or close to that.  For example, \cverb![^0-9A-Za-z]! will match the \verb~`_'~, which is not a NWRD character, but behaves the same for the rest of the characters.  So since there are so many characters in the NWRD character class, there will be many opportunities to match and this regex will match other NWRD-like regexes most of the time.
 \begin{multicols}{2}
 \begin{description}[noitemsep,topsep=0pt]
 \item[09] \cverb!(\W+)!
@@ -93,7 +93,7 @@ Cluster two has 36 patterns, is present in 89 projects, and the shortest regex i
 \end{multicols}
 
 \subsection*{Cluster Three}
-Cluster 3 has 33 patterns, is present in 89 projects, and the shortest regex is \cverb!(\s)!.
+Cluster 3 has 33 patterns, is present in 89 projects, and the shortest regex is \cverb!(\s)!.  The regexes in this cluster will be satisfied with a match of a single space character, or close to it.  Many of these regexes specify other behavior, like \cverb![\s\-]+!, which also will match a \verb~-~ character, but since the \cverb!\s! character class has several more characters, it is favored in randomly generated strings.
 \begin{multicols}{2}
 \begin{description}[noitemsep,topsep=0pt]
 \item[09] \cverb![ \t]+!
@@ -133,7 +133,7 @@ Cluster 3 has 33 patterns, is present in 89 projects, and the shortest regex is 
 \end{multicols}
 
 \subsection*{Cluster Four}
-Cluster four has 27 patterns, is present in 74 projects, and the shortest regex is \cverb!\S+!.
+Cluster four has 27 patterns, is present in 74 projects, and the shortest regex is \cverb!\S+!.  The regexes in this cluster will be satisfied with a single one of most non-space characters.  For example, \cverb![^0-9, ]! is exclusive of digits, and allows the tab and other whitespace.  But it does match the dozens of other NWSP characters like most punctuation and letters.
 \begin{multicols}{2}
 \begin{description}[noitemsep,topsep=0pt]
 \item[09] \cverb!^[^-_.]+!
@@ -167,7 +167,7 @@ Cluster four has 27 patterns, is present in 74 projects, and the shortest regex 
 \end{multicols}
 
 \subsection*{Cluster Five}
-Cluster five has 23 patterns, is present in 58 projects, and the shortest regex is \cverb!\d!.
+Cluster five has 23 patterns, is present in 58 projects, and the shortest regex is \cverb!\d!.  The regexes in this cluster will tend to match digits, even if they might match other characters as well like \cverb!([0-9]+)([DdHhMm]|[sS]?)!, which actually requires a non-digit to match as well.  This regex may have been clustered with the rest of these regexes because test strings generated to match it must include a digit, and so the pure-digits will match it 100\% of the time.
 \begin{multicols}{2}
 \begin{description}[noitemsep,topsep=0pt]
 \item[08] \cverb!\d!

@@ -17,16 +17,39 @@ public class Cluster extends TreeSet<RegexProjectSet> implements Comparable<Clus
 		allProjectIDs = new TreeSet<Integer>();
 	}
 	
+	public String getPatternDump(){
+		String categoryHeader = "\\begin{multicols}{1}\n\\begin{description}[noitemsep,topsep=0pt]\n";
+		String categoryFooter = "\\end{description}\n\\end{multicols}\n\n\n\n";
+		StringBuilder sb = new StringBuilder();
+		sb.append("total projects:"+this.getNProjects()+"\n");
+		sb.append("total patterns:"+this.getNPatterns()+"\n");
+		sb.append(categoryHeader);
+		for(RegexProjectSet member : this){
+			sb.append(itemMaker(member,"["+member.getRankableValue()+"] "));
+			sb.append("\n");
+		}
+		sb.append(categoryFooter);
+		return sb.toString();
+	}
+	
 	public String getItemLineLatex(HashMap<String, Integer> patternIndexMap){
 		StringBuilder sb = new StringBuilder();
 		
-		RegexProjectSet shorty = getHeaviest();
+//		RegexProjectSet shorty = getHeaviest();
+		RegexProjectSet shorty = getShorty();
+
 		Integer index = patternIndexMap.get(shorty.getContent());
 		sb.append(", "+index+" ");
-		sb.append("\\item ");
-		sb.append("["+getDescription()+"] ");
-		sb.append(AppendixHelper.wrap(shorty));
+		sb.append(itemMaker(shorty,getDescription()));
 		sb.append("\n");
+		return sb.toString();
+	}
+	
+	private String itemMaker(RegexProjectSet regex, String description){
+		StringBuilder sb = new StringBuilder();
+		sb.append("\\item ");
+		sb.append("["+description+"] ");
+		sb.append(AppendixHelper.wrap(regex));
 		return sb.toString();
 	}
 

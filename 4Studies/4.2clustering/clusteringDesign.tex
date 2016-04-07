@@ -32,6 +32,7 @@ An ideal analysis of regex behavioral similarity would use subsumption or contai
 
 
 \subsubsection{Building a similarity matrix}
+\label{sec:buildingSimilarity}
 The similarity analysis used in this study clusters regular expressions by their behavioral similarity on matched strings.  Consider two unspecified regexes \cverb!A! and \cverb!B!.
 Now consider a set of 100 strings that match \cverb!A!, named \underline{\tt A100m}.  If \cverb!B! matches 90 strings in \underline{\tt A100m}, then If \cverb!B! is 90\% similar to If \cverb!A!.  Similarly, consider a set of 100 strings that match \cverb!B!, named \underline{\tt B100m}.  If \cverb!A! matches 50 strings in \underline{\tt B100m}, then If \cverb!A! is 50\% similar to If \cverb!B!.  Notice that by this definition, each regex is 100\% similar to itself.  Similarity scores are used to create a similarity matrix as shown in Figure~\ref{fig:minimalMatrix}.
 
@@ -40,12 +41,12 @@ This facilitates clustering using the  Markov Clustering (MCL) algorithm\footurl
 MCL was chosen because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
 
 
-In the implementation, strings are generated for each regex using Rex~\cite{rex}.  Rex generates matching strings by representing the regular expression as an automaton, and then passing that automation to a constraint solver that generates members for it\footurl{http://research.microsoft.com/en-us/projects/rex/}.  If the regex matches a finite set of strings smaller than 400, Rex will produce a list of all possible strings.
+In the implementation, strings are generated for each regex using Rex~\cities{rex}.  Rex generates matching strings by representing the regular expression as an automaton, and then passing that automation to a constraint solver that generates members for it\footurl{http://research.microsoft.com/en-us/projects/rex/}.  If the regex matches a finite set of strings smaller than 400, Rex will produce a list of all possible strings.
 In this study, the goal is to generate 400 strings for each regex to balance the runtime of the similarity analysis with the precision of the similarity calculations.
 
-For clustering, the similarity matrix is pruned to retain all similarity values greater than or equal to 0.75, setting the rest to zero, and then using MCL.
-This threshold was selected based on recommendations in the MCL manual. The impact of lowering the threshold would likely result  in either the same number of more diverse clusters, or a larger number of clusters, but is unlikely to markedly change the largest clusters or their summaries.
-We also note that MCL can also be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node.
+For clustering, the similarity matrix is pruned to retain all similarity values greater than or equal to 0.75, setting the rest to zero, and then using MCL to actually find the clusters.
+This threshold (0.75) was selected based on recommendations in the MCL manual~\cities{mclManual}. The impact of lowering the threshold would likely result  in either the same number of more diverse clusters, or a larger number of clusters, but is unlikely to markedly change the largest clusters or their summaries.
+We also note that MCL can also be tuned using many parameters, including inflation and filtering out all but the top-k edges for each node~\cities{mclManual}.
 After exploring the quality of the clusters using various tuning parameter combinations, the best clusters (by inspection) were found using an inflation value of 1.8 and k=83.   The top 100 clusters are categorized by inspection into six categories of behavior.
 
 The end result is clusters and categories of highly behaviorally similar regular expressions, though this approach has a tendency to over-approximate the similarity of two regexes. Similarity is measured based on a finite set of generated strings, but some regexes match an infinite set (e.g., \cverb!ab*c!), so measuring similarity based on the first 400 strings may lead to an artificially high similarity value. To mitigate this threat, a large number of generated strings was used for each regex, but future work includes exploring other approaches to computing regex similarity.

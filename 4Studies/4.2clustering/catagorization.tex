@@ -1,52 +1,35 @@
-\subsection{Categorizing behavioral clusters}
+\subsection{Initial categorization of behavioral clusters}
 From 2,871 distinct regexes, MCL clustering identified 186 clusters with 2 or more regexes, and 2,042 clusters of size 1.
 The average size of clusters larger than size one was 4.5.  Each regex belongs to exactly one cluster.  Five example clusters are available in Appendix~\ref{app:top5CompleteClusters}.
 
-A report was prepared from the output of mcl providing the pattern of each regex in each cluster, the number of projects that the regex appears in, the number of projects containing at least one regex from the cluster (how clusters are ranked), and statistics about what features are most used in that cluster.  The contents of this report for the top 20 clusters is available in appendix \todoMid{link}.
+A report was prepared from the output of mcl providing the pattern of each regex in each cluster, the number of projects that the regex appears in, the number of projects containing at least one regex from the cluster (how clusters are ranked), and statistics about what features are most used in that cluster.
 
 \input{table/exampleCluster}
 \subsubsection{Representing a cluster with the shortest regex}
-Table~\ref{table:exampleCluster} provides an example of a behavioral cluster containing 12 regexes (four longer regexes omitted for brevity). Patterns from this cluster are present in 31 different projects.  All regexes in this cluster share the literal `:' character. The smallest regex, \verb!`:+'!,  matches one or more colons.
+Table~\ref{table:exampleCluster} provides an example of a behavioral cluster containing 12 regexes. At least one regex from this cluster is present in 31 different projects.  All regexes in this cluster share the literal \cverb!:! character. The smallest regex, \cverb!:+!,  matches one or more colons.
 
-% \begin{figure}[tb]
-% \centering
-% \includegraphics[width=\columnwidth]{nontex/illustrations/clusterEdgesExample.eps}
-% \vspace{-12pt}
-% \caption{Example Of Similarity Edges Of One Cluster}
-% \vspace{-6pt}
-% \label{fig:clusterEdgesExample}
-% \end{figure}
+Another regex from this cluster, \cverb!([^:]+):(.*)!, requires at least one non-colon character to occur before a colon character.  The behavioral similarity score between these two regexes was below the minimum of 0.75 because Rex generated many strings for \cverb!:+! that start with one or more colons.  However the overall similarity between the regex requiring a non-colon and other regexes in this cluster caused it to be clustered with this group.
 
-Another regex from this cluster, \verb!([^:]+):(.*)!, requires at least one non-colon character to occur before a colon character.  The behavioral similarity score between these two regexes was below the minimum of 0.75 because Rex generated many strings for `:+' that start with one or more colons.
+The smallest regex in a cluster provides insight about key characteristic that all the regexes in the cluster have in common.  A shorter regex will tend to have less extraneous behavior because it is specifying less behavior, yet, in order for the smallest regex to be clustered, it had to match most of the strings created by Rex from many other regexes within the cluster, and so one minor discovery about clusters of regexes is that {the smallest regex is useful as a representative of the cluster}.
 
-The smallest regex in a cluster provides insight about key characteristic that all the regexes in the cluster have in common.  A shorter regex will tend to have less extraneous behavior because it is specifying less behavior,
-yet, in order for the smallest regex to be clustered, it had to match most of the strings created by Rex from many other regexes within the cluster, and so one minor discovery about clusters of regexes is that {the smallest regex is useful as a representative of the cluster}.
+For the rest of this thesis, a cluster will be represented by one of the shortest regexes that the cluster contains, followed by parenthesis containing the number of projects any member of the cluster appears in, and the number of patterns it contains in angle brackets.  For Example, the cluster in Table~\ref{table:exampleCluster} will be represented as \cverb!:+!\cstat{31}{12}.  This representation is not an attempt to express all notable behavior of regexes within a cluster, but is a useful and meaningful abbreviation.
+Other regexes in the cluster may exhibit more diverse behavior, for example \cverb!([^: ]+):(.*)! requires a non-colon character to appear before a colon character.
 
-For the rest of this thesis, a cluster will be represented by one of the shortest regexes it contains, followed by the number of projects any member of the cluster appears in, so the cluster in Table~\ref{table:exampleCluster} will be represented as \verb!`:+'(31)!.  This representation is not an attempt to express all notable behavior of regexes within a cluster, but is a useful and meaningful abbreviation.
-Other regexes in the cluster may exhibit more diverse behavior, for example the regex \verb!`([^: ]+):(.*)'! requires a non-colon character to appear before a colon character.
-
-% Three example strings generated by Rex for the first regex are: `-()', `*'8(5)', `Oe()'.  For the third regex, Rex generated these three strings: ` ()', `(q)F', `(n)M'.  The regex: \verb!\(.*\)$! is very similar, but will not match the string `(n)M', and so was placed in a different cluster.
-
-% \subsection{Categorization of clusters}
-% \subsubsection{Implementation details}
-% \subsubsection{Results}
-
-
-The top 100 largest clusters based on the number of projects were manually sorted into 6 behavioral categories (determined by inspection).  The largest cluster was left out, as it was composed of patterns that trivially matched almost any string, like \verb!`b*'! and \verb!`^'!.  The remaining 99 clusters were all categorized. These clusters are briefly summarized in Table~\ref{tab:clustercats}, showing the name of the category and the number of clusters it represents, patterns in those clusters, and projects. The most common category is \emph{Multi Matches}, which contains clusters that have alternate behaviors (e.g., matching a comma or a semicolon, as in \verb!`,|;'(18)!). Each cluster was mapped to exactly one category.
+The top 100 largest clusters based on the number of projects were manually sorted into 6 behavioral categories (determined by inspection).  The largest cluster was left out, as it was composed of patterns that trivially matched almost any string, like \cverb!b*! and \cverb!^!.  The remaining 99 clusters were all categorized. These clusters are briefly summarized in Table~\ref{tab:clustercats}, showing the name of the category and the number of clusters it represents, patterns in those clusters, and projects. The most common category is \emph{Multi Matches}, which contains clusters that have alternate behaviors (e.g., matching a comma or a semicolon, as in \cverb!,|;!\cstat{18}{5}. Each of the aforementioned 99 clusters was mapped to exactly one category.
 
 \input{table/clustercats}
 
-\subsubsection{Six categories of behaviorally similar clusters}
+\subsubsection{Six initial categories of behaviorally similar clusters}
 \label{sec:categoriesDefined}
 \paragraph{Multiple Matching Alternatives}
-The patterns in these clusters match under a variety of conditions by using the CCC or OR feature.  For example: \verb!`(\W)'(89)! matches any alphanumeric character, \verb!`(\s)'(89)! matches any whitespace character, \verb!`\d'(58)! matches any numeric character, and \verb!`,|;'(18)! matches a comma or semicolon.  Most of these clusters are represented by patterns that use default character classes, as opposed to custom character classes.  This provides further support for the survey results to the question, \emph{Do you prefer to use custom character classes or default character classes more often?}, in which a majority of participants indicated they use the default classes more than custom.
+The patterns in these clusters match under a variety of conditions by using the CCC or OR feature.  For example: \cverb!(\W)!\cstat{88}{36} matches any alphanumeric character, \cverb!(\s)!\cstat{97}{33} matches any whitespace character, \cverb!\d!\cstat{58}{23} matches any numeric character, and \cverb!,|;!\cstat{18}{5} matches a comma or semicolon.  Most of these clusters are represented by patterns that use default character classes, as opposed to custom character classes.  This provides further support for the survey results to the question, \emph{Do you prefer to use custom character classes or default character classes more often?}, in which a majority of participants indicated they use the default classes more than custom.
 This category contains 21 clusters, each appearing in an average of 33 projects.
 
 \paragraph{Specific Character Must Match}
 \label{cluster:single}
 Each cluster in this category requires one specific character to match, for example:
-\verb!`\n\s*'(42)! matches only if a newline is found, \verb!`:+'(31)! matches only if a colon is found, \verb!`%'(22)!, matches only if a percent sign is found and \verb!`}'(14)! matches only if a right curly brace is found.
-% Table~\ref{table:exampleCluster} presents a cluster that falls under this category. While the cluster is centered on the presence of the \verb!`:'! character, the other regexes in the cluster also exhibit more diverse behavior.
+\cverb!\n\s*!\cstat{43}{16} matches only if a newline is found, \cverb!:+!\cstat{31}{12} matches only if a colon is found, \cverb!%!\cstat{22}{6}, matches only if a percent sign is found and \cverb!}!\cstat{14}{4} matches only if a right curly brace is found.
+% Table~\ref{table:exampleCluster} presents a cluster that falls under this category. While regexes in the cluster are grouped together because of the presence of the \verb!`:'! character, the other regexes in the cluster also exhibit more diverse behavior.
 The commonality of this cluster category contrasts with the survey in
 (Section~\ref{sec:surveyResults}) in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{table:regextasks}).
 This category contains 17 clusters, each appearing in an average of 17.1 projects.
@@ -54,34 +37,31 @@ These clusters have a combined total of 103 patterns, with at least one pattern 
 
 \paragraph{Anchored Patterns}
 Each of the clusters uses at least one endpoint anchor to require matches to be absolutely positioned, for example:
-\verb!`(\w+)$'(35)! captures the word characters at the end of the input, \verb!`^\s'(16)! matches a whitespace at the beginning of the input, and \verb!`^-?\d+$'(17)! requires that the entire input is an (optionally negative) integer.
-These anchors are the only way in regexes to guarantee that a character does (or does not) appear at a particular location by specifying what is allowed. As an example, \verb!^[-_A-Za-z0-9]+$! says that from beginning to end, only \verb![-_A-Za-z0-9]! characters are allowed, so it will fail to match if undesirable characters, such as \verb!?!, appear anywhere in the string.
+\cverb!(\w+)$!\cstat{35}{8} captures the word characters at the end of the input, \cverb!^\s!\cstat{16}{4} matches a whitespace at the beginning of the input, and \cverb!^-?\d+$!\cstat{17}{2} requires that the entire input is an (optionally negative) integer.
+These anchors are the only way in regexes to guarantee that a character does (or does not) appear at a particular location by specifying what is allowed. As an example, \cverb!^[-_A-Za-z0-9]+$! says that from beginning to end, only \cverb![-_A-Za-z0-9]! characters are allowed, so it will fail to match if undesirable characters, such as \verb!`?'!, appear anywhere in the string.
 This category contains 20 clusters, each appearing in an average of 15.4 projects.
 These clusters have a combined total of 85 patterns, with at least one pattern present in 141 projects.
-
-\paragraph{Content of Brackets and Parenthesis}
-\label{cluster:contentparens}
-The clusters in this category center around finding a pair of characters that surround content, often also capturing that content. For example,
-\verb!`\(.*\)'(29)! matches when content is surrounded by parentheses and \verb!`".*"'(25)! matches  when content is surrounded by double quotes.  The cluster \verb!`<(.+)>'(23)! matches and captures content surrounded by angled brackets.
-This category contains 10 clusters, each appearing in an average of 18.4 projects.
- These clusters have a combined total of 46 patterns, with at least one pattern present in 111 projects.
-% \todoMid{include this?, and }
-\verb!`\[.*\]'(22)!
-% \todoMid{matches when content is surrounded by square brackets}
 
 \paragraph{Two or More Characters in Sequence}
 \label{cluster:multiple}
 These clusters require several characters in a row to match some pattern, for example:
-\verb!`\d+\.\d+'(30)! requires one or more digits followed by a period character, followed by one or more digits.  The cluster \verb!`  '(17)! requires two spaces in a row,
-\verb!`([A-Z][a-z]+[A-Z][^ ]+)'(11)!,
-and \verb!`@[a-z]+'(9)! requires the at symbol followed by two or more lowercase characters, as in a twitter handle.
+\cverb!\d+\.\d+!\cstat{30}{7} requires one or more digits followed by a period character, followed by one or more digits.  The cluster \cverb!  !\cstat{17}{4} requires two spaces in a row,
+\cverb!([A-Z][a-z]+[A-Z][^ ]+)!\cstat{11}{2},
+and \cverb!@[a-z]+!\cstat{9}{1} requires the at symbol followed by two or more lowercase characters, as in a twitter handle.
 This category contains 16 clusters, each appearing in an average of 13 projects.
 These clusters have a combined total of 40 patterns, with at least one pattern present in 120 projects.
+
+\paragraph{Content of Brackets and Parenthesis}
+\label{cluster:contentparens}
+The clusters in this category center around finding a pair of characters that surround content, often also capturing that content. For example,
+\cverb!\(.*\)!\cstat{27}{7} matches when content is surrounded by parentheses and \cverb!".*"!\cstat{26}{6} matches  when content is surrounded by double quotes.  The cluster \cverb!<(.+)>!\cstat{23}{4} matches and captures content surrounded by angled brackets, and \cverb!\[.*\]!\cstat{22}{7} matches when content is surrounded by square brackets.
+This category contains 10 clusters, each appearing in an average of 18.4 projects.
+ These clusters have a combined total of 46 patterns, with at least one pattern present in 111 projects.
 
 \paragraph{Code Search and Variable Capturing}
 \label{cluster:search}
 These clusters show a recognizable effort to parse source code or URLs. For example,
-\verb!`^https?://'(23)! matches a web address, and \verb!`(.+)=(.+)'(9)! matches an assignment statement, capturing both the variable name and value.
-The cluster  \verb!`\$\{([\w\-]+)\}'(11)! matches an evaluated string interpolation and captures the code to evaluate.
+\cverb!^https?://!\cstat{13}{3} matches a web address, and \cverb!(.+)=(.+)!\cstat{9}{2} matches an assignment statement, capturing both the variable name and value.
+The cluster  \cverb!\$\{([\w\-]+)\}!\cstat{11}{2} matches an evaluated string interpolation and captures the code to evaluate.
 This category contains 15 clusters, each appearing in an average of 11.7 projects.
 These clusters have a combined total of 27 patterns, with at least one pattern present in 92 projects.

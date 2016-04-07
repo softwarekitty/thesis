@@ -32,8 +32,6 @@ The goal of this experiment was to collect regexes from a variety of projects to
 
 Every time a new repository is created on GitHub, a new unique identifier (strictly greater than existing identifiers) is generated and assigned to that repository.  This work refers to these identifiers using the shorthand: \emph{repoID}.  At the time the mining for utilizations used in this study was performed, the largest repoID was between 32 million and 33 million.  Dividing these repoIDs into four groups each of size $2^{23} = 8,388,608$ (with the fourth group being a little larger than that), the second group, which spans the range 8,388,608 - 16,777,215 was split into 32 sections so that starting indices were 262,144 repoIDs apart.  The original intention was to mine the entire second $1/4$ of the first 32 million repo IDs, but due to the challenges described in Appendix~\ref{app:miningChallenges}, only the first 100 or so projects from each of the 32 starting points was mined.  Instead of spending the majority of available time on perfecting a mining technique, the determination was made to analyze the data that had already been gathered.
 
-\pagebreak
-
 \subsubsection{Observed utilizations of the re module}
 \paragraph{Saturation of artifacts with regexes} Out of the \dbfetch{nProjScanned}\ projects scanned, \dbfetch{percentProjectsUsingRegex}\% (\dbfetch{nProjectsUsingRegex}) contained at least one utilization.  Within a project, a duplicate utilization was marked when two versions of the same file have the same function, pattern and flags.  In total, \dbfetch{nUsages} non-duplicate utilizations were observed.  To illustrate how saturated projects are with regexes, measurements are made for the number of utilizations per project, number of files scanned per project, number of files containing utilizations, and number of utilizations  per file, as shown in Table~\ref{table:saturation}.
 
@@ -42,7 +40,6 @@ From Table~\ref{table:saturation}, it can also be seen that each project had an 
 
 \input{table/saturation}
 
-\pagebreak
 \paragraph{Flags and functions}
 \label{sec:flagsAndFunctions} As shown in figure ~\ref{fig:partFlags}, of all behavioral flags used, ignorecase (\DTLfetch{data}{key}{percentI}{value}\%) and multiline (\DTLfetch{data}{key}{percentM}{value}\%) were the most frequently used.  It is also worth noting that although multiple flags can be combined using a bitwise or, this was never observed.
 When considering flag use, non-behavioral flags (default and debug) were excluded, which are present in \DTLfetch{data}{key}{percentFlags0}{value}\% of all \emph{utilizations}.

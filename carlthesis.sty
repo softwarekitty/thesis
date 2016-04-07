@@ -10,11 +10,13 @@
 \ProvidesPackage{carlthesis}
   [2016/03/20 v0.01 LaTeX package for commands used in Carl Chapman's Master's Thesis at ISU 2016]
   
-%% commands not requiring a package
+%% commands not requiring a new package (may depend on ISU required packages)
 \newcommand{\todoNow}[1]{\textbf{\textcolor{red}{\tiny #1}}}
 \newcommand{\todoMid}[1]{\textbf{\textcolor{magenta}{\tiny #1}}}
 \newcommand{\todoLast}[1]{\textbf{\textcolor{green}{\tiny #1}}}
 \newcommand{\clarify}[1]{{\color{blue}\{CLARIFY: #1\}}}
+\newcommand{\cities}[1]{[\cite{#1}]}
+\newcommand{\cstat}[2]{(#1 $<$#2$>$)}
 
 %% packages and the commands that require them
 
@@ -41,7 +43,8 @@
 
 \RequirePackage{fancyvrb,newverbs}
 \definecolor{cverbbg}{gray}{0.93}
-\definecolor{tverbbg}{gray}{0.97}
+\definecolor{bverbbg}{gray}{0.975}
+\definecolor{iverbbg}{gray}{0.96}
 \newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
 \newverbcommand{\cverb}
   {\setbox\verbbox\hbox\bgroup}
@@ -49,12 +52,12 @@
 \newverbcommand{\gverb}
 {\color{gray}}
 {}
+\newverbcommand{\bverb}
+  {(\setbox\verbbox\hbox\bgroup}
+  {\egroup\colorbox{bverbbg}{\box\verbbox})}
 
 %  {\color{cverbbg}}
-%  {}  
-
-
-  
+%  {}    
 
 \endinput
 %%

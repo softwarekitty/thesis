@@ -35,7 +35,7 @@
 % As one opportunity, certain character classes are logically equivalent and can be expressed differently, for example, \verb!\d! $\equiv$ \verb![0123456789]! $\equiv$ \verb![0-9]!. While \verb!\d! is more succinct, \verb![0-9]! may be easier to read, so a refactoring for \emph{default to custom character classes} could be introduced.
 % Human studies are needed to evaluate the readability and comprehension of various regex features in order to define and support appropriate regex refactorings.
 
-% Another avenue of refactoring could be for performance. Various implementations of regex libraries may perform more efficiently with some features than others. An evaluation of regex feature implementation speeds would facilitate semantic transformations based on performance, similar to performance refactorings for LabVIEW~\cite{chambers2013smell, chambers2015impact}.
+% Another avenue of refactoring could be for performance. Various implementations of regex libraries may perform more efficiently with some features than others. An evaluation of regex feature implementation speeds would facilitate semantic transformations based on performance, similar to performance refactorings for LabVIEW~\cities{chambers2013smell, chambers2015impact}.
 
 % Additionally, some developers may  \emph{find} specific content with a regex  and then subsequently \emph{capture} it with string parsing, which may be more error prone than using a capture group and indicates a missed opportunity to use the full extent of regex libraries. Future work will explore source code to identify the frequency of such occurrences and design refactorings to better utilize regex library features.
 
@@ -104,7 +104,7 @@
 % \paragraph{Regex Migration Libraries}
 % We have identified opportunities
 %  to improve the understandability of regexes in existing code bases by looking for some of the less understandable regex representations, which can be thought of as antipatterns, and refactoring to the more common or understandable representations.
-%  Building migration libraries is a promising direction of future work to ease the manual burden of this process, similar in spirit to prior work on class library migration~\cite{Balaban:2005:RSC:1103845.1094832}.
+%  Building migration libraries is a promising direction of future work to ease the manual burden of this process, similar in spirit to prior work on class library migration~\cities{Balaban:2005:RSC:1103845.1094832}.
 
 % \paragraph{Regex Refactoring Applications}
 % Maintainers of code that is intentionally obfuscated for security purposes may want to develop regexes that they understand and then automatically transform them into the least understandable regex possible.
@@ -116,7 +116,7 @@
 % Presently, we are not aware of coding standards for regular expressions, but this work suggests that enforcing standard representations for various regex constructs could ease comprehension.
 
 % \paragraph{Regex Refactoring for Performance}
-% The representation of regexes may have a strong impact on the runtime performance of a chosen regex engine. Prior work has sought to expedite the processing of regexes over large bodies of text~\cite{Baeza-Yates:1996:FTS:235809.235810}.
+% The representation of regexes may have a strong impact on the runtime performance of a chosen regex engine. Prior work has sought to expedite the processing of regexes over large bodies of text~\cities{Baeza-Yates:1996:FTS:235809.235810}.
 % Refactoring regexes for performance would complement those efforts.
 % Further study is needed to determine which representations are most efficient, leading to a whole new area of study on regex refactoring for performance, a topic already explored for
 % Depending on the efficiency of an organization's chosen regex engine, an organization may want to enforce standards for efficiency.
