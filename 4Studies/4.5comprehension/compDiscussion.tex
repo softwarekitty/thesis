@@ -7,17 +7,10 @@ The second refactoring $\overrightarrow{D2 D3}$, reduces confusion caused by the
 
 This refactoring is not likely to scale, however, because a slightly more complicated regex like \cverb!a?b*(cd)?e?! would expand to the very long regex \cverb!ab*cde|b*cde|ab*e|b*e|ab*cd|b*cd|ab*|b*! which introduces the new challenge of visually parsing and remembering eight strings.
 
-Although not statistically significant within the chosen alpha (0.05), all tested refactorings \emph{out} of C2 (into C5, C4 and C1) provided at least a slight advantage on average in both matching and composing scores.  This may not indicate a refactoring (suggesting what node to choose), but instead indicate that C2 is a smelly node.
-
-The most notable difference in measured understandability is between \cverb![\t\r\f\n ]! from C2 with a matching score of 83\%, and \cverb![\s]! from C4 with a matching score of 92\%.
-
-Moving from C2 to C5 is not as clear cut, with examples supporting both directions.  For the regex \cverb!([:;])!, the matching score increased from 81\% to 94\% when moving to \cverb!(:|;)!  However for \cverb!tri[abcdef]3!, the matching score decreased from 93\% to 86\% when moving to \cverb!tri(a|b|c|d|e|f)3!.
-
-Moving from C2 regex \cverb!no[wxyz]5! with a matching score of 87\% to either C1 or C5 boosted the matching score to 94\% or 93\%, respectively.
 
 \subsubsection{Threats to validity}
-Mechanical turk may not be an ideal source for regex comprehension study participants.  This threat was mitigated by requiring workers to pass a pre-qualification test, and by checking the composed regexes for validity before accepting any HIT.
+Mechanical turk may not be an ideal source for regex comprehension study participants.  This threat was mitigated by requiring workers to pass a pre-qualification test, and by checking the composed regexes for potential validity before accepting any HIT, as mentioned in Section~\ref{sec:workerStatistics}.
 
-The regexes chosen to represent nodes may have exhibited more variety in understandability than is present in the refactorings.  This risk is mitigated by composing regexes of approximately equal difficulty, as much as possible, from the perspective of the author.
+Poor understandability could be due to an overly complex regex, instead of the representation being tested.  This risk is mitigated by composing regexes of approximately equal difficulty, as much as possible, from the perspective of the author.
 
-Design flaws have reduced the coverage of equivalence classes, so that not all refactoring possibilities are fully explored.  This risk cannot be fully mitigated.  Several improvements to the experiment design are possible and with the benefit of experiences gained during the course of this study, the author acknowledges that a superior experiment could be executed.  However, with the rigorous treatment of excluding all data that was obtained under misconceptions, and making due with a partial result, this experiment retains valid results.
+Design flaws have reduced the coverage of equivalence classes, so that not all refactoring possibilities are fully explored.  Several improvements to the experiment design are possible and with the benefit of experiences gained during the course of this study, the author acknowledges that a superior experiment could be executed.  However, with the rigorous treatment of excluding all data that was obtained under misconceptions, and making due with a partial result, this experiment retains valid results.

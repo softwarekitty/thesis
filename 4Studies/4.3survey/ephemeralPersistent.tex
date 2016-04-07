@@ -1,9 +1,5 @@
 \subsection{Comparing ephemeral and persistent users}
-Some of the main applications for regexes, such as searching text files and system administration (Section~\ref{sec:applications}), do not leave a persistent artifact, like a text file, behind.  Since most of the analysis in this work is based on persistent regexes (i.e., mined from GitHub repositories), this section analyzes differences between these types of users
-
-\paragraph{Identifying persistent users} A distinction can be made between two types of regular expression users: those who primarily use regexes that are used once and then forgotten (ephemeral users), and those who primarily use regexes that are maintained as an artifact (persistent users).
-
-Participants were asked to recall the number of regexes composed per year by technical environment. Only 27\% (5)
+Some of the main applications for regexes, such as searching text files and system administration (Section~\ref{sec:applications}), do not leave a persistent artifact, like a text file, behind.Since most of the analysis in this work is based on persistent regexes (i.e., mined from GitHub repositories), this section analyzes differences between these two types of users.  \emph{Ephemeral users} are those who primarily use regexes that are used once and then forgotten, and \emph{persistent users} are those who primarily use regexes that are maintained as an artifact.  In question four of the survey, participants were asked to recall the number of regexes composed per year by technical environment. Only 27\% (5)
 % (L,N,P,Q,T) T counts be
 of participants wrote regular expressions that persist (general purpose, scripting, etc.) more frequently than in a text editor or command line tool (where they will not persist).
 
@@ -13,9 +9,7 @@ of participants wrote regular expressions that persist (general purpose, scripti
 \input{table/persistingFeatureGroups}
 
 
-\paragraph{Persistent users use more advanced features} Of the five feature groups analyzed, the only significant difference in usage is for the lookaround group (LKA, LKB, NLKA, NLKB) for which persistent users indicated an average between rarely and occasionally, compared to ephemeral users who averaged between very rarely and rarely.  The differences for all five groups are shown in Table~\ref{table:persistingFeatureGroups}.
-
-In the case of the most rarely-used feature asked about, the OPT feature, three of the four participants who have ever used the OPT feature are persistent users.
+\paragraph{Persistent users use more advanced features} Of the five feature groups analyzed, the only significant difference in usage is for the lookaround group (LKA, LKB, NLKA, NLKB) for which persistent users indicated an average between rarely and occasionally, compared to ephemeral users who averaged between very rarely and rarely.  The differences for all five groups are shown in Table~\ref{table:persistingFeatureGroups}.In the case of the most rarely-used feature asked about, the OPT feature, three of the four participants who have ever used the OPT feature are persistent users.
 
 \paragraph{Persistent users perform different tasks} The five participants who write persistent regexes more often also answered the task frequency questions differently.  Table~\ref{table:regexPersistingTasks} describes the tasks more frequently performed by persistent users than by ephemeral users.  Most notably, persistent users are counting strings and parsing generated text with greater frequency than `rarely'.  This makes sense because these are use cases more suited for a complex software program than a quick search.
 

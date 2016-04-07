@@ -1,0 +1,186 @@
+\section*{Mapping edge indices to regex pairings}
+\label{app:edgeToPairMap}
+
+E1: T1 -- T4
+\vspace{-5mm}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[T1] \cverb!([}{])!
+\item[T4] \cverb!([\0175\0173])!
+\item[T1] \cverb!([:;])!
+\item[T4] \cverb!([\072\073])!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E2: D2 vs D3
+\vspace{-5mm}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[D2] \cverb!((q4f)?ab)!
+\item[D3] \cverb!(q4fab|ab)!
+\item[D2] \cverb!(deedo(do)?)!
+\item[D3] \cverb!(deedo|deedodo)!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E3: C2 -- C5
+\vspace{-5mm}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[C2] \cverb!tri[abcdef]3!
+\item[C2] \cverb!no[wxyz]5!
+\item[C2] \cverb!([}{])!
+\item[C2] \cverb!([:;])!
+\item[C5] \cverb!tri(a|b|c|d|e|f)3!
+\item[C5] \cverb!no(w|x|y|z)5!
+\item[C5] \cverb!(\{|\})!
+\item[C5] \cverb!(:|;)!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E4: C2 -- C4
+\vspace{-5mm}
+\begin{multicols}{1}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[C2] \cverb![\t\r\f\n ]!
+\item[C4] \cverb![\s]!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E5: L2 -- L3
+\vspace{-5mm}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[L2] \cverb!zaa*!
+\item[L3] \cverb!za+!
+\item[L2] \cverb!RR*!
+\item[L3] \cverb!R+!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E6: D1 vs D2
+\vspace{-5mm}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[D1] \cverb!((q4f){0,1}ab)!
+\item[D2] \cverb!((q4f)?ab)!
+\item[D1] \cverb!(dee(do){1,2})!
+\item[D2] \cverb!(deedo(do)?)!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E7: C1 -- C2
+\vspace{-5mm}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[C1] \cverb!tri[a-f]3!
+\item[C2] \cverb!tri[abcdef]3!
+\item[C1] \cverb!no[w-z]5!
+\item[C2] \cverb!no[wxyz]5!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E8: T2 -- T4
+\vspace{-5mm}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[T2] \cverb!xyz[\x5b-\x5f]!
+\item[T4] \cverb!xyz[\0133-\0140]!
+\item[T2] \cverb!t[\x3a-\x3b]+p!
+\item[T4] \cverb!t[\072-\073]+p!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E9: C1 -- C5
+\vspace{-5mm}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[C1] \cverb!tri[a-f]3!
+\item[C5] \cverb!tri(a|b|c|d|e|f)3!
+\item[C1] \cverb!no[w-z]5!
+\item[C5] \cverb!no(w|x|y|z)5!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E10: T1 -- T3
+\vspace{-5mm}
+\begin{multicols}{3}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[T1] \cverb!(\$\{)\d+(:[^}]+\})!
+\item[T3] \cverb!([$][{])\d+(:[^}]+[}])!
+\item[T1] \cverb!t\.\$+\d+\*!
+\item[T3] \cverb!t[.][$]+\d+[*]!
+\item[T1] \cverb!\{\$(\d+\.\d)\}!
+\item[T3] \cverb![{][$](\d+[.]\d)[}]!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E11: D1 vs D3
+\vspace{-5mm}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[D1] \cverb!((q4f){0,1}ab)!
+\item[D3] \cverb!(q4fab|ab)!
+\item[D1] \cverb!(dee(do){1,2})!
+\item[D3] \cverb!(deedo|deedodo)!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E12: C1 -- C4
+\vspace{-5mm}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[C1] \cverb!([0-9]+)\.([0-9]+)!
+\item[C1] \cverb!xg1([0-9]{1,3})%!
+\item[C1] \cverb![a-f]([0-9]+)[a-f]!
+\item[C1] \cverb!&([A-Za-z0-9_]+);!
+\item[C1] \cverb!1q[A-Za-z0-9_][A-Za-z0-9_]!
+\item[C1] \cverb!tuv[A-Za-z0-9_]!
+\item[C4] \cverb!(\d+)\.(\d+)!
+\item[C4] \cverb!xg1(\d{1,3})%!
+\item[C4] \cverb![a-f](\d+)[a-f]!
+\item[C4] \cverb!&(\w+);!
+\item[C4] \cverb!1q\w\w!
+\item[C4] \cverb!tuv\w!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E13: C3 -- C4
+\vspace{-5mm}
+\begin{multicols}{2}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[C3] \cverb![^0-9A-Za-z]!
+\item[C4] \cverb![\W_]!
+\item[C3] \cverb![^0-9]!
+\item[C4] \cverb![\D]!
+\end{itemize}
+\end{multicols}
+\vspace{5mm}
+
+E14: S1 -- S2
+\vspace{-5mm}
+\begin{multicols}{3}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item[S1] \cverb!%([0-9A-Fa-f]{2})!
+\item[S2] \begin{footnotesize}\cverb!%([0-9a-fA-F][0-9a-fA-F])!\end{footnotesize}
+\item[S1] \cverb!&d([aeiou]{2})z!
+\item[S2] \cverb!&d([aeiou][aeiou])z!
+\item[S1] \cverb!fa[lmnop]{3}!
+\item[S2] \cverb!fa[lmnop][lmnop][lmnop]!
+\end{itemize}
+\end{multicols}
+
+
+

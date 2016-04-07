@@ -1,7 +1,6 @@
 \subsection{Counting representations in nodes}
-
-\subsubsection{Overview of the node counting process}
 \label{sec:nodeCountOverview}
+
 This work finds defines a community standard for each equivalence class by counting the number of regexes in each node.  A program was implemented that iterates through the corpus once for each of the 18 nodes, adding regexes to sets that represent nodes based on the definitions in Section~\ref{sec:equivClasses}.  A regex is a \emph{candidate} for membership in a node if it is possible for that regex belong to a node.  For six nodes, the presence of a feature is enough to determine membership without ambiguity.  For four nodes, the presence of a feature and a search of the regex's pattern is enough to determine candidacy for membership.  The remaining eight nodes require more advanced \emph{filters} to determine candidacy for membership.
 
 To verify accuracy and obtain a final node count, all sets were dumped to text files and reviewed manually. Regexes that had been erroneously added to a node were removed.  The regexes that had not been added to any node in a given equivalence class were also dumped to a file, and manually searched for regexes that belonged to some node but had been erroneously filtered out.  This process was iterated on several times to refine the filters used in the implementation.  Even after many iterations, manual verification was still required for D3. The final outcome of this node counting process is summarized in Table~\ref{table:nodeCount}.

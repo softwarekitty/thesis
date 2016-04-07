@@ -1,11 +1,10 @@
 \subsection{Defining five equivalence classes}
 \label{sec:equivClasses}
 
-\subsubsection{Conceptual Overview}
 This chapter introduces possible refactorings in regular expressions by identifying equivalence classes of Python Regular Expressions, identifying what representations are possible in each equivalence class, and also identifying what transformations between representations are possible. As with source code, in regular expressions there are often multiple ways to express the same semantic concept.
-For example, \cverb!AAA*! matches two \verb!`A'!s followed by zero or more \verb!`A'!s.  This matching behavior is identical to the behavior of the syntactically different regex \cverb!AA+!, which matches two or more \verb!`A'!s.  What is not clear is which representation,  \cverb!AAA*!  or  \cverb!AA+!, is preferred.
+For example, \cverb!AAA*! matches two \verb!`A'!s followed by zero or more \verb!`A'!s.  This matching behavior is identical to the behavior of the syntactically different regex \cverb!AA+!, which matches two or more \verb!`A'!s.  What is not clear is which representation,  \cverb!AAA*!  or  \cverb!AA+!, is preferred.  This topic will be explored by answering the research question, `Within five equivalence classes, what representations are most frequently observed?'
 
-Preferences in regular expression refactorings could come from a number of sources, including which is easier to maintain, easier to understand, or better conforms to community standards, depending on the goals of the programmer.  By investigating which representation appears most frequently in source code, we can establish a community standard and suggest refactorings based on conformance to that standard.
+Preferences in regular expression refactorings could come from a number of sources, including which is easier to maintain, easier to understand, or better conforms to community standards, depending on the goals of the programmer.  By investigating which representation appears most frequently in source code, community standards can be established that suggest refactorings based on conformance to that standard.
 
 
 \begin{figure*}[tb]
@@ -17,7 +16,7 @@ Preferences in regular expression refactorings could come from a number of sourc
 \label{fig:refactoringTree}
 \end{figure*}
 
-Figure~\ref{fig:refactoringTree} displays five equivalence classes in grey boxes.  These equivalence classes provide options for how to represent double-bounds in repetitions (e.g., \cverb!a{1,2}! or \cverb!a|aa!), single-bounds in repetitions (e.g., \cverb!a{2}! or \cverb!aa!), lower bounds in repetitions (e.g., \cverb!a{2,}! or \cverb!aaa*!), character classes (e.g., \cverb![0-9]! or \cverb![\d]!), and literals (e.g., \cverb!\a! or \cverb!\x07!).  This work will often use the term \emph{group} as shorthand for `equivalence class'.
+Figure~\ref{fig:refactoringTree} displays five equivalence classes in grey boxes.  These equivalence classes provide options for how to represent double-bounds in repetitions (e.g., \cverb!a{1,2}! or \cverb!a|aa!), single-bounds in repetitions (e.g., \cverb!a{2}! or \cverb!aa!), lower bounds in repetitions (e.g., \cverb!a{2,}! or \cverb!aaa*!), character classes (e.g., \cverb![0-9]! or \cverb![\d]!), and literals (e.g., \cverb!\a! or \cverb!\x07!).  This work will often use the term \emph{group} as shorthand for `equivalence class'.  These equivalence classes were chosen by considering what alternatives are possible between the most commonly used features from  Section~\ref{sec:featureResults}.  Additional classes of behaviorally identical regexes are discussed in Section~\ref{dis:equivalenceModels}.
 
 Each equivalence class has multiple \emph{nodes} which each represent different ways to express or \emph{represent} the behavior of a particular regex.  Examples of various semantically equivalent \emph{representations} of a regex are shown in white boxes. A \emph{representation} is a particular regex that expresses matching behavior using the style of a particular \emph{node}.
 
@@ -25,8 +24,7 @@ As an example of one equivalence class, consider the LWB group.  Each node in th
 The undirected edges between nodes define possible refactorings.
 % Identifying the best direction for each arrow in the possible refactorings is discussed in Section~\ref{sec:ordering}.
 
-Figure~\ref{fig:refactoringTree} uses specific examples to more clearly illustrate the characteristics of each node.  However, the \verb!`A'!s in the LWB group abstractly represent any element, and the number of elements is free to vary. We chose the lower bound repetition threshold of 2 for illustration; in practice this could be any number, including zero.
-Next, we describe the characteristics of all nodes of each group in detail:
+Figure~\ref{fig:refactoringTree} uses specific examples to more clearly illustrate the characteristics of each node.  However, the \verb!`A'!s in the LWB group abstractly represent any element, and the number of elements is free to vary. The lower bound repetition threshold of 2 provides a useful illustration, but is not meant to describe a requirement for the equivalence class.  In the analysis performed for this study, a lower bound of 1 is used.
 
 \subsubsection{CCC Group}
 The Custom Character Class (CCC) group contains five nodes that each require the expression of a set of characters, as is typical when using the CCC feature.  For example, the regex \cverb!b[ea]t! will match both \verb!"bet"! and \verb!"bat"! because, between the \verb!`b'! and \verb!`t'!, the CCC \cverb![ae]! specifies that either \verb!`a'! or \verb!`e'! (but not both) must be present.

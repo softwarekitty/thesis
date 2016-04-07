@@ -1,14 +1,16 @@
 \subsection{Discussion of survey results}
 
 \subsubsection{Implications}
-The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regexes being hard to read and hard to write, and express a respect for the power of regexes but also a hesitancy or caution concerning their use.  This supports the need for research into regular expressions to improve the state-of-the-art.
+The fact that all the surveyed developers compose regexes, and half of the developers use tools to test their regexes indicates the importance of tool development for regex.  Developers complain about regexes being hard to read and hard to write, and express a respect for the power of regexes but also a hesitancy or caution concerning their use.  This supports the need for research into regular expressions to improve the state-of-the-art, especially to help developers leverage the power of regular expressions with more confidence.  Participants reported testing code more frequently than testing regexes (Section~\ref{sec:bestPractices}), and though some online tools exist, guaranteeing coverage of all corner cases is challenging.  More research is needed into what kind of support is required to help developers use regular expressions with complete confidence.
 
 Common uses of regexes include locating content within a file, capturing parts of strings, and parsing user input.  Although ephemeral users are more common than persistent users, persistent users tend to use regexes more frequently than ephemeral users in a variety of tasks types, especially in counting substrings, parsing user input, capturing strings and parsing generated text.  This implies that improving the state-of-the-art for different classes of regular expression users will mean focusing on different goals.
 
 In terms of refactoring implications, developers communicated a preference for using default character classes when possible, using numbered capture groups over named capture groups, and choosing KLE over ADD if all else is equal.
+\todoLast{refer to refactorings?}
 
 \subsubsection{Threats to validity}
-The greatest threat to validity is that this is a small sample set.  This threat is mitigated by corroborating results with other studies, so that combined the results can be interpreted with confidence.
-Another threat to validity is that survey participants may tend to say what they believe they are supposed to say.  This threat is mitigated by the disclaimer given at the beginning of the survey to `answer as accurately as possible, not guessing what is the desired answer and providing that'.  Also, the (overall) sincere and professional tone of responses indicates that respondents took the survey seriously, providing quality answers.
+The greatest threat to validity is that this is a small sample set.  Future study is needed, using a larger sample set to obtain more statistically sound results.  Also, the population of developers at Dwolla may be more homogeneous than the general population of programmers - more study is also needed to gather the type of data gathered in this study from a diverse population of programmers.
+
+Another threat to validity is that survey participants may tend to say what they believe they are supposed to say.  This threat is mitigated by the disclaimer given at the beginning of the survey to `answer as accurately as possible, not guessing what is the desired answer and providing that'.
 
 

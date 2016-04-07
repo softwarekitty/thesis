@@ -1,6 +1,9 @@
+When trying to assess how developers use regular expressions, input directly from developers is useful and relevant.  The goal of this section is to answer the question, `What preferences, behaviors and opinions do professional developers have about using regex?'.  Professional software developers at Dwolla, a startup company focused on moving money, were asked about their usage and preferences when using regular expressions.  The results of this survey indicate that developers use regular expressions most frequently in text editors and on the command line, have a strong preference for numbered over named backreferences, and about half of developers use online testing tools when composing regular expressions.
+
+
 \subsection{Survey design}
 
-To understand the context of when and how programmers use regular expressions, a survey was designed and implemented using Google Forms containing 30 questions(Appendix~\ref{app:surveyQuestions}). The questions asked about regex usage frequency, technical environment, tasks regexes were used for, pain points, and the use of various language
+The survey designed to understand the context of when and how programmers use regular expressions was designed and implemented using Google Forms containing 30 questions.  All survey questions are in Appendix~\ref{app:surveyQuestions}. The questions asked about regex usage frequency, technical environment, tasks regexes were used for, pain points, and the use of various language
 features. Participation was voluntary and participants were entered in a lottery for a \$50 gift card.
 
 
@@ -13,7 +16,7 @@ The number of regexes used by a developer per year overall can be used as an ind
 To provide another perspective on feature usage frequency, developers were asked about the frequency of use for some features not supported the analysis tools examined in Table~\ref{table:featuresInTools}.  They were also asked about which features they prefer to use when two equivalent options will both work, providing information to inform refactoring recommendations.  One question asked about the what participants use the WRD default character class for, because many close variants of this default were observed in the corpus.
 
 \subsubsection{Best practices questions}
-\paragraph{Testing and composition tools} Because regexes can be hard to understand and cause bugs in code, participants were asked about their testing of regexes and testing of code in general, so that a comparison could be made.  Participants were also asked about what tools they use to test regexes.
+\paragraph{Testing and composition tools} Prior work suggests that regexes are hard understand, causing tens of thousands of reported bugs per year~\cities{Spishak:2012:TSR:2318202.2318207}.   Participants were asked about their testing of regexes and testing of code in general, so that a comparison could be made.  Participants were also asked about what tools they use to test regexes.
 
 \paragraph{Parsing HTML} Because parsing a markup language like HTML using regular expressions is a common mistake\footurl{http://stackoverflow.com/questions/1732348}, (typically an HTML parser is a better choice) participants were asked if they had ever tried to parse HTML or XML.  A separate questions asked if, when parsing text, participants prefer to use regular expressions or write a custom parser.
 
