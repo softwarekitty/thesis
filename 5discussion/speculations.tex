@@ -1,0 +1,37 @@
+speculations based on data::::
+speculation about the boundary at which 50 percent of developers have never used a feature.
+
+
+for better behavioral clustering, a human may be needed, or some other technique to group like purposes instead of just like behavior.
+
+
+
+which refactorings have conflicting directions from different perspectives...
+
+
+
+% For example, two regexes that have dissimilar matching behavior could be very similar in purpose and in the eyes of the developer. For example, \verb!commit:\[(\d+)\] - (.*)! and \verb!push:\[(\d+)\] - (.*)! could both be used to  capture the id and command from a versioning system, but match very different sets of strings. Future work would apply abstractions to the regex strings, such as removing or relaxing literals, prior to similarity analysis to capture and cluster such similarities.
+
+% From another perspective, our regex similarity measure, and even containment analysis, could treat behaviorally identical regexes as the same, when  their usage in practice is completely different. For example, in Table~\ref{table:exampleCluster}, the regexes \verb!`:+'! and \verb!`(:+)'! are behaviorally identical in that they match the same strings, except the latter uses a capture group. In practice, these may be used very differently, where the former may be used for validation and the latter for extraction. This usage difference could be observed by code  analysis, and is left for future work.
+
+
+% Many uses of CG also use the ANY and KLE features, eg. \verb!(.*){(.*)}(.*)! and \verb!\\s*([^: ]*)\\s*:(.*)!.  This type of usage frequently revolves around an important delimiter character such as \verb!:! or \verb!\!.  This use case is well supported by existing tools for ASCII characters, but future tools should consider the centrality of this use case and its implications for non-English users of regex tools.  For example, Unicode characters like `U+060D' the Arabic Date Separator, or `U+1806' the Mongolian Todo Soft Hyphen may be used to locate segments of text that a user would want to capture.
+
+
+% \subsubsection{Counting Lines}
+% Text files containing one unit of information per line are common in a wide variety of applications (for example .log and .csv files).  Out of the 13,597 patterns in the corpus, 3,410 (25\%) contained ANY followed by KLE  (i.e., \verb!`.*'!), often at the end of the pattern.
+% One reasonable explanation for this tendency to put \verb!`.*'! at the end of a pattern is that users want to disregard all matches after the first match on a single line in order to count how many distinct lines the match occurs on.  Survey participants indicated an average frequency of ``Counting lines that match a pattern" and ``Counting substrings that match a pattern" at 3.2 or rarely/occasionally. It may be valuable for tool builders to include support for common activities such as line counting.
+
+% CG is important for 2 cluster use cases, and for 1 survey response question with value x.x, is most frequently used in patterns::
+
+% \subsubsection{Capturing Specific Content Near A Delimiter}
+% The survey results from Section
+% \todoLast{N} indicate that capturing parts of strings is among the most frequent activities for which developers use regexes.
+% From a feature perspective, the capture group (CG) is the most frequently used in terms of patterns (Table~\ref{table:featureStats}).  This feature has two functions: 1) logical grouping as would be expected by parenthesis, and 2) retrieval of information in one logical grouping.  As mentioned in Section
+% \todoLast{N}, capturing content was a primary goal evident in several cluster categories.  The fourth-largest category is based entirely on capturing the content between brackets or parentheses (Section\todoLast{N}).
+
+% \subsection{Reason for knowledge gap}
+% \todoLast{clean and move this}
+% What explains the lack of rigor for regular expressions?  I've been pondering this for quite a while now.  This seems like it might be a case of being unable to see the forest because of the trees.  Everyone in CS uses regex, and deals to some extent with other people using regex.  It's never billed as top priority to optimize this, and it's so fundamental that the wikipedia pages explaining regex and Klene's theory are nearly circular with definitions of regular expressions relying on knowledge of what regular expressions are.  The terminology is also very confusing to theory people, who probably believe that modern regex still represent DFA's and regular languages.  I'd say there is an over-abundance of anecdotal evidence about how regex are used, so that people believe that it is a known topic.  I also suspect a very real hacker/Unix ethos, where the odd ducks out there who really love regex also scorn formal evaluations and `design by committee' in favor of just getting things to work, getting it good enough.  It has flabbergasted me to look at every single documentation source for the dozens of different regex language `flavors' and see that it is always just a thrown-together hodgepodge of examples and concepts.  Most regex doc feels like it may be incomplete, saying stuff like `it's mostly like PCRE'.  Nobody and I mean nobody has a definitive feature list, outlining how the flavors differ and overlap.  Like it's just okay to have all these dangling details for something that is pretty confusing already.  Now you have two problems.  It would be pretty fun to do a sort of gotcha-quiz of developers to see how many people would fall for the common myths and stuff.
+
+

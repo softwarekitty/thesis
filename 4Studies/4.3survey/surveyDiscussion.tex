@@ -4,8 +4,7 @@ The fact that all the surveyed developers compose regexes, and half of the devel
 
 Common uses of regexes include locating content within a file, capturing parts of strings, and parsing user input.  Although ephemeral users are more common than persistent users, persistent users tend to use regexes more frequently than ephemeral users in a variety of tasks types, especially in counting substrings, parsing user input, capturing strings and parsing generated text.  This implies that improving the state-of-the-art for different classes of regular expression users will mean focusing on different goals.
 
-In terms of refactoring implications, developers communicated a preference for using default character classes when possible, using numbered capture groups over named capture groups, and choosing KLE over ADD if all else is equal.
-\todoLast{refer to refactorings?}
+In terms of refactoring implications, developers communicated a preference for using default character classes when possible, using numbered capture groups over named capture groups, and choosing KLE over ADD if all else is equal.  In contrast to choosing KLE over ADD, results from other studies involving refactoring show a slight preference for ADD over KLE (Section\ref{sec:communityL2L3}, Section~\ref{sec:compL2L3}), indicating that further study is needed for that refactoring opportunity. No other information on named vs numbered backreference was obtained from other studies.
 
 \subsubsection{Threats to validity}
 The greatest threat to validity is that this is a small sample set.  Future study is needed, using a larger sample set to obtain more statistically sound results.  Also, the population of developers at Dwolla may be more homogeneous than the general population of programmers - more study is also needed to gather the type of data gathered in this study from a diverse population of programmers.

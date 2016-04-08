@@ -1,0 +1,62 @@
+\section{Implications For Regex Language Researchers}
+This section provides implications which are expected to be of interest to researchers studying regular expressions.  Builders of tools that help programmers use regexes should be encouraged by the results of the developer survey, in which 50\% of participants indicated using an online composition tool or standalone analysis tool.
+
+\paragraph{Behavioral clustering}  With the intuition that shared use cases should lead to shared behavior, this work clustered regexes using a string matching technique that measures the behavioral similarity between regexes.  Six categories of clusters were observed grouping on: specific characters, anchors, two or more chars in sequence, parsing brackets and code search.  The observed groups may prove useful to researchers seeking to understand how programmers use regular expressions.  The behavioral clustering technique may be used again to study a different body of regexes.
+
+\paragraph{Anchors need support}  In the developer survey, over half (56\%) of the respondents answered that they use endpoint anchors frequently or very frequently, and none of them claimed to never use them.  One of the six behavioral categories observed in the clustering experiment grouped on the anchor features.  The STR and END features appear in 51.4\% and 50.3\% of projects containing regexes (Table~\ref{table:featureStatsOnly}), and yet analysis tools `brics' and `Automata.Z3' both do not support analysis of regexes using END, and `brics' does not support analysis of regexes using STR (Table~\ref{table:featuresInTools}).  The feature usage frequency results, the behavioral clustering results, and the results from the developer survey can inform tool designers when deciding what features their tool should support.
+
+\subsection{Finding regex refactorings}
+
+This work identified many potential refactorings.  These refactorings were unambiguous:
+\begin{enumerate}
+\item $\overrightarrow{T4 T1}$ by community standard, and significance $\alpha=0.05$ understandability
+\item $\overrightarrow{T3 T1}$ by community standard
+\item $\overrightarrow{T2 T1}$ by community standard
+\item $\overrightarrow{T2 T4}$ by community standard, and supported by trends in understandability
+
+\item $\overrightarrow{L1 L3}$ by community standard (for small lower bounds)
+\item $\overrightarrow{C2 C1}$ by community standard (for sequences)
+\item $\overrightarrow{C4 C1}$ by community standard (for \bverb!\d!, \bverb!\w!)
+\item $\overrightarrow{C5 C1}$ by community standard (for sequences)
+\item $\overrightarrow{D2 D1}$ supported by trends in understandability
+\end{enumerate}
+Note that strictly speaking, $\overrightarrow{C3 C1}$ is also recommended by the community standard, but in practice this refactoring is not recommended because transforming an NCCC (C3) to a CCC using a range (C1) leads to very strange regexes.  Other potential community-based refactorings were disregarded for similar nuanced reasons (Section~\ref{sec:equivRefactorings}).
+
+
+Some of the refactorings indicated by one technique conflicted with refactorings indicated by another technique.  These conflicting refactorings are listed here:
+\begin{enumerate}
+\item \begin{itemize}
+\item   $\overrightarrow{D2 D3}$ significance $\alpha=0.05$ understandability
+\item   $\overrightarrow{D3 D2}$ by community standard
+\end{itemize}
+\item \begin{itemize}
+\item   $\overrightarrow{L2 L3}$ supported by trends in understandability
+\item   $\overrightarrow{L3 L2}$ by community standard, and trends in surveyed developer preferences
+\end{itemize}
+\item \begin{itemize}
+\item   $\overrightarrow{C2 C4}$ significance $\alpha=0.10$ understandability, and trends in surveyed developer preferences
+\item   $\overrightarrow{C4 C2}$ by community standard
+\end{itemize}
+\item \begin{itemize}
+\item   $\overrightarrow{C2 C5}$ significance $\alpha=0.10$ understandability
+\item   $\overrightarrow{C5 C2}$ by community standard
+\end{itemize}
+\end{enumerate}
+
+
+\paragraph{A starting point for regex refactoring}  An oversimplified equivalence model can accidentally combine several refactorings which depend on finer details.  These refactorings may need to go in opposite directions, so results from the oversimplified model are inconclusive.  One guiding principal for designing a model is finding the rules that separate use cases.  The model used to decide community support and understandability was based on features, but would have been improved by using more conditions, like the number of repetitions, the length of the repeated element, and the length of the original regex.  Additionally an equivalence model should, by design, block refactorings that are very likely to lead to an undesirable regex, like most refactorings out of C3.  It might also be the case that there exist critical comprehension differences within a representation. For example, between C1 (e.g., \cverb![0-9a]!) and C4 (e.g., \cverb![\da]!), it could be the case that \cverb![0-9]! is preferred to \cverb![\d]!, but \cverb![A-Za-z0-9_]! is not preferred to \cverb![\w]!). The work done in this thesis offers a starting point for designing equivalence classes for regex refactoring, which can be iterated on to improve equivalence class design.
+
+% \paragraph{Iterate on model designs}
+
+
+
+% When asked if they have ever used the OPT feature (\verb!(?i)!), 78\% (14) said that they had never used it, with the rest saying they had.  This provides some context to Table 4.3 - if a feature is used only 9.4\% of projects, then many programmers may have never even used it.  But DBB was at 14.5\% and in this case, 78\% \emph{had} used it.  So there may be a cutoff around 10\%...
+
+
+
+% Backslash explosion - how does it affect readability?
+
+
+
+% In the DBB group, D3 (e.g., \verb!pBs|pBBs|pBBBs!) merits further exploration because it is the most understandable but least common node in DBB group.  This may be because explicitly listing the possibilities with an OR is easy to grasp, but if the number of items in the OR is too large, the understandability may go down. Further analysis is needed to determine the optimal thresholds for representing a regex as D3 compared to D1 (e.g., \verb!pB{1,3}s!) or D2 (e.g., \verb!pBB?B?s!).
+%  regexes: deciding if certain strings match or not, composing strings that are supposed to match, and measuring the frequency of a regex type in a community.
