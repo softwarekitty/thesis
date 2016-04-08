@@ -1,7 +1,7 @@
 \subsection{Clustering implementation}
 
 \subsubsection{Selecting regexes to include}
-Earlier runs of the study determining behavioral similarity attempted to include all regexes - only to find that because only the clusters representing the most projects could be included in further analysis, regexes belonging to only one project had little affect on the results. In light of this and also due to the computationally intensive nature of building the similarity matrix, regexes appearing in only one project were not included in the final behavioral analysis.  So of the 13,597 regexes of the corpus, 10,015 (74\%) regexes that were not found in multiple projects were not included.
+Regexes appearing in only one project were not included in the final behavioral analysis, because these regexes have already appealed to more than one project maintainer, and so are more likely to be of interest when determining common behaviors, which aligns with the goal of this study.  So of the 13,597 regexes of the corpus, 10,015 (74\%) regexes that were not found in multiple projects were not included.
 An additional 711 (5\%) regexes were excluded that contain features not supported by Rex.  The remaining \textbf{2,871} (21\%) regexes were used in the similarity analysis technique described here.
 
 The impact is that 923 (53\%) projects were excluded from the data set for the similarity analysis.  The remaining \textbf{730} (47\%) projects touched by some cluster remained relevant to the analysis. Omitted features are indicated in Table~\ref{table:featuresInTools} for Rex.  Further details about similarity matrix creation are available in Appendix~\ref{app:similarityMatrixCreation}.

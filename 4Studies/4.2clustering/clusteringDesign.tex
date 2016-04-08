@@ -1,7 +1,9 @@
+The goal of this study is to answer the question, `What behavioral categories can be observed in regex?' so that designers of regular expression languages and end-user tools can better support what is most useful to programmers.
+
 \subsection{Clustering design}
 \label{sec:clusteringDesign}
 
-Regular expression languages are infinite and exhibit substantial variety, but programmers are likely to use them for a limited number of purposes.  The goal of this study is to answer the question, `What behavioral categories can be observed in regex?' so that designers of regular expression languages and end-user tools can better support what is most useful to programmers.  In this study, a regex similarity measurement technique was devised and used to group regex with similar behavior into clusters.  The clusters representing the most projects were then in turn manually grouped into general categories of behavior.
+Regular expression languages are infinite and exhibit substantial variety, but programmers are likely to use them for a limited number of purposes.  In this study, a regex similarity measurement technique was devised and used to group regex with similar behavior into clusters.  The clusters representing the most projects were then in turn manually grouped into general categories of behavior.
 
 \subsubsection{Determining behavioral similarity}
 An ideal analysis of regex behavioral similarity would use subsumption or containment analysis. However, a tool that could facilitate such an analysis of the corpus could not be found.  For this reason, a new technique using string matching was developed that can create a similarity score between two regexes with existing technology.
@@ -34,7 +36,7 @@ This facilitates clustering using the  Markov Clustering (MCL) algorithm\footurl
 MCL was chosen because it offers a fast and tunable way to cluster items by similarity and it is particularly useful when the number of clusters is not known \emph{a priori}.
 
 
-In the implementation, strings are generated for each regex using Rex~\cities{rex}.  Rex generates matching strings by representing the regular expression as an automaton, and then passing that automation to a constraint solver that generates members for it\footurl{http://research.microsoft.com/en-us/projects/rex/}.  If the regex matches a finite set of strings smaller than 400, Rex will produce a list of all possible strings.
+In the implementation, strings are generated for each regex using Rex~\cities{rex} version {1.0.0.0}.  Rex generates matching strings by representing the regular expression as an automaton, and then passing that automation to a constraint solver that generates members for it\footurl{http://research.microsoft.com/en-us/projects/rex/}.  If the regex matches a finite set of strings smaller than 400, Rex will produce a list of all possible strings.
 In this study, the goal is to generate 400 strings for each regex to balance the runtime of the similarity analysis with the precision of the similarity calculations.
 
 For clustering, the similarity matrix is pruned to retain all similarity values greater than or equal to 0.75, setting the rest to zero, and then using MCL to actually find the clusters.

@@ -3,7 +3,7 @@ Given a large set of regexes, and a set of strings specified to either not-match
 
 Ideally, a relatively small number of regexes could be used to navigate the set of regexes, finding the regexes that do match the specifications without performing very many evaluations.  By dividing the space of many regexes into regions that are represented by just a few regexes, the desired navigation may be possible.  One solution is described in the following section.
 
-\subsection{Finding a filter set} One technique for minimizing the number of regexes that need to be evaluated to solve semantic search is described here as `finding a filter set'.  This is left as an opportunity for future work.
+\subsection{Finding a filter set.} One technique for minimizing the number of regexes that need to be evaluated to solve semantic search is described here as `finding a filter set'.  This is left as an opportunity for future work.
 
 The intuition is best demonstrated with an example.  The regex \cverb!::! consists of only two \verb!`:'! characters, and the five regexes \cverb!::\(.*\)!, \cverb!\s*::\s*!, \cverb!e*d::!, \cverb!std::regex! and \cverb!d:{2,6}! also all contain two \verb!`:'! characters, but describe a more limited set of strings.  Now the first semantic search is performed by user A: find a regex that matches \verb!"abc"!.
 
@@ -25,7 +25,8 @@ $f_i$ is a \emph{filter} if $\forall s\in S$, $ \neg f_i.m(s) \implies (\forall 
 
 The best filter is the regex lowest in the subsumption tree to subsume a set.  Finding the best filters for a given set of regexes is likely to be computationally intensive, but the benefit of the filtering approach is that once good filters are found, the searching solution remains solved.  All additional detail is left as an opportunity for future work.
 
-\subsection{Automated regex repair}  Regular expression errors are common and have produced thousands of bug reports~\cities{Spishak:2012:TSR:2318202.2318207}. This provides an opportunity to introduce automated repair techniques for regular expressions.
+\subsection{Automated regex repair}
+Regular expression errors are common and have produced thousands of bug reports~\cities{Spishak:2012:TSR:2318202.2318207}. This provides an opportunity to introduce automated repair techniques for regular expressions.
 Recent approaches to automated program repair rely on mutation operators to make small changes to source code and then re-run the test suite (e.g., ~\cities{cacm10, genprog-tse-journal}). In regular expressions, it is likely that the broken regex is close, semantically, to the desired regex. Syntax changes through mutation operators could lead to big changes in behavior, but using transformations within a behaviorally similar cluster (as described in Section~\ref{sec:clusteringDesign}) to identify potential repair candidates could efficiently and effectively converge on a repair candidate.  Automated program repair for C programs has been shown to be effective, when based on semantic search~\cities{Ke15ase}.  A similar approach could apply to regular expressions, once semantic search for regular expressions is solved.
 
 

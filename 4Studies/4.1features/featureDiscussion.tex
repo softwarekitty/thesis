@@ -2,36 +2,13 @@
 \label{sec:featureDiscussion}
 
 \subsubsection{General Implications}
-Many of the implications of this work will not be apparent from the beginning, because of the fundamental nature of the investigation.  However, some implications can be drawn directly from this data.
+Based on these results we draw implications for programmers requiring portability, language and tool designers, and specifically, developers of the {\tt re} module.
 
-\paragraph{Defining a set of regex features that generalizes} As shown in Table~\ref{table:rankedFeatureSupport}, the feature set used in this study (except for PNG, NBKR and ENDZ) generalizes well across all feature-rich modern variants.  This has implications for coding standards, and for software development where portability is a concern.
+\paragraph{Defining a set of regex features that generalizes.} As shown in Table~\ref{table:rankedFeatureSupport}, the feature set used in this study (except for PNG, NBKR and ENDZ) generalizes well across all feature-rich modern variants.  A portable set of features is useful when developing regex coding standards that enable portability, and for software development where minimizing vendor lock-in, or planning for possible migration across languages is important.
 
-\paragraph{Providing a reference for language and tool designers} The largest implication for language and tool designers is that now, if they need to know what features are supported, or how frequently a feature is used, such information is available in a concise format.
+\paragraph{Providing a reference for language and tool designers.} The largest implication for language and tool designers is that now, if they need to know what features are supported, or how frequently a feature is used, such information is available in a concise format.
 
-\paragraph{For developers of the re module} Specific details about utilizations of the {\tt re} module, such as function and flag usage frequency, and saturation within GitHub projects, has implications for the developers of the {\tt re} module.  Namely, the near-irrelevance of the `locale' flag, the general trend toward compiling objects (presumably avoiding magic strings), and the apparent misconception that only one flag can be used at a time (the documentation clearly states that a bitwise-or of flags is effective\footurl{https://docs.python.org/2/library/re.html}, but this was never observed in over 50,000 utilizations).
-
-\subsubsection{Interpretations of feature frequency values}
-The following discussion uses the five interpretations for values from Table~\ref{table:featureStatsOnly}, as mentioned in Section~\ref{sec:featureResults}.
-
-\begin{itemize}[noitemsep,topsep=0pt]
-\item \begin{normalsize}nProjects indicates how frequently a feature is \emph{part of a software solution}.\end{normalsize}
-\item \begin{normalsize}nFiles indicates the number of conceptually separate \emph{task categories}.\end{normalsize}
-\item \begin{normalsize}nPatterns indicates the number of \emph{specific tasks} a feature is used for\end{normalsize}
-\item \begin{normalsize}nTokens indicates how often the language feature is used \emph{for any task}\end{normalsize}
-\item \begin{normalsize}maxTokens provides a sense of \emph{convenience} provided by the feature\end{normalsize}
-\end{itemize}
-
-\paragraph{KLE vs ADD} In terms of patterns and tokens, these two features have very similar frequencies.  Yet in terms of projects and especially files, ADD is used more often.  KLE, however, appears 50 times in a single regex, compared to a max of 30 times for ADD.  Given the assumptions listed above, this implies that ADD is effective in a broader range of task categories, but KLE is more convenient than ADD when its use is appropriate.
-
-This makes sense, because KLE is so frequently used along with ANY as \cverb!.*! to consume `all the chars, if any exist' - this provides users with a very general-purpose idiom that can be added to the beginning or end of the core pattern, or within a capture group, with little thought.
-
-ADD on the other hand, specifies requirements that will cause a failure to match if they are not met.  And that functionality is useful in more task categories than KLE, presumably because it specifies positively what to match, not just what is allowed but not required.
-
-\paragraph{CG may be the real \#1}  In terms of files, patterns and tokens, CG is the most frequently used feature.  This is easy to understand as the logical grouping it provides is natural and necessary for many tasks.  CG is not the top ranked feature in terms of projects (by only 0.6\%), but this could be explained as background noise, as the general trend is that CG is used most often in other categories.  Surprisingly, it is not used more than 17 times in any pattern.  This suggests that its use takes extra care (compared to KLE or ANY)
-
-\paragraph{Clone smells in file-to-pattern ratio} RNG appears in 5,092 files but is present in only 2,631 patterns.  NCCC has about the same 2-to-1 ratio of files to patterns (3,947 to 1,935).  Using the assumptions about what these numbers mean, a larger ratio of files to patterns should suggest that a feature is more limited in terms of what it can do (patterns relate to specific tasks), but these limited functions have a a larger variety of applications (files relate to categories of task).  This implies that regexes containing features with a high file-to-pattern ratio are more likely to be clones.  Other features with a high file-to-pattern are OR (3,926 to 2,102) and WRD (2,952 to 1,430).
-
-\paragraph{WNW is very convenient, for a position}  The STR, END, ENDZ, LKA, LKB, NLKB and NLKA features indicate zero-width positions in a string.  Perhaps because they are more restrictive or complex than other features, their maxTokens values are lower than usual (at 12, 12, 1, 4, 3, 4 and 3 respectively).  The exception to this rule is WNW with 36 appearances in a single pattern.
+\paragraph{For developers of the re module.} Specific details about utilizations of the {\tt re} module, such as function and flag usage frequency, and saturation within GitHub projects, has implications for the developers of the {\tt re} module.  In many cases, the observed practice diverges from the intended design.  Namely, the near-irrelevance of the `locale' flag, the general trend toward compiling objects (presumably avoiding magic strings), and the apparent misconception that only one flag can be used at a time (the documentation clearly states that a bitwise-or of flags is effective\footurl{https://docs.python.org/2/library/re.html}, but this was never observed in over 50,000 utilizations).
 
 \subsubsection{Threats to validity}
 Compared to the overall number of Python projects in existence, the number of projects used in this study is small.  It may not be representative of Python projects on a whole.  This is mitigated by the pseudo-random nature of selecting projects based on an arbitrary unit of division, several hundred thousand repository creation events apart (Section~\ref{sec:selectingProjects}).
