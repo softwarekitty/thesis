@@ -1,6 +1,6 @@
 \subsection{Categorization of behavioral clusters}
 From 2,871 distinct regexes, MCL clustering identified 186 clusters with 2 or more regexes, and 2,042 clusters of size 1.
-The average size of clusters larger than size one was 4.5.  Each regex belongs to exactly one cluster.  Five example clusters are available in Appendix~\ref{app:top5CompleteClusters}.
+The average size of clusters larger than size one was 4.5.  Each regex belongs to exactly one cluster.
 % A report was prepared from the output of mcl providing the pattern of each regex in each cluster, the number of projects that the regex appears in, the number of projects containing at least one regex from the cluster (how clusters are ranked), and statistics about what features are most used in that cluster.
 
 \input{table/exampleCluster}
@@ -14,7 +14,7 @@ The smallest regex in a cluster provides insight about key characteristic that a
 
 \input{table/clustercats}
 
-The top 100 largest clusters based on the number of projects were manually sorted into 6 behavioral categories (determined by inspection).  The largest cluster was left out, as it was composed of patterns that trivially matched almost any string, like \cverb!b*! and \cverb!^!.  The remaining 99 clusters were all categorized. These clusters are briefly summarized in Table~\ref{tab:clustercats}, showing the name of the category and the number of clusters it represents, patterns in those clusters, and projects. The most common category is \emph{Multi Matches}, which contains clusters that have alternate behaviors (e.g., matching a comma or a semicolon, as in \cverb!,|;!\cstat{18}{5}. Each of the aforementioned 99 clusters was mapped to exactly one category.
+The top 100 largest clusters based on the number of projects were manually sorted into 6 behavioral categories (determined by inspection).  The largest cluster was left out, as it was composed of patterns that trivially matched almost any string, like \cverb!b*! and \cverb!^!.  The remaining 99 clusters were all categorized. These clusters are briefly summarized in Table~\ref{tab:clustercats}, showing the name of the category and the number of clusters it represents, patterns in those clusters, and projects. The most common category is \emph{Multi Matches}, which contains clusters that have alternate behaviors (e.g., matching a comma or a semicolon, as in \cverb!,|;!\cstat{18}{5}. Each of the aforementioned 99 clusters was mapped to exactly one category.  Five example clusters are available in Appendix~\ref{app:top5CompleteClusters}.
 
 
 \subsubsection{Six categories of behaviorally similar clusters}

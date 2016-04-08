@@ -1,11 +1,11 @@
 \subsection{Summary of survey results}
 \label{sec:surveyResults}
 
-The survey was sent to 22 employees at Dwolla, and 20 attempted a response.  Two employees were eliminated by responding `no' when asked if they were a professional software developer that had used regex in a work environment.  The remaining 18 participants (82\% response rate) have an average of nine years of programming experience ($\sigma = 4.28$).
+The survey was sent to 22 employees at Dwolla.  Two employees ignored the survey, and two were eliminated by responding `no' when asked if they were a professional software developer that had used regex in a work environment.  The remaining 18 participants (82\% response rate) have an average of nine years of programming experience ($\sigma = 4.28$).
 
 \subsubsection{Contextual usage frequency}
 \label{sec:compositionFrequency}
-To increase accuracy of recall, participants were first prompted to recall per-environment, and per-task before asking for the overall number of regexes composed per year.  On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly.
+On average, survey participants report to compose 172 regexes per year ($\sigma$ = 250) and compose regexes on average once per month, with 28\% composing multiple regexes in a week and an additional 22\% composing regexes once per week. That is, 50\% of respondents uses regexes at least weekly.  To increase accuracy of recall, participants were first prompted to recall per-environment, and per-task before asking for the overall number of regexes composed per year.
 
 \input{table/regexenviron}
 
@@ -21,7 +21,7 @@ Participants answered questions using a 6-point likert scale including very freq
 
 \subsubsection{Feature usage questions}
 
-\paragraph{Rarely used OPT and DBB features.}  When asked if they have ever used the OPT feature (\verb!(?i)!), 78\% (14) said that they had never used it, with the rest saying they had.  However the reverse is true for the DBB feature, with 78\% (14) saying they \emph{had} used it before, and the rest saying they had not.
+\paragraph{Rarely used OPT and DBB features.}  When asked if they have ever used the OPT feature (\verb!(?i)!), 78\% (14) said that they had never used it, with the rest saying they had.  However the reverse is true for the DBB feature, with 78\% (14) saying they \emph{had} used it before, and the rest saying they had not.  This is consistent with results in Section~\ref{sec:featureResults}, where DBB is ranked 20\textsuperscript{th} out of 34 (14.5\% of projects contain DBB), and OPT is ranked 26\textsuperscript{th} out of 34 (9.4\% of projects contain OPT).  More study is needed into how frequently developers have never used a feature, to give an additional perspective about what features to support in languages and analysis tools.
 
 \paragraph{Use of the WRD default.}  A special investigation was made into the WRD default after a trend in the corpus was observed where, with some frequency, custom character classes are made that slightly modify the WRD default.  For example, the regex \cverb![\w-]! might be used to represent characters allowed in a username.
 Participants were asked what they use the WRD default character class for, but the intention of the question may not have been clear enough, because 50\% (9) participants said they don't know or don't use it, and 44\% (8) participants said they use it to match WRD characters.  However, one participant said `often we pair it with other characters we know are found in traditional writing such as punctuation marks.'.
@@ -30,7 +30,7 @@ Participants were asked what they use the WRD default character class for, but t
 
 \input{table/KLEvsADD}
 
-\subsubsection{Refactoring preference questions}
+\subsubsection{Preference questions}
 \paragraph{Pairing ANY with KLE or ADD.}  Participants were asked if, given a guarantee that it would not affect their use case, they would prefer to use ANY with KLE (\verb!*!) or with ADD (\verb!+!).  Participants generally preferred to use KLE, with 39\% (7) saying `always use \cverb!.*!', 28\% (5) saying `use \cverb!.*! more than \cverb!.+!', 22\% (4) saying `use \cverb!.+! more than \cverb!.*!', and 11\% (2) saying  `always use \cverb!.+!'.  These results are displayed in Table~\ref{table:KLEvsADD}.
 Semantically, there is a difference between these two, which triggered a rich, skeptical response in the section asking them to explain their preference.  Aside from this understandable skepticism, those who preferred ADD were referring to the expected content, and those who preferred KLE said that they are `used to using' KLE or `need \verb!*! more often'.
 

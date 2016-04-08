@@ -26,7 +26,7 @@ Computational limits (when determining equivalence) may present a challenge in a
 
 \paragraph{Refactoring for performance.}  The representation of regexes may have a strong impact on the runtime performance of a chosen regex engine. Prior work has sought to expedite the processing of regexes over large bodies of text~\cities{Baeza-Yates:1996:FTS:235809.235810}.  Refactoring regexes for performance would complement those efforts.  Further study is needed to determine which representations are most efficient in general, and for each engine specifically.
 
-\paragraph{Refactoring for compatibility.}  As discussed in Section~\ref{sec:featureSupport}, different language variants have different feature sets.  In the case of transforming code in one language to code in another language~\cities{7372046}, regexes also must be refactored so that regexes in the transformed code use only features supported by the target language, and must maintain expected behavior.  Besides transforming code, an organization may want to enforce standards for compatibility with a regex analysis tool like Z3, HAMPI, BRICS or REX.
+\paragraph{Refactoring for compatibility.}  As discussed in Section~\ref{sec:featureSupport}, different language variants have different feature sets.  In the case of transforming code in one language to code in another language~\cities{7372046}, regexes also must be refactored so that regexes in the transformed code use only features supported by the target language, and must maintain expected behavior.  Besides transforming code, an organization may want to enforce standards for compatibility with a regex analysis tool like Automata.Z3, Hampi, Brics or REX.
 
 \subsection{Applications for regex refactoring}
 

@@ -58,7 +58,7 @@ Similarly, the most popular regex from T3 \cverb![\x80-\xff]! appears in 81 proj
 \paragraph{Refactoring out of S3 is recommended.}
 S3 only has 27 regexes, and all of them seem to be abusing the DBB feature by making the upper and lower bounds identical.  Perhaps these regexes started off with different bounds and were fixed as time went on to have identical bounds.  Due to the large segment of S2 based on double letters in words, it is not clear whether to recommend a refactoring to S1 or S2.  Perhaps the best recommendation is to refactor low numbers of repetitions of small elements to S2, and all others to S1.
 
-\subsubsection{Threats to validity}
+\subsection{Threats to validity}
 The technique of determining the number of regexes in each node includes manual verification, so it may overcount or undercount node membership.  This does not represent a serious threat, however, because a small number of errors would not significantly change the main results of the work.
 The rules used to define the nodes of equivalence classes were very simple, and may not have been sophisticated enough to consider all the nuances of real usage.  For example, additional rules could have been applied to split the SNG equivalence class into one class dealing with SNG-type repetition applied exclusively to ordinary characters, and one class not dealing with ordinary characters.  Hypothetically, opposite refactorings could be preferred in these two groups.  By merging them, the refactoring preferences would interfere and no preference would be detected. As the first work on regular expression refactoring, this outcome is not unexpected.  Other equivalence classes are considered in Section~\ref{dis:equivalenceModels}.
 
