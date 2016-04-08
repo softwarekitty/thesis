@@ -4,6 +4,7 @@
 \caption{What regular expression languages support features studied in this thesis?}
 \label{table:rankedFeatureSupport}
 \begin{tabular}{l@{  \horiz}clc@{  \horiz}lc @{   \horiz} c @{   \horiz}c @{   \horiz}c @{   \horiz}c @{   \horiz}c @{   \horiz}c @{   \horiz}c}\textbf{Rank} & \textbf{Code} & \textbf{Example} & \textbf{Python} & \textbf{Perl} & \textbf{.Net}  & \textbf{Ruby} &  \textbf{Java} & \textbf{RE2} & \begin{footnotesize}\textbf{JavaScript}\end{footnotesize} & \begin{footnotesize}\textbf{POSIX ERE}\end{footnotesize}\\
+\toprule
 1 & ADD & \begin{minipage}{0.5in}\begin{verbatim}z+\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes\\
 \midrule
 2 & CG & \begin{minipage}{0.5in}\begin{verbatim}(caught)\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes\\
@@ -19,7 +20,7 @@
 7 & STR & \begin{minipage}{0.5in}\begin{verbatim}^\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes\\
 \midrule
 8 & END & \begin{minipage}{0.5in}\begin{verbatim}$\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes\\
-\midrule[0.12em]
+\midrule[0.10em]
 9 & NCCC & \begin{minipage}{0.5in}\begin{verbatim}[^qwxf]\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \yes\\
 \midrule
 10 & WSP & \begin{minipage}{0.5in}\begin{verbatim}\s\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \yes & \no\\
