@@ -1,0 +1,26 @@
+\begin{table}[!ht]
+\begin{center}
+\caption{Additional equivalent regexes for which some preference in understandability is suggested}
+\label{table:interestingEdges}
+\begin{small}
+\begin{tabular}
+{lccc c lccc}
+node & regex & match & compose & ref. & node &regex & match & compose \bigstrut \\
+\noalign{\hrule height 0.08em}
+L2 & \begin{minipage}{0.92in}\cverb!zaa*!\end{minipage} & 87\% & 97\% & \multirow{ 2}{*}{$\overrightarrow{L2 L3}$} & L3 & \begin{minipage}{1.0in}\cverb!za+!\end{minipage} & 91\% & 100\%  \bigstrut   \\
+L2 & \begin{minipage}{0.92in}\cverb!RR*!\end{minipage} & 86\% & 97\% & & L3 & \begin{minipage}{1.0in}\cverb!R+!\end{minipage} & 92\%  & 100\%  \bigstrut  \\
+\noalign{\hrule height 0.04em}
+D2 & \begin{minipage}{0.92in}\cverb!((q4f)?ab)!\end{minipage} & 79\% & 83\% & \multirow{ 2}{*}{$\overrightarrow{D2 D1}$} & D1 & \begin{minipage}{1.0in}\cverb!((q4f){0,1}ab)!\end{minipage} & 83\% & 97\%  \bigstrut   \\
+D2 & \begin{minipage}{0.92in}\cverb!(deedo(do)?)!\end{minipage} & 77\% & 93\% &  & D1 & \begin{minipage}{1.0in}\cverb!(dee(do){1,2})!\end{minipage} & 85\% & 90\%  \bigstrut   \\
+\noalign{\hrule height 0.04em}
+C2 & \begin{minipage}{0.92in}\cverb!tri[abcdef]3!\end{minipage} & 93\% & 90\% & \multirow{ 2}{*}{$\overrightarrow{C2 C1}$} & C1 & \begin{minipage}{1.0in}\cverb!tri[a-f]3!\end{minipage} & 94\% & 97\%  \bigstrut   \\
+C2 & \begin{minipage}{0.92in}\cverb!no[wxyz]5!\end{minipage} & 87\% & 90\% & & C1 & \begin{minipage}{1.0in}\cverb!no[w-z]5!\end{minipage} & 93\%  & 90\%  \bigstrut  \\
+\noalign{\hrule height 0.08em}
+T4 & \begin{minipage}{0.92in}\begin{footnotesize}\cverb!xyz[\0133-\0140]!\end{footnotesize}\end{minipage} & 71\% & 33\% & \multirow{ 2}{*}{$\overrightarrow{T4 T2}$} & T2 & \begin{minipage}{1.0in}\cverb!xyz[\x5b-\x5f]!\end{minipage} & 79\% & 60\%  \bigstrut   \\
+T4 & \begin{minipage}{0.92in}\cverb!t[\072-\073]+p!\end{minipage} & 90\% & 70\% &  & T2 & \begin{minipage}{1.0in}\cverb!t[\x3a-\x3b]+p!\end{minipage} & 89\% & 70\%  \bigstrut   \\
+\noalign{\hrule height 0.08em}
+\end{tabular}
+\end{small}
+\end{center}
+\vspace{-12pt}
+\end{table}

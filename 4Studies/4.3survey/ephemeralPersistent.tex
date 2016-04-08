@@ -1,23 +1,13 @@
 \subsection{Comparing ephemeral and persistent users}
-Some of the main applications for regexes, such as searching text files and system administration (Section~\ref{sec:applications}), do not leave a persistent artifact, like a text file, behind.Since most of the analysis in this work is based on persistent regexes (i.e., mined from GitHub repositories), this section analyzes differences between these two types of users.  \emph{Ephemeral users} are those who primarily use regexes that are used once and then forgotten, and \emph{persistent users} are those who primarily use regexes that are maintained as an artifact.  In question four of the survey, participants were asked to recall the number of regexes composed per year by technical environment. Only 27\% (5)
-% (L,N,P,Q,T) T counts be
-of participants wrote regular expressions that persist (general purpose, scripting, etc.) more frequently than in a text editor or command line tool (where they will not persist).
+Some of the main applications for regexes, such as searching text files and system administration (Section~\ref{sec:applications}), do not leave a persistent artifact, like a text file, behind.  Since most of the analysis in this work is based on persistent regexes (i.e., mined from GitHub repositories), this section analyzes differences between these two types of users.  \emph{Ephemeral users} are those who primarily use regexes that are used once and then forgotten, and \emph{persistent users} are those who primarily use regexes that are maintained as an artifact.  In question four of the survey, participants were asked to recall the number of regexes composed per year by technical environment. Only 27\% (5) of participants wrote regular expressions that persist (general purpose, scripting, etc.) more frequently than in a text editor or command line tool (where they will not persist).
+% persistent users are: (L,N,P,Q,T) T counts because of 'other' uses being for persistent tests
 
 \paragraph{Persistent user characteristics} The five persistent users have an average of 12.4 years of experience.  This contrasts with an average of 7.7 years of experience for ephemeral users.  Considering usage frequency, 60\% (3) of the five persistent users indicate using regex weekly, vs 46\% (6) of the 13 ephemeral users.
 
-
 \input{table/persistingFeatureGroups}
 
-
-\paragraph{Persistent users use more advanced features} Of the five feature groups analyzed, the only significant difference in usage is for the lookaround group (LKA, LKB, NLKA, NLKB) for which persistent users indicated an average between rarely and occasionally, compared to ephemeral users who averaged between very rarely and rarely.  The differences for all five groups are shown in Table~\ref{table:persistingFeatureGroups}.In the case of the most rarely-used feature asked about, the OPT feature, three of the four participants who have ever used the OPT feature are persistent users.
+\paragraph{Persistent users use more advanced features} Of the five feature groups analyzed, the only significant difference in usage is for the lookaround group (LKA, LKB, NLKA, NLKB) for which persistent users indicated an average between rarely and occasionally, compared to ephemeral users who averaged between very rarely and rarely.  The differences for all five groups are shown in Table~\ref{table:persistingFeatureGroups}. In the case of the most rarely-used feature asked about, the OPT feature, three of the four participants who have ever used the OPT feature are persistent users.
 
 \paragraph{Persistent users perform different tasks} The five participants who write persistent regexes more often also answered the task frequency questions differently.  Table~\ref{table:regexPersistingTasks} describes the tasks more frequently performed by persistent users than by ephemeral users.  Most notably, persistent users are counting strings and parsing generated text with greater frequency than `rarely'.  This makes sense because these are use cases more suited for a complex software program than a quick search.
 
-
-
-
-
 \input{table/regexPersistingTasks}
-
-
-

@@ -6,17 +6,8 @@
 \begin{tabular}
 {lccc c lccc}
 node & regex & match & compose & ref. & node &regex & match & compose \bigstrut \\
-\noalign{\hrule height 0.08em}
-C2 & \begin{minipage}{0.85in}\cverb!([:;])!\end{minipage} & 81\% & 87\% & \multirow{ 4}{*}{$\overrightarrow{C2 C5}$} & C5 & \begin{minipage}{1.2in}\cverb!(:|;)!\end{minipage} & 94\% & 100\%  \bigstrut   \\
-C2 & \begin{minipage}{0.85in}\cverb!no[wxyz]5!\end{minipage} & 87\% & 90\% &  & C5 & \begin{minipage}{1.2in}\cverb!no(w|x|y|z)5!\end{minipage} & 94\% & 97\%  \bigstrut   \\
-C2 & \begin{minipage}{0.85in}\cverb!([}{])!\end{minipage} & 79\% & 87\% & & C5 & \begin{minipage}{1.2in}\cverb!(\{|\})!\end{minipage} & 70\%  & 93\%  \bigstrut  \\
-C2 & \begin{minipage}{0.85in}\cverb!tri[abcdef]3!\end{minipage} & 93\% & 90\% & & C5 & \begin{minipage}{1.2in}\cverb!tri(a|b|c|d|e|f)3!\end{minipage} & 86\% & 90\%   \bigstrut  \\
+
 \noalign{\hrule height 0.04em}
-C2 & \begin{minipage}{0.85in}\cverb![\t\r\f\n ]!\end{minipage} & 83\% & 60\% & $\overrightarrow{C2 C4}$ & C4 & \begin{minipage}{1.2in}\cverb![\s]!\end{minipage} & 92\%  & 67\%  \bigstrut  \\
-\noalign{\hrule height 0.04em}
-C2 & \begin{minipage}{0.85in}\cverb!tri[abcdef]3!\end{minipage} & 93\% & 90\% & $\overrightarrow{C2 C1}$ & C1 & \begin{minipage}{0.85in}\cverb!tri[a-f]3!\end{minipage} & 94\% & 97\%  \bigstrut   \\
-C2 & \begin{minipage}{0.85in}\cverb!no[wxyz]5!\end{minipage} & 87\% & 90\% & & C1 & \begin{minipage}{0.85in}\cverb!no[w-z]5!\end{minipage} & 93\%  & 90\%  \bigstrut  \\
-\noalign{\hrule height 0.08em}
 \end{tabular}
 \end{small}
 \end{center}

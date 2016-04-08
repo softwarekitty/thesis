@@ -1,6 +1,6 @@
 \subsection{Population characteristics}
 
-\begin{table}[tp]
+\begin{table}[!ht]
 \begin{small}
 \fbox{\parbox{\columnwidth}{
 \begin{enumerate}
@@ -55,41 +55,18 @@ Figure~\ref{participantprofile} summarizes the self-reported participant charact
 
 For each of the 180 HITs, a matching and composition score was computed for each of the 10 regexes, using the metrics described in Section~\ref{sec:understandabilityMetrics}.  Since 30 separate participants responded to five string matching problems and one composition problem for each of the 60 regexes, there were 30 independent understandability evaluations for each representation.  An average of 0.53 out of 30 of these responses were NAs per regex, with the maximum number of NAs being four.  These 26-30 independent matching scores for each regex were used to determine if an understandability preference exists for each of the 35 pairwise comparisons.
 
-For example, one group had regexes \cverb!((q4f)?ab)! and \cverb!(q4fab|ab)!, which  represents a transformation between D2 and D3. The former had an average matching score of 79\% and the latter had an average matching score of 85\%. The average composition score for the former was 83\% and 97\% for the latter. Thus, the community found \cverb!(q4fab|ab)! from D3 more understandable.
-The other pairwise comparison performed between D2 and D3 used the pair \cverb!(deedo(do)?)! and \cverb!(deedo|deedodo)!.
-Considering both of these regex pairs, the \emph{overall matching score} for the regexes belonging to D2 was 78\% and the \emph{overall matching score} for D3 was 87\%.
-The \emph{overall composition score} for D2 was 88\%, with 97\% for D3. Thus, the community found D3 to be more understandable than D2, from the perspective of both understandability metrics, suggesting a refactoring from D2 to D3.
+The regexes \cverb!((q4f)?ab)! and \cverb!(q4fab|ab)!, represent a transformation between D2 and D3. The former have an average matching score of 79\% and the latter have an average matching score of 85\%. The average composition score for the former is 83\% and 97\% for the latter. Thus, the community found \cverb!(q4fab|ab)! from D3 more understandable.
+The other pairwise comparison performed between D2 and D3 uses the pair \cverb!(deedo(do)?)! and \cverb!(deedo|deedodo)!.
+Considering both of these regex pairs, the \emph{overall matching score} for the regexes belonging to D2 is 78\% and the \emph{overall matching score} for D3 is 87\%.
+The \emph{overall composition score} for D2 is 88\%, with 97\% for D3. Thus, the community found D3 to be more understandable than D2, from the perspective of both understandability metrics, suggesting a refactoring from D2 to D3.  These measurements comparing overall representation understandability are presented in summary in Table~\ref{table:testedEdgesTable}, with this specific example appearing in the E2 row. The pairs of regexes used to determine the values for each edge are listed in Appendix~\ref{app:edgeToPairMap}.  The \emph{Index} column enumerates all the pairwise comparisons evaluated in this experiment, \emph{Nodes} lists the two representations, \emph{Pairs} shows how many comparisons were performed, \emph{Match1} gives the overall matching score for the first representation listed and \emph{Match2} gives the overall matching score for the second representation listed. $H_0^{match}$ shows the results of using the Mann-Whitney test of means to compare the matching scores, testing the null hypothesis $H_0$: that $\mu_{match1} = \mu_{match2}$.  The p-values from these tests are presented in this column. The last three columns display the average composition scores for the representations and the relevant p-value, also using the Mann-Whitney test of means.
 
-This information is presented in summary in Table~\ref{table:testedEdgesTable}, with this specific example appearing in the E2 row. The pairs of regexes used to determine the values for each edge are listed in Appendix~\ref{app:edgeToPairMap}.  The \emph{Index} column enumerates all the pairwise comparisons evaluated in this experiment, \emph{Nodes} lists the two representations, \emph{Pairs} shows how many comparisons were performed, \emph{Match1} gives the overall matching score for the first representation listed and \emph{Match2} gives the overall matching score for the second representation listed. $H_0^{match}$ shows the results of using the Mann-Whitney test of means to compare the matching scores, testing the null hypothesis $H_0$: that $\mu_{match1} = \mu_{match2}$.  The p-values from these tests are presented in this column. The last three columns display the average composition scores for the representations and the relevant p-value, also using the Mann-Whitney test of means.
 
 \input{table/testedEdgesTable}
 
-In Table~\ref{table:testedEdgesTable}, a thick horizontal line separates the top two edges from the bottom 12. In E1 and E2, there is a statistically significant difference between the representations for at least one of the metrics considering $\alpha = 0.05$.  These represent the strongest evidence for suggesting the directions of refactoring based on the understandability metrics defined in this study. Specifically, $\overrightarrow{T4 T1}$ and $\overrightarrow{D2 D3}$ are likely to improve understandability.  The specific nodes, regexes, matching scores and compositions scores that led to these refactoring suggestions are shown in Table~\ref{table:pairwiseRefactorings}
+In Table~\ref{table:testedEdgesTable}, a thin horizontal line separates the top four edges from the bottom 10.  In these four edges, there is a statistically significant difference between the representations for at least one of the metrics considering $\alpha = 0.10$. These represent the strongest evidence for suggesting the directions of refactoring based on the understandability metrics defined in this study. Specifically, $\overrightarrow{T4 T1}$, $\overrightarrow{D2 D3}$, $\overrightarrow{C2 C5}$ and $\overrightarrow{C2 C4}$ are likely to improve understandability.  The specific nodes, regexes, matching scores and compositions scores that led to these refactoring suggestions are shown in Table~\ref{table:alpha10}
 
-\input{table/pairwiseRefactorings}
+\input{table/alpha10}
 
-In Table~\ref{table:testedEdgesTable}, a thin horizontal line separates edges E3 through E8 from the most significant edges above, and the least significant edges below.  All edges in this section are significant $\alpha = 0.15$, and the top two edges, E3 and E4 are significant with $\alpha = 0.10$. E5 is also notable because in \emph{both matching and composition}, all scores consistently indicate a preference for L3 over L2.
+In addition to the edges with a significant difference in understandability,  edges E5 through E8 exhibit noteworthy trends in understandability.  The regexes and matching scores for these nodes are shown in Table~\ref{table:interestingEdges}.  For edges E7 and E8, the potential refactorings $\overrightarrow{C2 C1}$ and $\overrightarrow{T4 T2}$ are also suggested by the community standards determined in Section~\ref{sec:nodeCountingResults}.  E5 is also notable because in \emph{both matching and composition}, all scores consistently indicate a small preference for L3 over L2 (5\% in overall matching and 3\% in overall composing).  More work is needed to determine if a significant difference in understandability exists between these nodes.
 
-\input{table/outOfC2}
-
-The results of both E3, E4 and E7 all suggest refactorings \emph{out} of C2 (into C4, C5 and C1, respectively).  This suggests that C2 is not preferred compared to other CCC group nodes.  The most notable difference in measured understandability is between \cverb![\t\r\f\n ]! from C2 with a matching score of 83\%, and \cverb![\s]! from C4 with a matching score of 92\%.  Moving from C2 to C5 is not as clear cut, with examples supporting both directions.  For the regex \cverb!([:;])!, the matching score increased from 81\% to 94\% when moving to \cverb!(:|;)!  However for \cverb!tri[abcdef]3!, the matching score decreased from 93\% to 86\% when moving to \cverb!tri(a|b|c|d|e|f)3!.  Moving from C2 regex \cverb!no[wxyz]5! with a matching score of 87\% to either C1 or C5 boosted the matching score to 94\% or 93\%, respectively.  The specific data for E3, E4 and E7 is shown in Table~\ref{table:outOfC2}.
-
-\input{table/alpha15}
-
-Edges E5, E6 and E7 all show at least one p-value below $\alpha = 0.15$, with E5 having both p-values below $\alpha = 0.15$.  For E5, the overall differences in matching and composition are small (5\% and 3\%, respectively), but the trend is consistent across both regex pairings.  For E6,...
-
-\paragraph{Refactoring out of C2 may be recommended}
-
-
-Participants were able to select \emph{unsure} when they were not sure if a string would be matched by a regex (Figure~\ref{fig:exampleQuestion}). From a comprehension perspective, this indicates some level of confusion and is worth exploring.
-
-\input{table/unsureResults}
-
-For each regex, the number of responses containing at least one unsure was observed, representing confusion when attempting to answer matching questions for that regex.
-The regexes were then grouped into their representation nodes and an average number of unsures was computed per regex.  For example, four regexes belonged to C5 and the number of unsures for those regexes was: 2,3,3 and 0 so the average number of unsures for C5 was 2.
-A higher number of unsures may indicate difficulty in comprehending a regex from that node.
-Overall, the highest number of unsure responses came from T4 and T2, which present octal and hex representations of characters. The least number of unsure responses were in L3 and D3, which are both shown to be understandable by looking at E2 and E3 in Table~\ref{table:testedEdgesTable}.
-
-These nodes and their average number of unsure responses are organized in Table~\ref{table:unsureResults}.
-These results strongly corroborate the refactorings suggested by the understandability analysis for both the LIT group (i.e., $\overrightarrow{T4 T1}$) and the DBB group (i.e.,  $\overrightarrow{D2 D3}$) because both refactorings go from nodes with more unsures to nodes with fewer unsures (T4 has 8.5 whereas T1 has 2.7, and D2 has 2.5 whereas D3 has 1).
-The one regex from T4 that had the most unsures of any regex (i.e., 10 out of 30) was \cverb!xyz[\0133-\0140]!.  The regex with the lowest composition score (7 out of 30) and matching score (0.54) was \cverb!([\0175\0173])!, which only had 6 unsures.
+\input{table/interestingEdges}
