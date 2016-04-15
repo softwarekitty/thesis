@@ -5,7 +5,7 @@ Ideally, a relatively small number of regexes could be used to navigate the set 
 
 \subsection{Finding a filter set.} One technique for minimizing the number of regexes that need to be evaluated to solve semantic search is described here as `finding a filter set'.  This is left as an opportunity for future work.
 
-The intuition is best demonstrated with an example.  The regex \cverb!::! consists of only two \verb!`:'! characters, and the five regexes \cverb!::\(.*\)!, \cverb!\s*::\s*!, \cverb!e*d::!, \cverb!std::regex! and \cverb!d:{2,6}! also all contain two \verb!`:'! characters, but describe a more limited set of strings.  Now the first semantic search is performed by user A: find a regex that matches \verb!"abc"!.
+The intuition is best demonstrated with an example.  The regex \cverb!::! consists of only two \verb!`:'! characters, and the five regexes \cverb!::\(.*\)!, \cverb!\s*::\s*!, \cverb!e*d::!, \cverb!d:{2,6}! and \cverb!std::regex!, also all contain two \verb!`:'! characters, but describe a more limited set of strings.  Now the first semantic search is performed by user A: find a regex that matches \verb!"abc"!.
 
 Let \cverb!`::'! be the top filter for the other five regexes, and \cverb!e*d::! be a second layer of filter for the last two.  The top filter is checked first, and it does not match the string, so no further evaluations are needed (no result is returned).
 

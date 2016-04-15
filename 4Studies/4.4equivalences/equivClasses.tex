@@ -27,7 +27,7 @@ Criteria for node membership is summarized in this section.  For a more detailed
 
 \begin{description}  \itemsep -1pt
 \item[C1:] Any regex using the RNG feature in a CCC like \cverb![a-f]! belongs to C1.
-\item[C2:] Any regex that contains at least one CCC without any RNG or defaults like \cverb![aeiou]!belongs to the C2 node.
+\item[C2:] Any regex that contains at least one CCC without any RNG or defaults like \\*\cverb![aeiou]!belongs to the C2 node.
 \item[C3:] Any regex using the NCCC feature like \cverb![^x]! belongs to the C3 node.
 \item[C4:] Any regex using a default character class in a CCC like \cverb![\d]! or \cverb![\W]! belongs to the C4 node.
 \item[C5:] Any regex containing an OR of length-one sequences (including defaults or other CCCs) like \cverb!(a|\d|x)!belongs to the C5 node.

@@ -8,7 +8,7 @@ import java.util.List;
 public class FeatureDictionary {
 
 	HashMap<String, Integer> nameToIntMap;
-	HashMap<Integer, String> intToNameMap;
+	public HashMap<Integer, String> intToNameMap;
 	HashMap<Integer, String> intToCodeMap;
 	HashMap<Integer, String> intToDescMap;
 	HashMap<Integer, String> intToVerbMap;

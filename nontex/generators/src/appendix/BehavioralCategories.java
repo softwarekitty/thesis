@@ -225,8 +225,8 @@ public class BehavioralCategories {
 			List<Category> categories, HashMap<String, Integer> patternIndexMap) {
 		Integer javaIndex = patternIndexMap.get(cluster.getHeaviest().getContent());
 		int i = 0;
-		for (; i < categoryOracle.size(); i++) {
-			List<Integer> categoryMembers = categoryOracle.get(i);
+		for (; i < CategoryOracle.size(); i++) {
+			List<Integer> categoryMembers = CategoryOracle.get(i);
 			if (categoryMembers.contains(javaIndex)) {
 				categories.get(i).add(cluster);
 				return true;
@@ -244,7 +244,7 @@ public class BehavioralCategories {
 		StringBuilder sb = new StringBuilder();
 
 		List<Category> categoryClusters = new LinkedList<Category>();
-		for (int catID = 0; catID <= categoryOracle.size(); catID++) {
+		for (int catID = 0; catID <= CategoryOracle.size(); catID++) {
 			categoryClusters.add(new Category());
 		}
 
