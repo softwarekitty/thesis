@@ -34,10 +34,10 @@ Note that \cverb!pB{1,3}s! can become \cverb!pBB{0,2}s! by pulling the lower bou
 \item[D2:] Any regex that uses the QST feature (a question mark indicating zero-or-one repetition) belongs to D2. An example regex belonging to D2 is \cverb!zz?!, which matches \verb!"z"! and \verb!"zz"!.
 
 When a regex belonging to D1 has zero as the lower bound, it can be transformed to a representation belonging to D2 by replacing the DBB feature and the element it operates on (like the \cverb!B{0,2}! in \cverb!pBB{0,2}s!) with $n$ new regexes composed of the element operated on by DBB followed by QST, where $n$ is equal to the upper bound in the DBB.  For example \cverb!B{0,2}! has a zero lower bound and an upper bound of 2, so it can be represented as \cverb!B?B?!.  Therefore \cverb!pBB{0,2}s! can become \cverb!pBB?B?s!.
-\item[D3:] Any regex that uses OR to express repetition with different upper and lower boundaries like \cverb!pBs|pBBs|pBBBs! belongs to D3.  The example \cverb!pB{1,3}s! becomes \cverb!pBs|pBBs|pBBBs! by explicitly stating the entire set of strings matched by the regex in an OR.
+\item[D3:] Any regex that uses OR to express repetition with different upper and lower boundaries like \cverb!pBs|pBBs|pBBBs! belongs to D3.  The example \cverb!pB{1,3}s! becomes \\*\cverb!pBs|pBBs|pBBBs! by explicitly stating the entire set of strings matched by the regex in an OR.
 \end{description}
 
-Note that a regex can belong to multiple nodes in the DBB group, for example, \cverb!(a|aa)X?Y{2,4}! belongs to all three nodes: \cverb!Y{2,4}! maps it to D1, \cverb!X?! maps it to D2, and \cverb!(a|aa)! maps it to D3.
+Note that a regex can belong to multiple nodes in the DBB group, for example, \\*\cverb!(a|aa)X?Y{2,4}! belongs to all three nodes: \cverb!Y{2,4}! maps it to D1, \cverb!X?! maps it to D2, and \cverb!(a|aa)! maps it to D3.
 
 \subsubsection{LIT Group}
 All regexes that are not purely default character classes have to use some literal tokens to specify what characters to match.  In Python and most other languages that support regex libraries, the programmer is able to specify literal tokens in a variety of ways.  Our examples use the ASCII charset, in which all characters can be expressed using hex codes like \verb!\x3A! and octal codes like \verb!\072!.  The LIT group defines transformations among various representations of literals.

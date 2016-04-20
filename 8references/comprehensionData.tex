@@ -1,14 +1,12 @@
-\chapter{COMPREHENSION STUDY ARTIFACTS}
-\label{ch12}
-\section*{Regexes And Matching Strings Tested On Mechanical Turk, Organized By Metagroup}
+\section*{Regexes and Matching Strings Tested on Mechanical Turk, Organized by Metagroup}
 \label{app:MTstudyInput}
-
+\begin{footnotesize}
 Metagroup 1: testing S1 vs S2
 \vspace{-5mm}
 \begin{multicols}{3}
 \begin{itemize}[noitemsep,topsep=0pt]
 \item[S1] \cverb!%([0-9A-Fa-f]{2})!
-\item[S2] \begin{footnotesize}\cverb!%([0-9a-fA-F][0-9a-fA-F])!\end{footnotesize}
+\item[S2] \begin{scriptsize}\cverb!%([0-9a-fA-F][0-9a-fA-F])!\end{scriptsize}
 \item[] \verb|"g%a9"|
 \item[] \verb|"%-F"|
 \item[] \verb|"0123abC"|
@@ -22,7 +20,7 @@ Metagroup 1: testing S1 vs S2
 \item[] \verb|"&dazez"|
 \item[] \verb|"douz"|
 \item[S1] \cverb!fa[lmnop]{3}!
-\item[S2] \cverb!fa[lmnop][lmnop][lmnop]!
+\item[S2] \begin{scriptsize}\cverb!fa[lmnop][lmnop][lmnop]!\end{scriptsize}
 \item[] \verb|"fall"|
 \item[] \verb|"afmon"|
 \item[] \verb|"fanopster"|
@@ -70,7 +68,7 @@ Metagroup 3: testing C1 vs C4, focusing on WRD
 \item[] \verb|"&&a_9;"|
 \item[] \verb|"&aFF;"|
 \item[] \verb|"&a-F;"|
-\item[C1] \cverb!1q[A-Za-z0-9_][A-Za-z0-9_]!
+\item[C1] \begin{scriptsize}\cverb!1q[A-Za-z0-9_][A-Za-z0-9_]!\end{scriptsize}
 \item[C4] \cverb![1q\w\w]!
 \item[] \verb|"1q&&"|
 \item[] \verb|"1aqabc_"|
@@ -221,7 +219,7 @@ Metagroup 8: testing C1 vs C2 vs C5
 Metagroup 9: testing C2/T1 vs C5/T1 vs C2/T4 (provides T1 vs T4 and C2 vs C5)
 \vspace{-5mm}
 \begin{multicols}{2}
-\begin{itemize}[noitemsep,topsep=0pt]
+\begin{itemize}[noitemsep,topsep=0pt,leftmargin=0.7in]
 \item[C2/T1] \cverb!([}{])!
 \item[C5/T1] \cverb!(\{|\})!
 \item[C2/T4] \cverb!([\072\073])!
@@ -244,7 +242,7 @@ Metagroup 9: testing C2/T1 vs C5/T1 vs C2/T4 (provides T1 vs T4 and C2 vs C5)
 Metagroup 10: testing C1/T2 vs C1/T4 vs C2/T1 (provides only T2 vs T4)
 \vspace{-5mm}
 \begin{multicols}{2}
-\begin{itemize}[noitemsep,topsep=0pt]
+\begin{itemize}[noitemsep,topsep=0pt,leftmargin=0.7in]
 \item[C1/T2] \cverb!xyz[\x5b-\x5f]!
 \item[C1/T4] \cverb!xyz[\0133-\0140]!
 \item[C2/T1] \cverb!xyz[_\[\]`\^\\]!
@@ -263,7 +261,7 @@ Metagroup 10: testing C1/T2 vs C1/T4 vs C2/T1 (provides only T2 vs T4)
 \item[] \verb|"t::;:"|
 \end{itemize}
 \end{multicols}
-
+\end{footnotesize}
 \pagebreak
 
 
@@ -318,3 +316,4 @@ Participants were able to select \emph{unsure} when they were not sure if a stri
  \caption{Template for one HIT (page 4 of 4)..  Red values like  \$\{ST1\_regex\} are populated with regexes, and black values like \$\{ST1A\} are populated with matching strings.}
  \label{fig:MTtemplate4}
 \end{figure}
+\pagebreak

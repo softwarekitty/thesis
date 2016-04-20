@@ -3,7 +3,7 @@
 
 \paragraph{Normalizing patterns.} All distinct patterns from the remaining \dbfetch{percentCleanUsages}\% (\dbfetch{nCleanUsages}) of utilizations were pre-processed by removing Python quotes (\verb!`\\W!' becomes \verb!\\W!), and unescaping escaped characters (\verb!\\W! becomes \verb!\W!).  After these filtering steps, \dbfetch{nDistinctPatterns} distinct patterns remained.
 
-\subsubsection{Parsing Python Regular Expression patterns using a PCRE parser}
+\subsubsection{Using a PCRE parser to recognize Python features}
 \paragraph{All studied features are recognizable.} The collection of distinct patterns formed by this process was parsed into tokens using an ANTLR-based, open source PCRE parser\footurl{https://github.com/bkiers/pcre-parser}.  A comparison of the features supported by this parser (Perl features) and Python is provided in Table~\ref{table:rankedFeatureSupport}, and indicates that all but the ENDZ feature have identical syntax and meaning.  Fortunately, the syntax of the ENDZ feature (e.g., \cverb!R\Z!) matches the syntax of the LNLZ feature (e.g., \cverb!R\Z!) so that in practice, the parser used can correctly identify all studied features.  To clarify the difference, if a newline is the last character in a string, ENDZ will match after that newline, and LNLZ will match before that newline.
 
 \paragraph{Excluded patterns.} This parser was unable to support 0.53\% (\dbfetch{N_UNICODE}) of the patterns due to unsupported Unicode characters.

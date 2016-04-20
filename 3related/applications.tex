@@ -1,4 +1,4 @@
-\section{Applications Of Regex}
+\section{Applications of Regex}
 \label{sec:applications}
 A variety of applications for regular expressions is explored in this section.
 
@@ -7,7 +7,7 @@ A variety of applications for regular expressions is explored in this section.
 
 \paragraph{System administration.}  System administrators and power users rely on command-line utilities to accomplish complex computing tasks, often dealing with file names and the contents of configuration files.  The output of one utility can be used as the input for another utility using \emph{pipes}, and the mini-programs written using piped commands often rely on regular expressions to filter or transform strings in one step or another.  For example, {\tt grep}~\cities{grepManual} allows users to find strings that match a regex, and {\tt sed}~\cities{sedManual} provides a replace functionality.  The {\tt find}~\cities{findManual} utility searches filenames based on a regex, and tools like {\tt git}~\cities{gitManual} and {\tt cron}~\cities{cronManual} use regexes written in configuration files (`.gitignore' and `crontab', respectively) to specify sets of files or sets of dates and times.
 
-\paragraph{Searching fields in relational databases.}  The popular SQL query language~\cities{Chamberlin:1974:SSE:800296.811515} uses the `LIKE' operator and an exotic regular expression syntax (\bverb!%! for zero or more of any character, equivalent to \cverb!.*!, \bverb!_! to match any character, equivalent to \cverb!.!, and typical character classes using brackets) to search fields for strings.  Modern relational database systems have expanded this syntax considerably with functions such as {\tt REGEXP\_LIKE} in Oracle~\cities{OracleRegexpLike}, {\tt REGEXP} in MySQL~\cities{MySQLRegexp}, {\tt\$regex} in MongoDB~\cities{MongoDBregex} and {\tt regexp\_replace} in PostrgreSQL~\cities{PostgreSQLregexreplace}.
+\paragraph{Searching fields in relational databases.}  The popular SQL query language \\*\cities{Chamberlin:1974:SSE:800296.811515} uses the `LIKE' operator and an exotic regular expression syntax (\bverb!%! for zero or more of any character, equivalent to \cverb!.*!, \bverb!_! to match any character, equivalent to \cverb!.!, and typical character classes using brackets) to search fields for strings.  Modern relational database systems have expanded this syntax considerably with functions such as {\tt REGEXP\_LIKE} in Oracle~\cities{OracleRegexpLike}, {\tt REGEXP} in MySQL~\cities{MySQLRegexp}, {\tt\$regex} in MongoDB~\cities{MongoDBregex} and {\tt regexp\_replace} in PostrgreSQL~\cities{PostgreSQLregexreplace}.
 
 
 \subsection{Research and industry applications}
