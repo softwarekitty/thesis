@@ -9,7 +9,7 @@ Four additional trends in understandability results were found that are not stat
 
 \paragraph{D2 to D3 is recommended for small repetitions.} The second refactoring $\overrightarrow{D2 D3}$, reduces confusion caused by the QST feature, by expanding the entire set of strings specified by the regex into an OR.  The OR feature is fundamental to regular expressions, and so the regexes in D3 are very straightforward -  essentially lists of strings, whereas the QST repetition may take a little thought.  This result seems likely to generalize for very simple examples like the one that was tested, using only one QST operator.
 
-This refactoring is not likely to scale, however, because a slightly more complicated regex like \cverb!a?b*(cd)?e?! would expand to \cverb!ab*cde|b*cde|ab*e|b*e|ab*cd|b*cd|ab*|b*! which introduces the new challenge of visually parsing and remembering eight strings.
+This refactoring is not likely to scale, however, because a slightly more complicated regex like \cverb!a?b*(cd)?e?! would expand to an OR of eight strings: \\*\cverb!ab*cde|b*cde|ab*e|b*e|ab*cd|b*cd|ab*|b*! which introduces the new challenge of visually parsing and remembering these eight strings.
 
 \paragraph{Refactoring out of C2 needs more study.} Refactorings out of C2 to (C1, C4 and C5) all displayed a strong trend for improving understandability.  More study is needed into determining which node to choose when refactoring out of C2.
 

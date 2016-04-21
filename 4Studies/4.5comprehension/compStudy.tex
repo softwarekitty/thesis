@@ -1,7 +1,7 @@
 
 The goal of this study is to answer the question, `Within five equivalence classes, what representations are more comprehensible?' by presenting programmers with one of several representations of semantically equivalent regexes and asking comprehension questions. By comparing the understandability of semantically equivalent regexes that have different representations, it is possible to infer which representations are more desirable.
 This study was implemented on Amazon's Mechanical Turk with 180 participants.  Each regex was evaluated by 30 participants.
-The regexes used were designed to belong to various nodes of the equivalence class graphs depicted in Figure~\ref{fig:refactoringTree}.
+The regexes used were designed to belong to various nodes of the equivalence class graphs depicted in Figure~\ref{fig:refactoringTree}.  Because this study involves human participants, IRB approval was obtained before work began (the approval letter is in Appendix~\ref{app:MTIRB}).
 
 \input{table/matchingmetric}
 
@@ -42,7 +42,7 @@ This study was implemented on Amazon's Mechanical Turk (MTurk),  a crowdsourcing
 \paragraph{Selecting pairwise comparisons.}  Using the regexes in the corpus as a guide, ten metagroups were created for this study.  The first six metagroups (re-numbered for simplicity) each contain three pairs of regexes.  The last four metagroups contain two sets of three equivalent regexes.  A list of the specific regexes selected for these metagroups is available in Appendix~\ref{app:MTstudyInput}.
 
 \begin{multicols}{2}
-\begin{itemize}[noitemsep,topsep=0pt]
+\begin{description}[noitemsep,topsep=0pt]
 \item[M1]  S1 vs S2
 \item[M2]  C1 vs C4, focusing on DEC
 \item[M3]  C1 vs C4, focusing on WRD
@@ -53,12 +53,12 @@ This study was implemented on Amazon's Mechanical Turk (MTurk),  a crowdsourcing
 \item[M8]  C1 vs C2 vs C5
 \item[M9]  C2/T1 vs C5/T1 vs C2/T4
 \item[M10] C1/T2 vs C1/T4 vs C2/T1
-\end{itemize}
+\end{description}
 \end{multicols}
 
 Each of these 10 metagroups contains 6 regexes, resulting in a total of 60 regexes.  These regexes are logically partitioned into 26 semantic equivalence groups (18 from pairs, 8 from triples).
 
-Although this design provides 42 pairwise comparisons (18 from pairs, 24 from triples),  seven total comparisons had to be dropped due to design flaws.  For six of the comparisons, the regexes performed transformations from multiple equivalence classes, making it impossible to tell which edge to attribute the results to. For example \cverb!([\072\073])! is in C2 and T4.  This regex was paired with \cverb!(:|;)! in C5, T1, so it was not possible to attribute results purely to C2 and C5, or to T4 and T1. However, the third member of the group, \cverb!([:;])!, could be compared with both, since it is a member of T1 and C2, so comparing it to \cverb!([\072\073])! evaluates the transformation between T1 and T4, and comparing to \cverb!(:|;)! evaluates the transformation between C2 and C5.  The seventh pair: \cverb!\..*! and \cverb!\.+! between L2 and L3, had to be dropped because these two regexes are not equivalent.  The first regex was meant to be \cverb!\.\.*!.  Data gathered for all seven of these flawed pairings was ignored.
+Although this design provides 42 pairwise comparisons (18 from pairs, 24 from triples),  seven total comparisons had to be dropped due to design flaws.  For six of the comparisons, the regexes performed transformations from multiple equivalence classes, making it impossible to tell which edge to attribute the results to. For example \\*\cverb!([\072\073])! is in C2 and T4.  This regex was paired with \cverb!(:|;)! in C5, T1, so it was not possible to attribute results purely to C2 and C5, or to T4 and T1. However, the third member of the group, \cverb!([:;])!, could be compared with both, since it is a member of T1 and C2, so comparing it to \cverb!([\072\073])! evaluates the transformation between T1 and T4, and comparing to \cverb!(:|;)! evaluates the transformation between C2 and C5.  The seventh pair: \cverb!\..*! and \cverb!\.+! between L2 and L3, had to be dropped because these two regexes are not equivalent.  The first regex was meant to be \cverb!\.\.*!.  Data gathered for all seven of these flawed pairings was ignored.
 
 An example of a correct pairwise comparison from a pair used in this study is a group with regexes \cverb!([0-9]+)\.([0-9]+)! and  \cverb!(\d+)\.(\d+)!, which is intended to evaluate the edge between C1 and C4.
 An example of pairwise comparisons from a triple is a semantic group with regexes \cverb!((q4f){0,1}ab)!, \cverb!((q4f)?ab)!, and \cverb!(q4fab|ab)! which is intended to explore the edges among D1, D2, and D3.

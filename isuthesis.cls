@@ -221,7 +221,7 @@
 % New Way of setting pages with Geometry
 %  replaces most of the setlength commands below (JAS05 / JAS09)
 \usepackage{geometry}
-\geometry{letterpaper, left=1.25in, top=0.55in, right=1.02in, bottom=1in, includehead=true} 
+\geometry{letterpaper, left=1.25in, top=0.55in, right=1.02in, bottom=1in, includehead=true}
 % (JAS11) old values: top=1.22 and no includehead option
 
 %\usepackage{isumacros}
@@ -357,7 +357,7 @@
 % changed 25 Jun 86 to fix according to Howard Trickey:
 % instead of \unhbox\@tempboxa\par we do #1: #2\par
 % We continue to use the old way in order to handle table footnotes on captions
-% - if don't use \unhbox then footnotetext gets output twice and footnote  
+% - if don't use \unhbox then footnotetext gets output twice and footnote
 % number once with the second value.
 
 \long\def\@makecaption#1#2{ \vskip 10pt
@@ -370,7 +370,7 @@
 % ELSE set as is
 % Complete caption is centered in both cases.
     \ifdim\captionwidth < \wd\@tempboxa
-      \hbox to \hsize{\hfil\box\@tempboxb%   
+      \hbox to \hsize{\hfil\box\@tempboxb%
              \parbox[t]{\captionwidth}{\unhbox\@tempboxa}\hfil}
    \else
       \hbox to \hsize{\hfil\box\@tempboxb\box\@tempboxa\hfil}
@@ -587,11 +587,11 @@
    \def\@majortitle{Co-majors: }}
 
 \def\signmajor#1{\def\@signmajor{#1}}
-\signmajor{\ifnum\signmajornum=2 Co-major Professor \else 
-Major Professor\fi} 
+\signmajor{\ifnum\signmajornum=2 Co-major Professor \else
+Major Professor\fi}
 \def\signdept#1{\def\@signdept{#1}}
-\signdept{\if@interdept For the Major Program \else 
-\ifnum\@deptnum=2 For the Co-major Program \else 
+\signdept{\if@interdept For the Major Program \else
+\ifnum\@deptnum=2 For the Co-major Program \else
 For the Major Program\fi\fi}
 
 \def\@depart{}
@@ -600,8 +600,8 @@ For the Major Program\fi\fi}
 \def\minor#1{\def\@minor{\\Minor: #1}}
 \def\@minor{}
 
-\def\mprofs#1#2{\def\@mprofs{#1, Co-major Professor\\#2, Co-major Professor} 
-\signmajornum=2} 
+\def\mprofs#1#2{\def\@mprofs{#1, Co-major Professor\\#2, Co-major Professor}
+\signmajornum=2}
 \def\@mprofs{}
 
 \def\members#1{\def\@members{\\#1}}
@@ -613,7 +613,7 @@ For the Major Program\fi\fi}
    \advance \@linecount by -1
       \vskip 3pt
     \underline{\mbox{\hspace{\@signwidth}}}
-%   \hrule width \@signwidth 
+%   \hrule width \@signwidth
    \vskip -7pt #2 \vskip 4pt
    \repeat}
 % allow major and department signature titles to be longer than
@@ -664,7 +664,7 @@ For the Major Program\fi\fi}
 %   \vskip 14pt
 %   \begin{singlespace}
 %   Program of Study Committee: \\
-%   \@mprof 
+%   \@mprof
 %   \@mprofs
 %   \@members
 %   \end{singlespace}
@@ -682,8 +682,8 @@ For the Major Program\fi\fi}
 %   \end{singlespace}
 %   \vskip 41pt
    % Alteration for PDFVersion of isuthesis  - JAS 3/10/06
-   %This is to certify that the 
-   %\@level\  
+   %This is to certify that the
+   %\@level\
    %\@format\ of\\
    %\@author\\
    %has met the \@format\ requirements of Iowa State University\\
@@ -694,7 +694,7 @@ For the Major Program\fi\fi}
 %   the signed thesis \\
 %   approval page \\
 %   here.\\
-%   \end{singlespace} 
+%   \end{singlespace}
 %   \vfill
    %\@signbox
    % End 3/10/06 alteration
@@ -713,7 +713,7 @@ For the Major Program\fi\fi}
    \vskip 14pt                    % Changed from 11pt to more evenly space page (JAS11)
    by \\
    \vskip 14pt                   % Changed from 11pt to more evenly space page (JAS11)
-   \@author
+   \textbf{\@author}
    \vskip 41pt                  % Changed from 30pt to more evenly space page (JAS11)
    A \@format\ submitted to \@submit\ \\
    in partial fulfillment of the requirements for the degree of\\
@@ -725,7 +725,7 @@ For the Major Program\fi\fi}
    \vskip 41pt                    % Changed from 14pt to more evenly space page (JAS11)
   % \begin{singlespace}  % Elminated to more evenly space page (JAS11)
    Program of Study Committee: \\
-   \@mprof 
+   \@mprof
    \@mprofs
    \@members
    %\end{singlespace}   % Eliminated to more evenly space page (JAS11)
@@ -757,7 +757,7 @@ For the Major Program\fi\fi}
    \vskip 14pt
    \begin{singlespace}
    Program of Study Committee: \\
-   \@mprof 
+   \@mprof
    \@mprofs
    \@members
    \end{singlespace}
@@ -776,17 +776,17 @@ For the Major Program\fi\fi}
    \@author
    \vskip 11pt
    \begin{singlespace}
-   \@mprof 
+   \@mprof
    \@mprofs \\
    Iowa State University
    \end{singlespace}
    \end{center}
 }% end startabstract
 
-\newcommand{\paperinfo}[1]{\vspace{-.4 in} \begin{center} A paper #1 \end{center} 
+\newcommand{\paperinfo}[1]{\vspace{-.4 in} \begin{center} A paper #1 \end{center}
 \vspace{.4 in}}
 
-\newcommand{\paperauthor}[1]{\vspace{-.5 in} \begin{center} #1 \end{center} 
+\newcommand{\paperauthor}[1]{\vspace{-.5 in} \begin{center} #1 \end{center}
 \vspace{.25 in}}
 
 \def\alternatenum{%  command to set numbering down to subpara
@@ -833,7 +833,7 @@ For the Major Program\fi\fi}
    \renewcommand{\theequation}{\arabic{equation}}
    \renewcommand{\thetable}{\@arabic\c@table}
    \makeatother
-   \renewcommand{\thechapter}      {}    
+   \renewcommand{\thechapter}      {}
    \renewcommand{\thesection}      {\arabic{section}}
    \renewcommand{\thesubsection}   {\thesection.\arabic{subsection}}
    \renewcommand{\thesubsubsection}{\thesubsection .\arabic{subsubsection}}
@@ -848,7 +848,7 @@ For the Major Program\fi\fi}
    \renewcommand{\thetable}{\@arabic\c@table}
    \makeatother
 %   \renewcommand{\thepart}         {\roman{part}}
-   \renewcommand{\thechapter}      {}    
+   \renewcommand{\thechapter}      {}
    \renewcommand{\thesection}      {\thepart.\arabic{section}}
    \renewcommand{\thesubsection}   {\thesection.\arabic{subsection}}
    \renewcommand{\thesubsubsection}{\thesubsection .\arabic{subsubsection}}
@@ -867,7 +867,7 @@ For the Major Program\fi\fi}
          \@parboxrestore
          \@makecaption{\csname fnum@#1\endcsname}{(Continued)}%
          \par \vspace{1.7ex}%
-      \endgroup}   
+      \endgroup}
 
 % The thesis office wants Chapters with a dotted leader
 % (This redefinition borrowed from isuthes may not be a very
@@ -967,7 +967,7 @@ For the Major Program\fi\fi}
 \renewcommand{\listtablename}
 {\protect \centering \large LIST OF TABLES}    %JAS
 
-%\renewcommand{\contentsname}{\centering 
+%\renewcommand{\contentsname}{\centering
 %\large TABLE OF CONTENTS } %JAS
 %\renewcommand{\listfigurename}{\centering \large LIST OF FIGURES}  %JAS
 %\renewcommand{\listtablename}{\centering \large LIST OF TABLES}    %JAS
@@ -1018,7 +1018,7 @@ For the Major Program\fi\fi}
                  %\thispagestyle{plain} - remove to get rid of page #
                  \if@twocolumn
                      \onecolumn
-                     \@tempswatrue  
+                     \@tempswatrue
                    \else
                      \@tempswafalse
                  \fi
@@ -1043,9 +1043,9 @@ For the Major Program\fi\fi}
      \fi
      \Large \bfseries #2\par}%
     \@endpart}
-\def\@spart#1{%   
+\def\@spart#1{%
     {\centering
-     \interlinepenalty \@M  
+     \interlinepenalty \@M
      \reset@font
      \Large \bfseries #1\par}%
     \@endpart}
@@ -1057,7 +1057,7 @@ For the Major Program\fi\fi}
               \fi
               \if@tempswa
                 \twocolumn
-              \fi} 
+              \fi}
 
 %  Chapter
 \renewcommand{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi

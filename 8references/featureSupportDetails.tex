@@ -4,6 +4,8 @@
 \label{app:caveats}
 Variation among supported feature sets is not easy to define concisely.  Often the same feature is essentially supported, but nuances exist so that the exact behavior of the feature still varies enough to have an effect on code that relies on regexes using that feature.  One example of this is the OPT feature (e.g., \cverb!(?i)cAsE!), for which different engines have different sets of options.  Python's set of 7 options is small compared to Tcl which has 15 or so.  In Table~\ref{table:rankedFeatureSupport} if the following 3 core options are supported: \cverb!(?ism)!, then the variant will be shown as having that feature.  However in all other cases, to the best knowledge of the author, a strict view is taken when considering if two variants support the same feature - it should have the exact same syntax and behavior in order for the feature to be considered the same feature in two variants.  Documentation of engines varies in detail and quality, so that often the particular behavioral details and full feature set is only known to developers of the engine.  In this attempt to document some of the variations in feature support, no attempt is made to address these minor nuances and tricky details, but instead the focus is on documenting the presence or absence of features at a high level.
 
+These tables should not be relied upon in life-or-death situations, as some error is certainly possible.  In such applications, a user may want to verify engine behavior using tests, consulting the documentation and source code as needed.
+
 \subsection*{Availability of alternate libraries is common}
 \label{app:alternateLibraries}
 Although pure ANSI C does not include a standard regex library or built-in, libraries providing regex support can be made available such as \underline{POSIX}, \underline{PCRE} or \underline{re2c}.  Similarly, pure Visual Basic has no core regex support but can use the \underline{RegExp} object provided by the VBScript library.  In fact, for most general-purpose languages, multiple alternative regular expression libraries can be found which may offer slightly different syntax or optimizations for speed.  Some of these libraries implement a language defined by a standard (like PCRE or ECMAScript) or offer a choice of languages.  For example, the std::regex library\footurl{http://en.cppreference.com/w/cpp/regex/syntax_option_type} implements engines for ECMAScript Regular Expressions (the default), AWK Regular Expressions,  POSIX BRE or POSIX ERE.  The following libraries are alternatives to std::regex: Boost.Regex, Boost.Xpressive, cppre, DEELX, GRETA, Qt/QRegExp and RE2.  These alternative libraries are developed by hobby users and software giants alike, with RE2~\cities{re2} being a recent and notable alternative library developed by Google.
@@ -12,9 +14,34 @@ Although pure ANSI C does not include a standard regex library or built-in, libr
 \label{app:languagesChosen}
 Instead of using language popularity alone to determine what languages to include, these languages were selected to optimize for the intersection of variety of regular expression languages covered, and ease of testing feature inclusion.  For example, Java and RE2 provide excellent and thorough documentation of their feature sets, and provide two entirely different variants.  Although C and C++ are very popular languages, their regular expression libraries use external standards like ECMA (used by JavaScript) and POSIX ERE, and do not provide a distinct language of their own.  For Python, Perl, Ruby, JavaScript and Java, testing a for a feature can be quickly accomplished in a browser or a terminal.  For RE2, POSIX ERE and .Net no tests were performed, but documentation was good enough, and the language variants seem significant enough to try and include them.  Two notably absent regular expression languages are the NSExpressions variant used by Apple in the Swift and Objective-C languages (no acceptably detailed documentation was found), and the well documented but wildly exotic syntax of Vim Regular Expressions which are very interesting but would unnecessarily inflate the size of the tables. So for 12 (70\%) of the 17 languages listed in Table~\ref{table:libraryStandards}, (i.e. not MATLAB, Swift, Objective-C, D or SQL), the tables presented here should provide useful information.
 
+\begin{footnotesize}
 \subsection*{Sources of data}
 \label{app:sourcesAndTechniques}
-Most of the data presented here was determined by directly attempting to use a feature and noticing if either the engine threw an exception, or the expected effect was noticeably missing.  This effort required hundreds of small experiments that will not be documented in detail at this time.  A cursory treatment of where the information came from is provided in Appendix~\ref{app:languagesChosen}.  These tables should not be relied upon in life-or-death situations, as some error is certainly possible.  In such applications, a user may want to verify engine behavior using tests, consulting the documentation and source code as needed.
+\paragraph{Data sources for ranked features (Table~\ref{table:rankedFeatureSupport}):}
+\begin{description}
+\item[Python] mostly documentation\footurl{https://docs.python.org/2/library/re.html}, and Regex101\footurl{https://regex101.com/}, and stackoverflow\footurl{http://stackoverflow.com/questions/3070655/does-regex-differ-from-php-to-python}, also many terminal tests using version 2.7.10.
+\item[Perl] very good docs\footurl{http://perldoc.perl.org/perlre.html}, and terminal tests, using version 5.18.2.
+\item[.Net] entirely regexhero\footurl{http://regexhero.net/reference/}.
+\item[Ruby] mostly documentation\footurl{http://ruby-doc.org/core-1.9.3/Regexp.html} and also rubular\footurl{http://rubular.com/}
+\item[Java] mostly documentation\footurl{https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html} and also RegexPlanet\footurl{http://www.regexplanet.com/advanced/java/index.html}.
+\item[RE2] only the excellent documentation\footurl{https://github.com/google/re2/wiki/Syntax} is needed.
+\item[JavaScript] mostly documentation\footurl{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions}, EMCAScript\footurl{http://www.ecma-international.org/ecma-262/5.1/}docs, and some experiments on regex101\footurl{https://regex101.com/}.
+\item[POSIX ERE] entirely documentation\footurl{http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html}
+\end{description} and more documentation\footurl{http://www.regextester.com/eregsyntax.html}
+
+\paragraph{Data sources for unranked features (Table~\ref{table:unrankedFeatureSupport}):}
+Miscellaneous info from \cities{RegexBuddy}, and:
+\begin{description}
+\item[Python] experiments on Regex101\footurl{https://regex101.com/}, and in the terminal using version 2.7.10.
+\item[Perl] very good docs\footurl{http://perldoc.perl.org/perlre.html}, and terminal tests, using version 5.18.2.
+\item[.Net] entirely regexhero\footurl{http://regexhero.net/reference/}.
+\item[Ruby] experiments on rubular\footurl{http://rubular.com/}, and some documentation\footurl{http://ruby-doc.org/core-1.9.3/Regexp.html}.
+\item[Java] the documentation\footurl{https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html} is nearly sufficient, suplimented by RegexPlanet\footurl{http://www.regexplanet.com/advanced/java/index.html}.
+\item[RE2] only the excellent documentation\footurl{https://github.com/google/re2/wiki/Syntax} is needed.
+\item[JavaScript] entirely experiments on regex101\footurl{https://regex101.com/}.
+\item[POSIX ERE] entirely documentation\footurl{http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html}
+\end{description} and more documentation\footurl{http://www.regextester.com/eregsyntax.html}.
+\end{footnotesize}
 
 
 
@@ -56,31 +83,9 @@ The following  brief descriptions of unranked features set are provided to aide 
 \item[BAL:] example: \cverb!(?<close-open>)! description:  balanced groups (.Net version of recursion)
 \item[NCND:] example: \cverb!(?(<n>)X|else)! description: named conditionals
 \item[BRES:] example: \cverb!(?|(A)|(B))! description: branch numbering reset (A and B capture into the same group number)
-\item[QNG:] example: \cverb!(?'name're)! description: single-quote named groups
+\item[QNG:] example: \cverb!(?`name're)! description: single-quote named groups
 \end{description}
 
 \subsection*{Determining feature support of four analysis tools}
 \label{app:determiningToolFeatures}
-What features each tool supports was determined in a variety of ways.  For brics, the set of supported features was collected using the formal grammar\footurl{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}.  For hampi, he set of regexes included in the test suite {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footurl{https://code.google.com/p/hampi/downloads/list} were examined to determine which features hampi supports (this may have been an overestimation, as this included more features than specified by the formal grammar\footurl{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}).  For Rex, the feature set was collected empirically when attempting to use Rex as described in Section  \todoMid{link}.  For Automata.Z3, a file containing sample regexes\footurl{https://github.com/AutomataDotNet/Automata/blob/master/src/Automata.Z3.Tests/SampleRegexes.cs} was examined to determine which features it supports.  This may be an underestimation, as the set of patterns provided is small.
-
-
-% THIS STUFF MAY NEED TO GO INTO THE SOURCES SECTION
-
-% Python\footurl{https://docs.python.org/2/library/re.html}
-% Java\footurl{https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html}
-% Automata.Z3\footurl{https://github.com/AutomataDotNet/Automata/blob/master/src/Automata.Tests/SampleRegexes.cs}
-% PCREvsPython\footurl{http://stackoverflow.com/questions/3070655/does-regex-differ-from-php-to-python}
-% .Net\footurl{http://regexhero.net/reference/}
-% POSIX.ERE\footurl{http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html},
-% \footurl{http://www.regextester.com/eregsyntax.html}
-% %#tag_09_04
-% Perl\footurl{https://www.cs.tut.fi/~jkorpela/perl/regexp.html}
-% Swift\footurl{https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial}
-% Javascript\footurl{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions},\footurl{http://www.ecma-international.org/ecma-262/5.1/}
-% %#sec-15.10
-% - note that javascript is an implementation of the ecma standard, including r.e. support.
-% RE2\footurl{https://github.com/google/re2/wiki/Syntax}
-% VIM\footurl{http://vimregex.com/}
-
-
-% \subsubsection{Feature support in text editors}
+What features each tool supports was determined in a variety of ways.  For brics, the set of supported features was collected using the formal grammar\footurl{http://www.brics.dk/automaton/doc/index.html?dk/brics/automaton/RegExp.html}.  For hampi, the set of regexes included in the test suite {\tt lib/regex-hampi/sampleRegex} file within the hampi repository\footurl{https://code.google.com/p/hampi/downloads/list} were examined to determine which features hampi supports (this may have been an overestimation, as this included more features than specified by the formal grammar\footurl{http://people.csail.mit.edu/akiezun/hampi/Grammar.html}).  For Rex, the feature set was collected empirically when attempting to use Rex as described in Section~\ref{sec:clusteringImplementation}.  For Automata.Z3, a file containing sample regexes\footurl{https://github.com/AutomataDotNet/Automata/blob/master/src/Automata.Z3.Tests/SampleRegexes.cs} was examined to determine which features it supports.  This may be an underestimation, as the set of patterns provided is small.
