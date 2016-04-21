@@ -1,0 +1,18 @@
+\section{Contributions}
+
+The contributions of this work are:
+\begin{itemize} \setlength \itemsep{.1pt}
+    \item An empirical analysis of regex feature usage in 13,597 regexes extracted from 1,645 open-source Python projects (Section~\ref{sec:featureResults}),
+    \item A comparison of supported features across eight regular expression languages, as well as a comparison of features supported by four regular expression analysis tools (Section~\ref{sec:featureSupport}),
+    \item An approach for measuring behavioral similarity of regular expressions, \\*(Section~\ref{sec:buildingSimilarity}), and qualitative analysis of clusters formed using that behavioral similarity measure (Section~\ref{sec:categoriesDefined}),
+<<<<<<< HEAD
+=======
+    \item A survey of 18 professional software developers about their habits, preferences and challenges using regular expressions (Section~\ref{sec:surveyResults}),
+>>>>>>> 50b8a591066c8a4b796f91c3770bb7de34a2c07f
+    \item Identification of equivalence classes for regular expressions with possible transformations within each class (Section~\ref{sec:equivClasses}),
+    \item An empirical study of how frequently regexes are represented within equivalence classes, identifying refactoring opportunities based on these frequency measurements (Section~\ref{sec:nodeCountingResults}),
+    \item An empirical study with 180 participants evaluating the understandability of representations within equivalence classes, identifying refactoring opportunities based on these understandability measurements (Section~\ref{sec:comprehensionResults}),
+    \item An evidence-based discussion of opportunities for future work in supporting programmers who use regular expressions, including refactoring regexes based on a variety of metrics, providing regex search functionality, migration support between languages, and fundamental research extending the techniques pioneered in this work (Section~\ref{sec:futureWork}).
+\end{itemize}
+
+Parsing source code, parsing balanced brackets, and searching for special delimiting sequences are three categories of regex behavior identified by behaviorally clustering regexes.Collections of characters can be expressed as an OR or using a custom character class - one of them is significantly more understandable, while the other occurs much more often. Between octal and hex representations of characters, hex is significantly more understandable and occurs more often.

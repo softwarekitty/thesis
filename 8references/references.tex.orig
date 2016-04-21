@@ -7,8 +7,14 @@
 \input{clusteringArtifacts}
 \FloatBarrier
 
+
+<<<<<<< HEAD
 % \input{dwollaSurvey}
-% \FloatBarrier
+% \afterpage{\clearpage}
+=======
+\input{dwollaSurvey}
+\FloatBarrier
+>>>>>>> 50b8a591066c8a4b796f91c3770bb7de34a2c07f
 
 \input{communityPreferences}
 \FloatBarrier

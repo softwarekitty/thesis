@@ -1,4 +1,4 @@
-\section*{Similarity matrix creation details}
+\section*{Similarity Matrix Creation Details}
 \label{app:similarityMatrixCreation}
 
 A free trial of Windows 7 was run within VMware on a macbook pro.  The Rex~\cities{rex} executable\footurl{http://research.microsoft.com/en-us/downloads/7f1d87be-f6d9-495d-a699-f12599cea030/} requires .Net 4.5, and the similarity matrix creating program was written in C\# using visual studio 2013.  First the patterns for 3,582 Python regexes appearing in multiple projects were used to try and generate strings using Rex, which rejected 711 patterns.  For the remaining 2,871 patterns that Rex could generate strings for, the test strings were stored in a distinct file for each regex, and delimited by a large random string (Rex often needs to generate muti-line test strings).
