@@ -5,12 +5,10 @@ Using over 13,000 regexes mined from Python projects on GitHub, this work provid
 
 In the set of mined regexes, this work identifies six broad categories of regex usage with a novel behavioral similarity analysis and clustering technique, which indicates that regexes are often used to parse code and balanced angle brackets, and to find specific delimiting characters or sequences of characters.
 
-A survey of how developers use regular expressions reveals, among other things, a difference between ephemeral users, who mostly use regexes in command line tools and text editors, and persistent users, who write and maintain regexes in source files.  These persistent users tend to have more experience, be more familiar with more rarely used regular expression features, and use regexes more for parsing generated files than ephemeral users.
-
 Using a simple equivalence class model based on features, where the same regex behavior may be represented in multiple ways, two studies were performed in an effort to find the most preferred way to represent a given regex.  The first study used an empirical approach to determine community support of representations by counting how often each type of representation appeared in the set of mined regexes.  This community support standard identified 11 refactorings such as $\overrightarrow{T3 T1}$.  This refactoring transforms characters wrapped in their own character class into ordinary characters, for example from \cverb![^]! to \cverb!\^!
 
 The second study used Mechanical Turk, a crowd-sourcing platform, to conduct comprehension tests on participants with some basic knowledge of regular expressions.  This data was used to identify seven refactorings such as $\overrightarrow{D2 D3}$.  This refactoring transforms zero-or-one repetition into an OR, for example from \cverb!ab?! to \cverb!a|ab!
 
-The observations obtained in the static analysis of mined regexes, survey of developers and refactoring studies can be used by language developers and researchers to further the state-of-the art of regular expression technologies.
+The observations obtained in the static analysis of mined regexes and the refactoring studies can be used by language developers and researchers to further the state-of-the art of regular expression technologies.
 
 There are many opportunities for future work based on this study, such as applying the same techniques to new sets of regexes, developing new regex categorizing techniques, and building more sophisticated equivalence class models and representation preference measurements, to identify new refactorings.  Concepts from regex refactoring research can be used to build new migration libraries and inform institutional coding standards.

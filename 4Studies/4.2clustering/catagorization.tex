@@ -20,16 +20,15 @@ The top 100 largest clusters based on the number of projects were manually sorte
 \subsubsection{Six categories of behaviorally similar clusters}
 \label{sec:categoriesDefined}
 \paragraph{Multiple Matching Alternatives.}
-The patterns in these clusters match under a variety of conditions by using the CCC or OR feature.  For example: \cverb!(\W)!\cstat{88}{36} matches any alphanumeric character, \cverb!(\s)!\cstat{97}{33} matches any whitespace character, \cverb!\d!\cstat{58}{23} matches any numeric character, and \cverb!,|;!\cstat{18}{5} matches a comma or semicolon.  Most of these clusters are represented by patterns that use default character classes, as opposed to custom character classes.  This provides further support for the survey results to the question, \emph{Do you prefer to use custom character classes or default character classes more often?}, in which a majority of participants indicated they use the default classes more than custom.
-This category contains 21 clusters, each appearing in an average of 33 projects.
+The patterns in these clusters match under a variety of conditions by using the CCC or OR feature.  For example: \cverb!(\W)!\cstat{88}{36} matches any alphanumeric character, \cverb!(\s)!\cstat{97}{33} matches any whitespace character, \cverb!\d!\cstat{58}{23} matches any numeric character, and \cverb!,|;!\cstat{18}{5} matches a comma or semicolon.  Most of these clusters are represented by patterns that use default character classes, as opposed to custom character classes.  This category contains 21 clusters, each appearing in an average of 33 projects.
 
 \paragraph{Specific Character Must Match.}
 \label{cluster:single}
 Each cluster in this category requires one specific character to match, for example:
 \cverb!\n\s*!\cstat{43}{16} matches only if a newline is found, \cverb!:+!\cstat{31}{12} matches only if a colon is found, \cverb!%!\cstat{22}{6}, matches only if a percent sign is found and \cverb!}!\cstat{14}{4} matches only if a right curly brace is found.
 % Table~\ref{table:exampleCluster} presents a cluster that falls under this category. While regexes in the cluster are grouped together because of the presence of the \verb!`:'! character, the other regexes in the cluster also exhibit more diverse behavior.
-The commonality of this cluster category contrasts with the survey in
-(Section~\ref{sec:surveyResults}) in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{table:regextasks}).
+% The commonality of this cluster category contrasts with the survey in
+% (Section~\ref{sec:surveyResults}) in which participants reported to very rarely or never use regexes to check for a single character (Table~\ref{table:regextasks}).
 This category contains 17 clusters, each appearing in an average of 17.1 projects.
 These clusters have a combined total of 103 patterns, with at least one pattern present in 184 projects.
 
