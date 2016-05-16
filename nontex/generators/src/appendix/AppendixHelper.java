@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.TreeSet;
 
-import build_corpus.CorpusUtil;
+import analysisUtil.build_corpus.CorpusUtil;
 import build_corpus.RegexProjectSet;
 import c.IOUtil;
 import exceptions.PythonParsingException;
@@ -50,18 +50,6 @@ public class AppendixHelper {
 		File corpusLatexOut = new File(nonTexPath,"top200Shorts.txt");
 		IOUtil.createAndWrite(corpusLatexOut, sb.toString());
 
-	}
-	
-	public static String wrap(RegexProjectSet regex){
-		char[] charsToUse = { '!', '@', '|', ':'};
-		String un = regex.getUnescapedPattern();
-		for(int i=0;i<charsToUse.length;i++){
-			char c = charsToUse[i];
-			if(un.indexOf(c)==-1){
-				return "\\cverb"+c+un+c;
-			}
-		}
-		return "\\cverb•"+un+"•";
 	}
 
 }

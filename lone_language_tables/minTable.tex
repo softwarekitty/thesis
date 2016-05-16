@@ -1,0 +1,93 @@
+\documentclass[12pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{tikz}
+\usepackage{booktabs}
+\newcommand{\yes}{\tikz\draw[black,fill=black] (0,0) circle (.5ex);}
+\newcommand{\no}{\tikz\draw[black] (0,0) circle (.5ex);}
+\pagenumbering{gobble}
+
+\begin{document}
+
+\begin{table*}
+\begin{center}
+\begin{scriptsize}
+\caption{Frequency of feature appearance in Projects, Files and Patterns, with number of tokens observed and the maximum number of tokens observed in a single pattern.}
+\label{table:featureStatsOnly}
+\begin{tabular}
+{lllcccc  cc}
+\begin{scriptsize}\textbf{Rank}\end{scriptsize} & \begin{scriptsize}\textbf{Code}\end{scriptsize} & \begin{scriptsize}\textbf{Example}\end{scriptsize} & \% \begin{scriptsize}\textbf{Projects}\end{scriptsize} & \begin{scriptsize}\textbf{NProjects}\end{scriptsize} & \begin{scriptsize}\textbf{NFiles}\end{scriptsize} & \begin{scriptsize}\textbf{NPatterns}\end{scriptsize} & \begin{scriptsize}\textbf{NTokens}\end{scriptsize} & \begin{scriptsize}\textbf{MaxTokens}\end{scriptsize} \\
+\toprule[0.12em]
+1 & ADD & \begin{minipage}{0.5in}\begin{verbatim}z+\end{verbatim}\end{minipage} & 73.2 & 1,204 & 9,165 & 6,003 & 11,136 & 30 \\
+\midrule
+2 & CG & \begin{minipage}{0.5in}\begin{verbatim}(caught)\end{verbatim}\end{minipage} & 72.6 & 1,194 & 9,559 & 7,130 & 12,707 & 17 \\
+\midrule
+3 & KLE & \begin{minipage}{0.5in}\begin{verbatim}.*\end{verbatim}\end{minipage} & 66.8 & 1,099 & 8,163 & 6,017 & 11,620 & 50 \\
+\midrule
+4 & CCC & \begin{minipage}{0.5in}\begin{verbatim}[aeiou]\end{verbatim}\end{minipage} & 62.4 & 1,026 & 7,648 & 4,468 & 8,179 & 42 \\
+\midrule
+5 & ANY & \begin{minipage}{0.5in}\begin{verbatim}.\end{verbatim}\end{minipage} & 61.1 & 1,005 & 6,277 & 4,657 & 7,119 & 60 \\
+\midrule
+6 & RNG & \begin{minipage}{0.5in}\begin{verbatim}[a-z]\end{verbatim}\end{minipage} & 51.6 & 848 & 5,092 & 2,631 & 8,043 & 50 \\
+\midrule
+7 & STR & \begin{minipage}{0.5in}\begin{verbatim}^\end{verbatim}\end{minipage} & 51.4 & 846 & 5,458 & 3,563 & 3,661 & 12 \\
+\midrule
+8 & END & \begin{minipage}{0.5in}\begin{verbatim}$\end{verbatim}\end{minipage} & 50.3 & 827 & 5,393 & 3,169 & 3,276 & 12 \\
+\midrule[0.10em]
+9 & NCCC & \begin{minipage}{0.5in}\begin{verbatim}[^qwxf]\end{verbatim}\end{minipage} & 47.2 & 776 & 3,947 & 1,935 & 2,718 & 15 \\
+\midrule
+10 & WSP & \begin{minipage}{0.5in}\begin{verbatim}\s\end{verbatim}\end{minipage} & 46.3 & 762 & 4,704 & 2,846 & 6,128 & 32 \\
+\midrule
+11 & OR & \begin{minipage}{0.5in}\begin{verbatim}a|b\end{verbatim}\end{minipage} & 43 & 708 & 3,926 & 2,102 & 2,606 & 15 \\
+\midrule
+12 & DEC & \begin{minipage}{0.5in}\begin{verbatim}\d\end{verbatim}\end{minipage} & 42.1 & 692 & 4,198 & 2,297 & 4,868 & 24 \\
+\midrule
+13 & WRD & \begin{minipage}{0.5in}\begin{verbatim}\w\end{verbatim}\end{minipage} & 39.5 & 650 & 2,952 & 1,430 & 2,037 & 13 \\
+\midrule
+14 & QST & \begin{minipage}{0.5in}\begin{verbatim}z?\end{verbatim}\end{minipage} & 39.2 & 645 & 3,707 & 1,871 & 3,290 & 35 \\
+\midrule
+15 & LZY & \begin{minipage}{0.5in}\begin{verbatim}z+?\end{verbatim}\end{minipage} & 36.8 & 605 & 2,221 & 1,300 & 1,761 & 12 \\
+\midrule
+16 & NCG & \begin{minipage}{0.5in}\begin{verbatim}a(?:b)c\end{verbatim}\end{minipage} & 24.6 & 404 & 1,709 & 791 & 1,453 & 28 \\
+\midrule
+17 & PNG & \begin{minipage}{0.5in}\begin{verbatim}(?P<name>x)\end{verbatim}\end{minipage} & 21.5 & 354 & 1,475 & 915 & 2,399 & 16 \\
+\midrule
+18 & SNG & \begin{minipage}{0.5in}\begin{verbatim}z{8}\end{verbatim}\end{minipage} & 20.7 & 340 & 1,267 & 581 & 1,159 & 17 \\
+\midrule
+19 & NWSP & \begin{minipage}{0.5in}\begin{verbatim}\S\end{verbatim}\end{minipage} & 16.4 & 270 & 776 & 484 & 676 & 10 \\
+\midrule
+20 & DBB & \begin{minipage}{0.5in}\begin{verbatim}z{3,8}\end{verbatim}\end{minipage} & 14.5 & 238 & 647 & 367 & 573 & 11 \\
+\midrule
+21 & NLKA & \begin{minipage}{0.5in}\begin{verbatim}a(?!yz)\end{verbatim}\end{minipage} & 11.1 & 183 & 489 & 131 & 148 & 3 \\
+\midrule
+22 & WNW & \begin{minipage}{0.5in}\begin{verbatim}\b\end{verbatim}\end{minipage} & 10.1 & 166 & 438 & 248 & 408 & 36 \\
+\midrule
+23 & NWRD & \begin{minipage}{0.5in}\begin{verbatim}\W\end{verbatim}\end{minipage} & 10 & 165 & 305 & 94 & 149 & 6 \\
+\midrule
+24 & LWB & \begin{minipage}{0.5in}\begin{verbatim}z{15,}\end{verbatim}\end{minipage} & 9.6 & 158 & 281 & 91 & 107 & 3 \\
+\midrule
+25 & LKA & \begin{minipage}{0.5in}\begin{verbatim}a(?=bc)\end{verbatim}\end{minipage} & 9.6 & 158 & 358 & 112 & 133 & 4 \\
+\midrule
+26 & OPT & \begin{minipage}{0.5in}\begin{verbatim}(?i)CasE\end{verbatim}\end{minipage} & 9.4 & 154 & 377 & 231 & 238 & 2 \\
+\midrule
+27 & NLKB & \begin{minipage}{0.5in}\begin{verbatim}(?<!x)yz\end{verbatim}\end{minipage} & 8.3 & 137 & 296 & 94 & 117 & 4 \\
+\midrule
+28 & LKB & \begin{minipage}{0.5in}\begin{verbatim}(?<=a)bc\end{verbatim}\end{minipage} & 7.3 & 120 & 255 & 80 & 99 & 4 \\
+\midrule
+29 & ENDZ & \begin{minipage}{0.5in}\begin{verbatim}\Z\end{verbatim}\end{minipage} & 5.5 & 90 & 149 & 89 & 89 & 1 \\
+\midrule
+30 & BKR & \begin{minipage}{0.5in}\begin{verbatim}\1\end{verbatim}\end{minipage} & 5.1 & 84 & 129 & 60 & 73 & 4 \\
+\midrule
+31 & NDEC & \begin{minipage}{0.5in}\begin{verbatim}\D\end{verbatim}\end{minipage} & 3.5 & 58 & 92 & 36 & 51 & 6 \\
+\midrule
+32 & BKRN & \begin{minipage}{0.5in}\begin{verbatim}(P?=name)\end{verbatim}\end{minipage} & 1.7 & 28 & 44 & 17 & 19 & 2 \\
+\midrule
+33 & VWSP & \begin{minipage}{0.5in}\begin{verbatim}\v\end{verbatim}\end{minipage} & 0.9 & 15 & 16 & 13 & 14 & 2 \\
+\midrule
+34 & NWNW & \begin{minipage}{0.5in}\begin{verbatim}\B\end{verbatim}\end{minipage} & 0.7 & 11 & 11 & 4 & 5 & 2 \\
+\bottomrule[0.13em]
+\end{tabular}
+\end{scriptsize}
+\end{center}
+\end{table*}
+
+\end{document}

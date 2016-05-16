@@ -16,14 +16,16 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 
-import build_corpus.CorpusUtil;
+import analysisUtil.build_corpus.CorpusUtil;
+import analysisUtil.categories.Category;
+import analysisUtil.categories.Cluster;
 import build_corpus.RegexProjectSet;
 import c.IOUtil;
 import exceptions.PythonParsingException;
 import exceptions.QuoteRuleException;
 
 public class BehavioralCategories {
-	public static final String homePath = "/Users/carlchapman/git/thesis/nontex/generators/";
+	public static final String homePath = "/Users/cc/home/edu/masters/thesis/nontex/generators/";
 	public static String filtered_corpus_path = homePath + "filteredCorpus.txt";
 	public static String abcPath = homePath +
 			"behavioralSimilarityGraph.abc";
@@ -34,8 +36,6 @@ public class BehavioralCategories {
 			SQLException, IOException, InterruptedException,
 			IllegalArgumentException, QuoteRuleException,
 			PythonParsingException {
-
-		File finalGraphFile = new File(abcPath);
 
 		DecimalFormat df = new DecimalFormat("0.00");
 		double i_value = 1.8;
@@ -57,18 +57,33 @@ public class BehavioralCategories {
 		TreeSet<RegexProjectSet> corpus = CorpusUtil.reloadCorpus();
 		HashMap<Integer, RegexProjectSet> lookup = getLookup(filtered_corpus_path, corpus, patternIndexMap);
 		TreeSet<Cluster> behavioralClusters = getClustersFromFile(abcPath, fullOutputFilePath, mclInput, lookup);
-		dumpCategories(behavioralClusters, "clusterCategoryDump.tex", patternIndexMap,corpus);
-		dumpClusters(behavioralClusters, "patternClusterDump.tex");
+//		dumpCategories(behavioralClusters, "clusterCategoryDump.tex", patternIndexMap,corpus);
+//		dumpClustersTex(behavioralClusters, "patternClusterDump.tex");
+		dumpClustersRaw(behavioralClusters, "patternClusterDump.txt");
 	}
 
-	private static void dumpClusters(TreeSet<Cluster> behavioralClusters,
+	private static void dumpClustersTex(TreeSet<Cluster> behavioralClusters,
 			String filename) {
 		File patternClusterFile = new File(homePath + filename);
 		StringBuilder sb = new StringBuilder();
 		int i=0;
 		for(Cluster cls: behavioralClusters ){
 			sb.append("Cluster i: "+i++ +"\n");
-			sb.append(cls.getPatternDump());
+			sb.append(cls.getPatternDumpTex());
+			sb.append("\n\n\n\n");
+		}
+		
+		IOUtil.createAndWrite(patternClusterFile, sb.toString());
+	}
+	
+	private static void dumpClustersRaw(TreeSet<Cluster> behavioralClusters,
+			String filename) {
+		File patternClusterFile = new File(homePath + filename);
+		StringBuilder sb = new StringBuilder();
+		int i=0;
+		for(Cluster cls: behavioralClusters ){
+			sb.append("Cluster i: "+i++ +"\n");
+			sb.append(cls.getPatternDumpRaw());
 			sb.append("\n\n\n\n");
 		}
 		
@@ -225,8 +240,8 @@ public class BehavioralCategories {
 			List<Category> categories, HashMap<String, Integer> patternIndexMap) {
 		Integer javaIndex = patternIndexMap.get(cluster.getHeaviest().getContent());
 		int i = 0;
-		for (; i < CategoryOracle.size(); i++) {
-			List<Integer> categoryMembers = CategoryOracle.get(i);
+		for (; i < CategoryOracles.size(); i++) {
+			List<Integer> categoryMembers = CategoryOracles.get(i);
 			if (categoryMembers.contains(javaIndex)) {
 				categories.get(i).add(cluster);
 				return true;

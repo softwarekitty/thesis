@@ -1,0 +1,80 @@
+\begin{table*}[h!tb]
+\centering
+\begin{scriptsize}
+\caption{What languages support various rare features?}
+\label{table:unrankedFeatureSupport}
+\begin{tabular}{l@{  \horiz}lc @{   \horiz} c @{   \horiz}c @{   \horiz}c @{   \horiz}c @{   \horiz}c @{   \horiz}c @{   \horiz}c} \\
+\textbf{Code} & \textbf{Example} & \textbf{Python} & \textbf{Perl} & \textbf{.Net}  & \textbf{Ruby} &  \textbf{Java} & \textbf{RE2} & \begin{footnotesize}\textbf{JavaScript}\end{footnotesize} & \begin{footnotesize}\textbf{POSIX ERE}\end{footnotesize}\\
+\toprule
+RCUN & \begin{minipage}{0.8in}\begin{verbatim}(?n)\end{verbatim}\end{minipage} & \no & \yes & \no & \no & \no & \no & \no & \no  \\
+\midrule
+RCUZ & \begin{minipage}{0.8in}\begin{verbatim}(?R)\end{verbatim}\end{minipage} & \no & \yes & \no & \no & \no & \no & \no & \no  \\
+\midrule
+GPLS & \begin{minipage}{0.8in}\begin{verbatim}\g{+1}\end{verbatim}\end{minipage} & \no & \yes & \no & \no & \no & \no & \no & \no  \\
+\midrule
+GBRK & \begin{minipage}{0.8in}\begin{verbatim}\g{name}\end{verbatim}\end{minipage} & \no & \yes & \no & \no & \no & \no & \no & \no  \\
+\midrule
+GSUB & \begin{minipage}{0.8in}\begin{verbatim}\g<name>\end{verbatim}\end{minipage} & \yes & \yes & \no & \yes & \no & \no & \no & \no  \\
+\midrule
+KBRK & \begin{minipage}{0.8in}\begin{verbatim}\k<name>\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \no & \no & \no  \\
+\midrule
+IFC & \begin{minipage}{0.8in}\begin{verbatim}(?(cond)X)\end{verbatim}\end{minipage} & \no & \yes & \yes & \no & \no & \no & \no & \no  \\
+\midrule
+IFEC & \begin{minipage}{0.8in}\begin{verbatim}(?(cnd)X|else)\end{verbatim}\end{minipage} & \no & \yes & \yes & \no & \no & \no & \no & \no  \\
+\midrule
+ECOD & \begin{minipage}{0.8in}\begin{verbatim}(?{code})\end{verbatim}\end{minipage} & \no & \yes & \no & \no & \no & \no & \no & \no  \\
+\midrule
+ECOM & \begin{minipage}{0.8in}\begin{verbatim}(?#comment)\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \no & \no & \no & \no  \\
+\midrule
+PRV & \begin{minipage}{0.8in}\begin{verbatim}\G\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \no & \no & \no  \\
+\midrule
+LHX & \begin{minipage}{0.8in}\begin{verbatim}\uFFFF\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \no & \yes & \no  \\
+\midrule
+POSS & \begin{minipage}{0.8in}\begin{verbatim}a?+\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & \yes & \no & \no & \no  \\
+\midrule
+NNCG & \begin{minipage}{0.8in}\begin{verbatim}(?<name>X)\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \no & \no & \no  \\
+\midrule
+MOD & \begin{minipage}{0.8in}\begin{verbatim}(?i)z(?-i)z\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \yes & \no & \no  \\
+\midrule
+ATOM & \begin{minipage}{0.8in}\begin{verbatim}(?>X)\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \no & \no & \no  \\
+\midrule
+CCCI & \begin{minipage}{0.8in}\begin{verbatim}[a-z&&[^f]]\end{verbatim}\end{minipage} & \no & \no & \no & \yes & \yes & \no & \no & \no  \\
+\midrule
+STRA & \begin{minipage}{0.8in}\begin{verbatim}\A\end{verbatim}\end{minipage} & \yes & \yes & \yes & \yes & \yes & \yes & \no & \no  \\
+\midrule
+LNLZ & \begin{minipage}{0.8in}\begin{verbatim}\Z\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \yes & \no & \no  \\
+\midrule
+FINL & \begin{minipage}{0.8in}\begin{verbatim}\z\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \yes & \no & \no  \\
+\midrule
+QUOT & \begin{minipage}{0.8in}\begin{verbatim}\Q...\E\end{verbatim}\end{minipage} & \no & \yes & \no & \no & \yes & \yes & \no & \no  \\
+\midrule
+JAVM & \begin{minipage}{0.8in}\begin{verbatim}\p{javaMirrored}\end{verbatim}\end{minipage} & \no & \no & \no & \no & \yes & \no & \no & \no  \\
+\midrule
+UNI & \begin{minipage}{0.8in}\begin{verbatim}\pL\end{verbatim}\end{minipage} & \no & \yes & \no & \no & \yes & \yes & \no & \no  \\
+\midrule
+NUNI & \begin{minipage}{0.8in}\begin{verbatim}\PS\end{verbatim}\end{minipage} & \no & \yes & \no & \no & \yes & \yes & \no & \no  \\
+\midrule
+OPTG & \begin{minipage}{0.8in}\begin{verbatim}(?flags:re)\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \yes & \yes & \no & \no  \\
+\midrule
+EREQ & \begin{minipage}{0.8in}\begin{verbatim}[[=o=]]\end{verbatim}\end{minipage} & \no & \no & \no & \no & \no & \no & \no & \yes  \\
+\midrule
+PXCC & \begin{minipage}{0.8in}\begin{verbatim}[:alpha:]\end{verbatim}\end{minipage} & \no & \yes & \no & \yes & \no & \yes & \yes & \yes  \\
+\midrule
+TRIV & \begin{minipage}{0.8in}\begin{verbatim}[^]\end{verbatim}\end{minipage} & \no & \no & \no & \no & \no & \no & \yes & \no  \\
+\midrule
+CCSB & \begin{minipage}{0.8in}\begin{verbatim}[a-f-[c]]\end{verbatim}\end{minipage} & \no & \no & \yes & \no & \no & \no & \no & \no  \\
+\midrule
+VLKB & \begin{minipage}{0.8in}\begin{verbatim}(?<=ab.+)\end{verbatim}\end{minipage} & \no & \no & \yes & \no & \no & \no & \no & \no  \\
+\midrule
+BAL & \begin{minipage}{0.8in}\begin{verbatim}(?<close-open>)\end{verbatim}\end{minipage} & \no & \no & \yes & \no & \no & \no & \no & \no  \\
+\midrule
+NCND & \begin{minipage}{0.8in}\begin{verbatim}(?(<n>)X|else)\end{verbatim}\end{minipage} & \no & \yes & \yes & \yes & \no & \no & \no & \no  \\
+\midrule
+BRES & \begin{minipage}{0.8in}\begin{verbatim}(?|(A)|(B))\end{verbatim}\end{minipage} & \no & \no & \no & \no & \no & \no & \no & \no  \\
+\midrule
+QNG & \begin{minipage}{0.8in}\begin{verbatim}(?'name're)\end{verbatim}\end{minipage} & \no & \no & \yes & \yes & \no & \no & \no & \no  \\
+\bottomrule
+\end{tabular}
+\end{scriptsize}
+\vspace{-12pt}
+\end{table*}
