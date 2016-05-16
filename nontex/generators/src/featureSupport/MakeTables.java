@@ -15,9 +15,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.TreeSet;
 
+import analysisUtil.build_corpus.CorpusUtil;
 import c.IOUtil;
 import metric.FeatureDictionary;
-import build_corpus.CorpusUtil;
 import build_corpus.RegexProjectSet;
 import exceptions.PythonParsingException;
 import exceptions.QuoteRuleException;

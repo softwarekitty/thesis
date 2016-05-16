@@ -6,10 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.TreeSet;
 
+import analysisUtil.build_corpus.CorpusUtil;
 import metric.FeatureCount;
 import metric.FeatureDictionary;
 import metric.FeatureSetClass;
-import build_corpus.CorpusUtil;
 import build_corpus.RegexProjectSet;
 import exceptions.PythonParsingException;
 import exceptions.QuoteRuleException;

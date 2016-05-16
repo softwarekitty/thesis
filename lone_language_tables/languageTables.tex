@@ -1,0 +1,84 @@
+% ISU HEADER SECTION:
+% Template file for a standard thesis
+\documentclass[12pt]{article}
+\usepackage{calc}
+\usepackage{enumitem}
+\usepackage[pdftex]{graphicx}
+\usepackage[margin=0.8in]{geometry}
+
+% for checking margins:
+% \usepackage{showframe}
+
+% Standard, old-style
+% \usepackage{isutraditional}
+% \chaptertitle
+% Old-style, thesis numbering down to subsubsection
+% \alternate
+% \usepackage{rotating}
+% Bibliography without numbers or labels
+% \usepackage{natbib}
+% \bibliographystyle{apa}
+
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{balance}
+% \usepackage{carlthesis}
+\usepackage{tikz}
+\newcommand{\yes}{\tikz\draw[black,fill=black] (0,0) circle (.5ex);}
+\newcommand{\sorta}{\tikz\draw[gray,fill=gray] (0,0) circle (.5ex);}
+\newcommand{\no}{\tikz\draw[black] (0,0) circle (.5ex);}
+\usepackage[update,prepend,outdir=./nontex/]{epstopdf}
+\usepackage{import}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{afterpage}
+\usepackage{listings}
+\usepackage{placeins}
+
+\usepackage[pdftex,hypertexnames=false,linktocpage=true]{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,anchorcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue,bookmarksnumbered=true,pdfview=FitB}
+\newcommand{\footurl}[1]{\footnote{\url{#1}}}
+
+\RequirePackage{booktabs}
+\renewcommand*\cmidrule{\midrule[0.001em]} % Thin middle lines
+
+\RequirePackage{pifont}
+\newcommand{\xmark}{\ding{53}}
+
+\RequirePackage{fancyvrb,newverbs}
+\definecolor{cverbbg}{gray}{0.93}
+\definecolor{bverbbg}{gray}{0.975}
+\definecolor{iverbbg}{gray}{0.96}
+\newcommand{\verbatimfont}[1]{\def\verbatim@font{#1}}%
+\newverbcommand{\cverb}
+  {\setbox\verbbox\hbox\bgroup}
+  {\egroup\colorbox{cverbbg}{\box\verbbox}}
+\newverbcommand{\gverb}
+{\color{gray}}
+{}
+\newverbcommand{\bverb}
+  {(\setbox\verbbox\hbox\bgroup}
+  {\egroup\colorbox{bverbbg}{\box\verbbox})}
+
+\RequirePackage{bigstrut}
+\setlength\bigstrutjot{2pt}
+\newcommand{\horiz}{\hspace{2.1pt}}
+\newcommand{\var}[1]{{\ttfamily#1}}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty = 10000
+\hyphenation{second-ly ap-pen-dix}
+\pagenumbering{gobble}
+
+\begin{document}
+
+\input{rankedFeatureSupport}
+Table~\ref{table:rankedFeatureSupport} compares support for the studied 34 features amongst Perl, Python, Ruby, .Net, JavaScript, RE2, Java and POSIX ERE (i.e., grep, sed, etc.).  Each feature (besides python-style named groups or named backreferences and the nuanced ENDZ feature) is supported by five or more of the other seven (non-Python) languages.
+\pagebreak
+
+\input{unrankedFeatureSupport}
+Table~\ref{table:unrankedFeatureSupport} describes feature support for a selection of 34 \emph{unranked} features (not in the studied feature set) chosen from the eight languages being investigated. No feature is supported by five or more other languages without also being supported by Python.
+
+\end{document}
